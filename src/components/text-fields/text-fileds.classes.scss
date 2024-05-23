@@ -1,0 +1,28 @@
+.one-line-text-field-class {
+    width: calc(100% - 24px);
+    // min-width: 300px;
+    min-height: 35px;
+    font-size: 16px;
+    // text-align: center;
+    padding: 5px 10px;
+    border-radius: 8px;
+    // outline: ?green solid 3px;
+    outline: none;
+    border: green solid 2px;
+}
+
+.text-field-normal {
+    background-color: rgba(rgb(136, 167, 136), 0.5);
+    color: black;
+}
+.text-field-normal:focus {
+    border: yellow solid 2px;
+}
+
+.text-filed-error {
+    background-color: red;
+    color: black;
+}
+.text-field-large {
+    height: 120px;
+}

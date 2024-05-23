@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: test.* form.*
+
+Sitemap: https://www.example.com/sitemap.xml

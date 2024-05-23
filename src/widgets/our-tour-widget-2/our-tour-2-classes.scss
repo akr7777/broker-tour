@@ -1,0 +1,120 @@
+$div-side-margin: 30px;
+$card-count: 3;
+$space-between: 20px;
+$card-width: 400px;
+$three-cols-screen-width: calc(
+        ($card-count * $card-width) + (($card-count - 1) * $space-between)
+    );
+$two-cols-screen-width: calc(
+        (2 * $card-width) + $space-between + (2 * $div-side-margin)
+    );
+
+.our-tours-2-wrapper {
+    width: calc(100% - 2*$div-side-margin);
+
+    // background-color: aqua;
+    margin: 0 $div-side-margin;
+
+    @media screen and (min-width: $three-cols-screen-width) {
+        display: flex;
+        flex-direction: row;
+        gap: $space-between;
+        justify-content: center;
+    }
+
+    @media screen and (min-width: $two-cols-screen-width) and (max-width: $three-cols-screen-width) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: $space-between;
+    }
+
+    @media screen and (max-width: $two-cols-screen-width) {
+        display: flex;
+        flex-direction: column;
+        gap: $space-between;
+        align-items: center;
+    }
+}
+
+.our-tours-2-card {
+    @media screen and (min-width: $card-width) { min-width: $card-width; }
+    @media screen and (max-width: $card-width) { min-width: 100%; }
+
+    // background-color: red;
+    overflow: hidden;
+    box-shadow: 5px 5px 10px grey;
+    position: relative;
+    border-radius: 10px;
+
+    min-height: 200px;
+    padding: 5px;
+    border: 1px solid grey;
+
+    cursor: pointer;
+
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // gap: 10px;
+    img {
+        position: relative;
+        top: 5px;
+        left: 5px;
+
+        width: calc(100% - 10px);
+        height: 100%;
+        max-height: 200px;
+
+        z-index: 100;
+        border-radius: 10px;
+    }
+}
+.our-tours-2-card:hover {scale: 1.025; }
+
+.our-tours-2-card-min-price {
+    z-index: 102;
+
+    position: absolute;
+    top: 25px;
+    left: 25px;
+
+    // width: 150px;
+    // height: 55px;
+    padding: 10px;
+    border-radius: 10px;
+
+    font-size: 16px;
+    line-height: normal;
+    text-align: center;
+
+    background-color: lightgrey;
+
+    box-shadow: 10px 10px 10px grey;
+
+    label {
+        font-size: 11px;
+    }
+}
+
+.our-tours-2-card-title {
+    position: relative;
+    margin: 5px 5px;
+    padding: 5px 5px;
+    border: 1px solid grey;
+    background-color: rgba(144, 238, 144, 0.674);
+    border-radius: 10px;
+
+    text-align: center;
+}
+
+.our-tours-2-card-description {
+    position: relative;
+    margin: 5px 5px;
+    padding: 5px 5px;
+    border: 1px solid grey;
+    background-color: azure;
+    border-radius: 10px;
+
+    text-align: justify;
+    line-height: normal;
+}

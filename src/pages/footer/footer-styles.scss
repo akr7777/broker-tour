@@ -1,0 +1,14 @@
+@import '../../assets/styles/common-variables.scss';
+
+.footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    justify-content: center;
+    align-items: center;
+
+    // background-color: black;
+    // color: white;
+
+    padding: $widget-padding-top $widget-padding-side;
+}

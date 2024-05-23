@@ -1,0 +1,89 @@
+@import '../../assets/styles/common-variables.scss';
+
+.vert-stepper-wrapper {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    margin-top: 20px;
+
+    @media screen and (min-width: 550px) { 
+        width: calc(100% - 2 * $widget-padding-side);
+        padding: 0 $widget-padding-side; 
+    }
+    @media screen and (max-width: 549px) { 
+        width: calc(100% - 30px);
+        padding: 0 15px; 
+    }
+    
+}
+
+.vert-stepper-part1 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    // background-color: aqua;
+    min-height: 100px;
+}
+.vert-stepper-part1-vert-line {
+    position: absolute;
+    top: -10px;
+    left: calc(100% - 1.5px - 25px);
+    width: 3px;
+    height: calc(100% + 20px);
+    background-color: greenyellow;
+}
+.vert-stepper-part1-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+
+    top: calc(50% - 15px);
+    left: calc(100% - 15px - 25px);
+}
+
+
+
+.vert-stepper-content {
+    @media screen and (min-width: 550px) {
+        display: grid;
+        grid-template-columns: 100px 1fr;
+    }
+    @media screen and (max-width: 549px) {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    height: 100%;
+    width: 100%;
+}
+
+.vert-stepper-part2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    // background-color: red;
+    font-weight: 700;
+}
+
+.vert-stepper-part3 {
+    width: calc(100% - 20px);
+    // height: calc(100% - 20px);
+    // height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    line-height: normal;
+
+    padding: 10px;
+
+    // background-color: blue;
+
+    border-radius: 10px;
+    border: 2px solid grey;
+}

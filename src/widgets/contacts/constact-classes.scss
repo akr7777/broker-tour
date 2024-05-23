@@ -1,0 +1,39 @@
+@import '../../assets/styles/common-variables.scss';
+
+.contacts-page-wrapper {
+    background-color: rgb(40, 37, 37);
+    color: wheat;
+    a {
+        color: wheat;
+    }
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
+
+    text-align: center;
+    padding: $widget-padding-top $widget-padding-side;
+
+    min-height: 100svh;
+}
+
+.contacts-author-photo-class {
+    border-radius: 20px;
+    width: 192px;
+    height: 256px;
+}
+
+.constact-social-networks-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    img {
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+    }
+}

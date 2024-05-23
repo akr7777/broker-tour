@@ -1,0 +1,27 @@
+.carusel-wrapper {
+    width: calc(100% - calc(((100% - 1280px) / 2) - 20px));
+    padding: 0 calc(((100% - 1280px) / 2) - 20px);
+    // width: calc(100% - 40px);
+    // padding: 20px;
+}
+
+.carusel-dots-wrapper {
+  background-color: darkmagenta;
+  width: 100%;
+}
+.carusel-dot {
+
+  background-color: yellow;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+
+  margin: 30px;
+}
+.carusel-dot:active {
+  background-color: black;
+}
+.carusel-dot:focus {
+  background-color: aqua;
+}

@@ -1,0 +1,11 @@
+@import './../../assets/styles/common-variables.scss';
+
+.choose-tour-wrapper {
+    // padding: $widget-padding-top $widget-padding-side;
+    margin: 0 $widget-padding-side;
+    width: calc(80% - 2 * $widget-padding-side);
+    // background-color: red;
+    // min-height: 100svh;
+    text-align: center;
+    margin-top: 50px;
+}

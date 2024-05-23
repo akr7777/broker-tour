@@ -1,0 +1,23 @@
+.slick-prev,
+.slick-next {
+  transition: 0.2s;
+  &:focus {
+    opacity: 0.5;
+  }
+  &:hover {
+    opacity: 0.7;
+  }
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.next {
+  transform: rotateX(180deg);
+}
+
+.slick-prev.slick-disabled,
+.slick-next.slick-disabled {
+  opacity: 0.25;
+  cursor: inherit;
+}

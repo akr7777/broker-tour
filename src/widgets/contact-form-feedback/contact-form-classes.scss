@@ -1,0 +1,36 @@
+@import '../../assets/styles/common-variables.scss';
+
+.contact-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    width: 100%;
+    padding: $widget-padding-top $widget-padding-side;
+    width: calc(100% - 2*$widget-padding-side);
+    
+    background-color: rgb(152, 152, 67);
+    min-height: 30svh;
+}
+
+
+// .contact-form-response-div {
+//     position: fixed;
+//     background-color: red;
+//     color: black;
+// }
+
+.contact-form-field-div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0px;
+
+    width: 100%;
+    // width: calc(100% - 2*$widget-padding-side);
+
+    // background-color: blue;
+}

@@ -1,0 +1,39 @@
+@import '../../assets/styles/common-variables.scss';
+// $language_img_size: 40px;
+
+.lang-icon-class-wrapper {
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    // background-color: black;
+
+    img {
+        width: $language_img_size;
+        height: $language_img_size;
+        cursor: pointer;
+    }
+}
+
+.lang-panel-div {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    // background-color: bisque;
+
+    img {
+        width: $language_img_size;
+        height: $language_img_size;
+        cursor: pointer;
+    }
+    // img:hover {
+    //     scale: 1.2;
+    // }
+}

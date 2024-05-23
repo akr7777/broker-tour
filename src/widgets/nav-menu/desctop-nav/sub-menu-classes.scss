@@ -1,0 +1,23 @@
+.desctop-nav-sublink-elem-wrapper-class {
+    background-color: yellow;
+
+    padding: 10px;
+    width: calc(100% - 20px);
+
+    cursor: pointer;
+
+    border-radius: 10px;
+}
+.desctop-nav-sublink-elem-wrapper-class:hover { scale: 1.03; }
+
+.desctop-nav-sublink-elem-title-class {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.desctop-nav-sublink-elem-description-class {
+    font-size: 12px;
+    line-height: normal;
+}
