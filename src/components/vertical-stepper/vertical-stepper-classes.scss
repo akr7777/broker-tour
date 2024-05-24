@@ -4,15 +4,17 @@
     display: grid;
     grid-template-columns: 50px 1fr;
     margin-top: 20px;
+    margin-bottom: 30px;
 
-    @media screen and (min-width: 550px) { 
-        width: calc(100% - 2 * $widget-padding-side);
-        padding: 0 $widget-padding-side; 
-    }
-    @media screen and (max-width: 549px) { 
-        width: calc(100% - 30px);
-        padding: 0 15px; 
-    }
+    // @media screen and (min-width: 550px) { 
+    //     width: calc(100% - 2 * $widget-padding-side);
+    //     padding: 0 $widget-padding-side; 
+    // }
+    // @media screen and (max-width: 549px) { 
+    //     width: calc(100% - 30px);
+    //     padding: 0 15px; 
+    // }
+    width: 100%;
     
 }
 

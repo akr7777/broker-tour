@@ -2,11 +2,18 @@ import { useNavigate } from "react-router-dom"
 import { NavMenuElementsType } from "../../../pages/header/header"
 
 import './sub-menu-classes.scss'
+import { useAppDispatch } from "../../../store/store"
+import { setWhichSubMenuPointOpen } from "../../../store/appSlice"
 
 export const SubNavMenuElement = (props: NavMenuElementsType) => {
 
     const navigate = useNavigate()
-    const onElemClick = () => navigate(props.path)
+    const dispatch = useAppDispatch()
+
+    const onElemClick = () => {
+        dispatch(setWhichSubMenuPointOpen(''))
+        navigate(props.path)
+    }
 
     return (
         <div

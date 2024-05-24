@@ -1,6 +1,6 @@
 @import '../../../assets/styles/common-variables.scss';
 
-$nav-menu-elem-width: 150px;
+$nav-menu-elem-width: 100px;
 $nav-menu-elem-height: 30px;
 
 .desctop-nav-wrapper {
@@ -22,11 +22,6 @@ $nav-menu-elem-height: 30px;
     font-weight: 700;
     color: black;
 
-    // animation-name: elementAnimation;
-    // animation-duration: 2s;
-    // animation-iteration-count: infinite;
-    // animation-delay: 2s;
-
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -35,6 +30,8 @@ $nav-menu-elem-height: 30px;
 
     width: $nav-menu-elem-width;
     height: $nav-menu-elem-height;
+    // width: 150px;
+    // height: 30px;
 
     padding: 3px 10px;
     border: 1px solid rgba($color: greenyellow, $alpha: 0.0);
@@ -45,7 +42,6 @@ $nav-menu-elem-height: 30px;
     }
 }
 .desctop-nav-link-class:hover {
-    // scale: 1.2;
     border: 1px solid greenyellow;
     border-radius: 15px;
     color: greenyellow;
@@ -62,8 +58,9 @@ $nav-menu-elem-height: 30px;
     position: absolute;
     // top: 0;
     // left: 0;
-    top: calc($nav-menu-elem-height + 15px);
-    left: $nav-menu-elem-width;
+    top: calc($nav-menu-elem-height + 5px);
+    left: calc($nav-menu-elem-width / 2);
+    width: 300px;
 
     display: flex;
     flex-direction: column;

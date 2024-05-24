@@ -18,11 +18,21 @@ export type ResizeType = {
 export const useResize = () => {
   const [width, setWidth] = useState(window.innerWidth);
 
+  console.log('resize width');
+
   useEffect(() => {
+    console.log('resize useEffect');
+    
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const handleResize = (event: any) => {
-      setWidth(event.target.innerWidth);
+    // const handleResize = (event: any) => {
+    //   setWidth(event.target.innerWidth);
+    // };
+
+    const handleResize = () => {
+      setWidth(window.innerWidth);
     };
+    handleResize()
+    
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);

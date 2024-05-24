@@ -55,3 +55,14 @@
     position: relative;
     left: calc(50% - $language_img_size/2);
 }
+
+.mobile-nav-menu-subelem-child-class {
+    margin-top: 10px;
+    width: 80%;
+    margin-left: 10%;
+    background-color: green;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    line-height: normal;
+}

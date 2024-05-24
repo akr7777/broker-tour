@@ -11,6 +11,7 @@ import './i18/i18init'
 import 'react-toastify/dist/ReactToastify.css';
 import { ContactPage } from "./pages/contacts/contacts-page";
 import { Tour1 } from "./pages/tours/tour1";
+import { Tour2 } from "./pages/tours/tour2";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: PATHS.tour1,
     element: <Tour1 />
+  },
+  {
+    path: PATHS.tour2,
+    element: <Tour2 />
   },
   {
     path: '*',

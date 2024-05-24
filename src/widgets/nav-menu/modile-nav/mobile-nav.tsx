@@ -10,15 +10,39 @@ import crossIcon from '../../../assets/icons/cross.png'
 
 import './mobile-nav-classes.scss'
 import { ANIMATION_TIME, ANIMATION_TIME_SHORT } from '../../../store/consts';
+import { useAppDispatch, useAppSelector } from '../../../store/store';
+import { setIsMobileMenuOpen } from '../../../store/appSlice';
 // import { NavLink } from 'react-router-dom'
 
 export const MobileNavigation = (props: NavMenuPropsType) => {
     const navigate = useNavigate()
-    const [isShow, setIsShow] = useState<boolean>(false)
+    const dispatch = useAppDispatch()
+    // const [isShow, setIsShow] = useState<boolean>(false)
+    const isMobileMenuShow: boolean = useAppSelector(state => state.app.isMobileMenuOpen)
+    const setIsShow = (value: boolean) => {
+        dispatch(setIsMobileMenuOpen(value))
+    }
+
+    const onLinkClickHandler = (link: string) => {
+        // setIsShow(false)
+        console.log('onLinkClickHandler')
+        
+        dispatch(setIsMobileMenuOpen(false))
+        navigate(link)
+    }
+    const onShowClickHandler = (title: string) => {
+        if (titleShow === title) {
+            setTitleShow('')
+        } else {
+            setTitleShow(title)
+        }
+    }
+    
+    const [titleShow, setTitleShow] = useState<string>('')
 
     return (
         <nav className='mobile-nav-menu-class'>
-            {!isShow && 
+            {!isMobileMenuShow && 
                 <motion.div 
                     className='mobile-nav-menu-class'
                     initial={{ opacity: 0, y: -50}}
@@ -36,7 +60,7 @@ export const MobileNavigation = (props: NavMenuPropsType) => {
             }
 
             <AnimatePresence mode="wait" initial={false}>
-                {isShow && (
+                {isMobileMenuShow && (
 
                     <motion.div 
                         className='mobile-nav-menu-outlet-wrapper'
@@ -52,24 +76,8 @@ export const MobileNavigation = (props: NavMenuPropsType) => {
                                 alt='Close navigation menu'
                                 className='mobile-nav-menu-img-div-class'
                                 onClick={() => setIsShow(false)}
-                                animate={{
-                                    // x: 0,
-                                    // y: 0,
-                                    // scale: 1,
-                                    rotate: 360,
-                                    
-                                }}
-                                // transition={{
-                                //         opacity: { delay: 1, duration: 1.5 },
-                                //         x: { delay: 1, duration: 1.5},
-                                //         repeatType: "loop",
-                                //         repeatDelay: 5,
-                                //       }}
-                                
+                                animate={{ rotate: 360 }}
                                 whileHover={{ rotate: 90 }}
-                                
-                                // whileFocus={{ rotate: 360 }}
-                                // exit={{ opacity: 0, rotate: 360 }}
                             />
                         </AnimatePresence>
 
@@ -77,16 +85,18 @@ export const MobileNavigation = (props: NavMenuPropsType) => {
                         <div className='mobile-nav-menu-elements-list'>
                             {props.elements.map(elem => {
 
-                                const onClickHandler = () => {
-                                    setIsShow(false)
-                                    navigate(elem.path)
-                                }
+                                
 
                                 return (
+                                    <AnimatePresence>
                                     <motion.div 
                                         key={uuid()}
                                         className='mobile-nav-menu-element' 
-                                        onClick={onClickHandler}
+                                        onClick={
+                                            elem.subElements
+                                                ? () => onShowClickHandler(elem.title)
+                                                : () => onLinkClickHandler(elem.path)
+                                            }
 
                                         whileHover={{ width: 300 }}
                                         // whileFocus={{ width: 300 }}
@@ -94,6 +104,31 @@ export const MobileNavigation = (props: NavMenuPropsType) => {
                                     >
                                         {elem.title}
                                     </motion.div>
+
+                                    <AnimatePresence>
+                                        {titleShow && elem.subElements &&
+                                            <motion.div
+                                                // className='mobile-nav-menu-elements-list'
+                                                initial={{ opacity: 0, y: -150 }}
+                                                animate={{ opacity: 1, y: 0 }}
+                                                transition={{ duration: ANIMATION_TIME }}
+                                                exit={{opacity: 0, y: -150}}
+                                            >
+                                                {elem.subElements.map(subElem => {
+                                                    return (
+                                                        <motion.div 
+                                                            key={uuid()}
+                                                            className='mobile-nav-menu-subelem-child-class'
+                                                            onClick={() => onLinkClickHandler(subElem.path)}
+                                                        >
+                                                            {subElem.title}
+                                                        </motion.div>
+                                                    )
+                                                })}
+                                            </motion.div>
+                                        }
+                                    </AnimatePresence>
+                                    </AnimatePresence>
                                 )
                             })}
                         </div>

@@ -24,7 +24,7 @@ export const OurTour2 = () => {
             title: t('tours.tour2.title'), 
             description: t('tours.tour2.description'),
             minPrice: t('tours.tour2.min-price'),
-            link: '#',
+            link: PATHS.tour2,
         },
         {
             title: t('tours.tour3.title'), 

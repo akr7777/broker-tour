@@ -1,4 +1,3 @@
-// import { NavLink } from 'react-router-dom'
 import { NavMenuPropsType } from '../../../pages/header/header'
 import { AnimatePresence, motion } from "framer-motion"
 
@@ -6,31 +5,34 @@ import { ANIMATION_TIME, ANIMATION_TIME_SHORT } from '../../../store/consts'
 import uuid from 'react-uuid'
 
 import './desctop-nav-classes.scss'
+
 import { SubNavMenuElement } from './sub-menu-elem'
-import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useAppDispatch, useAppSelector } from '../../../store/store'
+import { setWhichSubMenuPointOpen } from '../../../store/appSlice'
 
 export const DestopNavMenu = (props: NavMenuPropsType) => {
 
     const navigate = useNavigate()
-    const [showTitle, setShowTitle] = useState<string>('')
+    const dispatch = useAppDispatch()
+
+    const whichTitleOpen: string = useAppSelector(state => state.app.whichSubMenuPointOpen)
 
     const onLinkClickHandler = (link: string) => {
-        setShowTitle('')
+        dispatch(setWhichSubMenuPointOpen(''))
         navigate(link)
     }
     const subMenuClickHandler = (title: string) => {
-        if (showTitle === title) {
-            setShowTitle('')
+        if (whichTitleOpen === title) {
+            dispatch(setWhichSubMenuPointOpen(''))
         }
-        if (showTitle !== title) {
-            setShowTitle(title)
+        if (whichTitleOpen !== title) {
+            dispatch(setWhichSubMenuPointOpen(title))
         }
     }
 
     const onCloseOutletClick = () => {
-        // console.log('close');
-        setShowTitle('')
+        dispatch(setWhichSubMenuPointOpen(''))
     }
 
     return (
@@ -46,9 +48,7 @@ export const DestopNavMenu = (props: NavMenuPropsType) => {
                         return (
                             <div key={uuid()}>
                             <div 
-                                key={uuid()}
                                 className='desctop-nav-link-class' 
-                                // to={elem.path} 
                                 onClick={
                                     elem.subElements 
                                         ? () => subMenuClickHandler(elem.title)
@@ -60,26 +60,42 @@ export const DestopNavMenu = (props: NavMenuPropsType) => {
                             </div>
 
                             <AnimatePresence mode="wait" initial={false}>
-                                {elem.title === showTitle &&
+                                {elem.title === whichTitleOpen &&
+                                    // <motion.div
+                                    //         initial={{ opacity: 0, x: -200 }}
+                                    //         animate={{ opacity: 1, x: 0 }}
+                                    //         transition={{ duration: 10 }}
+                                    //         exit={{opacity: 0}}
+                                    // >
                                     <>
-                                    <div className='desctop-nav-oulet-close-div' onClick={onCloseOutletClick}/>
-                                    <motion.div 
-                                        className='desctop-nav-sublink-div'
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        transition={{ duration: ANIMATION_TIME_SHORT }}
-                                        exit={{opacity: 0}}
-                                    >
-                                        {elem.subElements && elem.subElements.map(subElem => {
-                                            return (
-                                                <SubNavMenuElement {...subElem}/>
-                                                // <NavLink to={subElem.path}>{subElem.title}</NavLink>
-                                            )
-                                        })}
-                                    </motion.div>
+                                        <AnimatePresence>
+                                            <motion.div 
+                                                className='desctop-nav-oulet-close-div' 
+                                                onClick={onCloseOutletClick}
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: 1 }}
+                                                transition={{ duration: ANIMATION_TIME_SHORT }}
+                                                exit={{opacity: 0}}
+                                            />
+                                        </AnimatePresence>
+                                        <AnimatePresence>
+                                            <motion.div 
+                                                className='desctop-nav-sublink-div'
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: 1 }}
+                                                transition={{ duration: ANIMATION_TIME_SHORT }}
+                                                exit={{opacity: 0}}
+                                            >
+                                                {elem.subElements && elem.subElements.map(subElem => {
+                                                    return ( 
+                                                        <SubNavMenuElement {...subElem} key={uuid()}/>
+                                                    )
+                                                })}
+                                            </motion.div>
+                                        </AnimatePresence>
                                     </>
                                 }
-                            </AnimatePresence>
+                                </AnimatePresence>
 
                             </div>
                         )

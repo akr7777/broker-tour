@@ -11,6 +11,7 @@ import tourIcon from '../../assets/icons/tour.png'
 import mainPageIcon from '../../assets/icons/main-page.png'
 
 import './header-classes.scss'
+// import { headerNavElements } from './header-menu-point';
 
 export type NavMenuElementsType = {
     title: string,
@@ -32,7 +33,7 @@ export const Header = () => {
 
     const toursSubElements: Array<NavMenuElementsType> = [
         { title: t('tours.tour1.title'), description: t('tours.tour1.description'),path: PATHS.tour1, imagePath: mainPageIcon },
-        { title: t('tours.tour2.title'), description: t('tours.tour2.description'), path: PATHS.mainPage, imagePath: mainPageIcon },
+        { title: t('tours.tour2.title'), description: t('tours.tour2.description'), path: PATHS.tour2, imagePath: mainPageIcon },
         { title: t('tours.tour3.title'), description: t('tours.tour3.description'), path: PATHS.mainPage, imagePath: mainPageIcon },
     ]
 
@@ -40,9 +41,12 @@ export const Header = () => {
         { title: t('nav.main_page'), path: PATHS.mainPage, imagePath: mainPageIcon },
         { title: t('nav.nav_tours'), path: PATHS.tours, imagePath: tourIcon, subElements: toursSubElements },
         { title: t('nav.contacts'), path: PATHS.contacts, imagePath: phoneIcon },
+        // { title: "111", path: PATHS.mainPage, imagePath: mainPageIcon },
+        // { title: "222", path: PATHS.tours, imagePath: tourIcon, subElements: toursSubElements },
+        // { title: "333", path: PATHS.contacts, imagePath: phoneIcon },
     ]
 
-    console.log('windowSize=', windowSize.width, windowSize.isScreenMd);
+    console.log('windowSize=', windowSize.width, windowSize.isScreenMd, windowSize.isScreenLg);
     
     
     return (
@@ -54,7 +58,6 @@ export const Header = () => {
                         ? <DestopNavMenu elements={headerNavElements}/>
                         : <MobileNavigation elements={headerNavElements} />
                 }
-                
 
                 <LanguageChanger />
         </header>
