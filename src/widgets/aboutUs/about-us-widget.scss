@@ -1,0 +1,11 @@
+@import '../../assets/styles/common-variables.scss';
+
+.about-us-widget-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: $widget-padding-top $widget-padding-side;
+
+    text-align: center;
+}

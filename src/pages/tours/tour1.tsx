@@ -5,6 +5,8 @@ import { WidgetWrapper } from "../../shared/widget-wrapper/widget-wrapper"
 import { VerticalStepper, VerticalStepperType } from "../../components/vertical-stepper/vertical-stepper"
 
 import './tours-classes.scss'
+import { PriceCalculation } from "../../widgets/price-calculation/price-calculation"
+import { PriceCalculation2 } from "../../widgets/price-calculation-2/price-calculation-2"
 // import { stepperColors } from "../../components/vertical-stepper/stepper-colors"
 
 
@@ -37,6 +39,10 @@ export const Tour1 = () => {
             <h2>План поездки:</h2>
             <VerticalStepper steps={tourOneStepsAuto}/>
          </WidgetWrapper>
+
+         <PriceCalculation />
+
+         <PriceCalculation2 />
 
         </MainWrapper>
     )

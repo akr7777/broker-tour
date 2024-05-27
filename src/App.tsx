@@ -10,10 +10,11 @@ import { PATHS } from "./widgets/nav-menu/nav-paths";
 import './i18/i18init'
 import 'react-toastify/dist/ReactToastify.css';
 import { ContactPage } from "./pages/contacts/contacts-page";
-import { Tour1 } from "./pages/tours/tour1";
-import { Tour2 } from "./pages/tours/tour2";
+// import { Tour1 } from "./pages/tours/tour1";
+// import { Tour2 } from "./pages/tours/tour2";
+import { TourInfoPage } from "./pages/tours/tour-info-page";
 
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: PATHS.mainPage,
     element: (<MainPage />),
@@ -23,13 +24,17 @@ const router = createBrowserRouter([
     element: <ContactPage />
   },
   {
-    path: PATHS.tour1,
-    element: <Tour1 />
+    path: PATHS.tourInfo + '/:tourId',
+    element: <TourInfoPage />
   },
-  {
-    path: PATHS.tour2,
-    element: <Tour2 />
-  },
+  // {
+  //   path: PATHS.tour1,
+  //   element: <Tour1 />
+  // },
+  // {
+  //   path: PATHS.tour2,
+  //   element: <Tour2 />
+  // },
   {
     path: '*',
     element: <NotFoundPage />

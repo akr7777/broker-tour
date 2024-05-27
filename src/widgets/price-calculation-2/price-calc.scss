@@ -1,0 +1,79 @@
+@import '../../assets/styles/common-variables.scss';
+
+$border-width: 2px;
+$border-color: blue;
+$wrapper-height: 90px;
+
+.price-calc-2-wrapper {
+   display: flex;
+   flex-direction: column;
+   gap: $paragraph_gap;
+   
+   text-align: center;
+
+   margin: 20px 10px;
+}
+
+.price-calc-2-data-wrapper {
+    width: calc(100% - 20px);
+    background-color: $border-color;
+    overflow: hidden;
+
+    @media screen and (min-width: 600px) {
+        display: grid;
+        grid-template-columns: 1fr 150px 150px 1fr;
+        column-gap: $border-width;
+        height: $wrapper-height;
+    }
+    @media screen and (max-width: 599px) {
+        display: flex;
+        flex-direction: column;
+        gap: $border-width;
+    }
+
+    border: $border-width solid $border-color;
+    border-radius: 20px;
+
+    place-content: center;
+}
+
+.price-calc-2-data-area {
+    z-index: 500;
+    position: relative;
+    background-color: $site-bg-color;
+    // background-color: red;
+
+    height: $wrapper-height;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    // cursor: pointer;
+}
+.price-calc-2-data-cursor {
+    cursor: pointer;
+}
+.price-calc-2-data-cursor:hover {
+    background-color: rgb(212, 243, 166);
+}
+.price-calc-2-data-cursor-error {
+    background-color: rgb(234, 125, 125);
+}
+
+.price-calc-2-results-wrapper {
+    display: flex;
+    flex-direction: column;
+    // gap: 10px;
+    min-height: 100px;
+
+    // background-color: red;
+}
+.price-calc-2-results-additional-info-div {
+    // display: flex;
+    // flex-direction: column;
+    line-height: normal;
+    text-align: center;
+}

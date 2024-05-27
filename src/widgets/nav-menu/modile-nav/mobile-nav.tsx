@@ -9,9 +9,10 @@ import burgerMenu from '../../../assets/icons/burger-menu.svg'
 import crossIcon from '../../../assets/icons/cross.png'
 
 import './mobile-nav-classes.scss'
-import { ANIMATION_TIME, ANIMATION_TIME_SHORT } from '../../../store/consts';
+import { ANIMATION_TIME_SHORT } from '../../../store/consts';
 import { useAppDispatch, useAppSelector } from '../../../store/store';
 import { setIsMobileMenuOpen } from '../../../store/appSlice';
+import { Logo } from '../../../shared/logo/logo';
 // import { NavLink } from 'react-router-dom'
 
 export const MobileNavigation = (props: NavMenuPropsType) => {
@@ -24,9 +25,6 @@ export const MobileNavigation = (props: NavMenuPropsType) => {
     }
 
     const onLinkClickHandler = (link: string) => {
-        // setIsShow(false)
-        console.log('onLinkClickHandler')
-        
         dispatch(setIsMobileMenuOpen(false))
         navigate(link)
     }
@@ -47,7 +45,7 @@ export const MobileNavigation = (props: NavMenuPropsType) => {
                     className='mobile-nav-menu-class'
                     initial={{ opacity: 0, y: -50}}
                     animate={{ opacity: 1, y: 0}}
-                    transition={{ duration: ANIMATION_TIME }}
+                    transition={{ duration: ANIMATION_TIME_SHORT }}
                     exit={{opacity: 0}}
                 >
                     <img 
@@ -70,23 +68,24 @@ export const MobileNavigation = (props: NavMenuPropsType) => {
                         exit={{opacity: 0}}
                     >
                         
-                        <AnimatePresence mode="wait" initial={true}>
-                            <motion.img
-                                src={crossIcon}
-                                alt='Close navigation menu'
-                                className='mobile-nav-menu-img-div-class'
-                                onClick={() => setIsShow(false)}
-                                animate={{ rotate: 360 }}
-                                whileHover={{ rotate: 90 }}
-                            />
-                        </AnimatePresence>
+                        <div className='mobile-nav-menu-logo-close-div '>
+                            <Logo />
+                            <AnimatePresence mode="wait" initial={true}>
+                                <motion.img
+                                    src={crossIcon}
+                                    alt='Close navigation menu'
+                                    className='mobile-nav-menu-img-div-class'
+                                    onClick={() => setIsShow(false)}
+                                    animate={{ rotate: 360 }}
+                                    whileHover={{ rotate: 90 }}
+                                />
+                            </AnimatePresence>
+                        </div>
+                        
 
 
                         <div className='mobile-nav-menu-elements-list'>
                             {props.elements.map(elem => {
-
-                                
-
                                 return (
                                     <AnimatePresence>
                                     <motion.div 
@@ -102,17 +101,20 @@ export const MobileNavigation = (props: NavMenuPropsType) => {
                                         // whileFocus={{ width: 300 }}
                                         whileTap={{ width: 300 }}
                                     >
-                                        {elem.title}
+                                        <img alt='' src={elem.imagePath} />
+                                        <div>{elem.title}</div>
                                     </motion.div>
 
                                     <AnimatePresence>
                                         {titleShow && elem.subElements &&
                                             <motion.div
                                                 // className='mobile-nav-menu-elements-list'
-                                                initial={{ opacity: 0, y: -150 }}
-                                                animate={{ opacity: 1, y: 0 }}
-                                                transition={{ duration: ANIMATION_TIME }}
-                                                exit={{opacity: 0, y: -150}}
+                                                initial={{ opacity: 0, x: -150 }}
+                                                animate={{ opacity: 1, x: 0 }}
+                                                transition={{ duration: 0.5 }}
+                                                exit={{opacity: 0, x: 150}}
+
+                                                className='mobile-nav-menu-subelem-child-list'
                                             >
                                                 {elem.subElements.map(subElem => {
                                                     return (

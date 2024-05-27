@@ -11,7 +11,8 @@ import tourIcon from '../../assets/icons/tour.png'
 import mainPageIcon from '../../assets/icons/main-page.png'
 
 import './header-classes.scss'
-// import { headerNavElements } from './header-menu-point';
+import { toursContent } from '../../store/tour-info';
+// import { toursContent } from '../../store/tour-info';
 
 export type NavMenuElementsType = {
     title: string,
@@ -24,6 +25,8 @@ export type NavMenuPropsType = {
     elements: Array<NavMenuElementsType>
 }
 
+// console.log('toursConten=', toursContent);
+
 // export const HEADER_DIV_ID = 'header_element'
 
 export const Header = () => {
@@ -31,23 +34,26 @@ export const Header = () => {
     const { t } = useTranslation()
     const windowSize: ResizeType = useResize()
 
-    const toursSubElements: Array<NavMenuElementsType> = [
-        { title: t('tours.tour1.title'), description: t('tours.tour1.description'),path: PATHS.tour1, imagePath: mainPageIcon },
-        { title: t('tours.tour2.title'), description: t('tours.tour2.description'), path: PATHS.tour2, imagePath: mainPageIcon },
-        { title: t('tours.tour3.title'), description: t('tours.tour3.description'), path: PATHS.mainPage, imagePath: mainPageIcon },
-    ]
+    // const toursSubElements: Array<NavMenuElementsType> = [
+    //     { title: t('tours.tour1.title'), description: t('tours.tour1.description'),path: PATHS.tour1, imagePath: mainPageIcon },
+    //     { title: t('tours.tour2.title'), description: t('tours.tour2.description'), path: PATHS.tour2, imagePath: mainPageIcon },
+    //     { title: t('tours.tour3.title'), description: t('tours.tour3.description'), path: PATHS.mainPage, imagePath: mainPageIcon },
+    // ]
+
+    const tourSubElem: Array<NavMenuElementsType> = toursContent().map(t => {
+        return {
+            title: t.title, description: t.description, path: t.urlPath, imagePath: t.tourIcon
+        }
+    })
 
     const headerNavElements: Array<NavMenuElementsType> = [
         { title: t('nav.main_page'), path: PATHS.mainPage, imagePath: mainPageIcon },
-        { title: t('nav.nav_tours'), path: PATHS.tours, imagePath: tourIcon, subElements: toursSubElements },
+        { title: t('nav.nav_tours'), path: PATHS.tourInfo, imagePath: tourIcon, subElements: tourSubElem },
         { title: t('nav.contacts'), path: PATHS.contacts, imagePath: phoneIcon },
         // { title: "111", path: PATHS.mainPage, imagePath: mainPageIcon },
         // { title: "222", path: PATHS.tours, imagePath: tourIcon, subElements: toursSubElements },
         // { title: "333", path: PATHS.contacts, imagePath: phoneIcon },
     ]
-
-    console.log('windowSize=', windowSize.width, windowSize.isScreenMd, windowSize.isScreenLg);
-    
     
     return (
         <header className='header-wrapper'>

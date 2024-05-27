@@ -1,0 +1,11 @@
+@import '../../assets/styles/common-variables.scss';
+
+.how-to-book-widget-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: $paragraph_gap;
+    padding: $widget-padding-top $widget-padding-side;
+
+    text-align: center;
+}

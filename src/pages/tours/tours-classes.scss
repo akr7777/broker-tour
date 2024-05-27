@@ -2,3 +2,57 @@
     background-color: darksalmon;
     
 }
+
+
+
+
+.tour-page-plan2 {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.tour-page-plan2-one-day-div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.tour-page-plan2-day-number-div {
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 1px solid grey;
+    width: 120px;
+}
+.tour-page-plan2-image-gallery {
+    // display: block;
+    padding: 0;
+    min-height: 100px;
+    // background-color: red;
+    img {
+        width: 100px;
+        height: 100px;
+        cursor: pointer;
+        border-radius: 10px;
+        margin-right: 15px;
+    }
+}
+
+.tour-page-plan2-big-gallery-outlet-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100svh;
+
+    background-color: rgba(0,0,0, 0.4);
+
+    img {
+        width: 50%;
+        border-radius: 25px;
+    }
+}

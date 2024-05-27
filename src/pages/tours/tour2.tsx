@@ -1,8 +1,9 @@
 import { useTranslation } from "react-i18next"
 import { MainWrapper } from "../../shared/main-wrapper/main-wrapper"
 import { WidgetWrapper } from "../../shared/widget-wrapper/widget-wrapper"
-
 import { VerticalStepper, VerticalStepperType } from "../../components/vertical-stepper/vertical-stepper"
+import { PriceCalculation } from "../../widgets/price-calculation/price-calculation"
+import { PriceCalculation2 } from "../../widgets/price-calculation-2/price-calculation-2"
 
 import './tours-classes.scss'
 
@@ -34,6 +35,11 @@ export const Tour2 = () => {
             <h2>План поездки:</h2>
             <VerticalStepper steps={tourTwoStepsAuto}/>
          </WidgetWrapper>
+
+         <PriceCalculation />
+
+         <PriceCalculation2 />
+
 
         </MainWrapper>
     )

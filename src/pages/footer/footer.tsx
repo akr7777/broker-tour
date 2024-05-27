@@ -2,14 +2,17 @@
 import './footer-styles.scss'
 
 export const Footer = () => {
+    const today:Date = new Date()
+    const currentYear: number = today.getFullYear()
+
     return (
         // <WidgetWrapper>
         <footer className='footer-wrapper'>
             <div>
-                @ All right reserved
+                @All right reserved, SRL Oldaga Group, {currentYear}
             </div>
             <div>
-                made by ...
+                Designed by ...
             </div>
         </footer>
         // </WidgetWrapper>

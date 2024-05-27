@@ -1,0 +1,14 @@
+.persons-count-chooser-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+
+    // background-color: red;
+
+    img {
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+    }
+}

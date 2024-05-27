@@ -1,0 +1,40 @@
+.price-calc-2-tour-chooser-wrapper {
+    z-index: 501;
+
+    // position: absolute;
+
+    position: fixed;
+    top: 100px;
+    // left: calc(50% - 250px);
+    left: 30px;
+
+    background-color: rgb(68, 102, 114);
+    width: 500px;
+    // height: 200px;
+    border-radius: 10px;
+    padding: 10px;
+
+    img {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+}
+
+.price-calc-2-tour-chooser-field {
+    margin: 10px 0;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: grey;
+    color: white;
+    cursor: pointer;
+}
+.price-calc-2-tour-chooser-field:hover {
+    background-color: rgb(83, 80, 80);
+}
+.price-calc-2-tour-chooser-field-selected {
+    background-color: green;
+}
+.price-calc-2-tour-chooser-field-selected:hover {
+    background-color: rgb(8, 90, 8);
+}

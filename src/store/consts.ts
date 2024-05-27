@@ -13,3 +13,11 @@ export const appSliceInitialContent: AppSliceInitialStateType = {
     isMobileMenuOpen: false,
     whichSubMenuPointOpen: '',
 }
+
+export const LINE_DEVIDER = '\n'
+
+export const CONTACTS = {
+    phoneOlga: '+50689122090',
+    phoneDavid: '+50689122044',
+    email: 'oldagatour@gmail.com'
+}
