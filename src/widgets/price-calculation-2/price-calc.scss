@@ -1,5 +1,6 @@
 @import '../../assets/styles/common-variables.scss';
 
+
 $border-width: 2px;
 $border-color: blue;
 $wrapper-height: 90px;
@@ -16,6 +17,7 @@ $border-radius: 20px;
 .price-calc-2-data-wrapper {
     width: 100%;
     background-color: $border-color;
+    position: relative;
 
     @media screen and (min-width: 600px) {
         display: grid;
@@ -36,7 +38,7 @@ $border-radius: 20px;
 }
 
 .price-calc-2-data-area {
-    z-index: 500;
+    // z-index: 500;
     position: relative;
     background-color: $site-bg-color;
 
@@ -51,10 +53,20 @@ $border-radius: 20px;
 }
 .price-calc-2-data-area-first {
     border-top-left-radius: $border-radius;
-    border-bottom-left-radius: $border-radius;
+    @media screen and (min-width: 600px) {
+        border-bottom-left-radius: $border-radius;
+    }
+    @media screen and (max-width: 599px) {
+        border-top-right-radius: $border-radius;
+    }
 }
 .price-calc-2-data-area-last {
-    border-top-right-radius: $border-radius;
+    @media screen and (min-width: 600px) {
+        border-top-right-radius: $border-radius;
+    }
+    @media screen and (max-width: 599px) {
+        border-bottom-left-radius: $border-radius;
+    }
     border-bottom-right-radius: $border-radius;
 }
 .price-calc-2-data-cursor {

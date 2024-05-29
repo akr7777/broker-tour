@@ -77,6 +77,14 @@ export const PriceCalculation2 = () => {
                 <h2>{t('tours.tour_price_calculation')}</h2>
 
                 <div className='price-calc-2-data-wrapper'>
+                        {/* <AnimatePresence mode="wait" initial={false}>
+                            {isShowTourChooser && 
+                                <PriceCalc2TourChooser 
+                                    currentTour={currentTour} 
+                                    setCurrentTour={setCurrentTour} 
+                                    closeFunction={setIsShowTourChooser}
+                            />}
+                        </AnimatePresence> */}
 
                     <div 
                         className={clsx(
