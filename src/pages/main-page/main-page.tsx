@@ -1,5 +1,6 @@
 import { MainWrapper } from "../../shared/main-wrapper/main-wrapper"
 import { AboutUsWidget } from "../../widgets/aboutUs/about-us-widget"
+import { FAQ } from "../../widgets/faq/faq"
 import { HowToBookWidget } from "../../widgets/how_to_book/how-to-book"
 import { OurTour2 } from "../../widgets/our-tour-widget-2/our-tour-2"
 import { PriceCalculation2 } from "../../widgets/price-calculation-2/price-calculation-2"
@@ -30,6 +31,7 @@ export const MainPage = () => {
 
             <AboutUsWidget />
             <HowToBookWidget />
+            <FAQ />
         </MainWrapper>
     )
 }

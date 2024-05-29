@@ -3,6 +3,8 @@ import { useTranslation } from 'react-i18next'
 import { AdultPriceType } from '../../store/tour-info'
 
 import './price-calc.scss'
+import { motion } from 'framer-motion'
+// import { ANIMATION_TIME_SUPER_SHORT } from '../../store/consts'
 
 export type PriceResultsPropsType = {
     adultCount: number,
@@ -39,7 +41,13 @@ export const PriceResults = (props: PriceResultsPropsType) => {
     
 
     return (
-        <div className='price-calc-2-results-wrapper'>
+        <motion.div 
+            className='price-calc-2-results-wrapper'
+            // initial={{ opacity: 0, y: -100 }}
+            // animate={{ opacity: 1, y: 0 }}
+            // transition={{ duration: ANIMATION_TIME_SUPER_SHORT }}
+            // exit={{ opacity: 0, y: -100 }}
+        >
             {result !== 0 && <h3>{t('tours.tour-price-is')} {result}$</h3>}
             {/* {props.priceAdditionalInfo &&
                 props.priceAdditionalInfo.map(p => <div key={uuid()}>{p.}</div>)
@@ -60,6 +68,6 @@ export const PriceResults = (props: PriceResultsPropsType) => {
                 <div>{t('tours.add-price-info.tour-info-eat-hotel')}</div>
             </div>
             
-        </div>
+        </motion.div>
     )
 }

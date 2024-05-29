@@ -9,7 +9,7 @@ import { PATHS } from "./widgets/nav-menu/nav-paths";
 
 import './i18/i18init'
 import 'react-toastify/dist/ReactToastify.css';
-import { ContactPage } from "./pages/contacts/contacts-page";
+// import { ContactPage } from "./pages/contacts/contacts-page";
 // import { Tour1 } from "./pages/tours/tour1";
 // import { Tour2 } from "./pages/tours/tour2";
 import { TourInfoPage } from "./pages/tours/tour-info-page";
@@ -19,10 +19,10 @@ export const router = createBrowserRouter([
     path: PATHS.mainPage,
     element: (<MainPage />),
   },
-  {
-    path: PATHS.contacts,
-    element: <ContactPage />
-  },
+  // {
+  //   path: PATHS.contacts,
+  //   element: <ContactPage />
+  // },
   {
     path: PATHS.tourInfo + '/:tourId',
     element: <TourInfoPage />

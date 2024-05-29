@@ -5,6 +5,8 @@ import minus from '../../assets/icons/temp/minus.png'
 import minusDis from '../../assets/icons/temp/minus-dis.png'
 
 import './persons-count-chooser.scss'
+import { motion } from 'framer-motion'
+import { ANIMATION_TIME_SUPER_SHORT } from '../../store/consts'
 
 type PersonsCountChooserPropsType = {
     count: number,
@@ -35,7 +37,14 @@ export const PersonsCountChooser = (props: PersonsCountChooserPropsType) => {
     return (
         <div className='persons-count-chooser-wrapper'>
             <img alt='' src={minusImg} onClick={minusClickHandler}/>
-            <h4>{props.count}</h4>
+            <motion.h3
+                initial={{opacity: 0}}
+                animate={{opacity: 1}}
+                transition={{ duration: ANIMATION_TIME_SUPER_SHORT }}
+                whileHover={{ rotate: 20, scale: 1.5 }}
+            >
+                {props.count}
+            </motion.h3>
             <img alt='' src={plusImg} onClick={plusClickHandler}/>
             {/* {isMax && <label>Достигнуто макс кол-во человек в рамках этого тура</label>} */}
         </div>

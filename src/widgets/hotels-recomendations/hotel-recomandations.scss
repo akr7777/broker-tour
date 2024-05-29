@@ -1,5 +1,9 @@
 .hotel-recomendations-wrapper {
     display: flex;
     flex-direction: column;
-    gap: $paragraph_gap;
+    gap: 15px;
+}
+
+.hotel-recomendations-description {
+    text-align: left;
 }

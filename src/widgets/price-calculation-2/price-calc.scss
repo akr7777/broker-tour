@@ -3,6 +3,7 @@
 $border-width: 2px;
 $border-color: blue;
 $wrapper-height: 90px;
+$border-radius: 20px;
 
 .price-calc-2-wrapper {
    display: flex;
@@ -10,14 +11,11 @@ $wrapper-height: 90px;
    gap: $paragraph_gap;
    
    text-align: center;
-
-   margin: 20px 10px;
 }
 
 .price-calc-2-data-wrapper {
-    width: calc(100% - 20px);
+    width: 100%;
     background-color: $border-color;
-    overflow: hidden;
 
     @media screen and (min-width: 600px) {
         display: grid;
@@ -32,7 +30,7 @@ $wrapper-height: 90px;
     }
 
     border: $border-width solid $border-color;
-    border-radius: 20px;
+    border-radius: $border-radius;
 
     place-content: center;
 }
@@ -41,7 +39,6 @@ $wrapper-height: 90px;
     z-index: 500;
     position: relative;
     background-color: $site-bg-color;
-    // background-color: red;
 
     height: $wrapper-height;
 
@@ -51,13 +48,20 @@ $wrapper-height: 90px;
     align-items: center;
     gap: 10px;
 
-    // cursor: pointer;
+}
+.price-calc-2-data-area-first {
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+}
+.price-calc-2-data-area-last {
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
 }
 .price-calc-2-data-cursor {
     cursor: pointer;
 }
 .price-calc-2-data-cursor:hover {
-    background-color: rgb(212, 243, 166);
+    background-color: rgb(230, 250, 199);
 }
 .price-calc-2-data-cursor-error {
     background-color: rgb(234, 125, 125);
@@ -66,14 +70,15 @@ $wrapper-height: 90px;
 .price-calc-2-results-wrapper {
     display: flex;
     flex-direction: column;
-    // gap: 10px;
     min-height: 100px;
-
-    // background-color: red;
 }
 .price-calc-2-results-additional-info-div {
-    // display: flex;
-    // flex-direction: column;
     line-height: normal;
     text-align: center;
+}
+
+.price-calc-2-results-common {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }

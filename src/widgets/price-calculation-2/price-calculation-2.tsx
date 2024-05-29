@@ -1,21 +1,20 @@
 
 import { useEffect, useState } from 'react'
 import { PersonsCountChooser } from '../../components/persons-count-chooser/persons-count-chooser'
-
-import './price-calc.scss'
 import { TourType, toursContent } from '../../store/tour-info'
-import { 
-    // useLocation, 
-    useParams 
-} from 'react-router-dom'
-// import { PATHS } from '../nav-menu/nav-paths'
+import { useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { PriceResults } from './price-result'
 import clsx from 'clsx'
 import { PriceCalc2TourChooser } from './tour-chooser/tour-chooser'
 import { ButtonContact } from '../../components/buttons/buttonContact'
 import { toast } from 'react-toastify'
+import { ANIMATION_TIME, CONTACTS } from '../../store/consts'
+import { WidgetWrapper } from '../../shared/widget-wrapper/widget-wrapper'
+import { AnimatePresence, motion } from 'framer-motion'
+import { HotelRecomendations } from '../hotels-recomendations/hotel-recomendations'
 
+import './price-calc.scss'
 
 const maxAdultCount = 8
 const minAdultCount = 1
@@ -25,15 +24,12 @@ const totalMaxPersons = 8
 
 export const PriceCalculation2 = () => {
 
-    // const pathname = useLocation().pathname
     const {tourId} = useParams()
     const { t } = useTranslation()
 
     const [currentTour, setCurrentTour] = useState<TourType | null>(null)
 
     useEffect(() => {
-        // console.log('tourId-=', tourId, 'pathname=', pathname);
-        
         const isPathFound: boolean = toursContent().some(tour => tour.id === Number(tourId))
         if (isPathFound) {
             const currentTour: TourType | undefined = toursContent().find(tour => tour.id === Number(tourId))
@@ -43,8 +39,6 @@ export const PriceCalculation2 = () => {
         }
     }, [tourId])
 
-    // const chooseTourClass: string = clsx('price-calc-2-data-cursor')
-    
     const [adultCount, setAdultCount] = useState<number>(minAdultCount)
     const [childrenCount, setChildrenCount] = useState<number>(minChildrenCount)
     const [isShowTourChooser, setIsShowTourChooser] = useState<boolean>(false)
@@ -63,7 +57,7 @@ export const PriceCalculation2 = () => {
     const onChooseTourClickHandler = () => {
         if (!tourId) {
             setNoTourErr(false)
-            setIsShowTourChooser(true)
+            setIsShowTourChooser(!isShowTourChooser)
         }
     }
 
@@ -77,82 +71,107 @@ export const PriceCalculation2 = () => {
     }
 
     return (
-        <div className='price-calc-2-wrapper'>
+        <WidgetWrapper>
+            <div className='price-calc-2-wrapper'>
+                
+                <h2>{t('tours.tour_price_calculation')}</h2>
 
-            {isShowTourChooser && 
-                <PriceCalc2TourChooser 
-                    currentTour={currentTour} 
-                    setCurrentTour={setCurrentTour} 
-                    closeFunction={setIsShowTourChooser}
-            />}
+                <div className='price-calc-2-data-wrapper'>
 
-            <h2>{t('tours.tour_price_calculation')}</h2>
+                    <div 
+                        className={clsx(
+                            'price-calc-2-data-area', 
+                            'price-calc-2-data-cursor', 
+                            'price-calc-2-data-area-first',
+                            noTourErr && 'price-calc-2-data-cursor-error'
+                        )}
+                        onClick={onChooseTourClickHandler}
+                    >
+                        <h4>{currentTour ? currentTour.title : t('tours.choose_tour')}</h4>
+                        <AnimatePresence mode="wait" initial={false}>
+                            {isShowTourChooser && 
+                                <PriceCalc2TourChooser 
+                                    currentTour={currentTour} 
+                                    setCurrentTour={setCurrentTour} 
+                                    closeFunction={setIsShowTourChooser}
+                            />}
+                        </AnimatePresence>
+                    </div>
 
-            <div className='price-calc-2-data-wrapper'>
+                    <div className='price-calc-2-data-area'>
+                        <h4>{ t('tours.adult_count_chooser') }</h4>
+                        <PersonsCountChooser 
+                            count={adultCount}
+                            setCount={(val: number) => setPersonsCount(val, true)}
+                            maxCount={maxAdultCount}
+                            minCount={minAdultCount}
+                            isMaxPersons={adultCount + childrenCount >= totalMaxPersons}
+                        />
+                    </div>
 
-                <div 
-                    className={clsx('price-calc-2-data-area', 'price-calc-2-data-cursor', noTourErr && 'price-calc-2-data-cursor-error')}
-                    onClick={onChooseTourClickHandler}
-                >
-                    <h4>{currentTour ? currentTour.title : t('tours.choose_tour')}</h4>
+                    <div className='price-calc-2-data-area'>
+                        <h4>{ t('tours.child_count_chooser') }</h4>
+                        <PersonsCountChooser 
+                            count={childrenCount}
+                            setCount={(val: number) => setPersonsCount(val, false)}
+                            maxCount={maxChildrenCount}
+                            minCount={minChildrenCount}
+                            isMaxPersons={adultCount + childrenCount >= totalMaxPersons}
+                        />
+                    </div>
+
+                    {/* Кнопка для запуска расчета стоимости тура */}
+                    <div 
+                        className={clsx(
+                            'price-calc-2-data-area', 
+                            'price-calc-2-data-cursor',
+                            'price-calc-2-data-area-last'
+                        )}
+                        onClick={onCalcTourClickHandler}
+                    >
+                        <h4>{t('tours.tour_price_calc_button_text')}</h4>
+                    </div>
                 </div>
 
-                <div className='price-calc-2-data-area'>
-                    <h4>{ t('tours.adult_count_chooser') }</h4>
-                    <PersonsCountChooser 
-                        count={adultCount}
-                        // setCount={setAdultCount}
-                        setCount={(val: number) => setPersonsCount(val, true)}
-                        maxCount={maxAdultCount}
-                        minCount={minAdultCount}
-                        isMaxPersons={adultCount + childrenCount >= totalMaxPersons}
-                    />
-                </div>
-
-                <div className='price-calc-2-data-area'>
-                    <h4>{ t('tours.child_count_chooser') }</h4>
-                    <PersonsCountChooser 
-                        count={childrenCount}
-                        // setCount={setChildrenCount}
-                        setCount={(val: number) => setPersonsCount(val, false)}
-                        maxCount={maxChildrenCount}
-                        minCount={minChildrenCount}
-                        isMaxPersons={adultCount + childrenCount >= totalMaxPersons}
-                    />
-                </div>
-
-                <div 
-                    className={clsx('price-calc-2-data-area', 'price-calc-2-data-cursor')}
-                    // onClick={() => setShowPriceResult(true)}
-                    onClick={onCalcTourClickHandler}
-                >
-                    <h4>Рассчитать</h4>
-                </div>
-            </div>
-
-            <div>
-                {t('tours.add-price-info.price_for_0_3_years_old')}
-            </div>
-            {adultCount + childrenCount >= totalMaxPersons && 
                 <div>
-                    {t('tours.tour_max_persons_count')}
-                </div>}
+                    {t('tours.add-price-info.price_for_0_3_years_old')}
+                </div>
 
-            
-            {showPriceResult && 
-            <>
-                <PriceResults 
-                    adultCount={adultCount}
-                    childrenCount={childrenCount}
+                {adultCount + childrenCount >= totalMaxPersons && 
+                    <div>
+                        {t('tours.tour_max_persons_count')}
+                        <a href={'whatsapp://send?phone=' + CONTACTS.phoneOlga}>{CONTACTS.phoneOlga}</a>
+                    </div>}
 
-                    adultPrice={currentTour?.adultPrice}
-                    childAbsDiscount={currentTour?.childAbsDiscount} 
-                    // priceAdditionalInfo={currentTour?.priceAdditionalInfo} 
-                 />
-                <ButtonContact tour={currentTour?.title || ""}/>
-            </>}
+                {/* Рассчет стоиомсти */}
+                <AnimatePresence mode="wait" initial={true}>
+                    {showPriceResult && 
+                    <motion.div
+                        initial={{ opacity: 0, y: -100 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: ANIMATION_TIME }}
+                        exit={{ opacity: 0, y: -100 }}
 
-            
-        </div>
+                        className='price-calc-2-results-common'
+                    >
+
+                        <PriceResults 
+                            adultCount={adultCount}
+                            childrenCount={childrenCount}
+
+                            adultPrice={currentTour?.adultPrice}
+                            childAbsDiscount={currentTour?.childAbsDiscount} 
+                        />
+                        
+                        {/* Забронировать тур! */}
+                        <ButtonContact tour={currentTour?.title || ""}/>
+
+                        {/* Рекомендации по выбору отеля */}
+                        <HotelRecomendations hotelRecomendations={currentTour?.hotelRecomendations} />
+
+                    </motion.div>}
+                </AnimatePresence>
+            </div>
+        </WidgetWrapper>
     )
 }

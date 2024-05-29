@@ -12,6 +12,7 @@ import mainPageIcon from '../../assets/icons/main-page.png'
 
 import './header-classes.scss'
 import { toursContent } from '../../store/tour-info';
+import { DIV_ID_CONTACTS } from '../../store/consts';
 // import { toursContent } from '../../store/tour-info';
 
 export type NavMenuElementsType = {
@@ -49,7 +50,7 @@ export const Header = () => {
     const headerNavElements: Array<NavMenuElementsType> = [
         { title: t('nav.main_page'), path: PATHS.mainPage, imagePath: mainPageIcon },
         { title: t('nav.nav_tours'), path: PATHS.tourInfo, imagePath: tourIcon, subElements: tourSubElem },
-        { title: t('nav.contacts'), path: PATHS.contacts, imagePath: phoneIcon },
+        { title: t('nav.contacts'), path: '#'+DIV_ID_CONTACTS, imagePath: phoneIcon },
         // { title: "111", path: PATHS.mainPage, imagePath: mainPageIcon },
         // { title: "222", path: PATHS.tours, imagePath: tourIcon, subElements: toursSubElements },
         // { title: "333", path: PATHS.contacts, imagePath: phoneIcon },

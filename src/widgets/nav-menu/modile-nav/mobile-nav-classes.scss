@@ -1,8 +1,5 @@
 @import '../../../assets/styles/common-variables.scss';
 
-$element-bg-color: lightgrey;
-$element-bg-color-focused: grey;
-
 .mobile-nav-menu-class {
     display: flex;
     flex-direction: row;
@@ -55,7 +52,7 @@ $element-bg-color-focused: grey;
     border: 1px solid black;
     border-radius: 10px;
     // background-color: green;
-    background-color: $element-bg-color;
+    background-color: $nav-menu-element-bg-color;
 
     // text-align: center;
 
@@ -74,7 +71,7 @@ $element-bg-color-focused: grey;
     }
 }
 .mobile-nav-menu-element:hover:focus {
-    background-color: $element-bg-color-focused;
+    background-color: $nav-menu-element-bg-color-focused;
 }
 
 .mobile-nav-menu-img-div-class {
@@ -93,12 +90,12 @@ $element-bg-color-focused: grey;
     // margin-top: 10px;
     width: calc(100% - 40px);
     // margin-left: 10%;
-    background-color: $element-bg-color;
+    background-color: $nav-menu-element-bg-color;
     padding: 10px 20px;
     border-radius: 10px;
     cursor: pointer;
     line-height: normal;
 }
 .mobile-nav-menu-subelem-child-class:hover:focus {
-    background-color: $element-bg-color-focused;
+    background-color: $nav-menu-element-bg-color-focused;
 }

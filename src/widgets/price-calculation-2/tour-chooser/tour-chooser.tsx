@@ -6,6 +6,8 @@ import crossIcon from '../../../assets/icons/cross.png'
 import './tour-chooser-classes.scss'
 import clsx from 'clsx'
 import { useTranslation } from 'react-i18next'
+import { motion } from 'framer-motion'
+import { ANIMATION_TIME_SUPER_SHORT } from '../../../store/consts'
 
 
 export type PriceCalc2TourChooserPropsType = {
@@ -20,15 +22,26 @@ export const PriceCalc2TourChooser = (props: PriceCalc2TourChooserPropsType) => 
         props.setCurrentTour(newTour)
         props.closeFunction(false)
     }
-
-    // console.log('toursContent=',toursContent);
     
     return (
-        <div className='price-calc-2-tour-chooser-wrapper'>
+        <motion.div 
+            className='price-calc-2-tour-chooser-wrapper'
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: ANIMATION_TIME_SUPER_SHORT }}
+            exit={{ opacity: 0, y: -100}}
+        >
 
-            <img alt="" src={crossIcon} onClick={() => props.closeFunction(false)}/>
+            <div className='price-calc-2-tour-chooser-title-div'>
+                <strong>{t('tours.choose_tour')}</strong>
+                <motion.img 
+                    alt="" 
+                    src={crossIcon} 
+                    onClick={() => props.closeFunction(false)}
+                    whileHover={{ rotate: 90, scale: 1.1 }}
+                />
+            </div>
 
-            <div>{t('tours.choose_tour')}</div>
 
             {toursContent().map(t => {
                 return (
@@ -45,6 +58,6 @@ export const PriceCalc2TourChooser = (props: PriceCalc2TourChooserPropsType) => 
                 )
             })
             }
-        </div>
+        </motion.div>
     )
 }

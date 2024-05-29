@@ -5,10 +5,12 @@ import { PATHS } from "../widgets/nav-menu/nav-paths"
 import t1Image from '../assets/images/tour-1.jpeg'
 import t2Image from '../assets/images/tour-2.jpeg'
 import t3Image from '../assets/images/tour-3.jpeg'
+import t4Image from '../assets/images/tour-3.jpeg'
 
 import t1Icon from '../assets/icons/main-page.png'
 import t2Icon from '../assets/icons/main-page.png'
 import t3Icon from '../assets/icons/main-page.png'
+import t4Icon from '../assets/icons/main-page.png'
 
 
 export type PlanDayType = {
@@ -26,7 +28,10 @@ export type PriceAdditionalInfoType = {
     info1: string,
     info2: string,
 }
-
+export type HotelRecomendationType = {
+    point: string,
+    hotels: Array<string>,
+}
 export type TourType = {
     id: number,
     title: string,
@@ -41,7 +46,7 @@ export type TourType = {
     daysCount: number,
     tourImage: string,
     tourIcon: string,
-
+    hotelRecomendations: Array<HotelRecomendationType>
 }
 // console.log("TOUR INFO / i18next.t('tours.tour1.plan.day1')=", i18next.t('tours.tour1.plan.day1'));
 
@@ -190,8 +195,21 @@ export const toursContent = ():Array<TourType> => [
             //     maxPersons: 8,
             //     info: 'в 10 местном приватном минивэне типа Хюндай с местным водителем и гидом,говорящим на вашем языке, в дни ,когда это необходимо.'
             // }
-            
-        
+        hotelRecomendations: [
+            {
+                point: i18next.t('tours.tour1.hotels.hotel1'),
+                hotels: ["Hotel Makanda by the Sea", "Tulemar resort Costa Rica", "Karahe beach front"]
+            },
+            {
+                point: i18next.t('tours.tour1.hotels.hotel2'),
+                hotels: ["Tabacon Thermar resort and SPA", "Los Lagos hotel Spa and Resort", "Casa Luna hotel and SPA"]
+            },
+            {
+                point: i18next.t('tours.tour1.hotels.hotel3'),
+                hotels: ["Marriot Hacienda Belen", "Holiday Inn Express San Jose Costa Rica Airport", "Barcelo San Jose"]
+            }
+   
+        ]   
     },
 
 
@@ -259,7 +277,24 @@ export const toursContent = ():Array<TourType> => [
             //     maxPersons: 8,
             //     info: 'включая оплату всех входных билетов по программе, а также, транспортное обслуживание по всему маршруту. Цена данной программы для Вашей группы 5-8 человека в 10 местном  приватном минивэне типа Хюндай с местным водителем и гидом,говорящим на вашем языке, в дни ,когда это необходимо.'
             // }
-        
+        hotelRecomendations: [
+            {
+                point: i18next.t('tours.tour2.hotels.hotel1'),
+                hotels: ["Hotel Makanda by the Sea","Tulemar resort Costa Rica", "Karahe beach front"]
+            },
+            {
+                point: i18next.t('tours.tour2.hotels.hotel2'),
+                hotels: ["Tabacon Thermar resort and SPA", "Los Lagos hotel Spa and Resort", "Casa Luna hotel and SPA"]
+            },
+            {
+                point: i18next.t('tours.tour2.hotels.hotel3'),
+                hotels: ["Aguas Claras", "Umami Hotel - Adults Only", "Relax Natural Village Adults Only", "Villas del Caribe", "Le Cameleon Boutique Hotel"]
+            },
+            {
+                point: i18next.t('tours.tour2.hotels.hotel4'),
+                hotels: ["Marriot Hacienda Belen", "Holiday Inn Express San Jose Costa Rica Airport", "Barcelo San Jose"]
+            }
+        ]
     },
 
 
@@ -325,7 +360,88 @@ export const toursContent = ():Array<TourType> => [
             //     maxPersons: 8,
             //     info: 'включая оплату всех входных билетов по программе, а также, транспортное обслуживание по всему маршруту. Цена данной программы для Вашей группы 5-8 человека в 10 местном  приватном минивэне типа Хюндай с местным водителем и гидом,говорящим на вашем языке, в дни ,когда это необходимо.'
             // }
+        hotelRecomendations: [
+            {
+                point: i18next.t('tours.tour3.hotels.hotel1'),
+                hotels: ["Marriot Hacienda Belen", "Holiday Inn Express San Jose Costa Rica Airport", "Barcelo San Jose"]
+            },
+            {
+                point: i18next.t('tours.tour3.hotels.hotel2'),
+                hotels: ["Tabacon Thermar resort and SPA", "Los Lagos hotel Spa and Resort", "Casa Luna hotel and SPA"]
+            }
+         ]
         
-    }
+    },
+
+
+    {
+        id: 4,
+        urlPath: PATHS.tourInfo + '/4',
+        title: i18next.t('tours.tour4.title'),
+        tourImage: t4Image,
+        tourIcon: t4Icon,
+        description: i18next.t('tours.tour4.description'),
+        daysCount: Number(i18next.t('tours.tour4.days-count')),
+        minPrice: 890,
+        // plan: tour3Plan(),
+        plan: tourPlanCreator({
+            days: Number(i18next.t('tours.tour4.days-count')),
+            tourI18n: 'tours.tour4'
+        }),
+        adultPrice: [
+            {
+                personsCount: 1,
+                oneAdultPrice: 2270,
+            },
+            {
+                personsCount: 2,
+                oneAdultPrice: 1390,
+            },
+            {
+                personsCount: 3,
+                oneAdultPrice: 1090,
+            },
+            {
+                personsCount: 4,
+                oneAdultPrice: 950,
+            },
+            {
+                personsCount: 5,
+                oneAdultPrice: 1090,
+            },
+            {
+                personsCount: 6,
+                oneAdultPrice: 990,
+            },
+            {
+                personsCount: 7,
+                oneAdultPrice: 950,
+            },
+            {
+                personsCount: 8,
+                oneAdultPrice: 890,
+            },
+        ],
+        childAbsDiscount: 90,
+        hotelRecomendations: [
+            {
+                point: i18next.t('tours.tour4.hotels.hotel1'),
+                hotels: ["Marriot Hacienda Belen", "Holiday Inn Express San Jose Costa Rica Airport", "Barcelo San Jose"]
+            },
+            {
+                point: i18next.t('tours.tour4.hotels.hotel2'),
+                hotels: ["Tabacon Thermar resort and SPA", "Los Lagos hotel Spa and Resort", "Casa Luna hotel and SPA"]
+
+            },
+            {
+                point: i18next.t('tours.tour4.hotels.hotel3'),
+                hotels: ["Hotel Makanda by the Sea","Tulemar resort Costa Rica", "Karahe beach front"]
+            },
+            {
+                point: i18next.t('tours.tour4.hotels.hotel4'),
+                hotels: ["Hotel Makanda by the Sea", "Tulemar resort Costa Rica", "Karahe beach front"]
+            }
+        ],
+    },
 
 ]

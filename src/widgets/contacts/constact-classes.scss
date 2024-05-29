@@ -46,7 +46,7 @@
     flex-direction: column;
     justify-content: center;
     gap: $paragraph_gap;
-    padding: $widget-padding-top $widget-padding-side;
+    // padding: $widget-padding-top $widget-padding-side;
 }
 .contacts-page-wrapper-2-paragraph {
     text-align: center;
@@ -58,6 +58,47 @@
         // color: green;
     }
 }
-.contacts-page-wrapper-2-whatsapp { color: green; }
-.contacts-page-wrapper-2-telegram { color: blue; }
+.contacts-page-wrapper-2-whatsapp { 
+    // color: green; 
+    animation-name: wa_keyframes;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+.contacts-page-wrapper-2-telegram { 
+    // color: blue; 
+    animation-name: tg_keyframes;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
 .contacts-page-wrapper-2-phone { color: black; }
+
+@keyframes wa_keyframes {
+    0% {
+        color: green;
+        font-weight: normal;
+    }
+    50% {
+        color: rgb(69, 97, 26);
+        font-weight: bold;
+    }
+    100% {
+        color: green;
+        font-weight: normal;
+
+    }
+}
+@keyframes tg_keyframes {
+    0% {
+        color: blue;
+        font-weight: normal;
+    }
+    50% {
+        color: rgb(6, 6, 181);
+        font-weight: bold;
+    }
+    100% {
+        color: blue;
+        font-weight: normal;
+
+    }
+}

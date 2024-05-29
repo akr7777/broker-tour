@@ -1,0 +1,34 @@
+.my-accordeon-wrapper {
+    // background-color: red;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+}
+
+.my-accordeon-item-question-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.my-accordeon-item-question-wrapper-top {
+    margin: 10px 0;
+}
+
+.my-accordeon-item-question-question {
+    display: grid;
+    grid-template-columns: 1fr 35px;
+    // align-content: center;
+
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    img {
+        width: 30px;
+        height: 30px;
+    }
+}
+.my-accordeon-item-question-question:hover {
+    background-color: grey;
+    color: white;
+}
