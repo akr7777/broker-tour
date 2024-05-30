@@ -1,16 +1,13 @@
 import i18next from "i18next"
-import { LINE_DEVIDER } from "./consts"
+import { LINE_DEVIDER, TOURS_IDS } from "./consts"
 import { PATHS } from "../widgets/nav-menu/nav-paths"
-
-import t1Image from '../assets/images/tour-1.jpeg'
-import t2Image from '../assets/images/tour-2.jpeg'
-import t3Image from '../assets/images/tour-3.jpeg'
-import t4Image from '../assets/images/tour-3.jpeg'
 
 import t1Icon from '../assets/icons/main-page.png'
 import t2Icon from '../assets/icons/main-page.png'
 import t3Icon from '../assets/icons/main-page.png'
 import t4Icon from '../assets/icons/main-page.png'
+import { tourMainPhotos } from "./tour-days-photos"
+import { ReactNode } from "react"
 
 
 export type PlanDayType = {
@@ -22,8 +19,6 @@ export type AdultPriceType = {
     oneAdultPrice: number,
 }
 export type PriceAdditionalInfoType = {
-    // maxPersons: number,
-    // info: string,
     divCount: number,
     info1: string,
     info2: string,
@@ -40,52 +35,12 @@ export type TourType = {
     plan: Array<PlanDayType>,
     adultPrice: Array<AdultPriceType>,
     childAbsDiscount: number,
-    // priceAdditionalInfo: Array<PriceAdditionalInfoType>,
-    // priceAdditionalInfo: PriceAdditionalInfoType,
-    urlPath: string,//typeof PATHS.tour1 | typeof PATHS.tour2 | typeof PATHS.tour3
+    urlPath: string,
     daysCount: number,
-    tourImage: string,
+    tourImage: ReactNode,
     tourIcon: string,
     hotelRecomendations: Array<HotelRecomendationType>
 }
-// console.log("TOUR INFO / i18next.t('tours.tour1.plan.day1')=", i18next.t('tours.tour1.plan.day1'));
-
-
-// const tour1Plan = ():Array<PlanDayType> => {
-//     const tour1PlanResult: Array<PlanDayType> = []
-//     for (let i=1; i<=7; i++) {
-//         tour1PlanResult.push({
-//             dayNumber: i, 
-//             dayContent: i18next.t('tours.tour1.plan.day' + i) ? i18next.t('tours.tour1.plan.day' + i).split(LINE_DEVIDER) : []
-//             // dayContent: i18next.t('tours.tour1.plan.day' + i)
-//         })
-//     }
-//     return tour1PlanResult
-// }
-
-// const tour2Plan = ():Array<PlanDayType> => {
-//     const tour1PlanResult: Array<PlanDayType> = []
-//     for (let i=1; i<=12; i++) {
-//         tour1PlanResult.push({
-//             dayNumber: i, 
-//             dayContent: i18next.t('tours.tour2.plan.day' + i) ? i18next.t('tours.tour2.plan.day' + i).split(LINE_DEVIDER) : []
-//             // dayContent: i18next.t('tours.tour1.plan.day' + i)
-//         })
-//     }
-//     return tour1PlanResult
-// }
-
-// const tour3Plan = ():Array<PlanDayType> => {
-//     const tour1PlanResult: Array<PlanDayType> = []
-//     for (let i=1; i<=4; i++) {
-//         tour1PlanResult.push({
-//             dayNumber: i, 
-//             dayContent: i18next.t('tours.tour3.plan.day' + i) ? i18next.t('tours.tour3.plan.day' + i).split(LINE_DEVIDER) : []
-//             // dayContent: i18next.t('tours.tour1.plan.day' + i)
-//         })
-//     }
-//     return tour1PlanResult
-// }
 
 type TourPlanCreatorType = {days: number, tourI18n: string}
 const tourPlanCreator = (props: TourPlanCreatorType):Array<PlanDayType> => {
@@ -96,57 +51,93 @@ const tourPlanCreator = (props: TourPlanCreatorType):Array<PlanDayType> => {
             dayContent: i18next.t(props.tourI18n +'.plan.day' + i) 
                     ? i18next.t(props.tourI18n+'.plan.day' + i).split(LINE_DEVIDER) 
                     : []
-            // dayContent: i18next.t('tours.tour1.plan.day' + i)
         })
     }
     return tour1PlanResult
 }
 
+
 export const toursContent = ():Array<TourType> => [
+    
+    // TOUR 4 days
     {
-        id: 1,
-        urlPath: PATHS.tourInfo + '/1',
-        tourImage: t1Image,
+        // TOUR 4 days
+        id: TOURS_IDS.tour_4_days,
+        urlPath: PATHS.tourInfo + '/' + TOURS_IDS.tour_4_days + '/',
+        title: i18next.t('tours.tour' + TOURS_IDS.tour_4_days + '.title'),
+        tourImage: tourMainPhotos.find(el => el.tourId === TOURS_IDS.tour_4_days)?.photo || "",
+        tourIcon: t3Icon,
+        description: i18next.t('tours.tour' + TOURS_IDS.tour_4_days + '.description'),
+        daysCount: Number(i18next.t('tours.tour' + TOURS_IDS.tour_4_days + '.days-count')),
+        minPrice: 570,
+        plan: tourPlanCreator({
+            days: Number(i18next.t('tours.tour' + TOURS_IDS.tour_4_days + '.days-count')),
+            tourI18n: 'tours.tour' + TOURS_IDS.tour_4_days
+        }),
+        adultPrice: [
+            {
+                personsCount: 1,
+                oneAdultPrice: 2270,
+            },
+            {
+                personsCount: 2,
+                oneAdultPrice: 1390,
+            },
+            {
+                personsCount: 3,
+                oneAdultPrice: 1090,
+            },
+            {
+                personsCount: 4,
+                oneAdultPrice: 950,
+            },
+            {
+                personsCount: 5,
+                oneAdultPrice: 1090,
+            },
+            {
+                personsCount: 6,
+                oneAdultPrice: 990,
+            },
+            {
+                personsCount: 7,
+                oneAdultPrice: 950,
+            },
+            {
+                personsCount: 8,
+                oneAdultPrice: 890,
+            },
+        ],
+        childAbsDiscount: 90,
+        hotelRecomendations: [
+            {
+                point: i18next.t('tours.tour' + TOURS_IDS.tour_4_days + '.hotels.hotel1'),
+                hotels: ["Marriot Hacienda Belen", "Holiday Inn Express San Jose Costa Rica Airport", "Barcelo San Jose"]
+            },
+            {
+                point: i18next.t('tours.tour' + TOURS_IDS.tour_4_days + '.hotels.hotel2'),
+                hotels: ["Tabacon Thermar resort and SPA", "Los Lagos hotel Spa and Resort", "Casa Luna hotel and SPA"]
+            }
+         ]
+        
+    },
+
+
+    // TOUR 7 days
+    {
+        // TOUR 7 days
+        id: TOURS_IDS.tour_7_days,
+        urlPath: PATHS.tourInfo + '/' + TOURS_IDS.tour_7_days + '/',
+        tourImage: tourMainPhotos.find(el => el.tourId === TOURS_IDS.tour_7_days)?.photo || "",
         tourIcon: t1Icon,
-        daysCount: Number(i18next.t('tours.tour1.days-count')),
-        title: i18next.t('tours.tour1.title'),
-        description: i18next.t('tours.tour1.description'),
+        daysCount: Number(i18next.t('tours.tour'+TOURS_IDS.tour_7_days+'.days-count')),
+        title: i18next.t('tours.tour'+TOURS_IDS.tour_7_days+'.title'),
+        description: i18next.t('tours.tour'+TOURS_IDS.tour_7_days+'.description'),
         minPrice: 690,
         plan: tourPlanCreator({
-            days: Number(i18next.t('tours.tour1.days-count')),
-            tourI18n: 'tours.tour1'
+            days: Number(i18next.t('tours.tour'+TOURS_IDS.tour_7_days+'.days-count')),
+            tourI18n: 'tours.tour' + TOURS_IDS.tour_7_days
         }),
-        // plan: tour1Plan(),
-        // plan: [
-        //     {
-        //        dayNumber: 1,
-        //        dayContent: i18next.t('tours.tour1.plan.day1') ? i18next.t('tours.tour1.plan.day1').split(LINE_DEVIDER) : []
-        //     },
-        //     {
-        //         dayNumber: 2,
-        //         dayContent: i18next.t('tours.tour1.plan.day2') ? i18next.t('tours.tour1.plan.day2').split(LINE_DEVIDER) : []
-        //     },
-        //     {
-        //         dayNumber: 3,
-        //         dayContent: i18next.t('tours.tour1.plan.day3') ? i18next.t('tours.tour1.plan.day3').split(LINE_DEVIDER) : []
-        //     },
-        //     {
-        //         dayNumber: 4,
-        //         dayContent: i18next.t('tours.tour1.plan.day4') ? i18next.t('tours.tour1.plan.day4').split(LINE_DEVIDER) : []
-        //     },
-        //     {
-        //         dayNumber: 5,
-        //         dayContent: i18next.t('tours.tour1.plan.day5') ? i18next.t('tours.tour1.plan.day5').split(LINE_DEVIDER) : []
-        //     },
-        //     {
-        //         dayNumber: 6,
-        //         dayContent: i18next.t('tours.tour1.plan.day6') ? i18next.t('tours.tour1.plan.day6').split(LINE_DEVIDER) : []
-        //     },
-        //     {
-        //         dayNumber: 7,
-        //         dayContent: i18next.t('tours.tour1.plan.day7') ? i18next.t('tours.tour1.plan.day7').split(LINE_DEVIDER) : []
-        //     },
-        // ],
         adultPrice: [
             {
                 personsCount: 1,
@@ -182,53 +173,109 @@ export const toursContent = ():Array<TourType> => [
             },
         ],
         childAbsDiscount: 70,
-        // priceAdditionalInfo: {
-        //     divCount: 4,
-        //     info1: 'включая оплату всех входных билетов по программе, а также  транспортное обслуживание по всему маршруту.',
-        //     info2: 'в 10 местном приватном минивэне типа Хюндай с местным водителем и гидом,говорящим на вашем языке, в дни ,когда это необходимо.',
-        // }
-            // {
-            //     maxPersons: 4,
-            //     info: 'включая оплату всех входных билетов по программе, а также  транспортное обслуживание по всему маршруту.'
-            // },
-            // {
-            //     maxPersons: 8,
-            //     info: 'в 10 местном приватном минивэне типа Хюндай с местным водителем и гидом,говорящим на вашем языке, в дни ,когда это необходимо.'
-            // }
         hotelRecomendations: [
             {
-                point: i18next.t('tours.tour1.hotels.hotel1'),
+                point: i18next.t('tours.tour'+TOURS_IDS.tour_7_days+'.hotels.hotel1'),
                 hotels: ["Hotel Makanda by the Sea", "Tulemar resort Costa Rica", "Karahe beach front"]
             },
             {
-                point: i18next.t('tours.tour1.hotels.hotel2'),
+                point: i18next.t('tours.tour'+TOURS_IDS.tour_7_days+'.hotels.hotel2'),
                 hotels: ["Tabacon Thermar resort and SPA", "Los Lagos hotel Spa and Resort", "Casa Luna hotel and SPA"]
             },
             {
-                point: i18next.t('tours.tour1.hotels.hotel3'),
+                point: i18next.t('tours.tour'+TOURS_IDS.tour_7_days+'.hotels.hotel3'),
                 hotels: ["Marriot Hacienda Belen", "Holiday Inn Express San Jose Costa Rica Airport", "Barcelo San Jose"]
             }
    
         ]   
     },
 
-
-
-
+    // TOUR 9 days
     {
-        id: 2,
-        urlPath: PATHS.tourInfo + '/2',
-        tourImage: t2Image,
-        tourIcon: t2Icon,
-        title: i18next.t('tours.tour2.title'),
-        description: i18next.t('tours.tour2.description'),
-        minPrice: 690,
-        daysCount: Number(i18next.t('tours.tour2.days-count')),
+        // TOUR 9 days
+        id: TOURS_IDS.tour_9_days,
+        urlPath: PATHS.tourInfo + '/'+TOURS_IDS.tour_9_days+'/',
+        title: i18next.t('tours.tour'+TOURS_IDS.tour_9_days+'.title'),
+        tourImage: tourMainPhotos.find(el => el.tourId === TOURS_IDS.tour_9_days)?.photo || "",
+        tourIcon: t4Icon,
+        description: i18next.t('tours.tour'+TOURS_IDS.tour_9_days+'.description'),
+        daysCount: Number(i18next.t('tours.tour'+TOURS_IDS.tour_9_days+'.days-count')),
+        minPrice: 890,
         plan: tourPlanCreator({
-            days: Number(i18next.t('tours.tour2.days-count')),
-            tourI18n: 'tours.tour2'
+            days: Number(i18next.t('tours.tour'+TOURS_IDS.tour_9_days+'.days-count')),
+            tourI18n: 'tours.tour' + TOURS_IDS.tour_9_days
         }),
-        // plan: tour2Plan(),
+        adultPrice: [
+            {
+                personsCount: 1,
+                oneAdultPrice: 2270,
+            },
+            {
+                personsCount: 2,
+                oneAdultPrice: 1390,
+            },
+            {
+                personsCount: 3,
+                oneAdultPrice: 1090,
+            },
+            {
+                personsCount: 4,
+                oneAdultPrice: 950,
+            },
+            {
+                personsCount: 5,
+                oneAdultPrice: 1090,
+            },
+            {
+                personsCount: 6,
+                oneAdultPrice: 990,
+            },
+            {
+                personsCount: 7,
+                oneAdultPrice: 950,
+            },
+            {
+                personsCount: 8,
+                oneAdultPrice: 890,
+            },
+        ],
+        childAbsDiscount: 90,
+        hotelRecomendations: [
+            {
+                point: i18next.t('tours.tour'+TOURS_IDS.tour_9_days+'.hotels.hotel1'),
+                hotels: ["Marriot Hacienda Belen", "Holiday Inn Express San Jose Costa Rica Airport", "Barcelo San Jose"]
+            },
+            {
+                point: i18next.t('tours.tour'+TOURS_IDS.tour_9_days+'.hotels.hotel2'),
+                hotels: ["Tabacon Thermar resort and SPA", "Los Lagos hotel Spa and Resort", "Casa Luna hotel and SPA"]
+
+            },
+            {
+                point: i18next.t('tours.tour'+TOURS_IDS.tour_9_days+'.hotels.hotel3'),
+                hotels: ["Hotel Makanda by the Sea","Tulemar resort Costa Rica", "Karahe beach front"]
+            },
+            {
+                point: i18next.t('tours.tour'+TOURS_IDS.tour_9_days+'.hotels.hotel4'),
+                hotels: ["Hotel Makanda by the Sea", "Tulemar resort Costa Rica", "Karahe beach front"]
+            }
+        ],
+    },
+
+    // TOUR 12 days
+    {
+        // TOUR 12 days
+        id: TOURS_IDS.tour_12_days,
+        urlPath: PATHS.tourInfo + '/'+TOURS_IDS.tour_12_days+'/',
+        tourImage: tourMainPhotos.find(el => el.tourId === TOURS_IDS.tour_12_days)?.photo || "",
+        tourIcon: t2Icon,
+        title: i18next.t('tours.tour'+TOURS_IDS.tour_12_days+'.title'),
+        description: i18next.t('tours.tour'+TOURS_IDS.tour_12_days+'.description'),
+        minPrice: 690,
+        daysCount: Number(i18next.t('tours.tour'+TOURS_IDS.tour_12_days+'.days-count')),
+        plan: tourPlanCreator({
+            days: Number(i18next.t('tours.tour'+TOURS_IDS.tour_12_days+'.days-count')),
+            tourI18n: 'tours.tour' + TOURS_IDS.tour_12_days
+        }),
         adultPrice: [
             {
                 personsCount: 1,
@@ -264,184 +311,23 @@ export const toursContent = ():Array<TourType> => [
             },
         ],
         childAbsDiscount: 80,
-        // priceAdditionalInfo: {
-        //     divCount: 4,
-        //     info1: 'в 4 местном  приватном автомобиле типа Хюндай Сантафе с гидом-водителем.',
-        //     info2: 'включая оплату всех входных билетов по программе, а также, транспортное обслуживание по всему маршруту. Цена данной программы для Вашей группы 5-8 человека в 10 местном  приватном минивэне типа Хюндай с местным водителем и гидом,говорящим на вашем языке, в дни ,когда это необходимо.',
-        // }
-            // {
-            //     maxPersons: 4,
-            //     info: 'в 4 местном  приватном автомобиле типа Хюндай Сантафе с гидом-водителем.'
-            // },
-            // {
-            //     maxPersons: 8,
-            //     info: 'включая оплату всех входных билетов по программе, а также, транспортное обслуживание по всему маршруту. Цена данной программы для Вашей группы 5-8 человека в 10 местном  приватном минивэне типа Хюндай с местным водителем и гидом,говорящим на вашем языке, в дни ,когда это необходимо.'
-            // }
         hotelRecomendations: [
             {
-                point: i18next.t('tours.tour2.hotels.hotel1'),
+                point: i18next.t('tours.tour'+TOURS_IDS.tour_12_days+'.hotels.hotel1'),
                 hotels: ["Hotel Makanda by the Sea","Tulemar resort Costa Rica", "Karahe beach front"]
             },
             {
-                point: i18next.t('tours.tour2.hotels.hotel2'),
+                point: i18next.t('tours.tour'+TOURS_IDS.tour_12_days+'.hotels.hotel2'),
                 hotels: ["Tabacon Thermar resort and SPA", "Los Lagos hotel Spa and Resort", "Casa Luna hotel and SPA"]
             },
             {
-                point: i18next.t('tours.tour2.hotels.hotel3'),
+                point: i18next.t('tours.tour'+TOURS_IDS.tour_12_days+'.hotels.hotel3'),
                 hotels: ["Aguas Claras", "Umami Hotel - Adults Only", "Relax Natural Village Adults Only", "Villas del Caribe", "Le Cameleon Boutique Hotel"]
             },
             {
-                point: i18next.t('tours.tour2.hotels.hotel4'),
+                point: i18next.t('tours.tour'+TOURS_IDS.tour_12_days+'.hotels.hotel4'),
                 hotels: ["Marriot Hacienda Belen", "Holiday Inn Express San Jose Costa Rica Airport", "Barcelo San Jose"]
             }
         ]
     },
-
-
-    {
-        id: 3,
-        urlPath: PATHS.tourInfo + '/3',
-        title: i18next.t('tours.tour3.title'),
-        tourImage: t3Image,
-        tourIcon: t3Icon,
-        description: i18next.t('tours.tour3.description'),
-        daysCount: Number(i18next.t('tours.tour3.days-count')),
-        minPrice: 570,
-        // plan: tour3Plan(),
-        plan: tourPlanCreator({
-            days: Number(i18next.t('tours.tour3.days-count')),
-            tourI18n: 'tours.tour3'
-        }),
-        adultPrice: [
-            {
-                personsCount: 1,
-                oneAdultPrice: 2270,
-            },
-            {
-                personsCount: 2,
-                oneAdultPrice: 1390,
-            },
-            {
-                personsCount: 3,
-                oneAdultPrice: 1090,
-            },
-            {
-                personsCount: 4,
-                oneAdultPrice: 950,
-            },
-            {
-                personsCount: 5,
-                oneAdultPrice: 1090,
-            },
-            {
-                personsCount: 6,
-                oneAdultPrice: 990,
-            },
-            {
-                personsCount: 7,
-                oneAdultPrice: 950,
-            },
-            {
-                personsCount: 8,
-                oneAdultPrice: 890,
-            },
-        ],
-        childAbsDiscount: 90,
-        // priceAdditionalInfo: {
-        //     divCount: 4,
-        //     info1: 'в 4 местном  приватном автомобиле типа Хюндай Сантафе с гидом-водителем.',
-        //     info2: 'включая оплату всех входных билетов по программе, а также, транспортное обслуживание по всему маршруту. Цена данной программы для Вашей группы 5-8 человека в 10 местном  приватном минивэне типа Хюндай с местным водителем и гидом,говорящим на вашем языке, в дни ,когда это необходимо.',
-        // }
-            // {
-            //     maxPersons: 4,
-            //     info: 'в 4 местном  приватном автомобиле типа Хюндай Сантафе с гидом-водителем.'
-            // },
-            // {
-            //     maxPersons: 8,
-            //     info: 'включая оплату всех входных билетов по программе, а также, транспортное обслуживание по всему маршруту. Цена данной программы для Вашей группы 5-8 человека в 10 местном  приватном минивэне типа Хюндай с местным водителем и гидом,говорящим на вашем языке, в дни ,когда это необходимо.'
-            // }
-        hotelRecomendations: [
-            {
-                point: i18next.t('tours.tour3.hotels.hotel1'),
-                hotels: ["Marriot Hacienda Belen", "Holiday Inn Express San Jose Costa Rica Airport", "Barcelo San Jose"]
-            },
-            {
-                point: i18next.t('tours.tour3.hotels.hotel2'),
-                hotels: ["Tabacon Thermar resort and SPA", "Los Lagos hotel Spa and Resort", "Casa Luna hotel and SPA"]
-            }
-         ]
-        
-    },
-
-
-    {
-        id: 4,
-        urlPath: PATHS.tourInfo + '/4',
-        title: i18next.t('tours.tour4.title'),
-        tourImage: t4Image,
-        tourIcon: t4Icon,
-        description: i18next.t('tours.tour4.description'),
-        daysCount: Number(i18next.t('tours.tour4.days-count')),
-        minPrice: 890,
-        // plan: tour3Plan(),
-        plan: tourPlanCreator({
-            days: Number(i18next.t('tours.tour4.days-count')),
-            tourI18n: 'tours.tour4'
-        }),
-        adultPrice: [
-            {
-                personsCount: 1,
-                oneAdultPrice: 2270,
-            },
-            {
-                personsCount: 2,
-                oneAdultPrice: 1390,
-            },
-            {
-                personsCount: 3,
-                oneAdultPrice: 1090,
-            },
-            {
-                personsCount: 4,
-                oneAdultPrice: 950,
-            },
-            {
-                personsCount: 5,
-                oneAdultPrice: 1090,
-            },
-            {
-                personsCount: 6,
-                oneAdultPrice: 990,
-            },
-            {
-                personsCount: 7,
-                oneAdultPrice: 950,
-            },
-            {
-                personsCount: 8,
-                oneAdultPrice: 890,
-            },
-        ],
-        childAbsDiscount: 90,
-        hotelRecomendations: [
-            {
-                point: i18next.t('tours.tour4.hotels.hotel1'),
-                hotels: ["Marriot Hacienda Belen", "Holiday Inn Express San Jose Costa Rica Airport", "Barcelo San Jose"]
-            },
-            {
-                point: i18next.t('tours.tour4.hotels.hotel2'),
-                hotels: ["Tabacon Thermar resort and SPA", "Los Lagos hotel Spa and Resort", "Casa Luna hotel and SPA"]
-
-            },
-            {
-                point: i18next.t('tours.tour4.hotels.hotel3'),
-                hotels: ["Hotel Makanda by the Sea","Tulemar resort Costa Rica", "Karahe beach front"]
-            },
-            {
-                point: i18next.t('tours.tour4.hotels.hotel4'),
-                hotels: ["Hotel Makanda by the Sea", "Tulemar resort Costa Rica", "Karahe beach front"]
-            }
-        ],
-    },
-
 ]

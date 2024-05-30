@@ -1,44 +1,15 @@
 import { WidgetWrapper } from '../../shared/widget-wrapper/widget-wrapper'
-
-import tourImg1 from '../../assets/images/main_photo_0.jpeg'
-
-import './our-tour-2-classes.scss'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import uuid from 'react-uuid'
 import { useNavigate } from 'react-router-dom'
 import { toursContent } from '../../store/tour-info'
 
+import './our-tour-2-classes.scss'
 
 export const OurTour2 = () => {
     const {t} = useTranslation()
     const navigate = useNavigate()
-
-    // const ourTourData = [
-    //     {
-    //         title: t('tours.tour1.title'), 
-    //         description: t('tours.tour1.description'),
-    //         minPrice: t('tours.tour1.min-price'),
-    //         link: PATHS.tour1,
-    //     },
-    //     {
-    //         title: t('tours.tour2.title'), 
-    //         description: t('tours.tour2.description'),
-    //         minPrice: t('tours.tour2.min-price'),
-    //         link: PATHS.tour2,
-    //     },
-    //     {
-    //         title: t('tours.tour3.title'), 
-    //         description: t('tours.tour3.description'),
-    //         minPrice: t('tours.tour3.min-price'),
-    //         link: '#',
-    //     }
-    // ]
-
-    // const ourTourData = toursContent().map(t => {
-
-    // })
-
     const onCardClickHandler = (link: string) => navigate(link)
 
     return (
@@ -57,19 +28,18 @@ export const OurTour2 = () => {
                             onClick={() => onCardClickHandler(tour.urlPath)}
                         >
 
-                            <motion.img 
-                                alt="" 
-                                src={tourImg1}
-                                whileHover={{ scale: 1.025 }} 
-                            />
+                            <motion.div
+                                whileHover={{ scale: 1.025 }}>
+                                 {tour.tourImage}
+                            </motion.div>
                             
                             <div className='our-tours-2-card-min-price'>
-                                <h5>От {tour.minPrice}$</h5>
-                                <label>за человека</label>
+                                <h5>I18n!! От {tour.minPrice}$</h5>
+                                <label>I18n!!за человека</label>
                             </div>
 
                             <div className='our-tours-2-card-day-blur-info'>
-                                <h5>5/4 noches</h5>
+                                <h5>{t('tours.tour' + tour.id + '.days-nights-text-count')}</h5>
                             </div>
 
                             <div className='our-tours-2-card-title'>

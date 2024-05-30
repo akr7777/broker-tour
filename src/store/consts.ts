@@ -22,3 +22,10 @@ export const CONTACTS = {
     phoneDavid: '+50689122044',
     email: 'oldagatour@gmail.com'
 }
+
+export const TOURS_IDS = {
+    tour_4_days: 1,
+    tour_7_days: 2,
+    tour_9_days: 3,
+    tour_12_days: 4,
+}

@@ -28,8 +28,10 @@ export type PriceResultsPropsType = {
 export const PriceResults = (props: PriceResultsPropsType) => {
     const { t } = useTranslation()
 
-    const oneAdultPrice: number = props.adultPrice?.find(el => el.personsCount === props.adultCount)?.oneAdultPrice || 0
+    const oneAdultPrice: number = props.adultPrice?.find(el => 
+        el.personsCount === props.adultCount + props.childrenCount)?.oneAdultPrice || 0
     const adultsPrice: number = oneAdultPrice * props.adultCount
+
     const oneChildPrice: number = props.childAbsDiscount ? oneAdultPrice - props.childAbsDiscount : 0
     const childrenPrice: number = oneChildPrice * props.childrenCount
 

@@ -1,10 +1,10 @@
 @import '../../assets/styles/common-variables.scss';
 
 .wellcome-wrapper {
-    background-image: url('../../assets//images/main_photo.jpeg');
+    background-image: url('../../assets//images/main_photo_1.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: top;
+    background-position: center;
     
     padding: 20px;
     width: calc(100% - 40px);
@@ -33,7 +33,9 @@
 }
 .wellcome-info-div-text { 
     z-index: 501; 
-    color: rgb(240, 211, 21); 
+    color: blue; 
+    text-align: center;
+    h3 { font-weight: 900; }
 }
 
 .wellcome-page-sun {

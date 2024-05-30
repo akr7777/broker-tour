@@ -155,10 +155,14 @@ export const PriceCalculation2 = () => {
                 <AnimatePresence mode="wait" initial={true}>
                     {showPriceResult && 
                     <motion.div
-                        initial={{ opacity: 0, y: -100 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        // initial={{ opacity: 0, y: -100 }}
+                        // animate={{ opacity: 1, y: 0 }}
+                        // transition={{ duration: ANIMATION_TIME }}
+                        // exit={{ opacity: 0, y: -100 }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
                         transition={{ duration: ANIMATION_TIME }}
-                        exit={{ opacity: 0, y: -100 }}
+                        exit={{ opacity: 0 }}
 
                         className='price-calc-2-results-common'
                     >

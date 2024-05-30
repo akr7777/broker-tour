@@ -9,8 +9,10 @@
     justify-content: center;
 }
 .not-found-page-link-class {
-    font-size: 18px;
-    font-weight: 700;
-    color: black;
+    a {
+        // font-size: 20px;
+        font-weight: 700;
+        color: blue;
+    }
 }
 

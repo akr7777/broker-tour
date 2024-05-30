@@ -121,7 +121,7 @@ export const MobileNavigation = (props: NavMenuPropsType) => {
                                                         <motion.div 
                                                             key={uuid()}
                                                             className='mobile-nav-menu-subelem-child-class'
-                                                            onClick={() => onLinkClickHandler(subElem.path)}
+                                                            // onClick={() => onLinkClickHandler(subElem.path)}
                                                         >
                                                             {subElem.title}
                                                         </motion.div>

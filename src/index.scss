@@ -1,7 +1,13 @@
 @import './assets/styles/common-variables.scss';
 
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat'),
+    url('./assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+}
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.75;
   font-weight: 400;
   min-width: 320px;

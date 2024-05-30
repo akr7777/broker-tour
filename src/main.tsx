@@ -9,6 +9,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import './index.scss'
+import './assets/fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf'
+import './assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

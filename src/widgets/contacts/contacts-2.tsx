@@ -1,34 +1,24 @@
-import { CONTACTS } from '../../store/consts'
+import { CONTACTS, DIV_ID_CONTACTS } from '../../store/consts'
+import { useTranslation } from 'react-i18next'
+import { WidgetWrapper } from '../../shared/widget-wrapper/widget-wrapper'
 
-// import authorPhoto from '../../assets/images/contact-photo.jpeg'
 import facebookImg from '../../assets/icons/facebook.svg'
 import instagramImg from '../../assets/icons/instagram.svg'
 
 import './constact-classes.scss'
-import { useTranslation } from 'react-i18next'
-import { WidgetWrapper } from '../../shared/widget-wrapper/widget-wrapper'
-// import { motion } from 'framer-motion'
 
 export const ContactWidget2 = () => {
     const {t} = useTranslation()
+    // const contactRef = React.useRef(null)
 
     return (
         <WidgetWrapper>
-            <div className='contacts-page-wrapper-2'>
+            <div className='contacts-page-wrapper-2' id={DIV_ID_CONTACTS}>
 
 
                 <div className='contacts-page-wrapper-2-paragraph'>
                     <h2>{ t('contacts.contacts') }</h2>
                 </div>
-
-                {/* <div className='contacts-page-wrapper-2-paragraph'>
-                    <motion.img 
-                        alt={'Фото контакта'}
-                        src={authorPhoto} 
-                        className={'contacts-author-photo-class'}
-                        whileHover={{rotate: 360 }}
-                    />
-                </div>  */}
 
                 <div className='contacts-page-wrapper-2-paragraph'>
                     {t('contacts.questions_and_booking')}
@@ -36,7 +26,7 @@ export const ContactWidget2 = () => {
                         href={'https://wa.me/' + CONTACTS.phoneOlga} 
                         className='contacts-page-wrapper-2-whatsapp'
                     >
-                        What's app
+                        What's app ({CONTACTS.phoneOlga})
                     </a>
                     {t('contacts.or')} 
                     <a

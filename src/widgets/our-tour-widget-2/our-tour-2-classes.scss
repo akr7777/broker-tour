@@ -1,28 +1,13 @@
 $div-side-margin: 30px;
-// $card-count: 4;
 $space-between: 20px;
 $card-width: 400px;
-// $three-cols-screen-width: calc(
-//         ($card-count * $card-width) + (($card-count - 1) * $space-between)
-//     );
-// $two-cols-screen-width: calc(
-//         (2 * $card-width) + $space-between + (2 * $div-side-margin)
-//     );
 $four-cols-screen-width: 1000px;
 $two-cols-screen-width: 500px;
 
 .our-tours-2-wrapper {
-    // width: calc(100% - 2*$div-side-margin);
-
-    // background-color: aqua;
-    // margin: 0 $div-side-margin;
     width: 100%;
 
     @media screen and (min-width: $four-cols-screen-width) {
-        // display: flex;
-        // flex-direction: row;
-        // gap: $space-between;
-        // justify-content: center;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         column-gap: $space-between;
@@ -37,10 +22,6 @@ $two-cols-screen-width: 500px;
     }
 
     @media screen and (max-width: $two-cols-screen-width) {
-        // display: flex;
-        // flex-direction: column;
-        // gap: $space-between;
-        // align-items: center;
         display: grid;
         grid-template-columns: 1fr;
         row-gap: $space-between;
@@ -48,14 +29,10 @@ $two-cols-screen-width: 500px;
 }
 
 .our-tours-2-card {
-    // @media screen and (min-width: $card-width) { min-width: $card-width; }
-    // @media screen and (max-width: $card-width) { min-width: 100%; }
-
     width: calc(100% - 10px);
     padding: 5px;
     min-height: 200px;
 
-    // background-color: red;
     overflow: hidden;
     box-shadow: 5px 5px 10px grey;
     position: relative;
@@ -65,10 +42,6 @@ $two-cols-screen-width: 500px;
 
     cursor: pointer;
 
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
-    // gap: 10px;
     img {
         position: relative;
         top: 5px;
@@ -76,7 +49,6 @@ $two-cols-screen-width: 500px;
 
         width: calc(100% - 10px);
         height: 200px;
-        // max-height: 200px;
 
         z-index: 100;
         border-radius: 10px;
@@ -91,8 +63,6 @@ $two-cols-screen-width: 500px;
     top: 25px;
     left: 25px;
 
-    // width: 150px;
-    // height: 55px;
     padding: 10px;
     border-radius: 10px;
 
@@ -116,8 +86,8 @@ $two-cols-screen-width: 500px;
     top: 140px;
     right: 25px;
 
-    width: 50px;
-    height: 40px;
+    // min-width: 50px;
+    // min-height: 40px;
 
     padding: 10px;
     border-radius: 10px;
@@ -128,9 +98,6 @@ $two-cols-screen-width: 500px;
 
     background-color: rgba(lightgrey, 1);
 
-    // box-shadow: 10px 10px 10px grey;
-    // filter: blur(5px);
-
     label {
         font-size: 11px;
     }
@@ -140,8 +107,6 @@ $two-cols-screen-width: 500px;
     position: relative;
     margin: 5px 5px;
     padding: 5px 5px;
-    // border: 1px solid grey;
-    // background-color: rgba(144, 238, 144, 0.674);
     background-color: #FBE2D0;
     border-radius: 10px;
 
@@ -152,8 +117,6 @@ $two-cols-screen-width: 500px;
     position: relative;
     margin: 5px 5px;
     padding: 5px 5px;
-    // border: 1px solid grey;
-    // background-color: azure;
     border-radius: 10px;
 
     text-align: justify;

@@ -18,6 +18,8 @@ $border-radius: 20px;
     width: 100%;
     background-color: $border-color;
     position: relative;
+   box-shadow: 3px 3px 5px 5px gray;
+
 
     @media screen and (min-width: 600px) {
         display: grid;
