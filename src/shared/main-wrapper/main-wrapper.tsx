@@ -4,7 +4,6 @@ import { Header } from "../../pages/header/header"
 // import { ContactFeedbackForm } from "../../widgets/contact-form-feedback/contact-form-feedback"
 // import { ContactsWidget } from "../../widgets/contacts/contacts"
 import { ContactWidget2 } from "../../widgets/contacts/contacts-2"
-import { DIV_ID_CONTACTS } from "../../store/consts"
 
 type PropsType = {
     children: JSX.Element | JSX.Element[] | ReactNode | ReactNode[]
@@ -19,7 +18,6 @@ export const MainWrapper = (props: PropsType) => {
             {/* <ContactFeedbackForm /> */}
             {/* <ContactsWidget /> */}
             <ContactWidget2 />
-            <div id={DIV_ID_CONTACTS}/>
 
             <Footer />
         </>

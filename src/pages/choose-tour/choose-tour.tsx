@@ -1,5 +1,5 @@
 // import { useState } from 'react'
-import { Carousel } from '../../components/carusel/carusel'
+import { Carousel } from '../../components/___carusel/carusel'
 import { WidgetWrapper } from '../../shared/widget-wrapper/widget-wrapper'
 import './choose-tour-class.scss'
 // import { feedbackData } from './feedback-data'

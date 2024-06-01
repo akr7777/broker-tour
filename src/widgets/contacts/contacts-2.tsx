@@ -1,6 +1,7 @@
-import { CONTACTS, DIV_ID_CONTACTS } from '../../store/consts'
+import { CONTACTS, DIV_IDS } from '../../store/consts'
 import { useTranslation } from 'react-i18next'
 import { WidgetWrapper } from '../../shared/widget-wrapper/widget-wrapper'
+import { ArticleTitle } from '../../shared/title/title'
 
 import facebookImg from '../../assets/icons/facebook.svg'
 import instagramImg from '../../assets/icons/instagram.svg'
@@ -9,16 +10,12 @@ import './constact-classes.scss'
 
 export const ContactWidget2 = () => {
     const {t} = useTranslation()
-    // const contactRef = React.useRef(null)
 
     return (
         <WidgetWrapper>
-            <div className='contacts-page-wrapper-2' id={DIV_ID_CONTACTS}>
-
-
-                <div className='contacts-page-wrapper-2-paragraph'>
-                    <h2>{ t('contacts.contacts') }</h2>
-                </div>
+            <div className='contacts-page-wrapper-2' id={DIV_IDS.contacts}>
+               
+                <ArticleTitle title={t('contacts.contacts')} />
 
                 <div className='contacts-page-wrapper-2-paragraph'>
                     {t('contacts.questions_and_booking')}

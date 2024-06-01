@@ -12,6 +12,9 @@ import { DaysPlan2, DaysPlanType } from "./tour-plan-2"
 import './tours-classes.scss'
 import { ReactNode } from "react"
 import { tourPhotos } from "../../store/tour-days-photos"
+import { ArticleTitle } from "../../shared/title/title"
+import { LINE_DEVIDER } from "../../store/consts"
+import uuid from "react-uuid"
 // import uuid from "react-uuid"
 
 export const TourInfoPage = () => {
@@ -39,11 +42,10 @@ export const TourInfoPage = () => {
         <MainWrapper>
 
          <WidgetWrapper>
-            <h2>{ currentTour?.title }</h2>
-
-            {/* <div className="background-color"> */}
-                <div>{ currentTour?.description }</div>
-            {/* </div> */}
+            {/* <h2>{ currentTour?.title }</h2> */}
+            <ArticleTitle title={currentTour?.title}/>
+            <div>{ currentTour?.description }</div>
+            { currentTour?.fullDescription.split(LINE_DEVIDER).map(p => <div key={uuid()}>{p}</div>) }
          </WidgetWrapper>
 
          {/* <WidgetWrapper>
@@ -52,7 +54,8 @@ export const TourInfoPage = () => {
          </WidgetWrapper> */}
 
          <WidgetWrapper>
-            <h2>{t('tours.plan-of-the-trip')}</h2>
+            {/* <h2>{t('tours.plan-of-the-trip')}</h2> */}
+            <ArticleTitle title={t('tours.plan-of-the-trip')}/>
 
             <DaysPlan2 data={daysPlanData} />
          </WidgetWrapper>

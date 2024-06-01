@@ -1,0 +1,12 @@
+.title-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    img {
+        width: 35px;
+        height: 35px;
+    }
+}

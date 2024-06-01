@@ -3,12 +3,13 @@ import { WidgetWrapper } from '../../shared/widget-wrapper/widget-wrapper'
 import uuid from 'react-uuid'
 import { AccordeonDataType, MyAccordeon } from '../../components/my-accordeon/my-accordeon'
 import { LINE_DEVIDER } from '../../store/consts'
+import { ArticleTitle } from '../../shared/title/title'
 
 export type FAQ_Type = {
     question: string, answer: string
 }
 
-const questionsCount = 9
+const questionsCount = 12
 
 export const FAQ = () => {
     const {t} = useTranslation()
@@ -33,7 +34,8 @@ export const FAQ = () => {
     return (
         <WidgetWrapper>
 
-            <h2>{t('faq.title')}</h2>
+            {/* <h2>{t('faq.title')}</h2> */}
+            <ArticleTitle title={t('faq.title')} />
 
             <MyAccordeon data={accordeonData} />
             

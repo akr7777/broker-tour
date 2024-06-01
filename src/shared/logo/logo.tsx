@@ -24,16 +24,16 @@ export const Logo = () => {
         //     <h1>BrokerTour</h1>
         // </motion.div>
         <div className='logo-wrapper'>
-        <motion.img 
-            className='logo-img'
-            src={logoImg}
-            onClick={onLogoClick}
+            <motion.img 
+                className='logo-img'
+                src={logoImg}
+                onClick={onLogoClick}
 
-            initial={{ opacity: 0, x: -200 }}
-            animate={{ opacity: 1, x: 0,  scale: 1 }}
-            transition={{ duration: ANIMATION_TIME }}
-            whileHover={{ scale: 1.08 }}
-        />
+                initial={{ opacity: 0, x: -200 }}
+                animate={{ opacity: 1, x: 0,  scale: 1 }}
+                transition={{ duration: ANIMATION_TIME }}
+                whileHover={{ scale: 1.08 }}
+            />
         </div>
     )
 }

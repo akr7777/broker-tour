@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import { toursContent } from '../../store/tour-info'
 
 import './our-tour-2-classes.scss'
+import { ArticleTitle } from '../../shared/title/title'
 
 export const OurTour2 = () => {
     const {t} = useTranslation()
@@ -15,7 +16,8 @@ export const OurTour2 = () => {
     return (
         <WidgetWrapper>
 
-            <h2>{t('tours.title')}</h2>
+            {/* <h2>{t('tours.title')}</h2> */}
+            <ArticleTitle title={t('tours.title')} />
 
             <div className="our-tours-2-wrapper">
 

@@ -31,6 +31,7 @@ export type TourType = {
     id: number,
     title: string,
     description: string,
+    fullDescription: string,
     minPrice: number,
     plan: Array<PlanDayType>,
     adultPrice: Array<AdultPriceType>,
@@ -68,6 +69,7 @@ export const toursContent = ():Array<TourType> => [
         tourImage: tourMainPhotos.find(el => el.tourId === TOURS_IDS.tour_4_days)?.photo || "",
         tourIcon: t3Icon,
         description: i18next.t('tours.tour' + TOURS_IDS.tour_4_days + '.description'),
+        fullDescription: i18next.t('tours.tour' + TOURS_IDS.tour_4_days + '.full-description'),
         daysCount: Number(i18next.t('tours.tour' + TOURS_IDS.tour_4_days + '.days-count')),
         minPrice: 570,
         plan: tourPlanCreator({
@@ -133,6 +135,7 @@ export const toursContent = ():Array<TourType> => [
         daysCount: Number(i18next.t('tours.tour'+TOURS_IDS.tour_7_days+'.days-count')),
         title: i18next.t('tours.tour'+TOURS_IDS.tour_7_days+'.title'),
         description: i18next.t('tours.tour'+TOURS_IDS.tour_7_days+'.description'),
+        fullDescription: i18next.t('tours.tour' + TOURS_IDS.tour_7_days + '.full-description'),
         minPrice: 690,
         plan: tourPlanCreator({
             days: Number(i18next.t('tours.tour'+TOURS_IDS.tour_7_days+'.days-count')),
@@ -199,6 +202,7 @@ export const toursContent = ():Array<TourType> => [
         tourImage: tourMainPhotos.find(el => el.tourId === TOURS_IDS.tour_9_days)?.photo || "",
         tourIcon: t4Icon,
         description: i18next.t('tours.tour'+TOURS_IDS.tour_9_days+'.description'),
+        fullDescription: i18next.t('tours.tour' + TOURS_IDS.tour_9_days + '.full-description'),
         daysCount: Number(i18next.t('tours.tour'+TOURS_IDS.tour_9_days+'.days-count')),
         minPrice: 890,
         plan: tourPlanCreator({
@@ -270,6 +274,7 @@ export const toursContent = ():Array<TourType> => [
         tourIcon: t2Icon,
         title: i18next.t('tours.tour'+TOURS_IDS.tour_12_days+'.title'),
         description: i18next.t('tours.tour'+TOURS_IDS.tour_12_days+'.description'),
+        fullDescription: i18next.t('tours.tour' + TOURS_IDS.tour_12_days + '.full-description'),
         minPrice: 690,
         daysCount: Number(i18next.t('tours.tour'+TOURS_IDS.tour_12_days+'.days-count')),
         plan: tourPlanCreator({

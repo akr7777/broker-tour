@@ -9,12 +9,13 @@ import clsx from 'clsx'
 import { PriceCalc2TourChooser } from './tour-chooser/tour-chooser'
 import { ButtonContact } from '../../components/buttons/buttonContact'
 import { toast } from 'react-toastify'
-import { ANIMATION_TIME, CONTACTS } from '../../store/consts'
+import { ANIMATION_TIME, CONTACTS, DIV_IDS } from '../../store/consts'
 import { WidgetWrapper } from '../../shared/widget-wrapper/widget-wrapper'
 import { AnimatePresence, motion } from 'framer-motion'
 import { HotelRecomendations } from '../hotels-recomendations/hotel-recomendations'
 
 import './price-calc.scss'
+import { ArticleTitle } from '../../shared/title/title'
 
 const maxAdultCount = 8
 const minAdultCount = 1
@@ -64,6 +65,10 @@ export const PriceCalculation2 = () => {
     const onCalcTourClickHandler = () => {
         if (currentTour) {
             setShowPriceResult(true)
+            const elem = document.getElementById(DIV_IDS.priceCalculationResult)
+            if (elem) {
+                elem.scrollIntoView({ behavior: 'smooth'})
+            }
         } else {
             toast.error(t('tours.needs_to_choose_a_tour'))
             setNoTourErr(true)
@@ -74,7 +79,8 @@ export const PriceCalculation2 = () => {
         <WidgetWrapper>
             <div className='price-calc-2-wrapper'>
                 
-                <h2>{t('tours.tour_price_calculation')}</h2>
+                {/* <h2>{t('tours.tour_price_calculation')}</h2> */}
+                <ArticleTitle title={t('tours.tour_price_calculation')}/>
 
                 <div className='price-calc-2-data-wrapper'>
                         {/* <AnimatePresence mode="wait" initial={false}>
@@ -130,6 +136,7 @@ export const PriceCalculation2 = () => {
 
                     {/* Кнопка для запуска расчета стоимости тура */}
                     <div 
+                        id={DIV_IDS.priceCalculationResult}
                         className={clsx(
                             'price-calc-2-data-area', 
                             'price-calc-2-data-cursor',
@@ -165,6 +172,7 @@ export const PriceCalculation2 = () => {
                         exit={{ opacity: 0 }}
 
                         className='price-calc-2-results-common'
+                        // id={DIV_IDS.priceCalculationResult}
                     >
 
                         <PriceResults 

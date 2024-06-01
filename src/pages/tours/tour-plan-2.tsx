@@ -1,6 +1,7 @@
 import uuid from 'react-uuid'
 import { ReactNode } from 'react'
-import { useTranslation } from 'react-i18next'
+import { TourDayPlanLeftSide } from './plan-2-left-side'
+import { TourDayPlanRightSide } from './plan-2-right-side'
 
 import './tours-classes.scss'
 
@@ -13,9 +14,6 @@ type PropsType = {
     data: Array<DaysPlanType>
 }
 export const DaysPlan2 = (props: PropsType) => {
-    const {t} = useTranslation()
-    // const [show, setShow] = useState<boolean>(false)
-    
     return (
         <div className="tour-page-plan2">
             {props.data.map(elem => {
@@ -29,29 +27,9 @@ export const DaysPlan2 = (props: PropsType) => {
                                 </div>
                         } */}
 
-                        <div>
-                            
-                            <div className="tour-page-plan2-day-number-div">
-                                {t('stepper.day')} {elem.day}
-                            </div>
+                        <TourDayPlanLeftSide elem={elem}/>
 
-                            {elem.description.map(d => {
-                                return (
-                                    <div key={uuid()}>
-                                        {d}
-                                    </div>
-                                )
-                            })}
-                            
-                        </div>
-
-                        <div className='tour-page-plan2-image-pre-gallery'>
-                            {elem.photos &&
-                                <div className="tour-page-plan2-image-gallery">
-                                    {elem.photos.map(photo => photo)}
-                                </div>
-                            }
-                        </div>
+                        <TourDayPlanRightSide elem={elem}/>
                     </div>
                 )
             })}
