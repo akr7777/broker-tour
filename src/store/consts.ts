@@ -54,7 +54,3 @@ export const TOUR_DAYS_PLAN_ANIMATION = {
     delay: 0.3,
     time: 0.7,
 }
-
-// export const CONTACT_FORM_SEND_URL = 'https://api.example.com/data'
-// export const CONTACT_FORM_SEND_URL = 'http://localhost:3005/contact_form'
-export const CONTACT_FORM_SEND_URL = 'https://form.costaricatures.com/contact_form'

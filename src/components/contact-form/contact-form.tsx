@@ -5,7 +5,7 @@ import { setBookTourSendStatusAC, setIsBookTourShow } from '../../store/appSlice
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { ButtonOne } from '../buttons/button1'
-import { ANIMATION_TIME_SHORT, BookTourSendStatusType, CONTACTS, CONTACT_FORM_SEND_URL, LINE_DEVIDER, bookTourSendStatusEnum } from '../../store/consts'
+import { ANIMATION_TIME_SHORT, BookTourSendStatusType, CONTACTS, LINE_DEVIDER, bookTourSendStatusEnum } from '../../store/consts'
 import { useNavigate } from 'react-router-dom'
 import waImage from '../../assets/icons/whatsapp.svg'
 import crossImg from '../../assets/icons/cross.png'
@@ -40,6 +40,8 @@ export const ContactForm = (props: PropsType) => {
     // transition={{ duration: ANIMATION_TIME_SHORT }}}
 
     const waLink = 'https://api.whatsapp.com/send/?phone=' + CONTACTS.phoneOlga + '&text=' + t('contacts.contact-whatsapp-text', {tour: props.tourTitle})
+    
+    const CONTACT_FORM_SEND_URL = import.meta.env.VITE_SEND_FORM_URL
 
     const onBtnClickHandler = () => {
         fetch(CONTACT_FORM_SEND_URL, {
