@@ -10,8 +10,10 @@
 }
 .tour-page-plan2-one-day-div {
     @media screen and (min-width: 500px) {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        // display: grid;
+        // grid-template-columns: 1fr 1fr;
+        display: flex;
+        flex-direction: column;
     }
     
     @media screen and (max-width: 499px) {
@@ -22,10 +24,17 @@
     // flex-direction: column;
     gap: 10px;
 }
+.tour-page-plan2-day-desription-div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
 .tour-page-plan2-day-number-div {
     padding: 5px 10px;
     border-radius: 10px;
-    border: 1px solid grey;
+    border: 1px solid rgb(99, 98, 98);
+    background-color: rgb(212, 210, 210);
     width: 120px;
     margin-bottom: 15px;
     text-align: center;
@@ -78,5 +87,16 @@
     img {
         width: 50%;
         border-radius: 25px;
+    }
+}
+
+.big-photo-class {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+    img {
+        width: 50%;
     }
 }

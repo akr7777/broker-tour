@@ -34,7 +34,8 @@ $two-cols-screen-width: 500px;
     min-height: 200px;
 
     overflow: hidden;
-    box-shadow: 5px 5px 10px grey;
+    // box-shadow: 5px 5px 10px grey;
+    background-color: rgb(212, 208, 208);
     position: relative;
     border-radius: 10px;
 
@@ -70,9 +71,10 @@ $two-cols-screen-width: 500px;
     line-height: normal;
     text-align: center;
 
-    background-color: lightgrey;
+    // background-color: lightgrey;
+    background-color: white;
 
-    box-shadow: 10px 10px 10px grey;
+    // box-shadow: 10px 10px 10px grey;
 
     label {
         font-size: 11px;
@@ -92,11 +94,12 @@ $two-cols-screen-width: 500px;
     padding: 10px;
     border-radius: 10px;
 
-    font-size: 16px;
+    // font-size: 16px;
     line-height: normal;
     text-align: center;
 
-    background-color: rgba(lightgrey, 1);
+    // background-color: rgba(lightgrey, 1);
+    backdrop-filter: blur(3px);
 
     label {
         font-size: 11px;
@@ -107,7 +110,8 @@ $two-cols-screen-width: 500px;
     position: relative;
     margin: 5px 5px;
     padding: 5px 5px;
-    background-color: #FBE2D0;
+    // background-color: #FBE2D0;
+    background-color: #FDD3D6;
     border-radius: 10px;
 
     text-align: center;

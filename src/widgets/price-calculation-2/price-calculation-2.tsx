@@ -183,7 +183,7 @@ export const PriceCalculation2 = () => {
                             childAbsDiscount={currentTour?.childAbsDiscount} 
                         />
                         
-                        {/* Забронировать тур! */}
+                        {/* Кнопка "Забронировать тур!"" */}
                         <ButtonContact tour={currentTour?.title || ""}/>
 
                         {/* Рекомендации по выбору отеля */}

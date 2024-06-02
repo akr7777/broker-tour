@@ -2,13 +2,14 @@ import { useTranslation } from 'react-i18next'
 import './how-to-book.scss'
 import { WidgetWrapper } from '../../shared/widget-wrapper/widget-wrapper'
 import { ArticleTitle } from '../../shared/title/title'
+import { DIV_IDS } from '../../store/consts'
 
 export const HowToBookWidget = () => {
     const {t} = useTranslation()
 
     return (
         <WidgetWrapper>
-            <div className='how-to-book-widget-wrapper'>
+            <div className='how-to-book-widget-wrapper' id={DIV_IDS.howToBook}>
 
                 {/* <h2>{t('booking.how_to_book')}</h2> */}
                 <ArticleTitle title={t('booking.how_to_book')} />

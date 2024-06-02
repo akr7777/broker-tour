@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next'
 import { WidgetWrapper } from '../../shared/widget-wrapper/widget-wrapper'
 import uuid from 'react-uuid'
 import { AccordeonDataType, MyAccordeon } from '../../components/my-accordeon/my-accordeon'
-import { LINE_DEVIDER } from '../../store/consts'
+import { DIV_IDS, LINE_DEVIDER } from '../../store/consts'
 import { ArticleTitle } from '../../shared/title/title'
 
 export type FAQ_Type = {
@@ -33,6 +33,8 @@ export const FAQ = () => {
 
     return (
         <WidgetWrapper>
+
+            <div id={DIV_IDS.faq} />
 
             {/* <h2>{t('faq.title')}</h2> */}
             <ArticleTitle title={t('faq.title')} />

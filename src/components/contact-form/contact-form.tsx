@@ -10,7 +10,11 @@ import { useNavigate } from 'react-router-dom'
 import waImage from '../../assets/icons/whatsapp.svg'
 import crossImg from '../../assets/icons/cross.png'
 import { PATHS } from '../../widgets/nav-menu/nav-paths'
-import { PhoneInput } from 'react-international-phone';
+import { 
+    PhoneInput, 
+    // defaultCountries,
+    // parseCountry
+} from 'react-international-phone';
 
 import './contact-form.scss'
 import 'react-international-phone/style.css';
@@ -23,8 +27,11 @@ export const ContactForm = (props: PropsType) => {
     const dispatch = useAppDispatch()
     const [phone, setPhone] = useState<string>('')
 
-    console.log('phone=', phone);
-    
+    // const countries = defaultCountries.filter((country) => {
+    //     const { iso2 } = parseCountry(country);
+    //     return ['us', 'ua', 'gb'].includes(iso2);
+    //   });
+    const preferredCountries = ['ru', 'us', 'cr', 'ca']
 
     const sendStatus: BookTourSendStatusType = useAppSelector(state => state.app.bookTourSendStatus)
 
@@ -114,6 +121,8 @@ export const ContactForm = (props: PropsType) => {
                                 onChange={phone => setPhone(phone)}
                                 className='contact-form-phone-input'
                                 // containerClass='contact-form-phone-container'
+                                preferredCountries={preferredCountries}
+                                defaultCountry='cr'
                             />
                             </div>
                         </div>

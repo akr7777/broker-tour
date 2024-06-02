@@ -2,7 +2,7 @@
 
 
 $border-width: 2px;
-$border-color: blue;
+$border-color: grey;
 $wrapper-height: 90px;
 $border-radius: 20px;
 
@@ -18,7 +18,7 @@ $border-radius: 20px;
     width: 100%;
     background-color: $border-color;
     position: relative;
-   box-shadow: 3px 3px 5px 5px gray;
+    box-shadow: 3px 3px 5px 5px rgb(197, 195, 195);
 
 
     @media screen and (min-width: 600px) {

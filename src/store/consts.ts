@@ -2,6 +2,9 @@ export const DIV_IDS = {
     contacts: 'contacts',
     priceCalculationData: 'priceCalculationData',
     priceCalculationResult: 'priceCalculationResult',
+    howToBook: 'how-to-book',
+    aboutUs: 'about-us',
+    faq: 'friguently-asked-questions',
 }
 
 export const ANIMATION_TIME = 2;
@@ -53,4 +56,5 @@ export const TOUR_DAYS_PLAN_ANIMATION = {
 }
 
 // export const CONTACT_FORM_SEND_URL = 'https://api.example.com/data'
-export const CONTACT_FORM_SEND_URL = 'http://localhost:3005/contact_form'
+// export const CONTACT_FORM_SEND_URL = 'http://localhost:3005/contact_form'
+export const CONTACT_FORM_SEND_URL = 'https://form.costaricatures.com/contact_form'

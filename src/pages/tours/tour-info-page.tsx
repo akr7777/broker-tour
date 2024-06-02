@@ -15,7 +15,6 @@ import { tourPhotos } from "../../store/tour-days-photos"
 import { ArticleTitle } from "../../shared/title/title"
 import { LINE_DEVIDER } from "../../store/consts"
 import uuid from "react-uuid"
-// import uuid from "react-uuid"
 
 export const TourInfoPage = () => {
     const { t } = useTranslation()

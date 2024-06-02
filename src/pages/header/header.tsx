@@ -6,13 +6,12 @@ import { Logo } from '../../shared/logo/logo';
 import { ResizeType, useResize } from '../../hooks/use-resize/useResize';
 import { MobileNavigation } from '../../widgets/nav-menu/modile-nav/mobile-nav';
 import { toursContent } from '../../store/tour-info';
-
+import { DIV_IDS } from '../../store/consts';
 import phoneIcon from '../../assets/icons/phone.png'
 import tourIcon from '../../assets/icons/tour.png'
 import mainPageIcon from '../../assets/icons/main-page.png'
 
 import './header-classes.scss'
-import { DIV_IDS } from '../../store/consts';
 
 export type NavMenuElementsType = {
     title: string,
@@ -50,6 +49,12 @@ export const Header = () => {
         { title: t('nav.main_page'), path: PATHS.mainPage, imagePath: mainPageIcon },
         { title: t('nav.nav_tours'), path: PATHS.tourInfo, imagePath: tourIcon, subElements: tourSubElem },
         { title: t('nav.contacts'), path: '#'+DIV_IDS.contacts, imagePath: phoneIcon },
+        
+        
+        { title: t('nav.how_to_book'), path: '#'+DIV_IDS.howToBook, imagePath: phoneIcon },
+        { title: t('nav.about_us'), path: '#'+DIV_IDS.aboutUs, imagePath: phoneIcon },
+        { title: t('nav.faq'), path: '#'+DIV_IDS.faq, imagePath: phoneIcon },
+
         // { title: "111", path: PATHS.mainPage, imagePath: mainPageIcon },
         // { title: "222", path: PATHS.tours, imagePath: tourIcon, subElements: toursSubElements },
         // { title: "333", path: PATHS.contacts, imagePath: phoneIcon },
@@ -60,7 +65,7 @@ export const Header = () => {
                 <Logo />
                 
                 {
-                    windowSize.isScreenMd
+                    windowSize.width > 1150
                         ? <DestopNavMenu elements={headerNavElements}/>
                         : <MobileNavigation elements={headerNavElements} />
                 }

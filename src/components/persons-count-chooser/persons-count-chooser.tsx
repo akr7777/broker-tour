@@ -1,12 +1,16 @@
-
-import plus from '../../assets/icons/temp/plus.png'
-import plusDis from '../../assets/icons/temp/plus-dis.png'
-import minus from '../../assets/icons/temp/minus.png'
-import minusDis from '../../assets/icons/temp/minus-dis.png'
-
-import './persons-count-chooser.scss'
 import { motion } from 'framer-motion'
 import { ANIMATION_TIME_SUPER_SHORT } from '../../store/consts'
+
+// import plus from '../../assets/icons/temp/plus.png'
+// import plusDis from '../../assets/icons/temp/plus-dis.png'
+// import minus from '../../assets/icons/temp/minus.png'
+// import minusDis from '../../assets/icons/temp/minus-dis.png'
+import plus from '../../assets/icons/persons-chooser/plus.png'
+import plusDis from '../../assets/icons/persons-chooser/plus-dis.png'
+import minus from '../../assets/icons/persons-chooser/minus.png'
+import minusDis from '../../assets/icons/persons-chooser/minus-dis.png'
+
+import './persons-count-chooser.scss'
 
 type PersonsCountChooserPropsType = {
     count: number,

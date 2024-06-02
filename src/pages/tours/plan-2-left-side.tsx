@@ -3,9 +3,9 @@ import { useRef } from 'react'
 import { DaysPlanType } from './tour-plan-2'
 import uuid from 'react-uuid'
 import { useTranslation } from 'react-i18next'
+import { TOUR_DAYS_PLAN_ANIMATION } from '../../store/consts'
 
 import './tours-classes.scss'
-import { TOUR_DAYS_PLAN_ANIMATION } from '../../store/consts'
 
 type PropsType = { elem: DaysPlanType }
 
@@ -24,16 +24,18 @@ export const TourDayPlanLeftSide = ({elem}: PropsType) => {
         <motion.div
             ref={refLeft}
             style={styleLeft}
+            className='tour-page-plan2-day-desription-div'
         >
             
             <div className="tour-page-plan2-day-number-div">
                 {t('stepper.day')} {elem.day}
             </div>
 
-            {elem.description.map(d => {
+            {elem.description.map((d:string, index: number) => {
                 return (
-                    <div key={uuid()}>
-                        {d}
+                    <div key={uuid()} className='big-photo-class'>
+                        <div>{d}</div>
+                        {elem.photos && index < elem.photos.length && elem.photos[index]}
                     </div>
                 )
             })}

@@ -5,7 +5,9 @@ import uuid from 'react-uuid';
 import { useNavigate } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 
-import burgerMenu from '../../../assets/icons/burger-menu.svg'
+// import burgerMenu from '../../../assets/icons/burger-menu.svg'
+import burgerMenu from '../../../assets/icons/burger-menu-3-white.svg'
+// import burgerMenu from '../../../assets/icons/burger-menu-2.jpg'
 import crossIcon from '../../../assets/icons/cross.png'
 
 import './mobile-nav-classes.scss'
@@ -113,9 +115,9 @@ export const MobileNavigation = (props: NavMenuPropsType) => {
                                                     : () => onLinkClickHandler(elem.path)
                                                 }
 
-                                            whileHover={{ width: 300 }}
+                                            // whileHover={{ width: 260 }}
                                             // whileFocus={{ width: 300 }}
-                                            whileTap={{ width: 300 }}
+                                            // whileTap={{ width: 300 }}
                                         >
                                             <img alt='' src={elem.imagePath} />
                                             <div>{elem.title}</div>

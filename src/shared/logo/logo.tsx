@@ -3,7 +3,8 @@ import { PATHS } from '../../widgets/nav-menu/nav-paths'
 import { motion } from 'framer-motion'
 import { ANIMATION_TIME } from '../../store/consts'
 
-import logoImg from '../../assets/logo/logo_1.svg'
+// import logoImg from '../../assets/logo/logo_black.svg'
+import logoImg from '../../assets/logo/logo_white.svg'
 
 import './logo-classes.scss'
 

@@ -1,9 +1,9 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { DaysPlanType } from './tour-plan-2'
+import { TOUR_DAYS_PLAN_ANIMATION } from '../../store/consts'
 
 import './tours-classes.scss'
-import { TOUR_DAYS_PLAN_ANIMATION } from '../../store/consts'
 
 type PropsType = { elem: DaysPlanType }
 

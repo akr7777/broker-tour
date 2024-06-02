@@ -5,12 +5,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-
-    // img {
-    //     width: $language_img_size;
-    //     height: $language_img_size;
-    //     cursor: pointer;
-    // }
 }
 
 .mobile-nav-menu-outlet-wrapper {
@@ -57,7 +51,7 @@
 
     // text-align: center;
 
-    width: 200px;
+    width: 250px;
     height: 40px;
     cursor: pointer;
 
@@ -76,10 +70,17 @@
         width: 25px;
     }
 }
-.mobile-nav-menu-element:hover:focus {
+.mobile-nav-menu-element:hover {
+    // background-color: red;
     background-color: $nav-menu-element-bg-color-focused;
+    font-weight: 700;
 }
 
+.mobile-nav-menu-img {
+    width: $language_img_size;
+    height: $language_img_size;
+    cursor: pointer;
+}
 .mobile-nav-menu-img-div-class {
     position: relative;
     width: 35px;

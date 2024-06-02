@@ -5,6 +5,7 @@ import './button-classes.scss'
 import { ContactForm } from '../contact-form/contact-form'
 import { useAppDispatch, useAppSelector } from '../../store/store'
 import { setIsBookTourShow } from '../../store/appSlice'
+import clsx from 'clsx'
 // import { useNavigate } from 'react-router-dom'
 
 type PropsType = {
@@ -35,7 +36,7 @@ export const ButtonContact = (props: PropsType) => {
             </a> */}
 
             <button
-                className='button-one-class'
+                className={clsx('button-one-class', 'contact-btn-additional-class')}
                 onClick={showBookTour}
             >
                 {t('contacts.contact-button-text')}

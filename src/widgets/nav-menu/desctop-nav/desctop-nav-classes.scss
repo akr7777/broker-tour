@@ -8,7 +8,7 @@ $nav-menu-elem-height: 30px;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
     position: relative;
 }
 
@@ -20,7 +20,7 @@ $nav-menu-elem-height: 30px;
     text-decoration: none;
     font-size: 16px;
     font-weight: 700;
-    color: black;
+    color: white;
 
     display: flex;
     flex-direction: row;
@@ -28,10 +28,11 @@ $nav-menu-elem-height: 30px;
     align-items: center;
     gap: 10px;
 
-    width: $nav-menu-elem-width;
+    // width: $nav-menu-elem-width;
     height: $nav-menu-elem-height;
     // width: 150px;
     // height: 30px;
+    white-space: nowrap;
 
     padding: 3px 10px;
     border: 1px solid rgba($color: greenyellow, $alpha: 0.0);

@@ -1,4 +1,10 @@
 {
+  "wellcome-widget": {
+    "line1": "Готовые туры по Коста-Рике!",
+    "line2": "Выбери свой тур.",
+    "tours-to-costa-rica": "Туры в Коста-Рику",
+    "contact-with-us": "Связаться с нами"
+  },
   "contacts": {
     "contact-button-text": "Забронировать тур!",
     "contact-whatsapp-text": "Добрый день! Я хочу забронировать тур {{tour}}",
@@ -26,7 +32,10 @@
   "nav": {
     "main_page": "Главная",
     "contacts": "Контакты",
-    "nav_tours": "Туры"
+    "nav_tours": "Туры",
+    "how_to_book": "Как забронировать",
+    "about_us": "О нас",
+    "faq": "Полезное"
   },
 
   "tours": {
