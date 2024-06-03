@@ -75,13 +75,14 @@ $two-cols-screen-width: 500px;
 
     padding: 10px;
     border-radius: 10px;
+    border: 1px solid #E6E6E6;
 
     font-size: 16px;
     line-height: normal;
     text-align: center;
 
     // background-color: lightgrey;
-    background-color: #E6E6E6;
+    background-color: white;
 
     // box-shadow: 10px 10px 10px grey;
 
@@ -98,6 +99,7 @@ $two-cols-screen-width: 500px;
     right: 25px;
 
     color: white;
+    border: 1px solid #E6E6E6;
 
     // min-width: 50px;
     // min-height: 40px;

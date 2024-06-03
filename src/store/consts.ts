@@ -5,6 +5,7 @@ export const DIV_IDS = {
     howToBook: 'how-to-book',
     aboutUs: 'about-us',
     faq: 'friguently-asked-questions',
+    tourCalculation: 'tour-calculation',
 }
 
 export const ANIMATION_TIME = 2;

@@ -1,11 +1,21 @@
 import { useTranslation } from 'react-i18next'
-import './how-to-book.scss'
 import { WidgetWrapper } from '../../shared/widget-wrapper/widget-wrapper'
 import { ArticleTitle } from '../../shared/title/title'
 import { DIV_IDS } from '../../store/consts'
 
+import './how-to-book.scss'
+
 export const HowToBookWidget = () => {
     const {t} = useTranslation()
+
+    const onLickClick = (divId: string) => {
+        
+        const elem = document.getElementById(divId)
+        
+        if (elem) {
+            elem.scrollIntoView({ behavior: 'smooth'})
+        }
+    }
 
     return (
         <WidgetWrapper>
@@ -18,8 +28,18 @@ export const HowToBookWidget = () => {
                     {t('booking.how_to_book_description_1')}
                 </div>
 
+                <div className='how-to-book-widget-link-class'
+                    onClick={() => onLickClick(DIV_IDS.tourCalculation)}>
+                    CALC LINK!!!!!
+                </div>
+
                 <div>
                     {t('booking.how_to_book_description_2')}
+                </div>
+
+                <div className='how-to-book-widget-link-class'
+                    onClick={() => onLickClick(DIV_IDS.contacts)}>
+                    CONTACTS LINK!!!!!
                 </div>
 
             </div>

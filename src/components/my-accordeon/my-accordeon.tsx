@@ -6,6 +6,8 @@ import arrowUp from '../../assets/icons/faq/arrow-up.png'
 import arrowDown from '../../assets/icons/faq/arrow-down.png'
 
 import './my-accordeon.scss'
+import { AnimatePresence, motion } from 'framer-motion'
+import { ANIMATION_TIME_SHORT } from '../../store/consts'
 
 export type AccordeonDataType = {
     id: string,
@@ -48,13 +50,25 @@ export const MyAccordeon = (props: AccordeonPropsType) => {
                             <img alt="" src={arrow} />
                         </div>
 
-                        {isShow && 
-                            <>
-                                {item.context.map(p => {
-                                    return <div key={uuid()}>{p}</div>
-                                })}
-                            </>
-                        }
+                        <AnimatePresence mode="wait" initial={false}>
+                            {isShow && 
+                                <>
+                                    {item.context.map(p => {
+                                        return (
+                                            <motion.div 
+                                                key={uuid()}
+                                                initial={{ opacity: 0}}
+                                                transition={{ duration: ANIMATION_TIME_SHORT }}
+                                                animate={{ opacity: 1 }}
+                                                exit={{ opacity: 0 }}
+                                            >
+                                                {p}
+                                            </motion.div>
+                                        )
+                                    })}
+                                </>
+                            }
+                        </AnimatePresence>
                     </div>
                 )
             })}

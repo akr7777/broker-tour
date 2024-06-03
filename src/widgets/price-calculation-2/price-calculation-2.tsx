@@ -77,7 +77,7 @@ export const PriceCalculation2 = () => {
 
     return (
         <WidgetWrapper>
-            <div className='price-calc-2-wrapper'>
+            <div className='price-calc-2-wrapper' id={DIV_IDS.tourCalculation}>
                 
                 {/* <h2>{t('tours.tour_price_calculation')}</h2> */}
                 <ArticleTitle title={t('tours.tour_price_calculation')}/>
