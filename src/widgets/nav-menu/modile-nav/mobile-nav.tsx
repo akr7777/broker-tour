@@ -87,7 +87,7 @@ export const MobileNavigation = (props: NavMenuPropsType) => {
                     >
                         
                         <div className='mobile-nav-menu-logo-close-div '>
-                            <Logo />
+                            <Logo isDark={true}/>
                             <AnimatePresence mode="wait" initial={true}>
                                 <motion.img
                                     src={crossIcon}

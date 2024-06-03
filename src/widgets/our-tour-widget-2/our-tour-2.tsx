@@ -4,9 +4,9 @@ import { motion } from 'framer-motion'
 import uuid from 'react-uuid'
 import { useNavigate } from 'react-router-dom'
 import { toursContent } from '../../store/tour-info'
+import { ArticleTitle } from '../../shared/title/title'
 
 import './our-tour-2-classes.scss'
-import { ArticleTitle } from '../../shared/title/title'
 
 export const OurTour2 = () => {
     const {t} = useTranslation()
@@ -31,13 +31,18 @@ export const OurTour2 = () => {
                         >
 
                             <motion.div
-                                whileHover={{ scale: 1.025 }}>
-                                 {tour.tourImage}
+                                whileHover={{ scale: 1.025 }}
+                                className='our-tours-2-card-covered-image'
+                                style={{ 
+                                    backgroundImage: 'url("' + tour.tourImage.url + '")',
+                                }}
+                            >
+                                 {/* {tour.tourImage.img} */}
                             </motion.div>
                             
                             <div className='our-tours-2-card-min-price'>
-                                <h5>I18n!! От {tour.minPrice}$</h5>
-                                <label>I18n!!за человека</label>
+                                <h5>{t('tours.from')} {tour.minPrice}$</h5>
+                                <label>{t('tours.per-person')}</label>
                             </div>
 
                             <div className='our-tours-2-card-day-blur-info'>

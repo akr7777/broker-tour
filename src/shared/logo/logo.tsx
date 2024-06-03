@@ -4,14 +4,19 @@ import { motion } from 'framer-motion'
 import { ANIMATION_TIME } from '../../store/consts'
 
 // import logoImg from '../../assets/logo/logo_black.svg'
-import logoImg from '../../assets/logo/logo_white.svg'
+import logoImgWhite from '../../assets/logo/logo_white.svg'
+import logoImgBlack from '../../assets/logo/logo_black.svg'
 
 import './logo-classes.scss'
 
-export const Logo = () => {
+type PropsType = { isDark?: boolean }
+
+export const Logo = (props: PropsType) => {
     const navigate = useNavigate()
 
     const onLogoClick = () => navigate(PATHS.mainPage)
+
+    const logoImg = props.isDark ? logoImgBlack : logoImgWhite
 
     return (
         // <motion.div 

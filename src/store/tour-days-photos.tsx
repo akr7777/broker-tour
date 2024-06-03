@@ -2,7 +2,10 @@ import { ReactNode } from "react"
 import uuid from "react-uuid"
 import { TOURS_IDS } from "./consts"
 
-import tour_7_main from '../assets/images/tour_images/7/7_main.jpg'
+import tour_4_main from '../assets/images/tour_images/tour_3_main.jpg'
+import tour_7_main from '../assets/images/tour_images/tour_7_main.jpg'
+import tour_9_main from '../assets/images/tour_images/tour_9_main.jpg'
+import tour_12_main from '../assets/images/tour_images/tour_12_main.jpg'
 
 import img_7_2_1 from '../assets/images/tour_images/7/tour_7_2_1.jpg'
 import img_7_2_2 from '../assets/images/tour_images/7/tour_7_2_2.jpg'
@@ -50,12 +53,29 @@ export type TourPhotoType = {
 export type TourMainPhotoType = {
     tourId: number,
     photo: ReactNode,
+    photoUrl: string,
 }
 export const tourMainPhotos: Array<TourMainPhotoType> = [
     {
+        tourId: TOURS_IDS.tour_4_days,
+        photo: <img src={tour_4_main} alt="" key={uuid()} />,
+        photoUrl: tour_4_main
+    },
+    {
         tourId: TOURS_IDS.tour_7_days,
-        photo: <img src={tour_7_main} alt="volcano arenal , 7 days classic tour two volcanoes and Pacific Ocean , семидневный классический два вулкана и Тихий океан , название файла volcan_arenal_ tour7days" key={uuid()} />
-    }
+        photo: <img src={tour_7_main} alt="volcano arenal , 7 days classic tour two volcanoes and Pacific Ocean , семидневный классический два вулкана и Тихий океан , название файла volcan_arenal_ tour7days" key={uuid()} />,
+        photoUrl: tour_7_main
+    },
+    {
+        tourId: TOURS_IDS.tour_9_days,
+        photo: <img src={tour_9_main} alt="" key={uuid()} />,
+        photoUrl: tour_9_main
+    },
+    {
+        tourId: TOURS_IDS.tour_12_days,
+        photo: <img src={tour_12_main} alt="" key={uuid()} />,
+        photoUrl: tour_12_main
+    },
 ]
 
 export const tourPhotos: Array<TourPhotoType> = [

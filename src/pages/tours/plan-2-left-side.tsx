@@ -3,7 +3,7 @@ import { useRef } from 'react'
 import { DaysPlanType } from './tour-plan-2'
 import uuid from 'react-uuid'
 import { useTranslation } from 'react-i18next'
-import { TOUR_DAYS_PLAN_ANIMATION } from '../../store/consts'
+import { ANIMATION_TIME_SHORT, TOUR_DAYS_PLAN_ANIMATION } from '../../store/consts'
 
 import './tours-classes.scss'
 
@@ -32,11 +32,19 @@ export const TourDayPlanLeftSide = ({elem}: PropsType) => {
             </div>
 
             {elem.description.map((d:string, index: number) => {
+                
                 return (
-                    <div key={uuid()} className='big-photo-class'>
+                    <motion.div 
+                        key={uuid()} 
+                        className='big-photo-class'
+                        initial={{ x: -200, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ duration: ANIMATION_TIME_SHORT }}
+                        exit={{ x: -200, opacity: 0 }}
+                    >
                         <div>{d}</div>
                         {elem.photos && index < elem.photos.length && elem.photos[index]}
-                    </div>
+                    </motion.div>
                 )
             })}
             

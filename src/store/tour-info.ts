@@ -38,7 +38,10 @@ export type TourType = {
     childAbsDiscount: number,
     urlPath: string,
     daysCount: number,
-    tourImage: ReactNode,
+    tourImage: {
+        img: ReactNode,
+        url: string
+    }
     tourIcon: string,
     hotelRecomendations: Array<HotelRecomendationType>
 }
@@ -66,7 +69,10 @@ export const toursContent = ():Array<TourType> => [
         id: TOURS_IDS.tour_4_days,
         urlPath: PATHS.tourInfo + '/' + TOURS_IDS.tour_4_days + '/',
         title: i18next.t('tours.tour' + TOURS_IDS.tour_4_days + '.title'),
-        tourImage: tourMainPhotos.find(el => el.tourId === TOURS_IDS.tour_4_days)?.photo || "",
+        tourImage: {
+            img: tourMainPhotos.find(el => el.tourId === TOURS_IDS.tour_4_days)?.photo || "",
+            url: tourMainPhotos.find(el => el.tourId === TOURS_IDS.tour_4_days)?.photoUrl || ""
+        },
         tourIcon: t3Icon,
         description: i18next.t('tours.tour' + TOURS_IDS.tour_4_days + '.description'),
         fullDescription: i18next.t('tours.tour' + TOURS_IDS.tour_4_days + '.full-description'),
@@ -130,7 +136,10 @@ export const toursContent = ():Array<TourType> => [
         // TOUR 7 days
         id: TOURS_IDS.tour_7_days,
         urlPath: PATHS.tourInfo + '/' + TOURS_IDS.tour_7_days + '/',
-        tourImage: tourMainPhotos.find(el => el.tourId === TOURS_IDS.tour_7_days)?.photo || "",
+        tourImage: {
+            img: tourMainPhotos.find(el => el.tourId === TOURS_IDS.tour_7_days)?.photo || "",
+            url: tourMainPhotos.find(el => el.tourId === TOURS_IDS.tour_7_days)?.photoUrl || "",
+        },
         tourIcon: t1Icon,
         daysCount: Number(i18next.t('tours.tour'+TOURS_IDS.tour_7_days+'.days-count')),
         title: i18next.t('tours.tour'+TOURS_IDS.tour_7_days+'.title'),
@@ -199,7 +208,10 @@ export const toursContent = ():Array<TourType> => [
         id: TOURS_IDS.tour_9_days,
         urlPath: PATHS.tourInfo + '/'+TOURS_IDS.tour_9_days+'/',
         title: i18next.t('tours.tour'+TOURS_IDS.tour_9_days+'.title'),
-        tourImage: tourMainPhotos.find(el => el.tourId === TOURS_IDS.tour_9_days)?.photo || "",
+        tourImage: {
+            img: tourMainPhotos.find(el => el.tourId === TOURS_IDS.tour_9_days)?.photo || "",
+            url: tourMainPhotos.find(el => el.tourId === TOURS_IDS.tour_9_days)?.photoUrl || "",
+        },
         tourIcon: t4Icon,
         description: i18next.t('tours.tour'+TOURS_IDS.tour_9_days+'.description'),
         fullDescription: i18next.t('tours.tour' + TOURS_IDS.tour_9_days + '.full-description'),
@@ -270,7 +282,10 @@ export const toursContent = ():Array<TourType> => [
         // TOUR 12 days
         id: TOURS_IDS.tour_12_days,
         urlPath: PATHS.tourInfo + '/'+TOURS_IDS.tour_12_days+'/',
-        tourImage: tourMainPhotos.find(el => el.tourId === TOURS_IDS.tour_12_days)?.photo || "",
+        tourImage: {
+            img: tourMainPhotos.find(el => el.tourId === TOURS_IDS.tour_12_days)?.photo || "",
+            url: tourMainPhotos.find(el => el.tourId === TOURS_IDS.tour_12_days)?.photoUrl || "",
+        },
         tourIcon: t2Icon,
         title: i18next.t('tours.tour'+TOURS_IDS.tour_12_days+'.title'),
         description: i18next.t('tours.tour'+TOURS_IDS.tour_12_days+'.description'),

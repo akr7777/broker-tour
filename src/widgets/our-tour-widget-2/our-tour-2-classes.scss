@@ -49,13 +49,22 @@ $two-cols-screen-width: 500px;
         left: 5px;
 
         width: calc(100% - 10px);
-        height: 200px;
+        height: 350px;
 
         z-index: 100;
         border-radius: 10px;
     }
 }
 .our-tours-2-card:hover {scale: 1.025; }
+
+.our-tours-2-card-covered-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 350px;
+    border-radius: 10px;
+}
 
 .our-tours-2-card-min-price {
     z-index: 102;
@@ -72,7 +81,7 @@ $two-cols-screen-width: 500px;
     text-align: center;
 
     // background-color: lightgrey;
-    background-color: white;
+    background-color: #E6E6E6;
 
     // box-shadow: 10px 10px 10px grey;
 
@@ -85,8 +94,10 @@ $two-cols-screen-width: 500px;
     z-index: 102;
 
     position: absolute;
-    top: 140px;
+    top: 300px;
     right: 25px;
+
+    color: white;
 
     // min-width: 50px;
     // min-height: 40px;
@@ -98,8 +109,8 @@ $two-cols-screen-width: 500px;
     line-height: normal;
     text-align: center;
 
-    // background-color: rgba(lightgrey, 1);
-    backdrop-filter: blur(3px);
+    background-color: rgba(#E6E6E6, 0.25);
+    backdrop-filter: blur(5px);
 
     label {
         font-size: 11px;

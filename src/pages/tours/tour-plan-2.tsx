@@ -1,7 +1,7 @@
 import uuid from 'react-uuid'
 import { ReactNode } from 'react'
 import { TourDayPlanLeftSide } from './plan-2-left-side'
-import { TourDayPlanRightSide } from './plan-2-right-side'
+// import { TourDayPlanRightSide } from './plan-2-right-side'
 
 import './tours-classes.scss'
 
@@ -29,7 +29,7 @@ export const DaysPlan2 = (props: PropsType) => {
 
                         <TourDayPlanLeftSide elem={elem}/>
 
-                        <TourDayPlanRightSide elem={elem}/>
+                        {/* <TourDayPlanRightSide elem={elem}/> */}
                     </div>
                 )
             })}

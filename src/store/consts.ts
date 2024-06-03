@@ -54,3 +54,5 @@ export const TOUR_DAYS_PLAN_ANIMATION = {
     delay: 0.3,
     time: 0.7,
 }
+
+export const NAV_MENU_BREAKPOINT = 1200

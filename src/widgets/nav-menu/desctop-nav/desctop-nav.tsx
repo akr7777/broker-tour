@@ -1,15 +1,13 @@
 import { NavMenuPropsType } from '../../../pages/header/header'
 import { AnimatePresence, motion } from "framer-motion"
-
 import { ANIMATION_TIME, ANIMATION_TIME_SHORT } from '../../../store/consts'
 import uuid from 'react-uuid'
-
-import './desctop-nav-classes.scss'
-
 import { SubNavMenuElement } from './sub-menu-elem'
 import { useNavigate } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../../../store/store'
 import { setWhichSubMenuPointOpen } from '../../../store/appSlice'
+
+import './desctop-nav-classes.scss'
 
 export const DestopNavMenu = (props: NavMenuPropsType) => {
 
@@ -33,8 +31,12 @@ export const DestopNavMenu = (props: NavMenuPropsType) => {
         // }
 
         if (link.slice(0,1) === '#') {
+            
+            // navigate(PATHS.mainPage)
+            
             const elemId = link.slice(1, link.length)
             const elem = document.getElementById(elemId)
+            
             if (elem) {
                 elem.scrollIntoView({ behavior: 'smooth'})
             }
