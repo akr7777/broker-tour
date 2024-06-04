@@ -1,13 +1,12 @@
 import { useState } from 'react'
 import clsx from 'clsx'
-import uuid from 'react-uuid'
+import { AnimatePresence } from 'framer-motion'
+import { AccordeonHidenText } from './my-accordeon-hiden-text'
 
 import arrowUp from '../../assets/icons/faq/arrow-up.png'
 import arrowDown from '../../assets/icons/faq/arrow-down.png'
 
 import './my-accordeon.scss'
-import { AnimatePresence, motion } from 'framer-motion'
-import { ANIMATION_TIME_SHORT } from '../../store/consts'
 
 export type AccordeonDataType = {
     id: string,
@@ -51,23 +50,7 @@ export const MyAccordeon = (props: AccordeonPropsType) => {
                         </div>
 
                         <AnimatePresence mode="wait" initial={false}>
-                            {isShow && 
-                                <>
-                                    {item.context.map(p => {
-                                        return (
-                                            <motion.div 
-                                                key={uuid()}
-                                                initial={{ opacity: 0}}
-                                                transition={{ duration: ANIMATION_TIME_SHORT }}
-                                                animate={{ opacity: 1 }}
-                                                exit={{ opacity: 0 }}
-                                            >
-                                                {p}
-                                            </motion.div>
-                                        )
-                                    })}
-                                </>
-                            }
+                            {isShow && <AccordeonHidenText text={item.context} />}
                         </AnimatePresence>
                     </div>
                 )

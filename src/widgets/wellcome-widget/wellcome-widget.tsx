@@ -1,10 +1,7 @@
-// import bgImage from '../../assets/images/main_photo_0.jpeg'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
-// import { ANIMATION_TIME } from '../../store/consts'
-// import { ResizeType, useResize } from '../../hooks/use-resize/useResize'
-// import sun from '../../assets/images/sun.png'
 import { Header } from '../../pages/header/header'
+import { CONTACTS, HOVER_VALUE } from '../../store/consts'
 
 import whatsappImg from '../../assets/icons/whatsapp.svg'
 
@@ -12,10 +9,7 @@ import './wellcome-classes.scss'
 
 export const WellcomeFrame = () => {
     const {t} = useTranslation()
-    // const size: ResizeType = useResize()
-    // const xMaxSize = size.width
-    // console.log('ySize=', ySize);
-    
+   
     return (
         <div className='wellcome-wrapper'>
             {/* <img src={bgImage} alt="Коста-Рика" /> */}
@@ -57,13 +51,21 @@ export const WellcomeFrame = () => {
                     </h4>
                 </div>
                 <div className='wellcome-page-lower-div-second'>
-                    <h4>
-                        {t('wellcome-widget.contact-with-us')}
-                    </h4>
-                    <img 
-                        src={whatsappImg}
-                        alt=""
-                    />
+                    <a href={'https://wa.me/' + CONTACTS.phoneOlga}>
+                        <motion.h4 
+                            whileHover={{ scale: 1.075 }}
+                        >
+                                {t('wellcome-widget.contact-with-us')}
+                        </motion.h4>
+                    </a>
+                    <a href={'https://wa.me/' + CONTACTS.phoneOlga}>
+                        <motion.img 
+                            // onClick={onWhatsAppClickHandler}
+                            whileHover={{ scale: HOVER_VALUE, rotate: 360 }}
+                            src={whatsappImg}
+                            alt=""
+                        />
+                    </a>
                 </div>
             </div>
         </div>

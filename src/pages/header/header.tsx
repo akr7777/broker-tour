@@ -7,9 +7,11 @@ import { ResizeType, useResize } from '../../hooks/use-resize/useResize';
 import { MobileNavigation } from '../../widgets/nav-menu/modile-nav/mobile-nav';
 import { toursContent } from '../../store/tour-info';
 import { DIV_IDS, NAV_MENU_BREAKPOINT } from '../../store/consts';
+
 import phoneIcon from '../../assets/icons/phone.png'
 import tourIcon from '../../assets/icons/tour.png'
 import mainPageIcon from '../../assets/icons/main-page.png'
+import faqImage from '../../assets/icons/faq/faq.png'
 
 import './header-classes.scss'
 
@@ -53,7 +55,7 @@ export const Header = () => {
         
         { title: t('nav.how_to_book'), path: '#'+DIV_IDS.howToBook, imagePath: phoneIcon },
         { title: t('nav.about_us'), path: '#'+DIV_IDS.aboutUs, imagePath: phoneIcon },
-        { title: t('nav.faq'), path: '#'+DIV_IDS.faq, imagePath: phoneIcon },
+        { title: t('nav.faq'), path: '#'+DIV_IDS.faq, imagePath: faqImage },
 
         // { title: "111", path: PATHS.mainPage, imagePath: mainPageIcon },
         // { title: "222", path: PATHS.tours, imagePath: tourIcon, subElements: toursSubElements },

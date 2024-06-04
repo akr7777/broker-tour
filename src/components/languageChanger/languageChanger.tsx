@@ -54,9 +54,9 @@ export const LanguageChanger = () => {
 
     return (
         <motion.div className="lang-icon-class-wrapper"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: ANIMATION_TIME }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: ANIMATION_TIME }}
         >
 
             {/* <img alt="" src={flagRu} onClick={onOpenClickHandler} /> */}

@@ -6,13 +6,16 @@ import {
 } from "react-router-dom";
 import { NotFoundPage } from "./pages/not-found-page/not-found-page";
 import { PATHS } from "./widgets/nav-menu/nav-paths";
+import { TourInfoPage } from "./pages/tours/tour-info-page";
+import { useTranslation } from "react-i18next";
+import { LanguageLC, LanguagesType } from "./i18/langs";
 
 import './i18/i18init'
 import 'react-toastify/dist/ReactToastify.css';
+
 // import { ContactPage } from "./pages/contacts/contacts-page";
 // import { Tour1 } from "./pages/tours/tour1";
 // import { Tour2 } from "./pages/tours/tour2";
-import { TourInfoPage } from "./pages/tours/tour-info-page";
 
 export const router = createBrowserRouter([
   {
@@ -49,6 +52,14 @@ export const router = createBrowserRouter([
 
 
 function App() {
+
+  const { i18n } = useTranslation();
+  const currentLanguageLC: LanguagesType | null = localStorage.getItem(LanguageLC)
+
+  if (currentLanguageLC && i18n.language !== currentLanguageLC) {
+      i18n.changeLanguage(currentLanguageLC)
+  }
+    
   return (
     <>
       <ToastContainer />
