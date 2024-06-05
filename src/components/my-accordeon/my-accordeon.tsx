@@ -38,6 +38,11 @@ export const MyAccordeon = (props: AccordeonPropsType) => {
                     'my-accordeon-item-question-wrapper',
                     isShow && 'my-accordeon-item-question-wrapper-top'
                 )
+                const greenPointClass: string = clsx(
+                    'my-accordeon-item-question-question-circle',
+                    isShow && 'my-accordeon-item-question-question-circle-green'
+                )
+
                 return (
                     <div className={wrapperClass} key={item.id}>
 
@@ -45,6 +50,7 @@ export const MyAccordeon = (props: AccordeonPropsType) => {
                             onClick={() => onHeadClickHandler(isShow, item.id)}
                             className='my-accordeon-item-question-question'
                         >
+                            <div className={greenPointClass} />
                             <h4>{item.title}</h4>
                             <img alt="" src={arrow} />
                         </div>

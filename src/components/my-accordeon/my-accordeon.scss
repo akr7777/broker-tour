@@ -16,7 +16,7 @@
 
 .my-accordeon-item-question-question {
     display: grid;
-    grid-template-columns: 1fr 35px;
+    grid-template-columns: 20px 1fr 35px;
     // align-content: center;
 
     padding: 5px 10px;
@@ -24,11 +24,23 @@
     cursor: pointer;
 
     img {
+        align-self: center;
         width: 30px;
         height: 30px;
     }
 }
 .my-accordeon-item-question-question:hover {
-    background-color: grey;
+    background-color: rgb(194, 192, 192);
     color: white;
+}
+
+.my-accordeon-item-question-question-circle {
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    align-self: center;
+}
+.my-accordeon-item-question-question-circle-green {
+    background-color: green;
 }
