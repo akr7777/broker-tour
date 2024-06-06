@@ -7,9 +7,11 @@ import { useState } from 'react'
 import { ButtonOne } from '../buttons/button1'
 import { ANIMATION_TIME_SHORT, BookTourSendStatusType, CONTACTS, LINE_DEVIDER, bookTourSendStatusEnum } from '../../store/consts'
 import { useNavigate } from 'react-router-dom'
-import waImage from '../../assets/icons/whatsapp.svg'
-import crossImg from '../../assets/icons/cross.png'
 import { PATHS } from '../../widgets/nav-menu/nav-paths'
+
+import waImage from '../../assets/icons/social-networks/whatsapp.svg'
+import crossImg from '../../assets/icons/cross.png'
+
 import { 
     PhoneInput, 
     // defaultCountries,

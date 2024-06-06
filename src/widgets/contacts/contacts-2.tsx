@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next'
 import { WidgetWrapper } from '../../shared/widget-wrapper/widget-wrapper'
 import { ArticleTitle } from '../../shared/title/title'
 
-import facebookImg from '../../assets/icons/facebook.svg'
-import instagramImg from '../../assets/icons/instagram.svg'
+import facebookImg from '../../assets/icons/social-networks/facebook.svg'
+import instagramImg from '../../assets/icons/social-networks/instagram.svg'
 
 import './constact-classes.scss'
 
@@ -27,10 +27,10 @@ export const ContactWidget2 = () => {
                     </a>
                     {t('contacts.or')} 
                     <a
-                        href={''}
+                        href={'https://t.me/' + CONTACTS.telegram}
                         className='contacts-page-wrapper-2-telegram'
                     >
-                        TELEGRAM (ссылка на username)
+                        Telegram @{CONTACTS.telegram}
                     </a>
 
                 </div>   

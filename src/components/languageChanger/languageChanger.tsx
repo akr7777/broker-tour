@@ -2,9 +2,9 @@ import { useTranslation } from "react-i18next";
 import { LANGUAGES, LanguageLC, LanguagesType } from "../../i18/langs";
 import { AnimatePresence, motion } from "framer-motion"
 
-import flagEs from '../../assets/icons/flag-es.png'
-import flagRu from '../../assets/icons/flag-ru.png'
-import flagUs from '../../assets/icons/flag-us.png'
+import flagEs from '../../assets/icons/langs/flag-es.png'
+import flagRu from '../../assets/icons/langs/flag-ru.png'
+import flagUs from '../../assets/icons/langs/flag-us.png'
 
 import { 
     // useEffect, 

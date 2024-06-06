@@ -41,7 +41,8 @@ export const LINE_DEVIDER = '\n'
 export const CONTACTS = {
     phoneOlga: '+50689122090',
     phoneDavid: '+50689122044',
-    email: 'oldagatour@gmail.com'
+    email: 'oldagatour@gmail.com',
+    telegram: 'costaricatures',
 }
 
 export const TOURS_IDS = {
@@ -56,4 +57,4 @@ export const TOUR_DAYS_PLAN_ANIMATION = {
     time: 0.7,
 }
 
-export const NAV_MENU_BREAKPOINT = 1200
+export const NAV_MENU_BREAKPOINT = 1110

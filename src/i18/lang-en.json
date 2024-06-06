@@ -16,10 +16,12 @@
     "company_name": "Legal name:"
   },
 
+  
   "booking": {
     "how_to_book": "How to book?",
-    "how_to_book_description_1": "You can book any of our tours by clicking the book button in our form here (insert form or link to it or button to the same tour calculator).",
-    "how_to_book_description_2": "You can also make a request for ready-made tours or an individual request"
+    "how_to_book_description_1": "You can book any of our tours after calculating the cost in our form ",
+    "how_to_book_description_2": "You can also make a request for ready-made tours or an individual request. Contact details are provided ",
+    "here": "here"
   },
 
   "about_us": {

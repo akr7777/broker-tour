@@ -86,7 +86,7 @@ export const DestopNavMenu = (props: NavMenuPropsType) => {
                                             : () => onLinkClickHandler(elem.path)
                                     }
                                 >
-                                    <img alt="" src={elem.imagePath} />
+                                    {/* <img alt="" src={elem.imagePath} /> */}
                                     {elem.title}
                                 </div>
                                 {/* </a> */}

@@ -8,10 +8,12 @@ import { MobileNavigation } from '../../widgets/nav-menu/modile-nav/mobile-nav';
 import { toursContent } from '../../store/tour-info';
 import { DIV_IDS, NAV_MENU_BREAKPOINT } from '../../store/consts';
 
-import phoneIcon from '../../assets/icons/phone.png'
-import tourIcon from '../../assets/icons/tour.png'
-import mainPageIcon from '../../assets/icons/main-page.png'
-import faqImage from '../../assets/icons/faq/faq.png'
+import mainPageIcon from '../../assets/icons/menu/home_page.png'
+import phoneIcon from '../../assets/icons/menu/contacts.png'
+import toursIcon from '../../assets/icons/menu/tours.png'
+import faqImage from '../../assets/icons/menu/faq-2.png'
+import aboutUsIcon from '../../assets/icons/menu/about_us.png'
+import bookingIcon from '../../assets/icons/menu/booking.png'
 
 import './header-classes.scss'
 
@@ -49,12 +51,12 @@ export const Header = () => {
 
     const headerNavElements: Array<NavMenuElementsType> = [
         { title: t('nav.main_page'), path: PATHS.mainPage, imagePath: mainPageIcon },
-        { title: t('nav.nav_tours'), path: PATHS.tourInfo, imagePath: tourIcon, subElements: tourSubElem },
+        { title: t('nav.nav_tours'), path: PATHS.tourInfo, imagePath: toursIcon, subElements: tourSubElem },
         { title: t('nav.contacts'), path: '#'+DIV_IDS.contacts, imagePath: phoneIcon },
         
         
-        { title: t('nav.how_to_book'), path: '#'+DIV_IDS.howToBook, imagePath: phoneIcon },
-        { title: t('nav.about_us'), path: '#'+DIV_IDS.aboutUs, imagePath: phoneIcon },
+        { title: t('nav.how_to_book'), path: '#'+DIV_IDS.howToBook, imagePath: bookingIcon },
+        { title: t('nav.about_us'), path: '#'+DIV_IDS.aboutUs, imagePath: aboutUsIcon },
         { title: t('nav.faq'), path: '#'+DIV_IDS.faq, imagePath: faqImage },
 
         // { title: "111", path: PATHS.mainPage, imagePath: mainPageIcon },

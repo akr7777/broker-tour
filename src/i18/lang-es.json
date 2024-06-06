@@ -19,8 +19,9 @@
 
   "booking": {
     "how_to_book": "¿Cómo reservar?",
-    "how_to_book_description_1": "Puedes reservar cualquiera de nuestros tours haciendo clic en el botón de reserva en nuestro formulario aquí (formulario o enlace o botón para el mismo cálculo del tour).",
-    "how_to_book_description_2": "También puedes hacer una solicitud sobre tours listos o una solicitud individual"
+    "how_to_book_description_1": "Puede reservar cualquiera de nuestros tours después de calcular el costo en nuestro formulario ",
+    "how_to_book_description_2": "También puede hacer una solicitud para tours listos o una solicitud individual. Los datos de contacto están disponibles ",
+    "here": "aquí"
   },
 
   "about_us": {

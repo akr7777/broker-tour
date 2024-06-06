@@ -26,20 +26,19 @@ export const HowToBookWidget = () => {
 
                 <div>
                     {t('booking.how_to_book_description_1')}
-                </div>
-
-                <div className='how-to-book-widget-link-class'
-                    onClick={() => onLickClick(DIV_IDS.tourCalculation)}>
-                    CALC LINK!!!!!
+                    <label className='how-to-book-widget-link-class'
+                        onClick={() => onLickClick(DIV_IDS.tourCalculation)}>
+                        {t('booking.here')}
+                    </label>
                 </div>
 
                 <div>
                     {t('booking.how_to_book_description_2')}
-                </div>
 
-                <div className='how-to-book-widget-link-class'
-                    onClick={() => onLickClick(DIV_IDS.contacts)}>
-                    CONTACTS LINK!!!!!
+                    <label className='how-to-book-widget-link-class'
+                        onClick={() => onLickClick(DIV_IDS.contacts)}>
+                        {t('booking.here')}
+                    </label>
                 </div>
 
             </div>

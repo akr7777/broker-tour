@@ -2,10 +2,10 @@ import i18next from "i18next"
 import { LINE_DEVIDER, TOURS_IDS } from "./consts"
 import { PATHS } from "../widgets/nav-menu/nav-paths"
 
-import t1Icon from '../assets/icons/main-page.png'
-import t2Icon from '../assets/icons/main-page.png'
-import t3Icon from '../assets/icons/main-page.png'
-import t4Icon from '../assets/icons/main-page.png'
+import t1Icon from '../assets/icons/menu/tours.png'
+import t2Icon from '../assets/icons/menu/tours.png'
+import t3Icon from '../assets/icons/menu/tours.png'
+import t4Icon from '../assets/icons/menu/tours.png'
 import { tourMainPhotos } from "./tour-days-photos"
 import { ReactNode } from "react"
 

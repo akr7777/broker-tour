@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { Header } from '../../pages/header/header'
 import { CONTACTS, HOVER_VALUE } from '../../store/consts'
 
-import whatsappImg from '../../assets/icons/whatsapp.svg'
+import whatsappImg from '../../assets/icons/social-networks/whatsapp.svg'
 
 import './wellcome-classes.scss'
 

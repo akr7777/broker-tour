@@ -7,6 +7,10 @@ import tour_7_main from '../assets/images/tour_images/tour_7_main.jpg'
 import tour_9_main from '../assets/images/tour_images/tour_9_main.jpg'
 import tour_12_main from '../assets/images/tour_images/tour_12_main.jpg'
 
+import img_4_2_4 from '../assets/images/tour_images/3/3_2_4.jpeg'
+import img_4_2_5 from '../assets/images/tour_images/3/3_2_5.jpeg'
+import img_4_2_6 from '../assets/images/tour_images/3/3_2_6.jpeg'
+
 import img_7_2_1 from '../assets/images/tour_images/7/tour_7_2_1.jpg'
 import img_7_2_2 from '../assets/images/tour_images/7/tour_7_2_2.jpg'
 import img_7_3_1 from '../assets/images/tour_images/7/tour_7_3_1.jpg'
@@ -219,7 +223,9 @@ export const tourPhotos: Array<TourPhotoType> = [
                 photos: [
                     <img src={img_7_6_1} alt="Парк Ла Пас Коста Рика недалечко от вулкана Поас , parque La Paz Costa Rica  , носуха в парке Ла Пас Коста Рика, coati animal at the Park La Paz Costa Rica , название файла coati_costa_rica." key={uuid()} />,
                     <img src={img_7_6_2} alt="Volcán Poas cráter Costa Rica, Кратер вулкана Поас Коста-Рика , название файла poas_volcano_costarica" key={uuid()} />,
-                    <img src={img_7_6_3} alt="Plantaciones de cafe Starbucks Alsacia Costa Rica cofee tour, кофе тур по плантации Старбакс, Коста-Рика , cofee_tour_starbucks" key={uuid()} />,
+                    <img src={img_4_2_6} alt="Plantaciones de cafe Starbucks Alsacia Costa Rica cofee tour, кофе тур по плантации Старбакс, Коста-Рика , cofee_tour_starbucks" key={uuid()} />,
+                    <img src={img_4_2_4} alt="Plantaciones de cafe Starbucks Alsacia Costa Rica cofee tour, кофе тур по плантации Старбакс, Коста-Рика , cofee_tour_starbucks" key={uuid()} />,
+                    <img src={img_4_2_5} alt="Plantaciones de cafe Starbucks Alsacia Costa Rica cofee tour, кофе тур по плантации Старбакс, Коста-Рика , cofee_tour_starbucks" key={uuid()} />,
                 ]
             },
             {
