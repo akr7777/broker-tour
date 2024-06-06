@@ -18,6 +18,12 @@
     flex-direction: row;
     align-items: center;
     gap: 10px;
+    text-align: center;
+
+    img {
+        width: 30px;
+        height: 30px;
+    }
 }
 
 .desctop-nav-sublink-elem-description-class {

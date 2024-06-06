@@ -1,3 +1,4 @@
+import { useLocation } from "react-router-dom"
 import { MainWrapper } from "../../shared/main-wrapper/main-wrapper"
 import { AboutUsWidget } from "../../widgets/aboutUs/about-us-widget"
 import { FAQ } from "../../widgets/faq/faq"
@@ -14,6 +15,20 @@ import { PriceCalculation2 } from "../../widgets/price-calculation-2/price-calcu
 // import { Header } from "../header/header"
 
 export const MainPage = () => {
+
+    const location = useLocation()
+    
+    if (location.hash) {
+        setTimeout(() => {
+            const elem = document.getElementById(location.hash.slice(1, location.hash.length))
+            if (elem) {
+                elem.scrollIntoView({ behavior: 'smooth'})
+            }
+        }, 500)
+        
+    }
+    
+
     return (
         <MainWrapper>
             {/* <Header /> */}

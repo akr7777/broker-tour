@@ -55,9 +55,9 @@ export const Header = () => {
         { title: t('nav.contacts'), path: '#'+DIV_IDS.contacts, imagePath: phoneIcon },
         
         
-        { title: t('nav.how_to_book'), path: '#'+DIV_IDS.howToBook, imagePath: bookingIcon },
-        { title: t('nav.about_us'), path: '#'+DIV_IDS.aboutUs, imagePath: aboutUsIcon },
-        { title: t('nav.faq'), path: '#'+DIV_IDS.faq, imagePath: faqImage },
+        { title: t('nav.how_to_book'), path: PATHS.mainPage + '#'+DIV_IDS.howToBook, imagePath: bookingIcon },
+        { title: t('nav.about_us'), path: PATHS.mainPage + '#'+DIV_IDS.aboutUs, imagePath: aboutUsIcon },
+        { title: t('nav.faq'), path: PATHS.mainPage + '#' + DIV_IDS.faq, imagePath: faqImage },
 
         // { title: "111", path: PATHS.mainPage, imagePath: mainPageIcon },
         // { title: "222", path: PATHS.tours, imagePath: tourIcon, subElements: toursSubElements },
