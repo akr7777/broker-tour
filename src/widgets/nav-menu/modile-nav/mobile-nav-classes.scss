@@ -91,21 +91,29 @@
 }
 
 .mobile-nav-menu-subelem-child-list {
-    // background-color: red;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
 }
 .mobile-nav-menu-subelem-child-class {
-    // margin-top: 10px;
     width: calc(100% - 40px);
-    // margin-left: 10%;
     background-color: $nav-menu-element-bg-color;
     padding: 10px 20px;
     border-radius: 10px;
     cursor: pointer;
     line-height: normal;
+
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    img {
+        width: 25px;
+        height: 25px;
+        align-self: center;
+        vertical-align: middle;
+    }
 }
 .mobile-nav-menu-subelem-child-class:hover:focus {
     background-color: $nav-menu-element-bg-color-focused;

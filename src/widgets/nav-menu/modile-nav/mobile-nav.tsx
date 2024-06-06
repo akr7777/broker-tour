@@ -141,6 +141,7 @@ export const MobileNavigation = (props: NavMenuPropsType) => {
                                                                 className='mobile-nav-menu-subelem-child-class'
                                                                 onClick={() => onLinkClickHandler(subElem.path)}
                                                             >
+                                                                <img alt="" src={elem.imagePath} />
                                                                 {subElem.title}
                                                             </motion.div>
                                                         )
