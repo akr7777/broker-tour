@@ -12,6 +12,7 @@ import { LanguageLC, LanguagesType } from "./i18/langs";
 
 import './i18/i18init'
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet";
 
 // import { ContactPage } from "./pages/contacts/contacts-page";
 // import { Tour1 } from "./pages/tours/tour1";
@@ -59,10 +60,19 @@ function App() {
   if (currentLanguageLC && i18n.language !== currentLanguageLC) {
       i18n.changeLanguage(currentLanguageLC)
   }
+  
+  const siteTitle = i18n.t('site_title')
+  const siteDescription = i18n.t('site_description')
     
   return (
     <>
       <ToastContainer />
+      <Helmet 
+        title={siteTitle}
+        meta={[
+          { "property": "og:description", "content": siteDescription }
+        ]}
+      />
       {/* <MainPage /> */}
       <RouterProvider router={router} />
     </>

@@ -3,7 +3,7 @@
 
 $border-width: 2px;
 $border-color: grey;
-$wrapper-height: 90px;
+$wrapper-height: 120px;
 $border-radius: 20px;
 
 .price-calc-2-wrapper {
@@ -44,7 +44,7 @@ $border-radius: 20px;
     position: relative;
     background-color: $site-bg-color;
 
-    height: $wrapper-height;
+    height: calc($wrapper-height - 20px);
 
     display: flex;
     flex-direction: column;
@@ -52,6 +52,7 @@ $border-radius: 20px;
     align-items: center;
     gap: 10px;
 
+    padding: 10px 0;
 }
 .price-calc-2-data-area-first {
     border-top-left-radius: $border-radius;

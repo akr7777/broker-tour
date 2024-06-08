@@ -1,10 +1,14 @@
 {
+  "site_title": "BrokerTour Costa Rica",
+  "site_description": "BrokerTour description",
+
   "wellcome-widget": {
     "line1": "Ready-made tours to Costa Rica",
     "line2": "Choose your tour.",
     "tours-to-costa-rica": "Tours to Costa Rica",
     "contact-with-us": "Contact us"
   },
+  
   "contacts": {
     "contact-button-text": "Book a tour!",
     "contact-whatsapp-text": "Good afternoon! I want to book a tour {{tour}}",
