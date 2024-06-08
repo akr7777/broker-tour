@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { PATHS } from '../../widgets/nav-menu/nav-paths'
 import { NavLink } from 'react-router-dom'
-import { MainWrapper } from '../../shared/main-wrapper/main-wrapper'
 
 import './not-found-page-classes.scss'
 import clsx from 'clsx'
@@ -10,7 +9,7 @@ export const NotFoundPage = () => {
     const {t} = useTranslation()
 
     return (
-        <MainWrapper>
+        <>
             <div className='not-found-page-wrapper'>
                 <h2>{t('not_found_page.title')}</h2>
                 <div className={clsx('not-found-page-text-div', 'not-found-page-link-class')}>
@@ -23,6 +22,6 @@ export const NotFoundPage = () => {
                     </NavLink>
                 </div>
             </div>
-        </MainWrapper>
+        </>
     )
 }

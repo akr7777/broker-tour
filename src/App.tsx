@@ -16,24 +16,39 @@ import './i18/i18init'
 import 'react-toastify/dist/ReactToastify.css';
 
 
-export const router = createBrowserRouter([
+const router = createBrowserRouter([
   {
     path: '/',
-    element: <OutletPage />
+    element: <OutletPage />,
+    children: [
+      {
+        // path: PATHS.mainPage,
+        element: (<MainPage />),
+        index: true
+      },
+      {
+        path: PATHS.tourInfo + '/:tourId',
+        element: <TourInfoPage />
+      },
+      {
+        path: '*',
+        element: <NotFoundPage />
+      }
+    ]
   },
-  {
-    // path: PATHS.mainPage,
-    element: (<MainPage />),
-    index: true
-  },
-  {
-    path: PATHS.tourInfo + '/:tourId',
-    element: <TourInfoPage />
-  },
-  {
-    path: '*',
-    element: <NotFoundPage />
-  }
+  // {
+  //   // path: PATHS.mainPage,
+  //   element: (<MainPage />),
+  //   index: true
+  // },
+  // {
+  //   path: PATHS.tourInfo + '/:tourId',
+  //   element: <TourInfoPage />
+  // },
+  // {
+  //   path: '*',
+  //   element: <NotFoundPage />
+  // }
 ]);
 
 function App() {
@@ -57,7 +72,6 @@ function App() {
           { "property": "og:description", "content": siteDescription }
         ]}
       />
-      {/* <MainPage /> */}
       <RouterProvider router={router} />
     </>
   )

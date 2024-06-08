@@ -1,8 +1,5 @@
 import { useTranslation } from "react-i18next"
-import { MainWrapper } from "../../shared/main-wrapper/main-wrapper"
 import { WidgetWrapper } from "../../shared/widget-wrapper/widget-wrapper"
-// import { VerticalStepper, VerticalStepperType } from "../../components/vertical-stepper/vertical-stepper"
-// import { PriceCalculation } from "../../widgets/price-calculation/price-calculation"
 import { PriceCalculation2 } from "../../widgets/price-calculation-2/price-calculation-2"
 import { useNavigate, useParams } from "react-router-dom"
 import { TourType, toursContent } from "../../store/tour-info"
@@ -26,10 +23,6 @@ export const TourInfoPage = () => {
     if (!currentTour)
         navigate(PATHS.mainPage)
 
-    // const tourTwoStepsAuto: Array<VerticalStepperType> = currentTour?.plan.map(d => {
-    //     return { day: d.dayNumber, description: d.dayContent}
-    // }) || []
-
     const daysPlanData: Array<DaysPlanType> = currentTour?.plan.map(d => {
         const photos: Array<ReactNode> | undefined = 
             tourPhotos
@@ -38,10 +31,9 @@ export const TourInfoPage = () => {
     }) || []
 
     return (
-        <MainWrapper>
+        <>
 
          <WidgetWrapper>
-            {/* <h2>{ currentTour?.title }</h2> */}
             <ArticleTitle title={currentTour?.title}/>
             <div className="tour-page-description">
                 { currentTour?.description }
@@ -51,13 +43,7 @@ export const TourInfoPage = () => {
             </div>
          </WidgetWrapper>
 
-         {/* <WidgetWrapper>
-            <h2>{t('tours.plan-of-the-trip')}</h2>
-            <VerticalStepper steps={tourTwoStepsAuto}/>
-         </WidgetWrapper> */}
-
          <WidgetWrapper>
-            {/* <h2>{t('tours.plan-of-the-trip')}</h2> */}
             <ArticleTitle title={t('tours.plan-of-the-trip')}/>
 
             <DaysPlan2 data={daysPlanData} />
@@ -67,7 +53,6 @@ export const TourInfoPage = () => {
 
          <PriceCalculation2 />
 
-
-        </MainWrapper>
+        </>
     )
 }
