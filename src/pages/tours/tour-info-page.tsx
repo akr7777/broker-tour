@@ -8,13 +8,13 @@ import { useNavigate, useParams } from "react-router-dom"
 import { TourType, toursContent } from "../../store/tour-info"
 import { PATHS } from "../../widgets/nav-menu/nav-paths"
 import { DaysPlan2, DaysPlanType } from "./tour-plan-2"
- 
-import './tours-classes.scss'
 import { ReactNode } from "react"
 import { tourPhotos } from "../../store/tour-days-photos"
 import { ArticleTitle } from "../../shared/title/title"
 import { LINE_DEVIDER } from "../../store/consts"
 import uuid from "react-uuid"
+
+import './tours-classes.scss'
 
 export const TourInfoPage = () => {
     const { t } = useTranslation()
@@ -43,8 +43,12 @@ export const TourInfoPage = () => {
          <WidgetWrapper>
             {/* <h2>{ currentTour?.title }</h2> */}
             <ArticleTitle title={currentTour?.title}/>
-            <div>{ currentTour?.description }</div>
-            { currentTour?.fullDescription.split(LINE_DEVIDER).map(p => <div key={uuid()}>{p}</div>) }
+            <div className="tour-page-description">
+                { currentTour?.description }
+            </div>
+            <div>
+                { currentTour?.fullDescription.split(LINE_DEVIDER).map(p => <div key={uuid()}>{p}</div>) }
+            </div>
          </WidgetWrapper>
 
          {/* <WidgetWrapper>
