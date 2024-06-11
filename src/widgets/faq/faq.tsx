@@ -9,7 +9,7 @@ export type FAQ_Type = {
     question: string, answer: string
 }
 
-const questionsCount = 12
+const questionsCount = 20
 
 export const FAQ = () => {
     const {t} = useTranslation()

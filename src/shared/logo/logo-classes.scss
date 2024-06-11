@@ -30,6 +30,8 @@
     justify-content: flex-start;
 }
 .logo-img {
+    position: relative;
+
     cursor: pointer;
     // height: $header-height;
     width: $logo-width;

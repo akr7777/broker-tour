@@ -57,4 +57,4 @@ export const TOUR_DAYS_PLAN_ANIMATION = {
     time: 0.7,
 }
 
-export const NAV_MENU_BREAKPOINT = 1110
+export const NAV_MENU_BREAKPOINT = 1100
