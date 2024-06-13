@@ -1,6 +1,8 @@
 {
-  "site_title": "BrokerTour Costa Rica",
+  "site_title": "Costa Rica Tures",
   "site_description": "Costa Rica reserva excursiones en línea, tours guiados, transporte al aeropuerto y actividades en Costa Rica.",
+  
+  "loading": "Сargando...",
 
   "wellcome-widget": {
     "line1": "Tours listos para Costa Rica",

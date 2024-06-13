@@ -1,6 +1,8 @@
 {
-  "site_title": "BrokerTour Costa Rica",
+  "site_title": "Costa Rica Tours",
   "site_description": "Costa Rica online booking of tours, guided visits, airport transfers, and activities in Costa Rica.",
+
+  "loading": "Loading...",
 
   "wellcome-widget": {
     "line1": "Ready-made tours to Costa Rica",

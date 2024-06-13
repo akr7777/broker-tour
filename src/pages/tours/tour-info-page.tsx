@@ -13,7 +13,7 @@ import uuid from "react-uuid"
 
 import './tours-classes.scss'
 
-export const TourInfoPage = () => {
+const TourInfoPage = () => {
     const { t } = useTranslation()
     const {tourId} = useParams()
     const navigate = useNavigate()
@@ -56,3 +56,5 @@ export const TourInfoPage = () => {
         </>
     )
 }
+
+export default TourInfoPage

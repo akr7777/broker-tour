@@ -14,6 +14,6 @@ i18n
             es: { translation: esTranslation },
             en: { translation: enTranslation },
         },
-        lng: LANGUAGES.RU, 
-        fallbackLng: LANGUAGES.RU,
+        lng: LANGUAGES.ES, 
+        fallbackLng: LANGUAGES.ES,
     });
