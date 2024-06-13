@@ -7,9 +7,12 @@ import tour_7_main from '../assets/images/tour_images/tour_7_main.jpg'
 import tour_9_main from '../assets/images/tour_images/tour_9_main.jpg'
 import tour_12_main from '../assets/images/tour_images/tour_12_main.jpg'
 
+import img_4_2_1 from '../assets/images/tour_images/3/3_2_1.jpeg'
+import img_4_2_2 from '../assets/images/tour_images/3/3_2_2.jpeg'
+import img_4_2_3 from '../assets/images/tour_images/3/3_2_3.jpeg'
 import img_4_2_4 from '../assets/images/tour_images/3/3_2_4.jpeg'
 import img_4_2_5 from '../assets/images/tour_images/3/3_2_5.jpeg'
-import img_4_2_6 from '../assets/images/tour_images/3/3_2_6.jpeg'
+// import img_4_2_6 from '../assets/images/tour_images/3/3_2_6.jpeg'
 
 import img_7_2_1 from '../assets/images/tour_images/7/tour_7_2_1.jpg'
 import img_7_2_2 from '../assets/images/tour_images/7/tour_7_2_2.jpg'
@@ -24,7 +27,8 @@ import img_7_5_2 from '../assets/images/tour_images/7/tour_7_5_2.jpg'
 import img_7_5_3 from '../assets/images/tour_images/7/tour_7_5_3.jpg'
 import img_7_6_1 from '../assets/images/tour_images/7/tour_7_6_1.jpg'
 import img_7_6_2 from '../assets/images/tour_images/7/tour_7_6_2.jpg'
-import img_7_6_3 from '../assets/images/tour_images/7/tour_7_6_3.jpg'
+import img_7_6_3 from '../assets/images/tour_images/7/tour_7_6_3.jpeg'
+import img_7_6_4 from '../assets/images/tour_images/7/tour_7_6_4.jpeg'
 
 import img_12_6_1 from '../assets/images/tour_images/12/12_6_1.jpg'
 import img_12_6_2 from '../assets/images/tour_images/12/12_6_2.jpg'
@@ -98,23 +102,23 @@ export const tourPhotos: Array<TourPhotoType> = [
                 day: 3,
                 photos: [
                     <img src={img_7_3_1} alt="Рыбалка на большую рыбу в Коста-Рике , pesca de peces grandes en Costa Rica , fishing in Costa Rica , alt девушка с большой рыбой на лодке в Тихом океане , bonita chica con un pez grande en un yate en el Océano Pacífico. Chica_yate_fish_costarica" key={uuid()} />,
-                    <img src={img_7_3_2} alt="Рыбалка на большую рыбу в Коста-Рике , pesca de peces grandes en Costa Rica , fishing in Costa Rica , alt девушка с большой рыбой на лодке в Тихом океане , bonita chica con un pez grande en un yate en el Océano Pacífico. Chica_yate_fish_costarica" key={uuid()} />,
+                    // <img src={img_7_3_2} alt="Рыбалка на большую рыбу в Коста-Рике , pesca de peces grandes en Costa Rica , fishing in Costa Rica , alt девушка с большой рыбой на лодке в Тихом океане , bonita chica con un pez grande en un yate en el Océano Pacífico. Chica_yate_fish_costarica" key={uuid()} />,
                     <img src={img_7_3_3} alt="Рыбалка на большую рыбу в Коста-Рике , pesca de peces grandes en Costa Rica , fishing in Costa Rica , alt яхта в тихом океане , yate_en_el_Océano_Pacífico" key={uuid()} />,
                 ]
             },
             {
                 day: 4,
                 photos: [
-                    <img src={img_7_4_1} alt="Monte Verde  butterfly tour, сад бабочек в национальном парке Монте Верде , alt желтая бабочка в Монте Верде Коста-Рика , mariposa en parque nacional Monte Verde Costa Rica , название файла mariposa_monteverde_costarica" key={uuid()} />,
-                    <img src={img_7_4_2} alt="Monte Verde Handing bridges Costa Rica , Мосты по джунглям Монте Верде Коста-Рика , название файла monte_verde_costarica" key={uuid()} />,
                     <img src={img_7_4_3} alt="Monte verde cloud forest, облачный лес национальный парк Монте Верде Коста-Рика , monteverde_cloudforest_costarica" key={uuid()} />,
+                    <img src={img_7_4_2} alt="Monte Verde Handing bridges Costa Rica , Мосты по джунглям Монте Верде Коста-Рика , название файла monte_verde_costarica" key={uuid()} />,
+                    <img src={img_7_4_1} alt="Monte Verde  butterfly tour, сад бабочек в национальном парке Монте Верде , alt желтая бабочка в Монте Верде Коста-Рика , mariposa en parque nacional Monte Verde Costa Rica , название файла mariposa_monteverde_costarica" key={uuid()} />,
                 ]
             },
             {
                 day: 5,
                 photos: [
-                    <img src={img_7_5_1} alt="Volcano Arenal view from Laguna La Fortuna, Вулкан Ареналь Коста-Рика Вид на вулкан Ареналь с лагуны. Volcan Arenal Costa Rica , название файла Volcan_Arenal_view" key={uuid()} />,
                     <img src={img_7_5_2} alt="Водопад Ла Фортуна купание с форелью, Catarata La Fortuna swimming with    fishes , volcano Arenal La Fortuna falls Costa Rica , название файла lafortuna_waterfall_troutriver" key={uuid()} />,
+                    <img src={img_7_5_1} alt="Volcano Arenal view from Laguna La Fortuna, Вулкан Ареналь Коста-Рика Вид на вулкан Ареналь с лагуны. Volcan Arenal Costa Rica , название файла Volcan_Arenal_view" key={uuid()} />,
                     <img src={img_7_5_3} alt="Hot natural river springs near volcano Arenal La Fortuna Costa Rica , горячая натуральная река рядом с Вулканом Ареналь Коста-Рика , rio caliente serca de volcán Arenal , hot_river_arenal" key={uuid()} />,
                 ]
             },
@@ -124,6 +128,7 @@ export const tourPhotos: Array<TourPhotoType> = [
                     <img src={img_7_6_1} alt="Парк Ла Пас Коста Рика недалечко от вулкана Поас , parque La Paz Costa Rica  , носуха в парке Ла Пас Коста Рика, coati animal at the Park La Paz Costa Rica , название файла coati_costa_rica." key={uuid()} />,
                     <img src={img_7_6_2} alt="Volcán Poas cráter Costa Rica, Кратер вулкана Поас Коста-Рика , название файла poas_volcano_costarica" key={uuid()} />,
                     <img src={img_7_6_3} alt="Plantaciones de cafe Starbucks Alsacia Costa Rica cofee tour, кофе тур по плантации Старбакс, Коста-Рика , cofee_tour_starbucks" key={uuid()} />,
+                    <img src={img_7_6_4} alt="Plantaciones de cafe Starbucks Alsacia Costa Rica cofee tour, кофе тур по плантации Старбакс, Коста-Рика , cofee_tour_starbucks" key={uuid()} />,
                 ]
             }
         ]
@@ -221,9 +226,11 @@ export const tourPhotos: Array<TourPhotoType> = [
             {
                 day: 2,
                 photos: [
-                    <img src={img_7_6_1} alt="Парк Ла Пас Коста Рика недалечко от вулкана Поас , parque La Paz Costa Rica  , носуха в парке Ла Пас Коста Рика, coati animal at the Park La Paz Costa Rica , название файла coati_costa_rica." key={uuid()} />,
-                    <img src={img_7_6_2} alt="Volcán Poas cráter Costa Rica, Кратер вулкана Поас Коста-Рика , название файла poas_volcano_costarica" key={uuid()} />,
-                    <img src={img_4_2_6} alt="Plantaciones de cafe Starbucks Alsacia Costa Rica cofee tour, кофе тур по плантации Старбакс, Коста-Рика , cofee_tour_starbucks" key={uuid()} />,
+                    <img src={img_4_2_1} alt="Парк Ла Пас Коста Рика недалечко от вулкана Поас , parque La Paz Costa Rica  , носуха в парке Ла Пас Коста Рика, coati animal at the Park La Paz Costa Rica , название файла coati_costa_rica." key={uuid()} />,
+                    <img src={img_4_2_2} alt="Парк Ла Пас Коста Рика недалечко от вулкана Поас , parque La Paz Costa Rica  , носуха в парке Ла Пас Коста Рика, coati animal at the Park La Paz Costa Rica , название файла coati_costa_rica." key={uuid()} />,
+                    // <img src={img_7_6_2} alt="Volcán Poas cráter Costa Rica, Кратер вулкана Поас Коста-Рика , название файла poas_volcano_costarica" key={uuid()} />,
+                    // <img src={img_7_6_3} alt="Plantaciones de cafe Starbucks Alsacia Costa Rica cofee tour, кофе тур по плантации Старбакс, Коста-Рика , cofee_tour_starbucks" key={uuid()} />,
+                    <img src={img_4_2_3} alt="Plantaciones de cafe Starbucks Alsacia Costa Rica cofee tour, кофе тур по плантации Старбакс, Коста-Рика , cofee_tour_starbucks" key={uuid()} />,
                     <img src={img_4_2_4} alt="Plantaciones de cafe Starbucks Alsacia Costa Rica cofee tour, кофе тур по плантации Старбакс, Коста-Рика , cofee_tour_starbucks" key={uuid()} />,
                     <img src={img_4_2_5} alt="Plantaciones de cafe Starbucks Alsacia Costa Rica cofee tour, кофе тур по плантации Старбакс, Коста-Рика , cofee_tour_starbucks" key={uuid()} />,
                 ]
@@ -231,17 +238,17 @@ export const tourPhotos: Array<TourPhotoType> = [
             {
                 day: 3,
                 photos: [
-                    <img src={img_7_5_1} alt="Volcano Arenal view from Laguna La Fortuna, Вулкан Ареналь Коста-Рика Вид на вулкан Ареналь с лагуны. Volcan Arenal Costa Rica , название файла Volcan_Arenal_view" key={uuid()} />,
                     <img src={img_7_5_2} alt="Водопад Ла Фортуна купание с форелью, Catarata La Fortuna swimming with    fishes , volcano Arenal La Fortuna falls Costa Rica , название файла lafortuna_waterfall_troutriver" key={uuid()} />,
+                    <img src={img_7_5_1} alt="Volcano Arenal view from Laguna La Fortuna, Вулкан Ареналь Коста-Рика Вид на вулкан Ареналь с лагуны. Volcan Arenal Costa Rica , название файла Volcan_Arenal_view" key={uuid()} />,
                     <img src={img_7_5_3} alt="Hot natural river springs near volcano Arenal La Fortuna Costa Rica , горячая натуральная река рядом с Вулканом Ареналь Коста-Рика , rio caliente serca de volcán Arenal , hot_river_arenal" key={uuid()} />,
                 ]
             },
             {
                 day: 4,
                 photos: [
-                    <img src={img_7_4_1} alt="Monte Verde  butterfly tour, сад бабочек в национальном парке Монте Верде , alt желтая бабочка в Монте Верде Коста-Рика , mariposa en parque nacional Monte Verde Costa Rica , название файла mariposa_monteverde_costarica" key={uuid()} />,
-                    <img src={img_7_4_2} alt="Monte Verde Handing bridges Costa Rica , Мосты по джунглям Монте Верде Коста-Рика , название файла monte_verde_costarica" key={uuid()} />,
                     <img src={img_7_4_3} alt="Monte verde cloud forest, облачный лес национальный парк Монте Верде Коста-Рика , monteverde_cloudforest_costarica" key={uuid()} />,
+                    <img src={img_7_4_2} alt="Monte Verde Handing bridges Costa Rica , Мосты по джунглям Монте Верде Коста-Рика , название файла monte_verde_costarica" key={uuid()} />,
+                    <img src={img_7_4_1} alt="Monte Verde  butterfly tour, сад бабочек в национальном парке Монте Верде , alt желтая бабочка в Монте Верде Коста-Рика , mariposa en parque nacional Monte Verde Costa Rica , название файла mariposa_monteverde_costarica" key={uuid()} />,
                 ]
             }
         ]

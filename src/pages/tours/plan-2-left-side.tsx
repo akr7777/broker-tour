@@ -42,7 +42,9 @@ export const TourDayPlanLeftSide = ({elem}: PropsType) => {
                         transition={{ duration: ANIMATION_TIME_SHORT }}
                         exit={{ x: -200, opacity: 0 }}
                     >
-                        <div>{d}</div>
+                        <div className='tour-page-plan2-day-point-description'>
+                            {d}
+                        </div>
                         {elem.photos && index < elem.photos.length && elem.photos[index]}
                     </motion.div>
                 )

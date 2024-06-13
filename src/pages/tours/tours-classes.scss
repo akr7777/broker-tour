@@ -94,3 +94,10 @@
         border-radius: 30px;
     }
 }
+
+.tour-page-plan2-day-point-description {
+    @media screen and (min-width: 950px) {
+        width: 50%;
+    }
+    text-align: center;
+}
