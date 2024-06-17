@@ -17,15 +17,12 @@ export type ResizeType = {
 };
 export const useResize = () => {
   const [width, setWidth] = useState(window.innerWidth);
+  const [height, setHeight] = useState(window.innerWidth);
 
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    // const handleResize = (event: any) => {
-    //   setWidth(event.target.innerWidth);
-    // };
-
     const handleResize = () => {
       setWidth(window.innerWidth);
+      setHeight(window.innerHeight);
     };
     handleResize()
     
@@ -37,6 +34,7 @@ export const useResize = () => {
 
   return {
     width,
+    height,
     isScreenSm: width >= SCREEN_SM, // 550
     isScreenMd: width >= SCREEN_MD, // 768
     isScreenLg: width >= SCREEN_LG, // 1100

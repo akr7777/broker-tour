@@ -11,15 +11,16 @@ import { PATHS } from "./widgets/nav-menu/nav-paths";
 const TourInfoPage = lazy(() => import('./pages/tours/tour-info-page'));
 // import { MainPage } from './pages/main-page/main-page';
 const MainPage = lazy(() => import('./pages/main-page/main-page'));
+const SeparateFAQpage = lazy(() => import('./pages/separate-faq-page/separate-faq-page'));
 
 import { useTranslation } from "react-i18next";
 import { LanguageLC, LanguagesType } from "./i18/langs";
 import { Helmet } from "react-helmet";
 import { OutletPage } from "./pages/outlet-page/outlet-page";
+import { Loading } from './shared/loading/loading';
 
 import './i18/i18init'
 import 'react-toastify/dist/ReactToastify.css';
-import { Loading } from './shared/loading/loading';
 
 
 const router = createBrowserRouter([
@@ -41,6 +42,14 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<Loading />}>
             <TourInfoPage />
+          </Suspense>
+        )
+      },
+      {
+        path: PATHS.separateFaqPage,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <SeparateFAQpage />
           </Suspense>
         )
       },

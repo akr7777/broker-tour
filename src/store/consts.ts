@@ -1,3 +1,5 @@
+import i18next from "i18next";
+
 export const DIV_IDS = {
     contacts: 'contacts',
     priceCalculationData: 'priceCalculationData',
@@ -58,3 +60,22 @@ export const TOUR_DAYS_PLAN_ANIMATION = {
 }
 
 export const NAV_MENU_BREAKPOINT = 1100
+
+export const FAQ_QUESTIONS_COUNT = 20
+
+
+export type FAQ_Type = { question: string, answer: string }
+export const faq_Data = (): Array<FAQ_Type> => {
+
+    const faqData: Array<FAQ_Type> = []
+    for (let i=1; i<=FAQ_QUESTIONS_COUNT; i++) {
+        faqData.push({
+            question: i18next.t('faq.' + i + '.question'),
+            answer: i18next.t('faq.' + i + '.answer')
+        })
+    }
+
+    return faqData
+}
+
+    

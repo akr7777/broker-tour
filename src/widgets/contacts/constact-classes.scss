@@ -31,9 +31,11 @@
     gap: 20px;
 
     img {
+        position: relative;
         width: 50px;
         height: 50px;
         border-radius: 10px;
+        cursor: pointer;
     }
 }
 
@@ -59,18 +61,24 @@
     }
 }
 .contacts-page-wrapper-2-whatsapp { 
+    // z-index: 4;
     // color: green; 
     animation-name: wa_keyframes;
     animation-duration: 4s;
     animation-iteration-count: infinite;
+    position: relative;
 }
 .contacts-page-wrapper-2-telegram { 
     // color: blue; 
+    position: relative;
     animation-name: tg_keyframes;
     animation-duration: 4s;
     animation-iteration-count: infinite;
 }
-.contacts-page-wrapper-2-phone { color: black; }
+.contacts-page-wrapper-2-phone { 
+    position: relative;
+    color: black; 
+}
 
 @keyframes wa_keyframes {
     0% {
