@@ -19,35 +19,40 @@ export const ContactWidget2 = () => {
 
                 <div className='contacts-page-wrapper-2-paragraph'>
                     {t('contacts.questions_and_booking')}
-                    <a 
-                        href={'https://wa.me/' + CONTACTS.phoneOlga} 
-                        className='contacts-page-wrapper-2-whatsapp'
-                    >
-                        What's app ({CONTACTS.phoneOlga})
-                    </a>
-                    {t('contacts.or')} 
-                    <a
-                        href={'https://t.me/' + CONTACTS.telegram}
-                        className='contacts-page-wrapper-2-telegram'
-                    >
-                        Telegram @{CONTACTS.telegram}
-                    </a>
-
+                    <div>
+                        <a 
+                            href={'https://wa.me/' + CONTACTS.phoneOlga} 
+                            className='contacts-page-wrapper-2-whatsapp'
+                        >
+                            What's app ({CONTACTS.phoneOlga})
+                        </a>
+                        {t('contacts.or')} 
+                        <a
+                            href={'https://t.me/' + CONTACTS.telegram}
+                            className='contacts-page-wrapper-2-telegram'
+                        >
+                            Telegram @{CONTACTS.telegram}
+                        </a>
+                    </div>
                 </div>   
 
                 <div className='contacts-page-wrapper-2-paragraph'>
                     {t('contacts.or_use_phone')}
-                    <a href={'tel:' + CONTACTS.phoneOlga} className='contacts-page-wrapper-2-phone'>{CONTACTS.phoneOlga}</a>
-                    Olga, 
-                    <a href={'tel:' + CONTACTS.phoneDavid} className='contacts-page-wrapper-2-phone'>{CONTACTS.phoneDavid}</a>
-                    David
+                    <div>
+                        <a href={'tel:' + CONTACTS.phoneOlga} className='contacts-page-wrapper-2-phone'>{CONTACTS.phoneOlga}</a>
+                        Olga, 
+                        <a href={'tel:' + CONTACTS.phoneDavid} className='contacts-page-wrapper-2-phone'>{CONTACTS.phoneDavid}</a>
+                        David
+                    </div>
                 </div>
 
                 <div className='contacts-page-wrapper-2-paragraph'>
-                    {t('contacts.our_address')} 20304 Costa Rica, Alajuela, Grecia, 125 metros al este de la escuela Simon Bolivar 
+                    {t('contacts.our_address')} 
+                    <div>20304 Costa Rica, Alajuela, Grecia, 125 metros al este de la escuela Simon Bolivar</div>
                 </div>
                 <div className='contacts-page-wrapper-2-paragraph'>
-                    {t('contacts.company_name')} SRL Oldaga Group
+                    {t('contacts.company_name')} 
+                    <div>SRL Oldaga Group</div>
                 </div>
 
                 <div className='constact-social-networks-div'>

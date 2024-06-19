@@ -1,10 +1,8 @@
-// import uuid from 'react-uuid'
 import { useTranslation } from 'react-i18next'
 import { AdultPriceType } from '../../store/tour-info'
+import { motion } from 'framer-motion'
 
 import './price-calc.scss'
-import { motion } from 'framer-motion'
-// import { ANIMATION_TIME_SUPER_SHORT } from '../../store/consts'
 
 export type PriceResultsPropsType = {
     adultCount: number,
@@ -12,18 +10,7 @@ export type PriceResultsPropsType = {
 
     adultPrice: Array<AdultPriceType> | undefined,
     childAbsDiscount: number | undefined,
-    // priceAdditionalInfo: Array<PriceAdditionalInfoType> | undefined,
-    // priceAdditionalInfo: PriceAdditionalInfoType | undefined,
 }
-
-// export type AdultPriceType = {
-//     personsCount: number,
-//     oneAdultPrice: number,
-// }
-// export type PriceAdditionalInfoType = {
-//     maxPersons: number,
-//     info: string,
-// }
 
 export const PriceResults = (props: PriceResultsPropsType) => {
     const { t } = useTranslation()
@@ -37,30 +24,11 @@ export const PriceResults = (props: PriceResultsPropsType) => {
 
     const result: number = adultsPrice + childrenPrice
 
-    // console.log('props=', props);
-    
-    // console.log('adultsPrice=', adultsPrice, 'childrenPrice=', childrenPrice);
-    
-
     return (
-        <motion.div 
-            className='price-calc-2-results-wrapper'
-            // initial={{ opacity: 0, y: -100 }}
-            // animate={{ opacity: 1, y: 0 }}
-            // transition={{ duration: ANIMATION_TIME_SUPER_SHORT }}
-            // exit={{ opacity: 0, y: -100 }}
-        >
+        <motion.div className='price-calc-2-results-wrapper'>
             {result !== 0 && <h3>{t('tours.tour-price-is')} {result}$</h3>}
-            {/* {props.priceAdditionalInfo &&
-                props.priceAdditionalInfo.map(p => <div key={uuid()}>{p.}</div>)
-            } */}
 
             <div className='price-calc-2-results-additional-info-div'>
-                {/* {
-                    props.priceAdditionalInfo && props.adultCount + props.childrenCount <= props.priceAdditionalInfo?.divCount
-                        ? <div>{props.priceAdditionalInfo.info1}</div>
-                        : <div>{props.priceAdditionalInfo?.info2}</div>
-                } */}
                 {
                     props.adultCount + props.childrenCount <= 4
                         ? <div>{t('tours.add-price-info.info1')}</div>

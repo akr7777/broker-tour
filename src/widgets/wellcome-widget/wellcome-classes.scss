@@ -1,6 +1,8 @@
 @import '../../assets/styles/common-variables.scss';
 
 .wellcome-wrapper {
+    position: relative;
+    z-index: 1000;
     background-image: url('../../assets//images/main_photo_1.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -29,8 +31,6 @@
     // height: calc(100svh - $header-height - $widget-devider-height);
     height: 300px;
 
-    // position: relative;
-    position: relative;
 
     display: flex;
     flex-direction: column;
@@ -89,25 +89,27 @@
     flex-direction: row;
     gap: 10px;
 
-    @media screen and (min-width: 670px) {
+    @media screen and (min-width: 827px) {
         h4 { font-size: 22px; }
     }
-    // @media screen and (min-width: 200px) and (max-width: 669px) {
-    //     h4 { font-size: 18px; }
-    // }
+    @media screen and (max-width: 826px) {
+        h4 { font-size: 18px; }
+    }
     
 }
 .wellcome-page-lower-div-first {
+    flex: 1;
     z-index: 502;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    @media screen and (min-width: 500px) {
-        justify-content: flex-start;
-    }
-    @media screen and (max-width: 499px) {
-        justify-content: center;
-    }
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    // @media screen and (min-width: 500px) {
+    //     justify-content: flex-start;
+    // }
+    // @media screen and (max-width: 499px) {
+    //     justify-content: center;
+    // }
 }
 .wellcome-page-lower-div-second {
     z-index: 502;
@@ -115,14 +117,17 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    @media screen and (min-width: 500px) {
-        justify-content: flex-end;
-        text-align: center;
+    justify-content: flex-end;
+    text-align: right;
 
-    }
-    @media screen and (max-width: 499px) {
-        text-align: center;
-    }
+    // @media screen and (min-width: 500px) {
+    //     justify-content: flex-end;
+    //     text-align: center;
+
+    // }
+    // @media screen and (max-width: 499px) {
+    //     text-align: center;
+    // }
     gap: 10px;
 
     h4 { color: white; }

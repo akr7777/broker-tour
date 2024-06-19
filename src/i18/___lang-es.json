@@ -1,0 +1,282 @@
+{
+  "site_title": "Costa Rica Tures",
+  "site_description": "Costa Rica reserva excursiones en línea, tours guiados, transporte al aeropuerto y actividades en Costa Rica.",
+  
+  "loading": "Сargando...",
+
+  "wellcome-widget": {
+    "line1": "Tours listos para \nCosta Rica",
+    "line2": "Elige tu tour.",
+    "tours-to-costa-rica": "Tours a Costa Rica",
+    "contact-with-us": "Contáctanos"
+  },
+
+  "contacts": {
+    "contact-button-text": "¡Reserva un tour!",
+    "contact-whatsapp-text": "¡Hola! Quiero reservar el tour {{tour}}",
+    "contacts": "Contactos",
+    "questions_and_booking": "Preguntas y reservas en",
+    "or": "o",
+    "or_use_phone": "También puedes contactarnos por teléfono",
+    "our_address": "Nuestra dirección:",
+    "company_name": "Nombre legal:"
+  },
+
+  "booking": {
+    "how_to_book": "¿Cómo reservar?",
+    "how_to_book_description_1": "Puede reservar cualquiera de nuestros tours después de calcular el costo en nuestro formulario ",
+    "how_to_book_description_2": "También puede hacer una solicitud para tours listos o una solicitud individual. Los datos de contacto están disponibles ",
+    "here": "aquí"
+  },
+
+  "about_us": {
+    "about_us": "Sobre nosotros",
+    "about_us_1": "Nuestra empresa Costa Rica Tures ha estado recibiendo turistas desde 2018. Nuestros turistas se han convertido en nuestros amigos. Las opiniones positivas de nuestros clientes nos dan la fuerza para seguir adelante y mejorar.",
+    "about_us_2": "Estamos ubicados cerca del aeropuerto de San José. Tenemos nuestro propio transporte, conductores y guías, lo que nos permite responder rápidamente a cualquier solicitud de nuestros turistas.",
+    "about_us_3": "Además, tenemos muchos socios turísticos de confianza en toda Costa Rica, lo que nos ayuda a resolver cualquier problema de manera muy rápida, ya que hablamos español, inglés y ruso."
+  },
+
+  "nav": {
+    "main_page": "Inicio",
+    "contacts": "Contactos",
+    "nav_tours": "Tours",
+    "how_to_book": "Cómo reservar",
+    "about_us": "Sobre nosotros",
+    "faq": "Preguntas frecuentes"
+  },
+
+  "tours": {
+    "title": "Elige el tour que mejor se adapte a ti",
+    "choose_tour": "Elegir tour",
+    "tour_price_calculation": "Cálculo del precio del tour:",
+    "tour_price_calc_button_text": "¡Calcular precio!",
+    "tour-price-is": "El precio del tour es:",
+    "adult_count_chooser": "Adultos",
+    "child_count_chooser": "Niños (3-12 años)",
+    "tour_max_persons_count": "Si tu grupo es de más de 8 personas, envía una solicitud por WhatsApp a:",
+    "add-price-info": {
+      "info1": "En un automóvil privado de 4 plazas tipo Hyundai Santa Fe con un guía conductor.",
+      "info2": "En una minivan privada de 10 plazas tipo Hyundai con un conductor local. Incluido el trabajo del guía, en los días que sea necesario según el programa.",
+      "price_for_0_3_years_old": "El precio para niños menores de 3 años y grupos de más de 9 personas se calcula individualmente (envía una solicitud)",
+      "tour-info-eat-hotel": "El precio del tour no incluye el alojamiento en hoteles. La reserva de hoteles la realizan los propios turistas según sus preferencias. A continuación se indican recomendaciones de hoteles según el itinerario."
+    },
+    "plan-of-the-trip": "Plan del viaje:",
+    "needs_to_choose_a_tour": "Debes elegir un tour",
+    "hotel-recomenddations-title": "Recomendaciones de hotel",
+    "hotel-recomenddations-description": "El precio del tour no incluye el alojamiento en hoteles. La reserva de hoteles la realizan los propios turistas según sus preferencias. A continuación se indican recomendaciones de hoteles según el itinerario. Están clasificados por precio: desde lujosos hasta económicos en orden descendente de precio.",
+    "from": "Desde",
+    "per-person": "por persona",
+
+    "tour1": {
+      "title": "Clásico de Costa Rica Mini 4 días / 3 noches",
+      "description": "Volcán Poás - Volcán Arenal - Bosque Nuboso Monteverde - Playa del Pacífico Manuel Antonio.",
+      "full-description": "",
+      "min-price": "570",
+      "days-count": "4",
+      "days-nights-text-count": "4 días / 3 noches",
+      "plan": {
+        "day1": "Llegada. Transfer desde el aeropuerto de San José al hotel cerca del aeropuerto y las plantaciones de café.",
+        "day2": "Visita a la única plantación de café Starbucks en el mundo;\n- aprendizaje de recolección de café;\n- familiarización con todo el proceso de fabricación del café;\n- y, por supuesto, degustación de las mejores variedades de café recién hecho, con una vista impresionante de la plantación y la cascada;\n- visita al uno de los cráteres más grandes del mundo - el volcán activo Poás;\n- visita al parque de animales rescatados y a la cascada de La Paz.\nTransfer al hotel seleccionado por ti en el complejo La Fortuna al pie del volcán Arenal.",
+        "day3": "⁃ Visita a la enorme cascada de La Fortuna, nadar en las aguas azules con truchas;\n⁃ Caminata por los puentes colgantes con vista al volcán cónico Arenal;\n⁃ Relajarse en las aguas termales del hotel.",
+        "day4": "Por la mañana, nos dirigiremos al parque nacional Monteverde;\n⁃ Volar sobre el bosque nuboso en tirolesa;\n⁃ Caminar sobre las copas de los árboles;\n⁃ Visitar el jardín de mariposas tropicales;\n⁃ Transfer al resort seleccionado por ti en el océano Pacífico."
+      },
+      "add-price-info": {
+        "info1": "\n¡Importante! Según este programa, el monto adicional por el traslado al resort que hayas elegido para el cuarto día del tour dependerá del resort que elijas por su distancia y del número de personas. Confirmaremos el monto adicional al momento de la reserva.",
+        "info2": "\n¡Importante! Según este programa, el monto adicional por el traslado al resort que hayas elegido para el cuarto día del tour dependerá del resort que elijas por su distancia y del número de personas. Confirmaremos el monto adicional al momento de la reserva."
+      },
+      "hotels": {
+        "hotel1": "Valle Central cerca de las plantaciones de café y el aeropuerto (1 noche)",
+        "hotel2": "La Fortuna (2 noches)"
+      }
+    },
+
+    "tour2": {
+      "title": "Clásico Activo de Costa Rica 7 días / 6 noches",
+      "description": "Visitaremos los lugares más emblemáticos de Costa Rica: Playa del Pacífico Manuel Antonio - Bosque Nuboso Monteverde - Volcán Arenal - Volcán Poás.",
+      "full-description": "Visitaremos los lugares más emblemáticos de Costa Rica: Playa del Pacífico Manuel Antonio - Bosque Nuboso Monteverde - Volcán Arenal - Volcán Poás. Día 2\nVisitaremos el parque nacional Manuel Antonio, nos relajaremos en las playas de arena blanca del parque, nadaremos en las aguas azules del océano pacífico. En el parque nacional Manuel Antonio, se garantiza la observación de monos, perezosos, iguanas, así como una variedad de otros animales y aves ... \n- caminaremos sobre las copas de los árboles de la selva tropical; \n- visitaremos la única plantación de café Starbucks en el mundo&",
+      "min-price": "690",
+      "days-count": "7",
+      "days-nights-text-count": "7 días / 6 noches",
+      "plan": {
+        "day1": "Llegada. Traslado desde el aeropuerto de San José al hotel en el Pacífico (resort Manuel Antonio)",
+        "day2": "Visita al parque nacional Manuel Antonio.",
+        "day3": "Día libre en las playas de Manuel Antonio.\nSegún tu preferencia: pesca deportiva en el océano pacífico.\n- excursión para ver ballenas y tortugas marinas en el parque nacional Uvita",
+        "day4": "Traslado al parque nacional Monteverde.\n- vuelo en tirolesa sobre la jungla;\n- caminata por las cimas de los árboles;\n- visita al jardín de mariposas tropicales.\nTraslado al resort La Fortuna al pie del volcán Arenal",
+        "day5": "Veremos la enorme cascada de La Fortuna y nadaremos en las aguas azules con truchas.\nCaminaremos por los puentes colgantes con vista al volcán cónico Arenal.\nRelajarse en las aguas termales del hotel.",
+        "day6": "Traslado al Valle Central. Visita al parque de animales rescatados y a la cascada de La Paz;\n- veremos uno de los cráteres más grandes del mundo en el volcán Poás;\n- visita a la única plantación de café Starbucks en el mundo;\n- aprenderemos a recolectar café, familiarización con todo el proceso de fabricación del café y, por supuesto, degustación de las mejores variedades de café recién hecho con una vista impresionante de la plantación y la cascada.",
+        "day7": "Traslado al aeropuerto de San José."
+      },
+      "add-price-info": {
+        "info1": "En un vehículo privado Hyundai Santa Fe de 4 plazas con un guía-chofer.",
+        "info2": "En una minivan privada Hyundai de 10 plazas con un conductor local y un guía que habla tu idioma (el guía acompaña en los días necesarios según el itinerario)"
+      },
+      "hotels": {
+        "hotel1": "Manuel Antonio (3 noches)",
+        "hotel2": "La Fortuna (2 noches)",
+        "hotel3": "Valle Central cerca de las plantaciones de café y el aeropuerto (1 noche)"
+      }
+    },
+
+    "tour3": {
+      "title": "Costa Rica Clásica y Relax 9d/8n",
+      "description": "Visita los lugares más populares de Costa Rica sin prisa. Itinerario del tour: Volcán Poás - Volcán Arenal - Bosque Nuboso de Monteverde - Río con cocodrilos Tarcolés - Playa del Océano Pacífico Manuel Antonio.",
+      "full-description": "",
+      "min-price": "890$",
+      "days-count": "9",
+      "days-nights-text-count": "9 días / 8 noches",
+      "plan": {
+        "day1": "Llegada.\nTraslado desde el aeropuerto de San José hasta el hotel cerca del aeropuerto y las plantaciones de café.",
+        "day2": "-Visita a la única plantación de café de Starbucks en el mundo;\n- aprende a recolectar café;\n- conoce el proceso completo de elaboración del café;\n- y por supuesto, prueba las mejores variedades de café recién preparado con una vista impresionante de la plantación y la cascada;\n- ver uno de los cráteres más grandes del mundo del volcán Poás;\n- visita al parque de animales rescatados y la cascada en La Paz;\nTraslado al hotel elegido por ti en el resort La Fortuna al pie del volcán Arenal.",
+        "day3": "⁃ Verás la enorme catarata La Fortuna y te bañarás en aguas azules con truchas;\n⁃ Caminata por los puentes colgantes con vista al cono del volcán Arenal;\n⁃ Relájate en las aguas termales del hotel.",
+        "day4": "Relax en las aguas termales del hotel.\nOpcionalmente, excursiones activas:\n⁃ Rafting;\n⁃ Tirolesa;\n- Paseo a caballo hasta el pie del volcán Arenal.",
+        "day5": "Por la mañana nos dirigiremos al Parque Nacional Monteverde;\n⁃ Vuelo sobre el bosque nuboso en tirolesa;\n⁃ Caminata por las copas de los árboles;\n⁃ Visita al jardín de mariposas tropicales.",
+        "day6": "Salida en una excursión al río Tarcolés, donde vive la población más grande de cocodrilos.\nDespués de un almuerzo tradicional, casado, nuestro camino lleva al resort Manuel Antonio.\nCheck-in en el hotel elegido por ti.",
+        "day7": "Caminata por el Parque Nacional Manuel Antonio.\nDescanso en el hotel elegido por ti y en las playas del resort Manuel Antonio.",
+        "day8": "Día libre y relajación en las aguas termales del hotel.\nOpcionalmente:\n⁃ Avistamiento de ballenas en el Parque Nacional Marino Ballena;\n⁃ A la cascada Nauyaca;\n⁃ Pesca de peces grandes.",
+        "day9": "Traslado al aeropuerto de San José."
+      },
+      "hotels": {
+        "hotel1": "Valle Central cerca de las plantaciones de café y el aeropuerto (1 noche)",
+        "hotel2": "La Fortuna (3 noches)",
+        "hotel3": "Monteverde (1 noche)",
+        "hotel4": "Manuel Antonio (3 noches)"
+      }
+    },
+
+    "tour4": {
+      "title": "Costa Rica Clásica dos Océanos 12d/11n",
+      "description": "Itinerario: Playa Manuel Antonio (Océano Pacífico) - Bosques Nubosos de Monteverde - Volcán Arenal - Playa Puerto Viejo (Océano Atlántico) - Volcán Poás.",
+      "full-description": "Visita el Parque Nacional Reserva Manuel Antonio, descansa en las playas de arena blanca del parque, báñate en las aguas azules del océano Pacífico. En el Parque Nacional Manuel Antonio, es garantizado ver monos, perezosos e iguanas, así como muchas otras especies de animales y aves.\nTraslado al Parque Nacional Monteverde.\n- Vuela sobre la jungla en tirolesa;\n- Camina sobre las copas de los árboles de la selva tropical;\n- Visita el jardín de mariposas tropicales.\nTraslado al resort La Fortuna al pie del volcán Arenal.\nPasaremos todo el día en la jungla y en las playas del Parque Nacional Cahuita, la caminata de un día completo se encuentra justo a lo largo de la costa del océano. Puedes bucear con máscara y ver una gran variedad de criaturas marinas.\nTambién en el Parque Nacional Cahuita, a menudo puedes encontrar serpientes, ranas, monos, perezosos e iguanas. Visitaremos la reserva indígena Bribri, donde los lugareños nos mostrarán sus plantas medicinales, ranas venenosas. \nTodo el proceso de producción de cacao, desde la recolección de frutas hasta el procesamiento de semillas, podremos intentar hacerlo nosotros mismos. Al final, probaremos el cacao producido por nosotros mismos y la pasta de chocolate amargo fresca. \nHasta el almuerzo, relájate en las playas del Mar Caribe. Luego, un traslado tranquilo al hotel en el Valle Central cerca de San José. Visita a la única plantación de café en el mundo propiedad de Starbucks.\nEl costo de los niños menores de 3 años y para grupos de más de 9 personas se calcula bajo petición. Los desplazamientos se realizan en un minibús privado Hyundai de 10 plazas con conductor local y guía según el itinerario. Dado que el costo del tour no incluye la reserva de hoteles, hemos compilado una lista de hoteles recomendados para reservar por tu cuenta. Están clasificados por precio: desde lujosos hasta más asequibles, en orden descendente de precio. Puedes reservar cualquier hotel que te guste, incluso si no está en la lista, después de coordinar previamente la ubicación con nosotros.",
+      "min-price": "990",
+      "days-count": "12",
+      "days-nights-text-count": "12 días / 11 noches",
+      "plan": {
+        "day1": "Llegada.\nTraslado desde el aeropuerto de San José hasta el hotel en el Océano Pacífico (resort Manuel Antonio).",
+        "day2": "Visita al parque nacional y la playa blanca de Manuel Antonio.",
+        "day3": "Descanso en las playas del resort Manuel Antonio.\nOpcionalmente:\n- Pesca de peces grandes en el Océano Pacífico;\n- Excursión para avistar ballenas y tortugas marinas en el Parque Nacional Uvita.",
+        "day4": "Traslado al Parque Nacional Bosque Nuboso Monteverde\n- Vuelo en tirolesa sobre la jungla;\n- Caminata por las copas de los árboles;\n- Visita al jardín de mariposas tropicales.\nTraslado al resort La Fortuna al pie del volcán Arenal.",
+        "day5": "Visita a la enorme catarata La Fortuna.\nCaminata por los puentes colgantes con vista al cono del volcán Arenal.\nRelajación en las aguas termales del hotel.",
+        "day6": "Día libre y relajación en las aguas termales del hotel.\nOpcionalmente:\n- Rafting en el río Pacuare;\n- Tirolesa con vista al volcán Arenal;\n- Diversión en un parque acuático con aguas termales.",
+        "day7": "Viaje al Océano Atlántico, al Mar Caribe, al resort Puerto Viejo.\nDescanso y relajación en la playa del hotel seleccionado.",
+        "day8": "Exploraremos la jungla del Parque Nacional Cahuita, con una caminata de día completo a lo largo de la costa con natación y descanso en playas de arena blanca.",
+        "day9": "Por la mañana, nos dirigiremos a una caminata en la reserva indígena Bribri.\n- Primero caminaremos por la selva salvaje hasta la cascada indígena Volio Watsi;\n- Luego visitaremos un auténtico pueblo indígena, donde los nativos nos mostrarán sus plantas medicinales, ranas venenosas y todo el proceso de producción de cacao.",
+        "day10": "Descanso en el hotel.\nTraslado al hotel en el Valle Central.",
+        "day11": "Por la mañana, subiremos al volcán Poás, que tiene uno de los cráteres activos más grandes del mundo.\nLuego visitaremos el parque de animales rescatados y la catarata La Paz.\nVisita a la única plantación de café de Starbucks en el mundo;\n- Aprenderemos a cosechar café;\n- Conoceremos todo el proceso de elaboración del café;\n- Y, por supuesto, probaremos las mejores variedades de café recién preparado con una vista impresionante de la plantación y la cascada.",
+        "day12": "Traslado al aeropuerto de San José."
+      },
+      "hotels": {
+        "hotel1": "Manuel Antonio (3 noches)",
+        "hotel2": "La Fortuna (3 noches)",
+        "hotel3": "Puerto Viejo de Limón (2 noches)",
+        "hotel4": "Valle Central cerca de las plantaciones de café y el aeropuerto (1 noche)"
+      }
+    }
+  },
+
+  "not_found_page": {
+    "title": "Página no encontrada",
+    "text": "Volver a la",
+    "link_text": "página principal"
+  },
+
+  "stepper": {
+    "day": "Día"
+  },
+
+  "faq": {
+    "title": "Preguntas frecuentes sobre Costa Rica",
+
+    "1": {
+      "question": "¿Dónde está ubicado Costa Rica?",
+      "answer": "Costa Rica es un país que limita con dos países y dos océanos. Limita al norte con Nicaragua y al sureste con Panamá. Al sur y oeste está el océano Pacífico, y al este, Costa Rica está bañada por el océano Atlántico, el mar Caribe."
+    },
+    "2": {
+      "question": "¿Cómo comprar bienes raíces en Costa Rica?",
+      "answer": "Si te encantó tu estancia en Costa Rica y deseas comprar propiedades en el país, puedes ver y elegir propiedades y terrenos sin intermediarios en el sitio web más popular entre los locales, encuentra24.com›Real Estate, o en el marketplace y grupos especializados de Facebook."
+    },
+    "3": {
+      "question": "¿Qué hoteles elegir en Costa Rica?",
+      "answer": "Puede ver una lista de hoteles recomendados después de calcular el costo de cada uno de nuestros tours."
+    }, 
+    "4": {
+      "question": "¿Cuál es el costo de unas vacaciones en Costa Rica en 2024?",
+      "answer": "Ofrecemos diferentes opciones de tours en Costa Rica. Puede ver los precios actuales seleccionando un tour y calculando su costo. Tenga en cuenta que el precio no incluye vuelos ni alojamiento. También puede obtener recomendaciones sobre vuelos y alojamiento en nuestro sitio web o haciendo preguntas por WhatsApp, siempre estamos dispuestos a responder."
+    },  
+    "5": {
+      "question": "¿Cuál es el nivel de criminalidad en Costa Rica?",
+      "answer": "Costa Rica es bastante segura. Viajar a Costa Rica es seguro en general. Los habitantes son muy pacíficos y amigables. Siempre están dispuestos a ayudar sin malicia hacia los extranjeros."
+    },
+    "6": {
+      "question": "¿Por qué es famosa Costa Rica?",
+      "answer": "Costa Rica tiene el 98% de su energía proveniente de fuentes renovables y es un país conservacionista. Tiene 74 parques nacionales y 7 zonas climáticas, lo que significa que se puede pasar de climas cálidos y tropicales a montañas, tundra y climas más frescos en media hora."
+    },
+    "7": {
+      "question": "¿Cuál es el único estado neutral en América?",
+      "answer": "Costa Rica es el único estado neutral en toda América. Renunció al ejército en 1948. Desde entonces, ha sido el país más feliz. La única estructura de seguridad en el país es la policía."
+    },
+    "8": {
+      "question": "¿Cuál es el nivel de vida en Costa Rica?",
+      "answer": "En términos de nivel de vida entre los estados de América Central, Costa Rica ocupa el segundo lugar, siendo Panamá el primero."
+    },
+    "9": {
+      "question": "¿Cómo llegar a Costa Rica?",
+      "answer": "Puede llegar a Costa Rica en vuelo directo si se encuentra en Panamá, México, Perú, República Dominicana, Estados Unidos, Canadá, Colombia, Francia, Alemania, los Países Bajos o España, ya que hay vuelos directos desde estos países. Si no hay vuelos directos desde su país, puede llegar con una o dos escalas a través de los países mencionados anteriormente. Para encontrar vuelos de conexión, visite el sitio web de la aerolínea del país más cercano a usted o el sitio web de aerolíneas que tenga un buen servicio desde su país. Puede buscar boletos disponibles fácilmente en skyscanner.com. Las aerolíneas populares que operan vuelos a Costa Rica son Avianca, Spirit Airlines, Air France, Lufthansa, Swiss International Air Lines e Iberojet Airlines. Si desea obtener información más detallada o sobre cuestiones de visado entre su país y Costa Rica, así como sobre las reglas de entrada a Costa Rica desde su país, escríbanos y haremos todo lo posible para responder a todas sus preguntas."
+    },
+    "10": {
+      "question": "¿Cuál es la mejor época para viajar a Costa Rica?",
+      "answer": "Costa Rica es un buen destino durante todo el año, según nuestros turistas. Hay ventajas y desventajas en ambas estaciones. La temporada seca (también conocida como verano) va de diciembre a abril, con vientos y casi ninguna lluvia, lo que es conveniente ya que se puede viajar de mañana a noche sin preocuparse por las lluvias repentinas. Por supuesto, en la temporada seca, la vegetación es más seca, especialmente en la zona del Pacífico. Los precios de los hoteles son más altos en verano (de diciembre a abril) porque es temporada alta. En la temporada de lluvias (de mayo a noviembre), los precios de la vivienda disminuyen y hay menos turistas, por lo que es mucho más cómodo visitar los lugares turísticos más populares. Las lluvias caen en el valle central y en el océano Pacífico de 1 p.m. a 4 p.m., aproximadamente. Es recomendable planificar todas las actividades principales por la mañana. Después del almuerzo, la siesta y por la tarde, generalmente se puede volver a disfrutar de la playa. Además, la lluvia es cálida y los turistas la perciben como una aventura. En la zona del Caribe (océano Atlántico), no hay temporada de lluvias como tal, y los días lluviosos son impredecibles y no interfieren con la estadía."
+    },
+    "11": {
+      "question": "¿Cuánto dinero se necesita para un viaje a Costa Rica?",
+      "answer": "Por supuesto, todos tienen diferentes niveles de ingresos y preferencias en cuanto al nivel de servicio. Pero se puede calcular aproximadamente el costo de un viaje a Costa Rica. En promedio, gastará alrededor de $100 por persona por noche en hoteles aquí, hay hoteles más baratos y mucho más caros, pero en promedio es así. La cuenta promedio en un restaurante para dos personas es de $50-70. Si pide un plato tradicional y abundante como casado para el almuerzo, será aún más barato (aproximadamente $10 por persona), y la bebida costará alrededor de $3-5. Las excursiones a parques nacionales cuestan aproximadamente $17, y los tours de rafting o canopy, así como los parques turísticos privados, cuestan entre $45 y $75. El alquiler de un automóvil le costará entre $120 y $160 + aproximadamente $50 en gasolina por día. Como no hay direcciones en Costa Rica, generalmente recomendamos reservar un automóvil con un conductor-guía de antemano, ya que esto es más barato y mucho más confiable. Los servicios de conductor-guía cuestan aproximadamente $250 al día con automóvil y gasolina. Los souvenirs cuestan aproximadamente $20-30."
+    },
+    "12": {
+      "question": "¿Por qué debería hacer un tour organizado por Costa Rica?",
+      "answer": "El transporte público no está desarrollado y no hay otro medio de transporte público. Todo está perfectamente conservado y no está contaminado por la presencia humana. Es más fácil organizar un viaje en Europa o Tailandia, donde el turismo está muy desarrollado y organizado. Costa Rica, en cambio, es hermosa precisamente porque no está muy desarrollada logísticamente. Todo es exclusivo para usted: no hay multitudes en las playas ni en las cataratas, y los parques nacionales se asemejan a un parque de la era jurásica lleno de vida silvestre, no de turistas. Muchos lugares asombrosos en Costa Rica no están marcados en los mapas. En Costa Rica, muchos de los lugares y rutas turísticas más interesantes no están marcados en los mapas. Además, alquilar un automóvil puede ser costoso y complicado. ¡Estamos dispuestos a encargarnos de su transporte! Es difícil creer que en Costa Rica no hay direcciones exactas, lo que a menudo dificulta encontrar lugares debido a la falta de direcciones precisas a las que estamos acostumbrados. Los mapas solo muestran las calles principales, sin indicar números de casas. El alquiler de un automóvil le costará entre $120 y $160 más aproximadamente $50 en gasolina por día. No hay direcciones en Costa Rica, por eso generalmente recomendamos reservar un automóvil con un conductor-guía de antemano, ya que es más económico y mucho más confiable. Los servicios de conductor-guía cuestan alrededor de $250 al día, incluyendo el automóvil y la gasolina. ¡Conocemos las mejores rutas! Muchas de las recomendaciones tomadas de sitios web o de blogueros no son óptimas. Hemos estado llevando turistas por Costa Rica durante mucho tiempo y nos basamos en la experiencia y las necesidades de nuestros turistas anteriores. Por lo tanto, nuestros tours básicos están diseñados específicamente para satisfacer sus necesidades, y también podemos ajustar las rutas ya probadas para adaptarlas a sus fechas o plazos."
+    },
+    "13": {
+      "question": "¿Cuánto cuesta unas vacaciones en Costa Rica?",
+      "answer": "La respuesta a esta pregunta depende de sus preferencias y presupuesto. Alojarse en un hostal puede costar entre $10 y $20 por noche, mientras que quedarse en un resort de lujo puede costar entre $100 y $500 o más por noche. La comida puede costar desde $5 por una comida simple en un café callejero hasta $30-50 por una comida en un restaurante. Las excursiones y actividades también varían en precio según su tipo y duración."
+    },
+    "14": {
+      "question": "¿Cuándo es el mejor momento para viajar a Costa Rica?",
+      "answer": "El mejor momento para visitar Costa Rica es de diciembre a abril, cuando es la temporada seca. En este tiempo, el clima es más seco y soleado, lo que lo hace ideal para vacaciones en la playa y explorar las atracciones naturales."
+    },
+    "15": {
+      "question": "¿Pueden los rusos viajar a Costa Rica?",
+      "answer": "Sí, los turistas rusos pueden visitar Costa Rica. La mayoría de los ciudadanos extranjeros solo necesitan un pasaporte con validez vigente para viajar a este país. No se requiere visa para la mayoría de los países, pero verifique esta información en el consulado de Costa Rica en su país."
+    },
+    "16": {
+      "question": "¿Dónde es mejor vacacionar en Costa Rica?",
+      "answer": "Hay muchas opciones, pero una de las más populares es la provincia de Guanacaste en la costa del Pacífico. Aquí encontrarás playas hermosas, resorts de lujo, oportunidades para surfear y observar la vida silvestre. Para aquellos que prefieren aventuras en la jungla, Monteverde y Arenal ofrecen increíbles oportunidades para el ecoturismo y actividades al aire libre."
+    },
+    "17": {
+      "question": "¿Cuánto cuestan las excursiones en Costa Rica?",
+      "answer": "El costo de las excursiones en Costa Rica depende de su duración, ubicación y actividades incluidas. Por lo general, los precios pueden variar entre $50 y $200 por persona. Las excursiones de medio día o día completo a parques nacionales, reservas naturales o actividades de aventura como tours de canopy o rafting suelen estar en un rango de precio medio, mientras que las excursiones más exclusivas o especializadas pueden ser más costosas. Es importante comparar precios y leer reseñas antes de reservar para asegurar la mejor experiencia al mejor precio."
+    },
+    "18": {
+      "question": "¿Qué excursiones son recomendadas en Costa Rica?",
+      "answer": "Costa Rica ofrece una amplia gama de emocionantes excursiones para todos los gustos y niveles de aventura. Algunas de las opciones más populares incluyen tours de observación de vida silvestre en parques nacionales como Manuel Antonio o Corcovado, caminatas por la selva en Monteverde, tours de canopy sobre las copas de los árboles, paseos en bote por ríos para observar cocodrilos y aves, y relajantes baños en aguas termales al pie del volcán Arenal. Con tanta variedad, siempre hay algo emocionante por descubrir en Costa Rica."
+    },
+    "19": {
+      "question": "¿Qué visitar en Costa Rica en 5 días?",
+      "answer": "En un viaje de 5 días a Costa Rica, vale la pena visitar varias atracciones. Un itinerario recomendado puede incluir una visita a la capital, San José, y luego un viaje a la impresionante región de Arenal para ver el famoso volcán y disfrutar de actividades como las aguas termales. Luego, dirígete a Monteverde para experimentar los densos bosques nubosos y emocionantes actividades ecoturísticas como el canopy y los puentes colgantes. Finalmente, termina el viaje en Manuel Antonio para relajarte en sus hermosas playas y explorar el Parque Nacional Manuel Antonio, conocido por su biodiversidad única."
+    },
+    "20": {
+      "question": "¿Qué hacer en Costa Rica en 7 días?",
+      "answer": "Con una estancia de una semana en Costa Rica, tendrás suficiente tiempo para explorar varias regiones del país y disfrutar de diversas actividades. Un itinerario recomendado puede comenzar con unos días en la región de Arenal para disfrutar de las vistas del volcán y actividades de turismo de aventura como el rafting y el canopy. Luego, dirígete a Monteverde para explorar el bosque nuboso y participar en tours de observación de aves y vida silvestre. Después, ve a la costa del Pacífico para disfrutar del sol y el surf en lugares como Tamarindo o Manuel Antonio. Con un poco de planificación, una semana en Costa Rica puede ser una aventura inolvidable llena de naturaleza y belleza."
+    }
+  },
+
+  "contact-form": {
+    "title": "Reservar un tour",
+    "description1": "Aquí puede reservar un tour ",
+    "description2": "Llámenos o escríbanos por teléfono",
+    "description3": "o ingrese su número de teléfono y haga clic en el botón Enviar",
+    "send-btn-text": "Enviar",
+    "contact-form-network-delivered-text": "¡Su mensaje ha sido recibido! \nNos pondremos en contacto con usted dentro de las próximas 12 horas. Si por alguna razón no recibe respuesta, comuníquese con nosotros utilizando la información de contacto proporcionada en el sitio web.",
+    "network-error-text": "Lo sentimos, se ha producido un problema técnico. \nIntenta comunicarte con nosotros por teléfono.",
+    "goto_main_page": "Volver a la página principal"
+  }
+
+}

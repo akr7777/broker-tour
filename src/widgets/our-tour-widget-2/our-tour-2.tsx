@@ -51,6 +51,7 @@ export const OurTour2 = () => {
 
                             <div className='our-tours-2-card-title'>
                                 <h4>{tour.title}</h4>
+                                {/* <>{tour.title.split(LINE_DEVIDER).map(p => <h4 key={uuid()}>{p}</h4>)}</> */}
                             </div>
 
                             <div className='our-tours-2-card-description'>

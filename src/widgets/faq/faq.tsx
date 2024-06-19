@@ -22,7 +22,6 @@ export const FAQ = () => {
 
             <div id={DIV_IDS.faq} />
 
-            {/* <h2>{t('faq.title')}</h2> */}
             <ArticleTitle title={t('faq.title')} />
 
             <MyAccordeon data={accordeonData} />

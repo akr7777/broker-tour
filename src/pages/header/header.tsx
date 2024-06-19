@@ -63,7 +63,10 @@ export const Header = () => {
     ]
     
     return (
+        <>
         <header className='header-wrapper'>
+
+                
                 <Logo />
                 
                 {
@@ -74,5 +77,7 @@ export const Header = () => {
 
                 <LanguageChanger />
         </header>
+        </>
+
     )
 }

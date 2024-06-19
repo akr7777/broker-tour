@@ -5,6 +5,7 @@ import { LINE_DEVIDER, faq_Data } from '../../store/consts'
 import uuid from 'react-uuid'
 
 import './separate-faq-page.scss'
+import { PriceCalculation2 } from '../../widgets/price-calculation-2/price-calculation-2'
 
 const SeparateFAQpage = () => {
     const {t} = useTranslation()
@@ -12,6 +13,8 @@ const SeparateFAQpage = () => {
     return (
         <WidgetWrapper>
             <ArticleTitle title={t('faq.title')} />
+
+            <PriceCalculation2 />
 
             {faq_Data().map(el => {
                 return (
@@ -24,6 +27,8 @@ const SeparateFAQpage = () => {
                     </div>
                 )
             })}
+
+            <PriceCalculation2 />
 
         </WidgetWrapper>
     )

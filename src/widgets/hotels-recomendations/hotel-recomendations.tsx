@@ -1,9 +1,9 @@
 import uuid from 'react-uuid'
 import { AccordeonDataType, MyAccordeon } from '../../components/my-accordeon/my-accordeon'
 import { HotelRecomendationType } from '../../store/tour-info'
+import { useTranslation } from 'react-i18next'
 
 import './hotel-recomandations.scss'
-import { useTranslation } from 'react-i18next'
 
 export type HotelRecomendationsPropsType = {
     hotelRecomendations: Array<HotelRecomendationType> | undefined
@@ -15,7 +15,7 @@ export const HotelRecomendations = (props: HotelRecomendationsPropsType) => {
             const res:AccordeonDataType = {
                 id: uuid(),
                 title: r.point,
-                context: r.hotels
+                context: r.hotels,
             }
             return res
         })

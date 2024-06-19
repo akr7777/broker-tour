@@ -5,7 +5,7 @@
   "loading": "Loading...",
 
   "wellcome-widget": {
-    "line1": "Ready-made tours to Costa Rica",
+    "line1": "Ready-made tours \nto Costa Rica",
     "line2": "Choose your tour.",
     "tours-to-costa-rica": "Tours to Costa Rica",
     "contact-with-us": "Contact us"
@@ -47,7 +47,7 @@
   },
 
   "tours": {
-    "title": "Choose the tour that suits you",
+    "title": "Find the Perfect Tour for You",
     "choose_tour": "Choose a tour",
     "tour_price_calculation": "Tour price calculation:",
     "tour_price_calc_button_text": "Calculate the cost!",
@@ -69,7 +69,7 @@
     "per-person": "per person",
 
     "tour1": {
-      "title": "Costa Rica Classic Mini 4d/3n",
+      "title": "Costa Rica Classic Mini \n4 days / 3 nights",
       "description": "Poás Volcano - Arenal Volcano - Monteverde Cloud Forest - Manuel Antonio Pacific Beach.",
       "full-description": "",
       "min-price": "570",
@@ -92,7 +92,7 @@
     },
 
     "tour2": {
-      "title": "Costa Rica Classic Active 7d/6n",
+      "title": "Costa Rica Classic Active \n7 days / 6 nights",
       "description": "We will visit the most iconic places in Costa Rica: Manuel Antonio Pacific Beach - Monteverde Cloud Forest - Arenal Volcano - Poás Volcano.",
       "full-description": "We will visit the most iconic places in Costa Rica: Manuel Antonio Pacific Beach - Monteverde Cloud Forest - Arenal Volcano - Poás Volcano. Day 2\nWe will visit the Manuel Antonio National Park Reserve, relax on the park's white sandy beaches, swim in the azure waters of the Pacific Ocean. In Manuel Antonio National Park, you are guaranteed to see coatis, monkeys, and iguanas, as well as many other animals and birds ...... \n- walk over the treetops of the rainforest; \n- visit the only Starbucks coffee plantation in the world&",
       "min-price": "690",
@@ -119,7 +119,7 @@
     },
 
     "tour3": {
-      "title": "Costa Rica Classic Relax 9d/8n",
+      "title": "Costa Rica Classic Relax \n9 days / 8 nights",
       "description": "We will visit the most popular places in Costa Rica at a leisurely pace. Tour route: Poás Volcano - Arenal Volcano - Monteverde Cloud Forest - Pacific Beach - Manuel Antonio National Park.",
       "full-description": "We will visit the most popular places in Costa Rica at a leisurely pace. Tour route: Poás Volcano - Arenal Volcano - Monteverde Cloud Forest - Pacific Beach - Manuel Antonio National Park.\nThis program is ideal for those who have time for relaxation and sightseeing.\n\nDay 1\nArrival.\nTransfer from San José airport to the hotel near the airport and coffee plantations\nDay 2\nWe will visit the only Starbucks coffee plantation in the world, \n- learn how to collect coffee;\n- get acquainted with the full coffee production process;\n- and of course taste the best varieties of freshly brewed coffee, with a stunning view of the plantation and waterfall.\nSee one of the largest craters in the world - the active Poás Volcano.\nVisit the rescued animals park and the La Paz waterfall.\nTransfer to your chosen hotel at the La Fortuna resort at the foot of Arenal Volcano.\nDay 3\nWe will see the huge La Fortuna waterfall, swim in the azure water with trout.\nWalk over suspension bridges with a view of the cone-shaped Arenal Volcano.\nRelax in the hot springs of the hotel.\nDay 4\nIn the morning we will go to the Monteverde National Park.\nFly over the cloud forest on a zip-line.\nWalk over the treetops.\nVisit the tropical butterfly garden.\nTransfer to your chosen Pacific Ocean resort.\nDay 5\nRelax on the Pacific Ocean beach.\nDay 6\nRelax on the Pacific Ocean beach.\nDay 7\nTransfer to Manuel Antonio resort.\nRelax on the beach of Manuel Antonio resort.\nDay 8\nVisit Manuel Antonio National Park.\nDay 9\nTransfer to San José airport.",
       "min-price": "1250",
@@ -150,7 +150,7 @@
     },
 
     "tour4": {
-      "title": "Costa Rica Classic Two Oceans 12d/11n",
+      "title": "Costa Rica Classic Two Oceans \n12 days / 11 nights",
       "description": "Route: Manuel Antonio Beach (Pacific Ocean) - Monteverde Cloud Forest - Arenal Volcano - Puerto Viejo Beach (Atlantic Ocean) - Poás Volcano.",
       "full-description": "We will visit Manuel Antonio National Park, relax on the park's white sandy beaches, and swim in the azure waters of the Pacific Ocean. In Manuel Antonio National Park, you are guaranteed to see coatis, monkeys, and iguanas, as well as many other animals and birds.\nTransfer to Monteverde National Park.\n- We will fly over the jungle on a zip-line;\n- Walk above the treetops of the rainforest;\n- Visit a tropical butterfly garden.\nTransfer to the La Fortuna resort at the foot of the Arenal Volcano.\nWe will spend this entire day in the jungles and on the beaches of Cahuita National Park. The full-day hiking trail runs right along the ocean shore. You can snorkel and see a huge variety of marine life.\nIn Cahuita National Park, you can also often see snakes, frogs, coatis, monkeys, and iguanas. We will visit the Bri Bri indigenous reservation, where locals will show us their medicinal plants and poisonous frogs.\nWe will be able to see the entire cocoa production process - from harvesting the fruits to processing the seeds, and we will try to make it ourselves. At the end, we will enjoy our homemade cocoa and fresh bitter chocolate paste.\nRelax on the Caribbean Sea beaches until noon. Then a leisurely transfer to a hotel in the Central Valley near San José.\nWe will visit the only Starbucks coffee plantation in the world.\nThe cost for children under 3 years old and for groups of 9 or more people is calculated upon request. Transportation is carried out in a 10-seat private Hyundai minivan with a local driver and a guide along the route. Since hotel bookings are not included in the tour price, we have compiled a list of recommended hotels for self-booking. They are ranked by price: from luxury to more budget options, in descending order of price. You can book any hotel you like, not necessarily from the list, after coordinating the location with us.",
       "min-price": "990",
@@ -186,7 +186,7 @@
   },
   
   "faq": {
-    "title": "Frequently Asked Questions about Costa Rica",
+    "title": "Frequently Asked Questions \nabout Costa Rica",
   
     "1": {
       "question": "Where is Costa Rica located?",

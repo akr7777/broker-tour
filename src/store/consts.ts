@@ -69,10 +69,14 @@ export const faq_Data = (): Array<FAQ_Type> => {
 
     const faqData: Array<FAQ_Type> = []
     for (let i=1; i<=FAQ_QUESTIONS_COUNT; i++) {
-        faqData.push({
-            question: i18next.t('faq.' + i + '.question'),
-            answer: i18next.t('faq.' + i + '.answer')
-        })
+        
+        if (i18next.exists('faq.' + i + '.question') && 
+                i18next.exists('faq.' + i + '.answer')) {
+            faqData.push({
+                question: i18next.t('faq.' + i + '.question'),
+                answer: i18next.t('faq.' + i + '.answer')
+            })
+        }
     }
 
     return faqData

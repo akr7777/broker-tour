@@ -4,26 +4,6 @@ $nav-menu-elem-width: 100px;
 $nav-menu-elem-height: 30px;
 
 .desctop-nav-wrapper {
-
-    // @media screen and (min-width: 781px) and (max-width: 1100px) {
-    //     position: relative;
-    //     top: $header-height;
-    //     left: -120px;
-
-    //     display: flex;
-    //     flex-direction: column;
-    //     align-items: flex-start;
-    // }
-
-    // @media screen and (min-width: 1101px) {
-    //     display: flex;
-    //     flex-direction: row;
-    //     justify-content: center;
-    //     align-items: center;
-    //     gap: 10px;
-    //     position: relative;
-    // }
-
     display: flex;
     flex-direction: row;
     justify-content: center;

@@ -1,14 +1,12 @@
 import uuid from 'react-uuid'
 import { TourType, toursContent } from '../../../store/tour-info'
-
 import crossIcon from '../../../assets/icons/cross.png'
-
-import './tour-chooser-classes.scss'
 import clsx from 'clsx'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
-import { ANIMATION_TIME_SUPER_SHORT } from '../../../store/consts'
+import { ANIMATION_TIME_SUPER_SHORT, LINE_DEVIDER } from '../../../store/consts'
 
+import './tour-chooser-classes.scss'
 
 export type PriceCalc2TourChooserPropsType = {
     currentTour: TourType | null,
@@ -53,7 +51,12 @@ export const PriceCalc2TourChooser = (props: PriceCalc2TourChooserPropsType) => 
                             props.currentTour?.id === t.id && 'price-calc-2-tour-chooser-field-selected'
                         )}
                     >
-                        {t.title}
+                        {
+                            t.title.includes(LINE_DEVIDER)
+                                ? <>{t.title.split(LINE_DEVIDER).map(l => <div key={uuid()}>{l}</div>)}</>
+                                : <>{t.title}</>
+                            // t.title
+                        }
                     </div>
                 )
             })

@@ -9,13 +9,15 @@ import clsx from 'clsx'
 import { PriceCalc2TourChooser } from './tour-chooser/tour-chooser'
 import { ButtonContact } from '../../components/buttons/buttonContact'
 import { toast } from 'react-toastify'
-import { ANIMATION_TIME, CONTACTS, DIV_IDS } from '../../store/consts'
+import { ANIMATION_TIME, CONTACTS, DIV_IDS, LINE_DEVIDER } from '../../store/consts'
 import { WidgetWrapper } from '../../shared/widget-wrapper/widget-wrapper'
 import { AnimatePresence, motion } from 'framer-motion'
 import { HotelRecomendations } from '../hotels-recomendations/hotel-recomendations'
+import { ArticleTitle } from '../../shared/title/title'
+import i18next from 'i18next'
+import uuid from 'react-uuid'
 
 import './price-calc.scss'
-import { ArticleTitle } from '../../shared/title/title'
 
 const maxAdultCount = 8
 const minAdultCount = 1
@@ -30,16 +32,34 @@ export const PriceCalculation2 = () => {
 
     const [currentTour, setCurrentTour] = useState<TourType | null>(null)
 
+    //Переменные currentLang и tourTitle нужны, чтобы корректно отобразить название тура в первом поле (ячейке)
+    //при смене языка во время выбора тура
+    const currentLang = i18next.language
+    const [tourTitle, setTourTitle] = useState<string>(
+        currentTour?.title || ""
+    )
+
     useEffect(() => {
+        // Обновление информации при смене route тура
         const isPathFound: boolean = toursContent().some(tour => tour.id === Number(tourId))
         if (isPathFound) {
-            const currentTour: TourType | undefined = toursContent().find(tour => tour.id === Number(tourId))
-            if (currentTour) {
-                setCurrentTour(currentTour)
+            const newCurrentTour: TourType | undefined = toursContent().find(tour => tour.id === Number(tourId))
+            if (newCurrentTour) {
+                setCurrentTour(newCurrentTour)
+                setTourTitle(newCurrentTour.title)
             }
         }
-    }, [tourId])
+        // Обновление информации при смене языка
+        if (currentTour?.id) {
+            const currentTourNewLang: TourType | undefined = toursContent().find(tour => tour.id === currentTour.id)
+            if (currentTourNewLang) {
+                setCurrentTour(currentTourNewLang)
+                setTourTitle(currentTourNewLang.title)
+            }
+        }
+    }, [tourId, currentLang, currentTour?.id])
 
+    // Информация о выборе детей-взрослых и вспомогательные переменные
     const [adultCount, setAdultCount] = useState<number>(minAdultCount)
     const [childrenCount, setChildrenCount] = useState<number>(minChildrenCount)
     const [isShowTourChooser, setIsShowTourChooser] = useState<boolean>(false)
@@ -75,23 +95,20 @@ export const PriceCalculation2 = () => {
         }
     }
 
+    const onNewTourChoice = (newTour: TourType) => {
+        setCurrentTour(newTour)
+        setTourTitle(newTour.title)
+    }
+
     return (
         <WidgetWrapper>
             <div className='price-calc-2-wrapper' id={DIV_IDS.tourCalculation}>
                 
-                {/* <h2>{t('tours.tour_price_calculation')}</h2> */}
                 <ArticleTitle title={t('tours.tour_price_calculation')}/>
 
                 <div className='price-calc-2-data-wrapper'>
-                        {/* <AnimatePresence mode="wait" initial={false}>
-                            {isShowTourChooser && 
-                                <PriceCalc2TourChooser 
-                                    currentTour={currentTour} 
-                                    setCurrentTour={setCurrentTour} 
-                                    closeFunction={setIsShowTourChooser}
-                            />}
-                        </AnimatePresence> */}
-
+                       
+                    {/* Выбор тура */}
                     <div 
                         className={clsx(
                             'price-calc-2-data-area', 
@@ -101,17 +118,29 @@ export const PriceCalculation2 = () => {
                         )}
                         onClick={onChooseTourClickHandler}
                     >
-                        <h4>{currentTour ? currentTour.title : t('tours.choose_tour')}</h4>
+                        {/* Надпись текущего тура в поле выбранного тура (или "Выберите тур") */}
+                        {currentTour 
+                            ? tourTitle.includes(LINE_DEVIDER)
+                                ? <>{tourTitle.split(LINE_DEVIDER)
+                                        .map(l => <h4 key={uuid()}>{l}</h4>)
+                                }</>
+                                : <h4>{tourTitle}</h4>
+                            : <h4>{t('tours.choose_tour')}</h4>
+                        }
+
+                        {/* Выпадающее меню с выбором туров */}
                         <AnimatePresence mode="wait" initial={false}>
-                            {isShowTourChooser && 
+                            {isShowTourChooser &&
                                 <PriceCalc2TourChooser 
                                     currentTour={currentTour} 
-                                    setCurrentTour={setCurrentTour} 
+                                    setCurrentTour={onNewTourChoice} 
                                     closeFunction={setIsShowTourChooser}
-                            />}
+                                />
+                            }
                         </AnimatePresence>
                     </div>
 
+                    {/* Выбор кол-ва взрослых */}
                     <div className='price-calc-2-data-area'>
                         <h4>{ t('tours.adult_count_chooser') }</h4>
                         <PersonsCountChooser 
@@ -123,6 +152,7 @@ export const PriceCalculation2 = () => {
                         />
                     </div>
 
+                    {/* Выбор кол-ва детей */}
                     <div className='price-calc-2-data-area'>
                         <h4>{ t('tours.child_count_chooser') }</h4>
                         <PersonsCountChooser 
@@ -162,17 +192,12 @@ export const PriceCalculation2 = () => {
                 <AnimatePresence mode="wait" initial={true}>
                     {showPriceResult && 
                     <motion.div
-                        // initial={{ opacity: 0, y: -100 }}
-                        // animate={{ opacity: 1, y: 0 }}
-                        // transition={{ duration: ANIMATION_TIME }}
-                        // exit={{ opacity: 0, y: -100 }}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: ANIMATION_TIME }}
                         exit={{ opacity: 0 }}
 
                         className='price-calc-2-results-common'
-                        // id={DIV_IDS.priceCalculationResult}
                     >
 
                         <PriceResults 

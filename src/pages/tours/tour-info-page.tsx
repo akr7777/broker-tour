@@ -43,6 +43,8 @@ const TourInfoPage = () => {
             </div>
          </WidgetWrapper>
 
+         <PriceCalculation2 />
+
          <WidgetWrapper>
             <ArticleTitle title={t('tours.plan-of-the-trip')}/>
 
