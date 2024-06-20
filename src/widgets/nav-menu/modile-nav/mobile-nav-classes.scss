@@ -17,7 +17,9 @@
     height: 100%;
     min-height: 100svh;
 
-    background-color: white;
+    // background-color: white;
+    background-image: linear-gradient(to bottom right, white, rgb(175, 171, 171));
+    // background-image: linear-gradient(to bottom right, red, yellow);
 }
 
 .mobile-nav-menu-logo-close-div {
@@ -90,6 +92,8 @@
     background-color: $nav-menu-element-bg-color;
     padding: 10px 20px;
     border-radius: 10px;
+    border: 1px solid grey;
+
     cursor: pointer;
     line-height: normal;
 

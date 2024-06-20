@@ -100,7 +100,7 @@ export const MobileNavigation = (props: NavMenuPropsType) => {
                         <div className='mobile-nav-menu-elements-list'>
                             {props.elements.map(elem => {
                                 return (
-                                    <AnimatePresence key={uuid()}>
+                                    <AnimatePresence mode='wait' key={uuid()}>
                                         <motion.div 
                                             key={uuid()}
                                             className='mobile-nav-menu-element' 
@@ -118,19 +118,19 @@ export const MobileNavigation = (props: NavMenuPropsType) => {
                                             <div>{elem.title}</div>
                                         </motion.div>
 
-                                        <AnimatePresence>
-                                            {titleShow && elem.subElements &&
+                                        <AnimatePresence mode='wait'>
+                                            {titleShow === elem.title && elem.subElements &&
                                                 <motion.div
                                                     initial={{ opacity: 0, x: -150 }}
                                                     animate={{ opacity: 1, x: 0 }}
-                                                    transition={{ duration: 0.5 }}
-                                                    exit={{opacity: 0, x: 150}}
+                                                    transition={{ duration: .5 }}
+                                                    exit={{opacity: 0, x: 150 }}
 
                                                     className='mobile-nav-menu-subelem-child-list'
                                                 >
                                                     {elem.subElements.map(subElem => {
                                                         return (
-                                                            <motion.div 
+                                                            <div 
                                                                 key={uuid()}
                                                                 className='mobile-nav-menu-subelem-child-class'
                                                                 onClick={() => onLinkClickHandler(subElem.path)}
@@ -143,7 +143,7 @@ export const MobileNavigation = (props: NavMenuPropsType) => {
                                                                         </div>
                                                                     )}
                                                                 </div>
-                                                            </motion.div>
+                                                            </div>
                                                         )
                                                     })}
                                                 </motion.div>

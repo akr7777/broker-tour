@@ -17,7 +17,7 @@ export const ArticleTitle = ({title} : PropsType) => {
     const isInView = useInView(ref)
     
     const titleText: ReactNode = title && title.includes(LINE_DEVIDER)
-        ? <>{title?.split(LINE_DEVIDER).map(line => <h2 key={uuid()}>{line}</h2>)}</>
+        ? <>{title.split(LINE_DEVIDER).map(line => <h2 key={uuid()}>{line}</h2>)}</>
         : <h2>{title}</h2>
 
     return (
