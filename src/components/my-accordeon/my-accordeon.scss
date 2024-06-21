@@ -15,8 +15,13 @@
 }
 
 .my-accordeon-item-question-question {
-    display: grid;
-    grid-template-columns: 20px 1fr 35px;
+    // display: grid;
+    // grid-template-columns: 20px 1fr 35px;
+
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
     // align-content: center;
 
     padding: 5px 10px;

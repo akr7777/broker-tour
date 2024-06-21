@@ -10,8 +10,8 @@ $border-radius: 20px;
    display: flex;
    flex-direction: column;
    gap: $paragraph_gap;
-   align-items: center;
-   text-align: center;
+   align-items: flex-start;
+//    text-align: center;
 }
 
 .price-calc-2-data-wrapper {
@@ -19,7 +19,10 @@ $border-radius: 20px;
     max-width: 1100px;
     background-color: $border-color;
     position: relative;
-    box-shadow: 3px 3px 5px 5px rgb(197, 195, 195);
+
+    left: 50%;
+    transform: translateX(-50%);
+    // box-shadow: 3px 3px 5px 5px rgb(197, 195, 195);
 
 
     @media screen and (min-width: 600px) {
@@ -54,6 +57,8 @@ $border-radius: 20px;
     gap: 10px;
 
     padding: 10px 0;
+
+    text-align: center;
 }
 .price-calc-2-data-area-first {
     border-top-left-radius: $border-radius;
@@ -90,7 +95,7 @@ $border-radius: 20px;
 }
 .price-calc-2-results-additional-info-div {
     line-height: normal;
-    text-align: center;
+    // text-align: center;
 }
 
 .price-calc-2-results-common {

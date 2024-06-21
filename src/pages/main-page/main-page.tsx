@@ -5,6 +5,8 @@ import { HowToBookWidget } from "../../widgets/how_to_book/how-to-book"
 import { OurTour2 } from "../../widgets/our-tour-widget-2/our-tour-2"
 import { PriceCalculation2 } from "../../widgets/price-calculation-2/price-calculation-2"
 
+import './main-page-classes.scss'
+
 const MainPage = () => {
 
     const location = useLocation()
@@ -25,8 +27,11 @@ const MainPage = () => {
             <OurTour2 />
             <PriceCalculation2 />
 
-            <AboutUsWidget />
-            <HowToBookWidget />
+            <div className="main-page-classes-two-cols-block">
+                <AboutUsWidget />
+                <HowToBookWidget />
+            </div>
+            
             <FAQ />
         </>
     )
