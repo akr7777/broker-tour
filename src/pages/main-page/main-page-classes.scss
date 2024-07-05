@@ -1,5 +1,8 @@
 .main-page-classes-two-cols-block {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    @media screen and (min-width: 600px) {
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
 }

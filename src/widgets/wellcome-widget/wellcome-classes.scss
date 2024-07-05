@@ -6,6 +6,7 @@
     background-image: url('../../assets//images/main_photo_1.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 
     // @media screen and (min-width: 1500px) {
     //     background-position: center;
@@ -16,15 +17,15 @@
 
     // background-position-y: -10px;
     // background-position: bottom -250px left 0;
-    @media screen and (min-width: 1500px) {
-        background-position: bottom -150px left 0;
-        // background-position: bottom;
+    // @media screen and (min-width: 1500px) {
+    //     background-position: bottom -150px left 0;
+    //     // background-position: bottom;
 
-    }
-    @media screen and (max-width: 1499px) {
-        background-position: bottom;
+    // }
+    // @media screen and (max-width: 1499px) {
+    //     background-position: bottom;
         
-    }
+    // }
     
     padding: 20px;
     width: calc(100% - 40px);
