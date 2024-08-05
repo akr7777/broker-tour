@@ -3,7 +3,7 @@ import { NavMenuElementsType } from "../../../pages/header/header"
 import { useAppDispatch } from "../../../store/store"
 import { setWhichSubMenuPointOpen } from "../../../store/appSlice"
 import { ReactNode } from "react"
-import { LINE_DEVIDER } from "../../../store/consts"
+import { DIV_IDS, LINE_DEVIDER } from "../../../store/consts"
 import uuid from "react-uuid"
 
 import './sub-menu-classes.scss'
@@ -35,11 +35,16 @@ export const SubNavMenuElement = (props: NavMenuElementsType) => {
     const onElemClick = () => {
         dispatch(setWhichSubMenuPointOpen(''))
         navigate(props.path)
-        document.documentElement.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: "smooth", // Optional if you want to skip the scrolling animation
-        });
+        // document.documentElement.scrollTo({
+        //     top: 0,
+        //     left: 0,
+        //     behavior: "smooth", // Optional if you want to skip the scrolling animation
+        // });
+        const elem = document.getElementById(DIV_IDS.wellcomePageLowerText)
+            
+        if (elem) {
+            elem.scrollIntoView({ behavior: 'smooth'})
+        }
     }
 
     return (

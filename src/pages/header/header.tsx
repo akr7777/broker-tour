@@ -28,7 +28,6 @@ export type NavMenuPropsType = {
     elements: Array<NavMenuElementsType>
 }
 
-// console.log('toursConten=', toursContent);
 
 // export const HEADER_DIV_ID = 'header_element'
 

@@ -10,15 +10,17 @@ import './title.scss'
 
 type PropsType = {
     title: string | undefined
+    image?: string
 }
 
-export const ArticleTitle = ({title} : PropsType) => {
+export const ArticleTitle = ({title, image} : PropsType) => {
     const ref = useRef(null)
     const isInView = useInView(ref)
     
     const titleText: ReactNode = title && title.includes(LINE_DEVIDER)
         ? <>{title.split(LINE_DEVIDER).map(line => <h2 key={uuid()}>{line}</h2>)}</>
         : <h2>{title}</h2>
+
 
     return (
         <motion.div
@@ -30,7 +32,8 @@ export const ArticleTitle = ({title} : PropsType) => {
                 transition: "all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s"
               }}
         >
-           
+
+            {image && <img alt="" src={image} />}
             {titleText}
 
         </motion.div>

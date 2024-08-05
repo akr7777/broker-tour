@@ -1,0 +1,272 @@
+{
+  "site_title": "Costa Rica Tours",
+  "site_description": "Costa Rica online booking of tours, guided visits, airport transfers, and activities in Costa Rica.",
+
+  "loading": "Loading...",
+
+  "wellcome-widget": {
+    "line1": "Ready-made tours \nto Costa Rica",
+    "line2": "Choose your tour.",
+    "tours-to-costa-rica": "Tours to Costa Rica",
+    "contact-with-us": "Contact us"
+  },
+  
+  "contacts": {
+    "contact-button-text": "Book a tour!",
+    "contact-whatsapp-text": "Good afternoon! I want to book a tour {{tour}}",
+    "contacts": "Contacts",
+    "questions_and_booking": "Questions and booking via", 
+    "or": "or",
+    "or_use_phone": "You can also contact us by phone",
+    "our_address": "Our address:",
+    "company_name": "Legal name:"
+  },
+
+  
+  "booking": {
+    "how_to_book": "How to book?",
+    "how_to_book_description_1": "You can book any of our tours after calculating the cost in our form ",
+    "how_to_book_description_2": "You can also make a request for ready-made tours or an individual request. Contact details are provided ",
+    "here": "here"
+  },
+
+  "about_us": {
+    "about_us": "About us",
+    "about_us_1": "Our company Costa Rica Tures has been receiving tourists since 2018. Our tourists have become our friends. Positive feedback from our clients gives us the strength to move forward and improve.",
+    "about_us_2": "We are located near the San José airport. We have our own transport, drivers, and guides, which allows us to respond quickly to any request from our tourists.",
+    "about_us_3": "In addition, we have many verified tourist partners throughout Costa Rica, which helps to solve any problem very quickly, as we speak Spanish, English, and Russian."
+  },
+
+  "nav": {
+    "main_page": "Home",
+    "contacts": "Contacts",
+    "nav_tours": "Tours",
+    "how_to_book": "How to book",
+    "about_us": "About us",
+    "faq": "Useful"
+  },
+
+  "tours": {
+    "title": "Find the Perfect Tour for You",
+    "choose_tour": "Choose a tour",
+    "tour_price_calculation": "Tour price calculation:",
+    "tour_price_calc_button_text": "Calculate the cost!",
+    "tour-price-is": "The cost of the tour is:",
+    "adult_count_chooser": "Adults",
+    "child_count_chooser": "Children (3-12 years old)",
+    "tour_max_persons_count": "If your group is more than 8 people, send a request on WhatsApp: ",
+    "add-price-info": {
+      "info1": "In a 4-seater private Hyundai Santa Fe car with a driver-guide.",
+      "info2": "In a 10-seater private Hyundai minivan with a local driver. Guide services are included on the days required by the program",
+      "price_for_0_3_years_old": "The cost for children under 3 years old and for groups of more than 9 people is calculated individually (send a request)",
+      "tour-info-eat-hotel": "The tour price does not include hotel accommodation. Hotel bookings are made by the tourists themselves depending on their preferences. Below are hotel recommendations according to the route"
+    },
+    "plan-of-the-trip": "Trip plan:",
+    "needs_to_choose_a_tour": "You need to choose a tour",
+    "hotel-recomenddations-title": "Hotel selection recommendations",
+    "hotel-recomenddations-description": "The tour price does not include hotel accommodation. Hotel bookings are made by the tourists themselves depending on their preferences. Below are hotel recommendations according to the route. They are ranked by cost: from luxury to budget in descending order of price.",
+    "from": "From",
+    "per-person": "per person",
+
+    "tour1": {
+      "title": "Costa Rica Classic Mini \n4 days / 3 nights",
+      "description": "Poás Volcano - Arenal Volcano - Monteverde Cloud Forest - Manuel Antonio Pacific Beach.",
+      "full-description": "",
+      "min-price": "570",
+      "days-count": "4",
+      "days-nights-text-count": "4 days / 3 nights",
+      "plan": {
+        "day1": "Arrival.\nTransfer from San José airport to the hotel near the airport and coffee plantations.",
+        "day2": "We will visit the only Starbucks coffee plantation in the world;\n- learn how to collect coffee;\n- get acquainted with the full coffee production process;\n- and of course taste the best varieties of freshly brewed coffee, with a stunning view of the plantation and waterfall;\n- see one of the largest craters in the world - the active Poás Volcano;\n- visit the rescued animals park and the La Paz waterfall.\nTransfer to your chosen hotel at the La Fortuna resort at the foot of Arenal Volcano.",
+        "day3": "⁃ We will see the huge La Fortuna waterfall, swim in the azure water with trout;\n⁃ Walk over suspension bridges with a view of the cone-shaped Arenal Volcano;\n⁃ Relax in the hot springs of the hotel.",
+        "day4": "In the morning we will go to the Monteverde National Park;\n⁃ Fly over the cloud forest on a zip-line;\n⁃ Walk over the treetops;\n⁃ Visit the tropical butterfly garden;\n⁃ Transfer to your chosen Pacific Ocean resort."
+      },
+      "add-price-info": {
+        "info1": "\n!Important! For this program, the additional transfer fee to your chosen resort on the fourth day of the tour will depend on the resort's distance and the number of people, we clarify the amount additionally at the time of booking.",
+        "info2": "\n!Important! For this program, the additional transfer fee to your chosen resort on the fourth day of the tour will depend on the resort's distance and the number of people, we clarify the amount additionally at the time of booking."
+      },
+      "hotels": {
+        "hotel1": "Central Valley near coffee plantations and airport (1 night)",
+        "hotel2": "La Fortuna (2 nights)"
+      }
+    },
+
+    "tour2": {
+      "title": "Costa Rica Classic Active \n7 days / 6 nights",
+      "description": "We will visit the most iconic places in Costa Rica: Manuel Antonio Pacific Beach - Monteverde Cloud Forest - Arenal Volcano - Poás Volcano.",
+      "full-description": "We will visit the most iconic places in Costa Rica: Manuel Antonio Pacific Beach - Monteverde Cloud Forest - Arenal Volcano - Poás Volcano. Day 2\nWe will visit the Manuel Antonio National Park Reserve, relax on the park's white sandy beaches, swim in the azure waters of the Pacific Ocean. In Manuel Antonio National Park, you are guaranteed to see coatis, monkeys, and iguanas, as well as many other animals and birds ...... \n- walk over the treetops of the rainforest; \n- visit the only Starbucks coffee plantation in the world&",
+      "min-price": "690",
+      "days-count": "7",
+      "days-nights-text-count": "7 days / 6 nights",
+      "plan": {
+        "day1": "Arrival.\nTransfer from San José airport to the hotel on the Pacific Ocean (Manuel Antonio resort)",
+        "day2": "We will visit the Manuel Antonio National Park Reserve.",
+        "day3": "Free day on the beaches of the Manuel Antonio resort.\nOptional: big game fishing in the Pacific Ocean.\n-excursion to see whales and sea turtles in Uvita National Park",
+        "day4": "Transfer to Monteverde National Park.\n- fly on a zip-line over the jungle;\n- walk over the treetops;\n- visit the tropical butterfly garden.\nTransfer to the La Fortuna resort at the foot of Arenal Volcano",
+        "day5": "We will see the huge La Fortuna waterfall, swim in the azure water with trout.\nWalk over suspension bridges with a view of the cone-shaped Arenal Volcano.\nRelax in the hot springs of the hotel.",
+        "day6": "Transfer to the Central Valley. Visit the rescued animals park and the La Paz waterfall;\n- see one of the largest craters in the world of the Poás Volcano;\n- visit the only Starbucks coffee plantation in the world;\n- learn how to collect coffee, get acquainted with the full coffee production process and of course taste the best varieties of freshly brewed coffee with a stunning view of the plantation and waterfall.",
+        "day7": "Transfer to San José airport."
+      },
+      "add-price-info": {
+        "info1": "In a 4-seater private Hyundai Santa Fe car with a driver-guide.",
+        "info2": "In a 10-seater private Hyundai minivan with a local driver and guide, speaking your language (the guide accompanies on the days when it is necessary according to the program)"
+      },
+      "hotels": {
+        "hotel1": "Manuel Antonio (3 nights)",
+        "hotel2": "La Fortuna (2 nights)",
+        "hotel3": "Central Valley near coffee plantations and airport (1 night)"
+      }
+    },
+
+    "tour3": {
+      "title": "Costa Rica Classic Relax \n9 days / 8 nights",
+      "description": "We will visit the most popular places in Costa Rica at a leisurely pace. Tour route: Poás Volcano - Arenal Volcano - Monteverde Cloud Forest - Pacific Beach - Manuel Antonio National Park.",
+      "full-description": "We will visit the most popular places in Costa Rica at a leisurely pace. Tour route: Poás Volcano - Arenal Volcano - Monteverde Cloud Forest - Pacific Beach - Manuel Antonio National Park.\nThis program is ideal for those who have time for relaxation and sightseeing.\n\nDay 1\nArrival.\nTransfer from San José airport to the hotel near the airport and coffee plantations\nDay 2\nWe will visit the only Starbucks coffee plantation in the world, \n- learn how to collect coffee;\n- get acquainted with the full coffee production process;\n- and of course taste the best varieties of freshly brewed coffee, with a stunning view of the plantation and waterfall.\nSee one of the largest craters in the world - the active Poás Volcano.\nVisit the rescued animals park and the La Paz waterfall.\nTransfer to your chosen hotel at the La Fortuna resort at the foot of Arenal Volcano.\nDay 3\nWe will see the huge La Fortuna waterfall, swim in the azure water with trout.\nWalk over suspension bridges with a view of the cone-shaped Arenal Volcano.\nRelax in the hot springs of the hotel.\nDay 4\nIn the morning we will go to the Monteverde National Park.\nFly over the cloud forest on a zip-line.\nWalk over the treetops.\nVisit the tropical butterfly garden.\nTransfer to your chosen Pacific Ocean resort.\nDay 5\nRelax on the Pacific Ocean beach.\nDay 6\nRelax on the Pacific Ocean beach.\nDay 7\nTransfer to Manuel Antonio resort.\nRelax on the beach of Manuel Antonio resort.\nDay 8\nVisit Manuel Antonio National Park.\nDay 9\nTransfer to San José airport.",
+      "min-price": "1250",
+      "days-count": "9",
+      "days-nights-text-count": "9 days / 8 nights",
+      "plan": {
+        "day1": "Arrival.\nTransfer from San José airport to the hotel near the airport and coffee plantations.",
+        "day2": "We will visit the only Starbucks coffee plantation in the world;\n- learn how to collect coffee;\n- get acquainted with the full coffee production process;\n- and of course taste the best varieties of freshly brewed coffee, with a stunning view of the plantation and waterfall;\n- see one of the largest craters in the world - the active Poás Volcano;\n- visit the rescued animals park and the La Paz waterfall.\nTransfer to your chosen hotel at the La Fortuna resort at the foot of Arenal Volcano.",
+        "day3": "We will see the huge La Fortuna waterfall, swim in the azure water with trout;\nWalk over suspension bridges with a view of the cone-shaped Arenal Volcano.\nRelax in the hot springs of the hotel.",
+        "day4": "In the morning we will go to the Monteverde National Park.\nFly over the cloud forest on a zip-line.\nWalk over the treetops.\nVisit the tropical butterfly garden.\nTransfer to your chosen Pacific Ocean resort.",
+        "day5": "Relax on the Pacific Ocean beach.",
+        "day6": "Relax on the Pacific Ocean beach.",
+        "day7": "Transfer to Manuel Antonio resort.\nRelax on the beach of Manuel Antonio resort.",
+        "day8": "Visit Manuel Antonio National Park.",
+        "day9": "Transfer to San José airport."
+      },
+      "add-price-info": {
+        "info1": "The price includes a guide for the entire tour duration and transportation in a Hyundai minivan (for large groups).",
+        "info2": "All transfers between hotels and locations are included in the price."
+      },
+      "hotels": {
+        "hotel1": "Central Valley near coffee plantations and airport (1 night)",
+        "hotel2": "La Fortuna (2 nights)",
+        "hotel3": "Monteverde (1 night)",
+        "hotel4": "Pacific Ocean beach (3 nights)",
+        "hotel5": "Manuel Antonio (2 nights)"
+      }
+    },
+
+    "tour4": {
+      "title": "Costa Rica Classic Two Oceans \n12 days / 11 nights",
+      "description": "Route: Manuel Antonio Beach (Pacific Ocean) - Monteverde Cloud Forest - Arenal Volcano - Puerto Viejo Beach (Atlantic Ocean) - Poás Volcano.",
+      "full-description": "We will visit Manuel Antonio National Park, relax on the park's white sandy beaches, and swim in the azure waters of the Pacific Ocean. In Manuel Antonio National Park, you are guaranteed to see coatis, monkeys, and iguanas, as well as many other animals and birds.\nTransfer to Monteverde National Park.\n- We will fly over the jungle on a zip-line;\n- Walk above the treetops of the rainforest;\n- Visit a tropical butterfly garden.\nTransfer to the La Fortuna resort at the foot of the Arenal Volcano.\nWe will spend this entire day in the jungles and on the beaches of Cahuita National Park. The full-day hiking trail runs right along the ocean shore. You can snorkel and see a huge variety of marine life.\nIn Cahuita National Park, you can also often see snakes, frogs, coatis, monkeys, and iguanas. We will visit the Bri Bri indigenous reservation, where locals will show us their medicinal plants and poisonous frogs.\nWe will be able to see the entire cocoa production process - from harvesting the fruits to processing the seeds, and we will try to make it ourselves. At the end, we will enjoy our homemade cocoa and fresh bitter chocolate paste.\nRelax on the Caribbean Sea beaches until noon. Then a leisurely transfer to a hotel in the Central Valley near San José.\nWe will visit the only Starbucks coffee plantation in the world.\nThe cost for children under 3 years old and for groups of 9 or more people is calculated upon request. Transportation is carried out in a 10-seat private Hyundai minivan with a local driver and a guide along the route. Since hotel bookings are not included in the tour price, we have compiled a list of recommended hotels for self-booking. They are ranked by price: from luxury to more budget options, in descending order of price. You can book any hotel you like, not necessarily from the list, after coordinating the location with us.",
+      "min-price": "990",
+      "days-count": "12",
+      "days-nights-text-count": "12 days / 11 nights",
+      "plan": {
+        "day1": "Arrival.\nTransfer from San José Airport to a hotel on the Pacific Ocean (Manuel Antonio resort)",
+        "day2": "Visit Manuel Antonio National Park and its white sandy beach",
+        "day3": "Relax on the beaches of the Manuel Antonio resort.\nOptional activities:\n- Deep sea fishing in the Pacific Ocean;\n- Whale and sea turtle tour in Marino Ballena National Park",
+        "day4": "Transfer to Monteverde National Park.\n- Fly over the jungle on a zip-line;\n- Walk above the treetops;\n- Visit a tropical butterfly garden.\nTransfer to the La Fortuna resort at the foot of the Arenal Volcano",
+        "day5": "See the huge La Fortuna waterfall and swim in its azure waters with trout;\nWalk on suspension bridges with views of the conical Arenal Volcano;\nRelax in the hot springs of the hotel.",
+        "day6": "Transfer to the Central Valley:\n- Visit the rescued animals park and La Paz waterfall gardens;\n- See one of the largest craters in the world at Poás Volcano;\n- Visit the only Starbucks coffee plantation in the world;\n- Learn how to pick coffee;\n- Learn about the full coffee production process;\n- And, of course, taste the best varieties of freshly brewed coffee with a stunning view of the plantation and waterfall.",
+        "day7": "Transfer to San José Airport."
+      },
+      "hotels": {
+        "hotel1": "Manuel Antonio (3 nights)",
+        "hotel2": "La Fortuna (2 nights)",
+        "hotel3": "Central Valley near coffee plantations and airport (1 night)"
+      }
+    }
+
+
+  },
+
+  "not_found_page": {
+    "title": "Page Not Found",
+    "text": "Please proceed to the",
+    "link_text": "main page"
+  },
+  
+  "stepper": {
+    "day": "Day"
+  },
+  
+  "faq": {
+    "title": "Frequently Asked Questions \nabout Costa Rica",
+  
+    "1": {
+      "question": "Where is Costa Rica located?",
+      "answer": "Costa Rica is a country bordered by two countries and two oceans. It borders Nicaragua to the north and Panama to the southeast. To the south and west is the Pacific Ocean, and to the east, Costa Rica is washed by the Atlantic Ocean, the Caribbean Sea."
+    },
+    "2": {
+      "question": "How to buy property in Costa Rica?",
+      "answer": "If you really liked your vacation in Costa Rica and want to buy property there, you can view and choose properties and land without intermediaries on the most popular local website encuentra24.com›Real Estate or on the marketplace and in specialized Facebook groups."
+    },
+    "3": {
+      "question": "What hotels to choose in Costa Rica?",
+      "answer": "You can view the list of recommended hotels for each of our tours after calculating the cost."
+    },
+    "4": {
+      "question": "What is the cost of a vacation in Costa Rica in 2024?",
+      "answer": "We offer various tour options to Costa Rica. You can view the current prices by selecting a tour and calculating its cost. Please note that the price does not include flights and accommodation. Recommendations for flights and accommodation can also be found in the materials on our website or by asking questions on WhatsApp—we are always happy to answer."
+    },
+    "5": {
+      "question": "What is the crime rate in Costa Rica?",
+      "answer": "Costa Rica is quite safe. Traveling to Costa Rica is generally safe. The locals are very peaceful. They have a good attitude towards foreigners and are always ready to help without any ill intent."
+    },
+    "6": {
+      "question": "What is Costa Rica famous for?",
+      "answer": "Costa Rica has 98% clean energy and is a conservation country. There are 74 reserves in Costa Rica. There are 7 climatic zones here, so you can go from heat and tropics to mountains, tundra, and relative coolness in half an hour."
+    },
+    "7": {
+      "question": "Which country is the only neutral state in the Americas?",
+      "answer": "Costa Rica is the only neutral state in all of the Americas. Costa Rica abolished its army in 1948. Since then, it has been the happiest country. The law enforcement agency in the country is called the police."
+    },
+    "8": {
+      "question": "What is the standard of living in Costa Rica?",
+      "answer": "In terms of standard of living among Central American countries, Costa Rica ranks 2nd, with Panama rightfully taking first place."
+    },
+    "9": {
+      "question": "How to fly to Costa Rica?",
+      "answer": "You can fly to Costa Rica directly if you are in Panama, Mexico, Peru, the Dominican Republic, the USA, Canada, Colombia, France, Germany, the Netherlands, or Spain, as there are direct flights from these countries.\nIf there is no direct flight from your country, you can fly with one or two stopovers through the aforementioned countries. To find connecting flights, visit the website of the airline closest to you or with the most accessible air connection to your country. \nIt's convenient to search for available tickets on skyscanner.com. \nPopular airlines operating flights to Costa Rica:\nAvianca\nSpirit Airlines\nAir France\nLufthansa\nSwiss International Air Lines\nIberojet Airlines. If you are interested in more detailed information or visa questions between your country and Costa Rica, as well as entry rules for Costa Rica for your country, please write to us, and we will try to answer all your questions."
+    },
+    "10": {
+      "question": "When is the best time to fly to Costa Rica?",
+      "answer": "Costa Rica is great to visit all year round, as confirmed by our tourists. There are pros and cons in both seasons. The dry season (also called summer here) lasts from December to April inclusive, there may be winds, almost no rain, which is convenient as you can travel from morning to evening without fearing sudden showers. Of course, in the dry season, the vegetation is drier, especially in the Pacific region. Hotel prices are higher in summer (from December to April) due to the high season. In the wet season (from May to November inclusive), accommodation prices decrease, there are fewer tourists, so it is much more comfortable to visit the most popular tourist places. Rain falls in the central valley and on the Pacific coast from around 1 pm to 4 pm, approximately. It is advisable to plan all major activities in the morning. There is a siesta at lunchtime, and by evening, you can usually relax on the beach again. Also, the rain is warm, and tourists perceive it as an adventure. In the Caribbean area (Atlantic Ocean), there is no rainy season as such, and rainy days are unpredictable and also do not interfere with relaxation."
+    },
+    "11": {
+      "question": "How much money do you need for a trip to Costa Rica?",
+      "answer": "Of course, everyone has a different income level and preferences regarding the level of service. But you can roughly calculate the cost of a trip to Costa Rica.\nYou will spend on hotels here on average $100 per person per day, there are hotels cheaper and much more expensive, but on average, it turns out like this. \nThe average bill in a restaurant for two is $50-70. If you order a traditional hearty dish, casado, for lunch, it will be even cheaper (about $10 per person), and a drink will cost around $3-5. \nExcursions to national parks cost approximately $17, and tours like 'rafting' or 'canopy,' as well as private tourist parks, from $45 to $75. \nCar rental will cost you $120-160 + about $50 for gas per day. There are no addresses in Costa Rica, which is why we usually recommend booking a car with a driver-guide in advance, as it is cheaper and much more reliable. The services of a driver-guide cost approximately $250 per day with a car and gasoline. \nSouvenirs cost about $20-30."
+    },
+    "12": {
+      "question": "Why do you need an organized tour of Costa Rica?",
+      "answer": "Bus service is not developed, and there is no other public transportation! Everything is perfect and untouched by people\nIt's easier to do somewhere in Europe or in Thailand, where tourism is very developed and organized. Costa Rica, however, is beautiful precisely because it is not very developed logistically. Everything is exclusive for you – no people on beaches and waterfalls, and national parks resemble a Jurassic period park, filled with wildlife, not tourists.\nMany amazing places in Costa Rica are not marked on the map\nIn Costa Rica, many of the most interesting routes and tourist spots are not marked on the map. At the same time, it is quite expensive and difficult to rent a car. We are ready to take care of your transfer!\nIs it really true that there are no addresses in Costa Rica?\nIt's hard to believe, but it is often difficult to find something in Costa Rica due to the lack of exact addresses, to which we are so accustomed. Only the main streets are marked on maps, without indicating house numbers. Car rental will cost you $120-160 + about $50 for gas per day. There are no addresses in Costa Rica, which is why we usually recommend booking a car with a driver-guide in advance, as it is cheaper and much more reliable. The services of a driver-guide cost approximately $250 per day with a car and gasoline. \nWe know the best routes!\nMany recommendations taken from websites or received from bloggers are not optimal. We have been taking tourists around Costa Rica for a long time and rely on the experience and needs of our tourists who have visited us. Therefore, our basic tours are built precisely according to your needs, and we can also adjust sets of routes developed by us to your dates or terms."
+    },
+
+
+    "13": {
+      "question": "How much do tours cost in Costa Rica?",
+      "answer": "The cost of tours in Costa Rica varies depending on the duration, location, and activities included. Typically, prices can range from $50 to $200 per person. Half-day or full-day tours to national parks, nature reserves, or adventure activities like canopy tours or rafting may fall into the mid-range, while more exclusive or specialized tours may be more expensive. It's important to compare prices and read reviews before booking to ensure you get the best experience at the best price."
+    },
+
+    
+    "18": {
+      "question": "What excursions to do in Costa Rica?",
+      "answer": "Costa Rica offers a wide range of exciting excursions for all tastes and adventure levels. Some of the most popular options include wildlife observation tours in national parks like Manuel Antonio or Corcovado, jungle hikes in Monteverde, ziplining adventures over the rainforest canopy, boat tours on rivers to spot crocodiles and birds, and relaxing hot springs baths at the base of the Arenal Volcano. With so many options available, there will always be something thrilling to discover in Costa Rica."
+    },
+    "19": {
+      "question": "What to visit in Costa Rica in 5 days?",
+      "answer": "On a 5-day trip to Costa Rica, there are several attractions that should not be missed. A suggested itinerary could include exploring the capital, San Jose, followed by a visit to the stunning Arenal region to see the famous volcano and enjoy activities like hot springs. Then, head to Monteverde to experience the lush cloud forest and exciting ecotourism activities such as ziplining and hanging bridges. Finally, end in Manuel Antonio to relax on its beautiful beaches and explore Manuel Antonio National Park, known for its unique biodiversity."
+    },
+    "20": {
+      "question": "What to do in Costa Rica in 7 days?",
+      "answer": "With a week in Costa Rica, travelers have enough time to explore multiple regions of the country and enjoy a variety of activities. A recommended itinerary could start with a few days in the Arenal region to take in the volcano views and adventure activities like rafting and canopy tours. Then, head to Monteverde to explore the cloud forest and participate in birdwatching and wildlife tours. Afterward, travel to the Pacific coast to enjoy sun and surf in places like Tamarindo or Manuel Antonio. With a little planning, a week in Costa Rica can be an unforgettable experience filled with adventure and natural beauty."
+    }
+  },
+  
+  "contact-form": {
+    "title": "Book a Tour",
+    "description1": "Here you can book a tour",
+    "description2": "Call/write to us by phone",
+    "description3": "or provide your phone number and click the Send button",
+    "send-btn-text": "Send",
+    "contact-form-network-delivered-text": "Your message has been received!\nWe will respond to you within 12 hours. If for any reason you do not receive a response, please contact us using the contact details provided on the website.",
+    "network-error-text": "Sorry, there was a technical issue.\nPlease try to contact us by phone.",
+    "goto_main_page": "Return to the main page"
+  }
+}
+

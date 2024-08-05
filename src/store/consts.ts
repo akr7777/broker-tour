@@ -8,6 +8,8 @@ export const DIV_IDS = {
     aboutUs: 'about-us',
     faq: 'friguently-asked-questions',
     tourCalculation: 'tour-calculation',
+    toursCards: 'tours-cards',
+    wellcomePageLowerText: 'wellcome-page-lower-text'
 }
 
 export const ANIMATION_TIME = 2;

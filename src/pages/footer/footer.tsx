@@ -12,7 +12,7 @@ export const Footer = () => {
                 @All right reserved, SRL Oldaga Group, {currentYear}
             </div>
             <div>
-                Designed by ...
+                {/* Designed by ... */}
             </div>
         </footer>
         // </WidgetWrapper>

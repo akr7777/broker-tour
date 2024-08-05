@@ -1,20 +1,20 @@
 @import '../../assets/styles/common-variables.scss';
 
 .header-bg-wrapper {
-    z-index: 999;
+    z-index: 1001;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: $header-height;
 
-    background-color: rgba(0,0,0, .5);
+    background-color: rgba(0,0,0, .2);
 }
 .header-wrapper {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000;
+    z-index: 1001;
     // opacity: 0.2;
 
     padding: 0 20px;

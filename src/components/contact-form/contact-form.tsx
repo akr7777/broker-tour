@@ -81,7 +81,7 @@ export const ContactForm = (props: PropsType) => {
 
     return (
         <div className='contact-form-outlet'>
-            <div className='contact-form-wrapper'>
+            <div className='contact-form-wrapper-component'>
 
                 <img alt='' src={crossImg} onClick={closeClickHandler} className='contact-form-cross-img'/>
                 

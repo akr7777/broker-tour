@@ -1,10 +1,12 @@
 import uuid from 'react-uuid'
 import { TourType, toursContent } from '../../../store/tour-info'
-import crossIcon from '../../../assets/icons/cross.png'
 import clsx from 'clsx'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import { ANIMATION_TIME_SUPER_SHORT, LINE_DEVIDER } from '../../../store/consts'
+
+// import crossIcon from '../../../assets/icons/cross.png'
+import crossIcon from '../../../assets/icons/cross_2.svg'
 
 import './tour-chooser-classes.scss'
 

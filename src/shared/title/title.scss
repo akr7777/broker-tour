@@ -1,8 +1,8 @@
 .title-wrapper {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
     gap: 15px;
 
     margin-block-start: 0.83em;
@@ -10,9 +10,11 @@
     margin-inline-start: 0px;
     margin-inline-end: 0px;
 
+    // padding-left: 30px;
+
     img {
-        width: 35px;
-        height: 35px;
+        width: 45px;
+        height: 45px;
     }
 
     h2 {
@@ -25,7 +27,7 @@
         // margin-inline-end: 0px;
         font-weight: bold;
         unicode-bidi: isolate;
-        margin: 0 30px;
+        margin: 0 0;
     }
 
 

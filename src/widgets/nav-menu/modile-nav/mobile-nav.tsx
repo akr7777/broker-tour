@@ -4,12 +4,13 @@ import { NavMenuPropsType } from '../../../pages/header/header'
 import uuid from 'react-uuid';
 import { useNavigate } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
-import { ANIMATION_TIME_SHORT, LINE_DEVIDER } from '../../../store/consts';
+import { ANIMATION_TIME_SHORT, DIV_IDS, LINE_DEVIDER } from '../../../store/consts';
 import { useAppDispatch, useAppSelector } from '../../../store/store';
 import { setIsMobileMenuOpen } from '../../../store/appSlice';
 
 import burgerMenu from '../../../assets/icons/burger-menu-3-white.svg'
-import crossIcon from '../../../assets/icons/cross.png'
+// import crossIcon from '../../../assets/icons/cross.png'
+import crossIcon2 from '../../../assets/icons/cross_2.svg'
 import { Logo } from '../../../shared/logo/logo';
 
 import './mobile-nav-classes.scss'
@@ -34,11 +35,16 @@ export const MobileNavigation = (props: NavMenuPropsType) => {
             // document.getElementById(elemId).scrollIntoView({ behavior: 'smooth' });
         } else {
             navigate(link)
-            document.documentElement.scrollTo({
-                top: 0,
-                left: 0,
-                behavior: "smooth", // Optional if you want to skip the scrolling animation
-            });
+            // document.documentElement.scrollTo({
+            //     top: 0,
+            //     left: 0,
+            //     behavior: "smooth", // Optional if you want to skip the scrolling animation
+            // });
+            const elem = document.getElementById(DIV_IDS.wellcomePageLowerText)
+            
+            if (elem) {
+                elem.scrollIntoView({ behavior: 'smooth'})
+            }
         }
     }
     const onShowClickHandler = (title: string) => {
@@ -85,7 +91,7 @@ export const MobileNavigation = (props: NavMenuPropsType) => {
                             <Logo isDark={true}/>
                             <AnimatePresence mode="wait" initial={true}>
                                 <motion.img
-                                    src={crossIcon}
+                                    src={crossIcon2}
                                     alt='Close navigation menu'
                                     className='mobile-nav-menu-img-div-class'
                                     onClick={() => setIsShow(false)}

@@ -6,7 +6,10 @@ import { useNavigate } from 'react-router-dom'
 import { toursContent } from '../../store/tour-info'
 import { ArticleTitle } from '../../shared/title/title'
 
+import titleIcon from '../../assets/icons/summer-vacation.svg'
+
 import './our-tour-2-classes.scss'
+import { DIV_IDS } from '../../store/consts'
 
 export const OurTour2 = () => {
     const {t} = useTranslation()
@@ -16,12 +19,10 @@ export const OurTour2 = () => {
     return (
         <WidgetWrapper>
 
-            {/* <h2>{t('tours.title')}</h2> */}
-            <ArticleTitle title={t('tours.title')} />
+            <ArticleTitle title={t('tours.title')} image={titleIcon}/>
 
-            <div className="our-tours-2-wrapper">
+            <div className="our-tours-2-wrapper" id={DIV_IDS.toursCards}>
 
-                {/* {ourTourData.map(item => { */}
                 {toursContent().map(tour => {
                     return (
                         <div 
@@ -37,7 +38,6 @@ export const OurTour2 = () => {
                                     backgroundImage: 'url("' + tour.tourImage.url + '")',
                                 }}
                             >
-                                 {/* {tour.tourImage.img} */}
                             </motion.div>
                             
                             <div className='our-tours-2-card-min-price'>
@@ -51,7 +51,6 @@ export const OurTour2 = () => {
 
                             <div className='our-tours-2-card-title'>
                                 <h4>{tour.title}</h4>
-                                {/* <>{tour.title.split(LINE_DEVIDER).map(p => <h4 key={uuid()}>{p}</h4>)}</> */}
                             </div>
 
                             <div className='our-tours-2-card-description'>

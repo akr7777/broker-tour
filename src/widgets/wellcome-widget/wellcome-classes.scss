@@ -1,12 +1,29 @@
 @import '../../assets/styles/common-variables.scss';
 
+// $lower_div_text_color: rgb(7, 96, 7);
+$lower_div_text_color: white;
+
+
 .wellcome-wrapper {
     position: relative;
     z-index: 1000;
-    background-image: url('../../assets//images/main_photo_1.jpeg');
+    // background-image: url('../../assets//images/main_photo_1.jpeg');
+    // background-image: url('../../assets/images/main_photo_2.jpeg');
+    // background-image: url('../../assets/images/main_photo_3.jpg');
+    // background-image: url('../../assets/images/main_photo_4_tucan.jpg');
+    // background-image: url('../../assets/images/main_photo_5.jpg');
+    // background-image: url('../../assets/images/main_photo_6.jpg');
+    // background-image: url('../../assets/images/main_photo_7.jpg');
+    background-image: url('../../assets/images/main_photo_8.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    // background-position: center;
+    background-position-x: center;
+    background-position-y: center;
+    
+    // background-attachment: fixed;
+
+    background-origin: border-box;
 
     // @media screen and (min-width: 1500px) {
     //     background-position: center;
@@ -30,7 +47,7 @@
     padding: 20px;
     width: calc(100% - 40px);
     // height: calc(100svh - $header-height - $widget-devider-height);
-    height: 70svh;
+    height: calc(100svh - 40px);
 
 
     display: flex;
@@ -84,10 +101,12 @@
 
 .wellcome-page-lower-div {
     width: 100%;
-    color: white;
+    color: $lower_div_text_color;
 
-    display: flex;
-    flex-direction: row;
+    // display: flex;
+    // flex-direction: row;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
     gap: 10px;
 
     @media screen and (min-width: 827px) {
@@ -105,6 +124,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    // h4 {color: red}
+    cursor: pointer;
 }
 .wellcome-page-lower-div-second {
     z-index: 502;
@@ -117,7 +138,7 @@
     text-align: right;
     gap: 10px;
 
-    h4 { color: white; }
+    h4 { color: $lower_div_text_color; }
     h4:hover { color: greenyellow; }
 
     img {
@@ -125,5 +146,28 @@
         height: $language_img_size;
         cursor: pointer;
         vertical-align: middle;
+    }
+}
+
+.wellcome-page-lower-div-bg-color {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+
+    // background-color: yellow;
+    // background: linear-gradient(0deg, rgba(143,143,152,1) 49%, rgba(143,143,152,0) 100%);
+    // background: linear-gradient(0deg, rgba(143,143,152,0) 0%, rgba(143,143,152,1) 35%, rgba(143,143,152,1) 65%, rgba(143,143,152,0) 100%);
+    // background: linear-gradient(0deg, rgba(143,143,152,1) 70%, rgba(143,143,152,0) 100%);
+    
+    // background-color: rgba(0,0,0, .3);
+
+    @media screen and (min-width: 690px) {
+        height: 70px;
+    }
+    @media screen and (max-width: 689px) {
+        height: 100px;
     }
 }

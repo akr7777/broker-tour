@@ -1,3 +1,5 @@
+@import '../../assets/styles/common-variables.scss';
+
 .button-one-class {
     // position: relative;
     max-width: 300px;
@@ -18,7 +20,12 @@
 
 
 .contact-btn-additional-class {
-    background-color: #FDD3D6;
+    // background-color: #FDD3D6;
+    background-color: $secondary_design_color;
     color: black;
 }
 .contact-btn-additional-class:hover { scale: 1.05; }
+
+.center-button-div {
+    text-align: center;
+}

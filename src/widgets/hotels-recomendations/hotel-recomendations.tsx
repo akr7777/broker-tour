@@ -1,5 +1,5 @@
 import uuid from 'react-uuid'
-import { AccordeonDataType, MyAccordeon } from '../../components/my-accordeon/my-accordeon'
+import { MyAccordeonHotelType, MyHotelsAccordeon } from '../../components/my-accordeon/my-accordeon'
 import { HotelRecomendationType } from '../../store/tour-info'
 import { useTranslation } from 'react-i18next'
 
@@ -10,12 +10,12 @@ export type HotelRecomendationsPropsType = {
 }
 export const HotelRecomendations = (props: HotelRecomendationsPropsType) => {
     const {t} = useTranslation()
-    const accordeonData: Array<AccordeonDataType> = props.hotelRecomendations
+    const accordeonData: Array<MyAccordeonHotelType> = props.hotelRecomendations
         ? props.hotelRecomendations.map(r => {
-            const res:AccordeonDataType = {
+            const res:MyAccordeonHotelType = {
                 id: uuid(),
-                title: r.point,
-                context: r.hotels,
+                point: r.point,
+                hotels: r.hotels,
             }
             return res
         })
@@ -28,7 +28,7 @@ export const HotelRecomendations = (props: HotelRecomendationsPropsType) => {
             <div className='hotel-recomendations-description'>
                 {t('tours.hotel-recomenddations-description')}
             </div>
-            <MyAccordeon data={accordeonData} />
+            <MyHotelsAccordeon data={accordeonData} />
             
         </div>
     )

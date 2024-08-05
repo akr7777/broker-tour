@@ -15,9 +15,11 @@ export const WellcomeFrame = () => {
         
         <div className='header-bg-wrapper'></div>
         
+        <Header />
+        
         
         <div className='wellcome-wrapper'>
-            <Header />
+            {/* <Header /> */}
             
             {/* Готовые туры по Коста-Рике! */}
             <motion.div 

@@ -2,16 +2,23 @@
 @import '../../../assets/styles/common-variables.scss';
 
 .desctop-nav-sublink-elem-wrapper-class {
-    background-color: $nav-menu-element-bg-color;
+    // background-color: $nav-menu-element-bg-color;
+    // background-color: $secondary_design_color;
 
     padding: 10px;
-    width: calc(100% - 20px);
+    width: 100%;
+    box-sizing: border-box;
+
 
     cursor: pointer;
 
     border-radius: 10px;
 }
-.desctop-nav-sublink-elem-wrapper-class:hover { scale: 1.03; }
+.desctop-nav-sublink-elem-wrapper-class:hover { 
+    // scale: 1.03; 
+    font-weight: 450;
+    background-color: $secondary_design_color;
+}
 
 .desctop-nav-sublink-elem-title-class {
     display: flex;

@@ -7,13 +7,15 @@
     top: calc($wrapper-height + 5px);
     left: 0;
 
-    background-color: #EFF2F3;
-    width: calc(100% - 20px);
-    padding: 10px;
+    // background-color: #EFF2F3;
+    background-color: #DFF0F5;
+    // width: calc(100% - 20px);
+    // padding: 10px;
+    width: 100%;
 
     border-radius: 10px;
-    border: 1px solid black;
-    box-shadow: 3px 3px 3px 3px lightgrey;
+    // border: 1px solid black;
+    // box-shadow: 3px 3px 3px 3px lightgrey;
 }
 
 .price-calc-2-tour-chooser-title-div {
@@ -21,27 +23,31 @@
     grid-template-columns: 1fr 35px;
 
     img {
-        width: 30px;
-        height: 30px;
+        width: 25px;
+        height: 25px;
         cursor: pointer;
     }
 }
 
 .price-calc-2-tour-chooser-field {
-    margin: 10px 0;
+    // margin: 10px 0;
     padding: 5px 10px;
     border-radius: 10px;
-    background-color: rgb(183, 176, 176);
+    // background-color: rgb(183, 176, 176);
     color: black;
     cursor: pointer;
 }
 .price-calc-2-tour-chooser-field:hover {
-    background-color: grey;
+    // background-color: grey;
+    // background-color: #FFFFFF;
+    font-weight: 600;
 }
 .price-calc-2-tour-chooser-field-selected {
-    background-color: rgb(92, 89, 89);
-    color: white;
+    background-color: #FFFFFF;
+    // background-color: rgb(92, 89, 89);
+    // color: white;
 }
 .price-calc-2-tour-chooser-field-selected:hover {
-    background-color: grey;
+    // background-color: grey;
+    background-color: #FFFFFF;
 }

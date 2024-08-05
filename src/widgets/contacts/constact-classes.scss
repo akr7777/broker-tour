@@ -26,7 +26,7 @@
 .constact-social-networks-div {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 20px;
 
@@ -51,7 +51,7 @@
     // padding: $widget-padding-top $widget-padding-side;
 }
 .contacts-page-wrapper-2-paragraph {
-    text-align: center;
+    text-align:left;
     word-wrap: break-word;
     // display: inline-block;
     a {

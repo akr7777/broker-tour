@@ -37,7 +37,7 @@ $nav-menu-elem-height: 30px;
     white-space: nowrap;
 
     padding: 3px 10px;
-    border: 1px solid rgba($color: greenyellow, $alpha: 0.0);
+    // border: 1px solid rgba($color: greenyellow, $alpha: 0.0);
 
     img {
         width: 25px;
@@ -45,9 +45,11 @@ $nav-menu-elem-height: 30px;
     }
 }
 .desctop-nav-link-class:hover {
-    border: 1px solid greenyellow;
-    border-radius: 15px;
-    color: greenyellow;
+    // border: 1px solid greenyellow;
+    border-radius: 5px;
+    // color: greenyellow;
+    background-color: $secondary_design_color;
+    color: #252424;
 }
 
 // @keyframes elementAnimation {
@@ -73,9 +75,9 @@ $nav-menu-elem-height: 30px;
 
     background-color: white;
 
-    padding: 10px;
+    padding: 10px 0;
     border-radius: 10px;
-    border: 1px solid black;
+    border: 1px solid $elem_border_color;
 }
 
 .desctop-nav-oulet-close-div {

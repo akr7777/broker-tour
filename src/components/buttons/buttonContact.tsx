@@ -17,7 +17,7 @@ export const ButtonContact = (props: PropsType) => {
     const showBookTour = () => dispatch(setIsBookTourShow(true))
     
     return (
-        <div>
+        <div className='center-button-div'>
             <button
                 className={clsx('button-one-class', 'contact-btn-additional-class')}
                 onClick={showBookTour}

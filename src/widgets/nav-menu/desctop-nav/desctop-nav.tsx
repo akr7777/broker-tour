@@ -1,6 +1,6 @@
 import { NavMenuPropsType } from '../../../pages/header/header'
 import { AnimatePresence, motion } from "framer-motion"
-import { ANIMATION_TIME, ANIMATION_TIME_SHORT } from '../../../store/consts'
+import { ANIMATION_TIME, ANIMATION_TIME_SHORT, DIV_IDS } from '../../../store/consts'
 import uuid from 'react-uuid'
 import { SubNavMenuElement } from './sub-menu-elem'
 import { useNavigate } from 'react-router-dom'
@@ -28,11 +28,17 @@ export const DestopNavMenu = (props: NavMenuPropsType) => {
             }
         } else {
             navigate(link)
-            document.documentElement.scrollTo({
-                top: 0,
-                left: 0,
-                behavior: "smooth", // Optional if you want to skip the scrolling animation
-            });
+            // document.documentElement.scrollTo({
+            //     top: 0,
+            //     left: 0,
+            //     behavior: "smooth", // Optional if you want to skip the scrolling animation
+            // });
+
+            const elem = document.getElementById(DIV_IDS.wellcomePageLowerText)
+            
+            if (elem) {
+                elem.scrollIntoView({ behavior: 'smooth'})
+            }
         }
 
     }

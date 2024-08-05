@@ -8,8 +8,8 @@ import { DaysPlan2, DaysPlanType } from "./tour-plan-2"
 import { ReactNode } from "react"
 import { tourPhotos } from "../../store/tour-days-photos"
 import { ArticleTitle } from "../../shared/title/title"
-import { LINE_DEVIDER } from "../../store/consts"
-import uuid from "react-uuid"
+// import { LINE_DEVIDER } from "../../store/consts"
+// import uuid from "react-uuid"
 
 import './tours-classes.scss'
 
@@ -34,13 +34,13 @@ const TourInfoPage = () => {
         <>
 
          <WidgetWrapper>
-            <ArticleTitle title={currentTour?.title}/>
+            <ArticleTitle title={currentTour?.title} />
             <div className="tour-page-description">
                 { currentTour?.description }
             </div>
-            <div>
+            {/* <div>
                 { currentTour?.fullDescription.split(LINE_DEVIDER).map(p => <div key={uuid()}>{p}</div>) }
-            </div>
+            </div> */}
          </WidgetWrapper>
 
          <PriceCalculation2 />

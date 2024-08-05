@@ -2,30 +2,35 @@
 
 
 // $border-width: 2px;
-$border-width: 11px;
+$border-width: 1px;
 // $border-color: grey;
-$border-color: red;
+$border-color: #BABABA;
 $wrapper-height: 120px;
 $border-radius: 20px;
 
 .price-calc-2-wrapper {
     z-index: 100;
-   display: flex;
-   flex-direction: column;
-   gap: $paragraph_gap;
-   align-items: flex-start;
-//    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: $paragraph_gap;
+    align-items: flex-start;
+    //    text-align: center;
+    width: calc(100% - 40px);
+    margin-left: 20px;
 }
 
 .price-calc-2-data-wrapper {
     width: 100%;
-    max-width: 1100px;
+    // max-width: 1100px;
     background-color: $border-color;
     position: relative;
 
-    left: 50%;
-    transform: translateX(-50%);
+    // left: 50%;
+    // transform: translateX(-50%);
+
     // box-shadow: 3px 3px 5px 5px rgb(197, 195, 195);
+
+    // background-color: red;
 
 
     @media screen and (min-width: 600px) {
@@ -43,7 +48,7 @@ $border-radius: 20px;
     border: $border-width solid $border-color;
     border-radius: $border-radius;
 
-    place-content: center;
+    // place-content: center;
 }
 
 .price-calc-2-data-area {
@@ -85,7 +90,8 @@ $border-radius: 20px;
     cursor: pointer;
 }
 .price-calc-2-data-cursor:hover {
-    background-color: rgb(230, 250, 199);
+    // background-color: rgb(230, 250, 199);
+    background-color: $secondary_design_color;
 }
 .price-calc-2-data-cursor-error {
     background-color: rgb(234, 125, 125);
@@ -105,4 +111,14 @@ $border-radius: 20px;
     display: flex;
     flex-direction: column;
     gap: 30px;
+
+    // width: 100%;
+    // max-width: 1100px;
+    // // background-color: $border-color;
+    // position: relative;
+
+    // left: 50%;
+    // transform: translateX(-50%);
+    width: calc(100% - 20px);
+    padding: 10px;
 }

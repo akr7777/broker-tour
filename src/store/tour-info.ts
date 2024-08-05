@@ -23,9 +23,14 @@ export type PriceAdditionalInfoType = {
     info1: string,
     info2: string,
 }
+export type HotelType = {
+    hotelId: string,
+    title: string,
+    link: string
+}
 export type HotelRecomendationType = {
     point: string,
-    hotels: Array<string>,
+    hotels: Array<HotelType | undefined>,
 }
 export type TourType = {
     id: number,
@@ -45,6 +50,79 @@ export type TourType = {
     tourIcon: string,
     hotelRecomendations: Array<HotelRecomendationType>
 }
+
+export const costaRicaHotels: Array<HotelType> = [
+    {
+        hotelId: '01',
+        title: "Marriot Hacienda Belen",
+        link: "https://www.marriott.com/en-us/hotels/sjocr-costa-rica-marriott-hotel-hacienda-belen/overview/",
+    },
+    {
+        hotelId: '02',
+        title: "Holiday Inn Express San Jose Costa Rica Airport",
+        link: "https://www.ihg.com/holidayinnexpress/hotels/us/en/san-jose/sjoap/hoteldetail",
+    },
+    {
+        hotelId: '03',
+        title: "Barcelo San Jose",
+        link: "https://www.barcelo.com/en-us/barcelo-san-jose/",
+    },
+    {
+        hotelId: '04',
+        title: "Tabacon Thermar resort and SPA",
+        link: "https://www.tabacon.com/",
+    },
+    {
+        hotelId: '05',
+        title: "Los Lagos hotel Spa and Resort",
+        link: "https://www.hotelloslagos.com/",
+    },
+    {
+        hotelId: '06',
+        title: "Casa Luna hotel and SPA",
+        link: "https://casalunahotel.com/",
+    },
+    {
+        hotelId: '07',
+        title: "Hotel Makanda by the Sea",
+        link: "https://makanda.com/",
+    },
+    {
+        hotelId: '08',
+        title: "Tulemar resort Costa Rica",
+        link: "https://tulemar.com/",
+    },
+    {
+        hotelId: '09',
+        title: "Karahe beach front",
+        link: "https://www.karahe.com/",
+    },
+    {
+        hotelId: "10",
+        title: "Aguas Claras",
+        link: "https://www.hotelaguasclaras.com/"
+    },
+    {
+        hotelId: "11",
+        title: "Umami Hotel - Adults Only",
+        link: "https://umamihotel.com/",
+    },
+    {
+        hotelId: "12",
+        title: "Relax Natural Village Adults Only",
+        link: "https://www.relaxnaturalvillage.com/",
+    },
+    {
+        hotelId: "13",
+        title: "Villas del Caribe",
+        link: "https://villasdelcaribe.com/en/home/",
+    },
+    {
+        hotelId: "14",
+        title: "Le Cameleon Boutique Hotel",
+        link: "https://lecameleonhotel.com/",
+    },
+]
 
 type TourPlanCreatorType = {days: number, tourI18n: string}
 const tourPlanCreator = (props: TourPlanCreatorType):Array<PlanDayType> => {
@@ -120,11 +198,19 @@ export const toursContent = ():Array<TourType> => [
         hotelRecomendations: [
             {
                 point: i18next.t('tours.tour' + TOURS_IDS.tour_4_days + '.hotels.hotel1'),
-                hotels: ["Marriot Hacienda Belen", "Holiday Inn Express San Jose Costa Rica Airport", "Barcelo San Jose"]
+                hotels: [
+                    costaRicaHotels.find(h => h.hotelId === '01'),
+                    costaRicaHotels.find(h => h.hotelId === '02'),
+                    costaRicaHotels.find(h => h.hotelId === '03'),
+                ]
             },
             {
                 point: i18next.t('tours.tour' + TOURS_IDS.tour_4_days + '.hotels.hotel2'),
-                hotels: ["Tabacon Thermar resort and SPA", "Los Lagos hotel Spa and Resort", "Casa Luna hotel and SPA"]
+                hotels: [
+                    costaRicaHotels.find(h => h.hotelId === '04'),
+                    costaRicaHotels.find(h => h.hotelId === '05'),
+                    costaRicaHotels.find(h => h.hotelId === '06'),
+                ]
             }
          ]
         
@@ -188,15 +274,27 @@ export const toursContent = ():Array<TourType> => [
         hotelRecomendations: [
             {
                 point: i18next.t('tours.tour'+TOURS_IDS.tour_7_days+'.hotels.hotel1'),
-                hotels: ["Hotel Makanda by the Sea", "Tulemar resort Costa Rica", "Karahe beach front"]
+                hotels: [
+                    costaRicaHotels.find(h => h.hotelId === '07'),
+                    costaRicaHotels.find(h => h.hotelId === '08'),
+                    costaRicaHotels.find(h => h.hotelId === '09'),
+                ]
             },
             {
                 point: i18next.t('tours.tour'+TOURS_IDS.tour_7_days+'.hotels.hotel2'),
-                hotels: ["Tabacon Thermar resort and SPA", "Los Lagos hotel Spa and Resort", "Casa Luna hotel and SPA"]
+                hotels: [
+                    costaRicaHotels.find(h => h.hotelId === '04'),
+                    costaRicaHotels.find(h => h.hotelId === '05'),
+                    costaRicaHotels.find(h => h.hotelId === '06'),
+                ]
             },
             {
                 point: i18next.t('tours.tour'+TOURS_IDS.tour_7_days+'.hotels.hotel3'),
-                hotels: ["Marriot Hacienda Belen", "Holiday Inn Express San Jose Costa Rica Airport", "Barcelo San Jose"]
+                hotels: [
+                    costaRicaHotels.find(h => h.hotelId === '01'),
+                    costaRicaHotels.find(h => h.hotelId === '02'),
+                    costaRicaHotels.find(h => h.hotelId === '03'),
+                ]
             }
    
         ]   
@@ -259,20 +357,36 @@ export const toursContent = ():Array<TourType> => [
         hotelRecomendations: [
             {
                 point: i18next.t('tours.tour'+TOURS_IDS.tour_9_days+'.hotels.hotel1'),
-                hotels: ["Marriot Hacienda Belen", "Holiday Inn Express San Jose Costa Rica Airport", "Barcelo San Jose"]
+                hotels: [
+                    costaRicaHotels.find(h => h.hotelId === '01'),
+                    costaRicaHotels.find(h => h.hotelId === '02'),
+                    costaRicaHotels.find(h => h.hotelId === '03'),
+                ]
             },
             {
                 point: i18next.t('tours.tour'+TOURS_IDS.tour_9_days+'.hotels.hotel2'),
-                hotels: ["Tabacon Thermar resort and SPA", "Los Lagos hotel Spa and Resort", "Casa Luna hotel and SPA"]
+                hotels: [
+                    costaRicaHotels.find(h => h.hotelId === '04'),
+                    costaRicaHotels.find(h => h.hotelId === '05'),
+                    costaRicaHotels.find(h => h.hotelId === '06'),
+                ]
 
             },
             {
                 point: i18next.t('tours.tour'+TOURS_IDS.tour_9_days+'.hotels.hotel3'),
-                hotels: ["Hotel Makanda by the Sea","Tulemar resort Costa Rica", "Karahe beach front"]
+                hotels: [
+                    costaRicaHotels.find(h => h.hotelId === '07'),
+                    costaRicaHotels.find(h => h.hotelId === '08'),
+                    costaRicaHotels.find(h => h.hotelId === '09'),
+                ]
             },
             {
                 point: i18next.t('tours.tour'+TOURS_IDS.tour_9_days+'.hotels.hotel4'),
-                hotels: ["Hotel Makanda by the Sea", "Tulemar resort Costa Rica", "Karahe beach front"]
+                hotels: [
+                    costaRicaHotels.find(h => h.hotelId === '07'),
+                    costaRicaHotels.find(h => h.hotelId === '08'),
+                    costaRicaHotels.find(h => h.hotelId === '09'),
+                ]
             }
         ],
     },
@@ -334,19 +448,37 @@ export const toursContent = ():Array<TourType> => [
         hotelRecomendations: [
             {
                 point: i18next.t('tours.tour'+TOURS_IDS.tour_12_days+'.hotels.hotel1'),
-                hotels: ["Hotel Makanda by the Sea","Tulemar resort Costa Rica", "Karahe beach front"]
+                hotels: [
+                    costaRicaHotels.find(h => h.hotelId === '07'),
+                    costaRicaHotels.find(h => h.hotelId === '08'),
+                    costaRicaHotels.find(h => h.hotelId === '09'),
+                ]
             },
             {
                 point: i18next.t('tours.tour'+TOURS_IDS.tour_12_days+'.hotels.hotel2'),
-                hotels: ["Tabacon Thermar resort and SPA", "Los Lagos hotel Spa and Resort", "Casa Luna hotel and SPA"]
+                hotels: [
+                    costaRicaHotels.find(h => h.hotelId === '04'),
+                    costaRicaHotels.find(h => h.hotelId === '05'),
+                    costaRicaHotels.find(h => h.hotelId === '06'),
+                ]
             },
             {
                 point: i18next.t('tours.tour'+TOURS_IDS.tour_12_days+'.hotels.hotel3'),
-                hotels: ["Aguas Claras", "Umami Hotel - Adults Only", "Relax Natural Village Adults Only", "Villas del Caribe", "Le Cameleon Boutique Hotel"]
+                hotels: [
+                    costaRicaHotels.find(h => h.hotelId === '10'),
+                    costaRicaHotels.find(h => h.hotelId === '11'),
+                    costaRicaHotels.find(h => h.hotelId === '12'),
+                    costaRicaHotels.find(h => h.hotelId === '13'),
+                    costaRicaHotels.find(h => h.hotelId === '14'),
+                ]
             },
             {
                 point: i18next.t('tours.tour'+TOURS_IDS.tour_12_days+'.hotels.hotel4'),
-                hotels: ["Marriot Hacienda Belen", "Holiday Inn Express San Jose Costa Rica Airport", "Barcelo San Jose"]
+                hotels: [
+                    costaRicaHotels.find(h => h.hotelId === '01'),
+                    costaRicaHotels.find(h => h.hotelId === '02'),
+                    costaRicaHotels.find(h => h.hotelId === '03'),
+                ]
             }
         ]
     },

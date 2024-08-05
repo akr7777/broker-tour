@@ -9,13 +9,15 @@ import clsx from 'clsx'
 import { PriceCalc2TourChooser } from './tour-chooser/tour-chooser'
 import { ButtonContact } from '../../components/buttons/buttonContact'
 import { toast } from 'react-toastify'
-import { ANIMATION_TIME, CONTACTS, DIV_IDS, LINE_DEVIDER } from '../../store/consts'
+import { ANIMATION_TIME, CONTACTS, LINE_DEVIDER } from '../../store/consts'
 import { WidgetWrapper } from '../../shared/widget-wrapper/widget-wrapper'
 import { AnimatePresence, motion } from 'framer-motion'
 import { HotelRecomendations } from '../hotels-recomendations/hotel-recomendations'
 import { ArticleTitle } from '../../shared/title/title'
 import i18next from 'i18next'
 import uuid from 'react-uuid'
+
+import vacationImage from '../../assets/icons/summer-vacation.svg'
 
 import './price-calc.scss'
 
@@ -31,6 +33,8 @@ export const PriceCalculation2 = () => {
     const { t } = useTranslation()
 
     const [currentTour, setCurrentTour] = useState<TourType | null>(null)
+
+    const divIdPriceCalcResult = uuid()
 
     //Переменные currentLang и tourTitle нужны, чтобы корректно отобразить название тура в первом поле (ячейке)
     //при смене языка во время выбора тура
@@ -85,7 +89,8 @@ export const PriceCalculation2 = () => {
     const onCalcTourClickHandler = () => {
         if (currentTour) {
             setShowPriceResult(true)
-            const elem = document.getElementById(DIV_IDS.priceCalculationResult)
+            // const elem = document.getElementById(DIV_IDS.priceCalculationResult)
+            const elem = document.getElementById(divIdPriceCalcResult)
             if (elem) {
                 elem.scrollIntoView({ behavior: 'smooth'})
             }
@@ -102,9 +107,12 @@ export const PriceCalculation2 = () => {
 
     return (
         <WidgetWrapper>
-            <div className='price-calc-2-wrapper' id={DIV_IDS.tourCalculation}>
+            <ArticleTitle title={t('tours.tour_price_calculation')} image={vacationImage}/>
+
+            {/* <div className='price-calc-2-wrapper' id={DIV_IDS.tourCalculation}> */}
+            <div className='price-calc-2-wrapper' id={divIdPriceCalcResult}>
                 
-                <ArticleTitle title={t('tours.tour_price_calculation')}/>
+                {/* <ArticleTitle title={t('tours.tour_price_calculation')} image={vacationImage}/> */}
 
                 <div className='price-calc-2-data-wrapper'>
                        
@@ -166,7 +174,7 @@ export const PriceCalculation2 = () => {
 
                     {/* Кнопка для запуска расчета стоимости тура */}
                     <div 
-                        id={DIV_IDS.priceCalculationResult}
+                        id={divIdPriceCalcResult}
                         className={clsx(
                             'price-calc-2-data-area', 
                             'price-calc-2-data-cursor',
@@ -178,12 +186,12 @@ export const PriceCalculation2 = () => {
                     </div>
                 </div>
 
-                <div>
+                <div className='price-calc-2-results-common'>
                     {t('tours.add-price-info.price_for_0_3_years_old')}
                 </div>
 
                 {adultCount + childrenCount >= totalMaxPersons && 
-                    <div>
+                    <div className='price-calc-2-results-common'>
                         {t('tours.tour_max_persons_count')}
                         <a href={'whatsapp://send?phone=' + CONTACTS.phoneOlga}>{CONTACTS.phoneOlga}</a>
                     </div>}
