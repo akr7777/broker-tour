@@ -7,9 +7,7 @@ import {
 import { NotFoundPage } from "./pages/not-found-page/not-found-page";
 import { PATHS } from "./widgets/nav-menu/nav-paths";
 
-// import { TourInfoPage } from "./pages/tours/tour-info-page";
 const TourInfoPage = lazy(() => import('./pages/tours/tour-info-page'));
-// import { MainPage } from './pages/main-page/main-page';
 const MainPage = lazy(() => import('./pages/main-page/main-page'));
 const SeparateFAQpage = lazy(() => import('./pages/separate-faq-page/separate-faq-page'));
 
@@ -29,7 +27,6 @@ const router = createBrowserRouter([
     element: <OutletPage />,
     children: [
       {
-        // path: PATHS.mainPage,
         element: (
           <Suspense fallback={<Loading />}>
             <MainPage />
@@ -59,19 +56,6 @@ const router = createBrowserRouter([
       }
     ]
   },
-  // {
-  //   // path: PATHS.mainPage,
-  //   element: (<MainPage />),
-  //   index: true
-  // },
-  // {
-  //   path: PATHS.tourInfo + '/:tourId',
-  //   element: <TourInfoPage />
-  // },
-  // {
-  //   path: '*',
-  //   element: <NotFoundPage />
-  // }
 ]);
 
 function App() {

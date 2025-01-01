@@ -15,6 +15,6 @@ export type ReqBodyType = {
 }
 export const feedbackAPI = {
     sendFeedbackMsg: (data: ReqBodyType): Promise<AxiosResponse> => {
-      return instance.post('/contact_form', data)
+      return instance.post('contact_form', data)
     },
 }
