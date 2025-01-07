@@ -43,7 +43,7 @@ export const ContactForm = (props: PropsType) => {
 
     const waLink = 'https://api.whatsapp.com/send/?phone=' + CONTACTS.phoneOlga + '&text=' + t('contacts.contact-whatsapp-text', {tour: props.tourTitle})
     
-    const CONTACT_FORM_SEND_URL = import.meta.env.VITE_SEND_FORM_URL
+    const CONTACT_FORM_SEND_URL = import.meta.env.VITE_SERVER_URL
 
     const onBtnClickHandler = () => {
         fetch(CONTACT_FORM_SEND_URL, {
