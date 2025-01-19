@@ -28,11 +28,6 @@ export const DestopNavMenu = (props: NavMenuPropsType) => {
             }
         } else {
             navigate(link)
-            // document.documentElement.scrollTo({
-            //     top: 0,
-            //     left: 0,
-            //     behavior: "smooth", // Optional if you want to skip the scrolling animation
-            // });
 
             const elem = document.getElementById(DIV_IDS.wellcomePageLowerText)
             
@@ -93,7 +88,7 @@ export const DestopNavMenu = (props: NavMenuPropsType) => {
                                                 />
                                             </AnimatePresence>
                                             <AnimatePresence>
-                                                <motion.div 
+                                                <motion.nav 
                                                     className='desctop-nav-sublink-div'
                                                     initial={{ opacity: 0 }}
                                                     animate={{ opacity: 1 }}
@@ -105,7 +100,7 @@ export const DestopNavMenu = (props: NavMenuPropsType) => {
                                                             <SubNavMenuElement {...subElem} key={uuid()}/>
                                                         )
                                                     })}
-                                                </motion.div>
+                                                </motion.nav>
                                             </AnimatePresence>
                                         </>
                                 }

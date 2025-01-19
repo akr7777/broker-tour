@@ -20,11 +20,13 @@ export const FAQ = () => {
     return (
         <WidgetWrapper>
 
-            <div id={DIV_IDS.faq} />
+            <article id={DIV_IDS.faq}>
 
-            <ArticleTitle title={t('faq.title')} />
+                <ArticleTitle title={t('faq.title')} />
 
-            <MyAccordeon data={accordeonData} />
+                <MyAccordeon data={accordeonData} />
+
+            </article>
             
         </WidgetWrapper>
     )

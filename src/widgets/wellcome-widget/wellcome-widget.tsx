@@ -9,35 +9,21 @@ import '../../pages/header/header-classes.scss'
 export const WellcomeFrame = () => {
     const {t} = useTranslation()
 
-   
     return (
         <>
         
-        <div className='header-bg-wrapper'></div>
-        
-        <Header />
-        
-        
-        <div className='wellcome-wrapper'>
-            {/* <Header /> */}
+            <div className='header-bg-wrapper'></div>
             
-            {/* Готовые туры по Коста-Рике! */}
-            <motion.div 
-                className='wellcome-info-div'
-            ></motion.div>
-
+            <Header />
             
-            {/* Картинка солнце */}
-            {/* <motion.img 
-                src={sun} 
-                alt=''
-                className='wellcome-page-sun'
-                animate={{ rotate: 360, }}
-                transition={{ repeat: Infinity, duration: 10 }}
-            /> */}
+            <div className='wellcome-wrapper'>
+                
+                {/* Готовые туры по Коста-Рике! */}
+                <motion.div 
+                    className='wellcome-info-div'
+                ></motion.div>
 
-
-            <LowerInfoPanel firstPhrase={t('wellcome-widget.line1')} secondPhrase={t('wellcome-widget.contact-with-us')} />
+                <LowerInfoPanel />
         </div>
         
         

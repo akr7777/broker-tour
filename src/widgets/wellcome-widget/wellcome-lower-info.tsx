@@ -5,24 +5,24 @@ import { useResize } from '../../hooks/use-resize/useResize'
 import uuid from 'react-uuid'
 
 import './wellcome-classes.scss'
+import { useTranslation } from 'react-i18next'
 
-type PropsType = {
-    firstPhrase: string,
-    secondPhrase: string,
-}
-
-export const LowerInfoPanel = (props: PropsType) => {
+export const LowerInfoPanel = () => {
+    const {t} = useTranslation()
     const windowSize = useResize()
+
+    const firstPhrase: string = t('wellcome-widget.line1')
+    const secondPhrase: string = t('wellcome-widget.contact-with-us')
 
     // const lowerDivFirstTextRaw: string = i18next.t('wellcome-widget.line1')
     const lowerDivFirstText: ReactNode = windowSize.width >= 690
-        ? <h4>{props.firstPhrase}</h4>
-        : <>{props.firstPhrase.split(LINE_DEVIDER).map(line => <h4 key={uuid()}>{line}</h4>)}</>
+        ? <h4>{firstPhrase}</h4>
+        : <>{firstPhrase.split(LINE_DEVIDER).map(line => <h4 key={uuid()}>{line}</h4>)}</>
 
     // const lowerDivSecondTextRaw: string = i18next.t('wellcome-widget.contact-with-us')
     const lowerDivSecondText: ReactNode = windowSize.width >= 690
-        ? <h4>{props.secondPhrase}</h4>
-        : <>{props.secondPhrase.split(LINE_DEVIDER).map(line => <h4 key={uuid()}>{line}</h4>)}</>
+        ? <h4>{secondPhrase}</h4>
+        : <>{secondPhrase.split(LINE_DEVIDER).map(line => <h4 key={uuid()}>{line}</h4>)}</>
 
     const onReadeMadeToursClick = () => {
             const elem = document.getElementById(DIV_IDS.toursCards)

@@ -9,7 +9,6 @@ import { useAppDispatch, useAppSelector } from '../../../store/store';
 import { setIsMobileMenuOpen } from '../../../store/appSlice';
 
 import burgerMenu from '../../../assets/icons/burger-menu-3-white.svg'
-// import crossIcon from '../../../assets/icons/cross.png'
 import crossIcon2 from '../../../assets/icons/cross_2.svg'
 import { Logo } from '../../../shared/logo/logo';
 
@@ -32,14 +31,8 @@ export const MobileNavigation = (props: NavMenuPropsType) => {
             if (elem) {
                 elem.scrollIntoView({ behavior: 'smooth'})
             }
-            // document.getElementById(elemId).scrollIntoView({ behavior: 'smooth' });
         } else {
             navigate(link)
-            // document.documentElement.scrollTo({
-            //     top: 0,
-            //     left: 0,
-            //     behavior: "smooth", // Optional if you want to skip the scrolling animation
-            // });
             const elem = document.getElementById(DIV_IDS.wellcomePageLowerText)
             
             if (elem) {
@@ -115,10 +108,6 @@ export const MobileNavigation = (props: NavMenuPropsType) => {
                                                     ? () => onShowClickHandler(elem.title)
                                                     : () => onLinkClickHandler(elem.path)
                                                 }
-
-                                            // whileHover={{ width: 260 }}
-                                            // whileFocus={{ width: 300 }}
-                                            // whileTap={{ width: 300 }}
                                         >
                                             <img alt='' src={elem.imagePath} />
                                             <div>{elem.title}</div>
@@ -126,7 +115,7 @@ export const MobileNavigation = (props: NavMenuPropsType) => {
 
                                         <AnimatePresence mode='wait'>
                                             {titleShow === elem.title && elem.subElements &&
-                                                <motion.div
+                                                <motion.nav
                                                     initial={{ opacity: 0, x: -150 }}
                                                     animate={{ opacity: 1, x: 0 }}
                                                     transition={{ duration: .5 }}
@@ -152,7 +141,7 @@ export const MobileNavigation = (props: NavMenuPropsType) => {
                                                             </div>
                                                         )
                                                     })}
-                                                </motion.div>
+                                                </motion.nav>
                                             }
                                         </AnimatePresence>
                                     </AnimatePresence>

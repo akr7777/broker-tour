@@ -21,7 +21,7 @@ export const HowToBookWidget = () => {
 
     return (
         <WidgetWrapper>
-            <div className='how-to-book-widget-wrapper' id={DIV_IDS.howToBook}>
+            <article className='how-to-book-widget-wrapper' id={DIV_IDS.howToBook}>
 
                 <ArticleTitle title={t('booking.how_to_book')} />
 
@@ -46,7 +46,7 @@ export const HowToBookWidget = () => {
 
                 </div>
 
-            </div>
+            </article>
         </WidgetWrapper>
     )
 }

@@ -22,9 +22,9 @@ import { ANIMATION_TIME, ANIMATION_TIME_SHORT, HOVER_VALUE } from "../../store/c
 export const LanguageChanger = () => {
     const { i18n } = useTranslation();
     const [isShow, setIsShow] = useState<boolean>(false)
-    const currentLanguageLC: LanguagesType = localStorage.getItem(LanguageLC) || LANGUAGES.RU
+    const currentLanguageLC: LanguagesType | null = localStorage.getItem(LanguageLC)
 
-    if (i18n.language !== currentLanguageLC) {
+    if (currentLanguageLC && i18n.language !== currentLanguageLC) {
         i18n.changeLanguage(currentLanguageLC)
     }
 
