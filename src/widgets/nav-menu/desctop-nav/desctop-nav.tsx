@@ -51,7 +51,7 @@ export const DestopNavMenu = (props: NavMenuPropsType) => {
     }
     
     return (
-        <nav className='desctop-nav-wrapper'>
+        <div className='desctop-nav-wrapper'>
                 <motion.div 
                     className='desctop-nav-wrapper'
                     initial={{ opacity: 0 }}
@@ -63,7 +63,7 @@ export const DestopNavMenu = (props: NavMenuPropsType) => {
                         return (
                             <div key={uuid()}>
 
-                                <div 
+                                <nav 
                                     className='desctop-nav-link-class' 
                                     onClick={
                                         elem.subElements 
@@ -72,7 +72,7 @@ export const DestopNavMenu = (props: NavMenuPropsType) => {
                                     }
                                 >
                                     {elem.title}
-                                </div>
+                                </nav>
 
                                 <AnimatePresence mode="wait" initial={false}>
                                     {elem.title === whichTitleOpen &&
@@ -110,6 +110,6 @@ export const DestopNavMenu = (props: NavMenuPropsType) => {
                         )
                     })}
                 </motion.div>
-        </nav>
+        </div>
     )
 }

@@ -51,7 +51,7 @@ export const MobileNavigation = (props: NavMenuPropsType) => {
     const [titleShow, setTitleShow] = useState<string>('')
 
     return (
-        <nav className='mobile-nav-menu-class'>
+        <div className='mobile-nav-menu-class'>
             {!isMobileMenuShow && 
                 <motion.div 
                     className='mobile-nav-menu-class'
@@ -100,7 +100,7 @@ export const MobileNavigation = (props: NavMenuPropsType) => {
                             {props.elements.map(elem => {
                                 return (
                                     <AnimatePresence mode='wait' key={uuid()}>
-                                        <motion.div 
+                                        <motion.nav 
                                             key={uuid()}
                                             className='mobile-nav-menu-element' 
                                             onClick={
@@ -111,7 +111,7 @@ export const MobileNavigation = (props: NavMenuPropsType) => {
                                         >
                                             <img alt='' src={elem.imagePath} />
                                             <div>{elem.title}</div>
-                                        </motion.div>
+                                        </motion.nav>
 
                                         <AnimatePresence mode='wait'>
                                             {titleShow === elem.title && elem.subElements &&
@@ -154,6 +154,6 @@ export const MobileNavigation = (props: NavMenuPropsType) => {
             </AnimatePresence>
 
 
-        </nav>
+        </div>
     )
 }
