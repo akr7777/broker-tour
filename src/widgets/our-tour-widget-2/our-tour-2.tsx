@@ -5,11 +5,11 @@ import uuid from 'react-uuid'
 import { useNavigate } from 'react-router-dom'
 import { toursContent } from '../../store/tour-info'
 import { ArticleTitle } from '../../shared/title/title'
+import { DIV_IDS } from '../../store/consts'
 
 import titleIcon from '../../assets/icons/summer-vacation.svg'
 
 import './our-tour-2-classes.scss'
-import { DIV_IDS } from '../../store/consts'
 
 export const OurTour2 = () => {
     const {t} = useTranslation()

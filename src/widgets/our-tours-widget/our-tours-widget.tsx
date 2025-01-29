@@ -15,9 +15,6 @@ export const OurTourCaruselWidget = (props: PropsType) => {
             className="our-tour-wrapper"
             style={{
                 backgroundImage: 'url("' + props.bgUrl + '")',
-                // backgroundSize: "cover",
-                // backgroundPosition: "center",
-                // backgroundRepeat: "no-repeat",
             }}
         >
             <div className='our-tour-content-div'>

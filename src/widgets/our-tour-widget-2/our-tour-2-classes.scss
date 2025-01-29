@@ -9,15 +9,6 @@ $two-cols-screen-width: 500px;
 .our-tours-2-wrapper {
     width: 100%;
 
-
-    // display: flex;
-    // flex-direction: column;
-    // gap: 20px;
-
-    // display: grid;
-    // grid-template-columns: 1fr 1fr;
-    // gap: 50px;
-
     @media screen and (min-width: 800px) {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -29,26 +20,6 @@ $two-cols-screen-width: 500px;
         gap: 30px;
     }
 
-
-    // @media screen and (min-width: $four-cols-screen-width) {
-    //     display: grid;
-    //     grid-template-columns: 1fr 1fr 1fr 1fr;
-    //     column-gap: $space-between;
-    //     row-gap: $space-between;
-    // }
-
-    // @media screen and (min-width: $two-cols-screen-width) and (max-width: $four-cols-screen-width) {
-    //     display: grid;
-    //     grid-template-columns: 1fr 1fr;
-    //     column-gap: $space-between;
-    //     row-gap: $space-between;
-    // }
-
-    // @media screen and (max-width: $two-cols-screen-width) {
-    //     display: grid;
-    //     grid-template-columns: 1fr;
-    //     row-gap: $space-between;
-    // }
 }
 
 .our-tours-2-card {
@@ -57,7 +28,6 @@ $two-cols-screen-width: 500px;
     min-height: 400px;
 
     overflow: hidden;
-    // box-shadow: 5px 5px 10px grey;
     background-color: white;
     position: relative;
     border-radius: 10px;
@@ -108,10 +78,7 @@ $two-cols-screen-width: 500px;
     line-height: normal;
     text-align: center;
 
-    // background-color: lightgrey;
     background-color: white;
-
-    // box-shadow: 10px 10px 10px grey;
 
     label {
         font-size: 11px;
@@ -128,13 +95,9 @@ $two-cols-screen-width: 500px;
     color: white;
     border: 1px solid #E6E6E6;
 
-    // min-width: 50px;
-    // min-height: 40px;
-
     padding: 10px;
     border-radius: 10px;
 
-    // font-size: 16px;
     line-height: normal;
     text-align: center;
 
@@ -150,7 +113,6 @@ $two-cols-screen-width: 500px;
     position: relative;
     margin: 0 5px;
     padding: 0 5px;
-    // background-color: #FDD3D6;
     background-color: $secondary_design_color;
     border-radius: 10px;
 
@@ -164,7 +126,6 @@ $two-cols-screen-width: 500px;
 
 .our-tours-2-card-description {
     position: relative;
-    // margin: 5px 5px;
     margin: 0 5px;
     padding: 0 5px;
     border-radius: 10px;
