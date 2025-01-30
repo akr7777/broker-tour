@@ -2,11 +2,14 @@ import { useState } from 'react'
 import clsx from 'clsx'
 import { AnimatePresence } from 'framer-motion'
 import { AccordeonHidenText, AccordeonHotelsHiddenText } from './my-accordeon-hiden-text'
-import arrowUp from '../../assets/icons/faq/arrow-up.png'
-import arrowDown from '../../assets/icons/faq/arrow-down.png'
 import { HotelType } from '../../store/tour-info'
 
 import './my-accordeon.scss'
+
+import arrowUp from '../../assets/icons/faq/arrow-up-3.png'
+import arrowDown from '../../assets/icons/faq/arrow-down-3.png'
+
+// import arrowUp2
 
 export type AccordeonDataType = {
     id: string
@@ -26,7 +29,6 @@ export const MyAccordeon = (props: AccordeonPropsType) => {
         } else {
             setShowElems([...showElems, id])
         }
-        // const newArr: Array<AccordeonDataType>
     }
 
     return (

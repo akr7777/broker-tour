@@ -1,3 +1,5 @@
+@use "../../assets/styles/common-variables.scss" as *;
+
 .my-accordeon-wrapper {
     // background-color: red;
     display: flex;
@@ -45,12 +47,13 @@
     min-height: 10px;
     max-width: 10px;
     max-height: 10px;
-    background-color: black;
+    background-color: $secondary_design_color;
     border-radius: 50%;
     align-self: center;
 }
 .my-accordeon-item-question-question-circle-green {
-    background-color: green;
+    // background-color: green;
+    background-color: rgb(204, 204, 18);
 }
 .my-accordeon-item-link-class {
     color: blue;
