@@ -63,6 +63,7 @@
 |---|---|---|---|
 | Главная | `/` | `/es/` | `/en/` |
 | FAQ | `/faq/` | `/es/faq/` | `/en/faq/` |
+| О компании | `/about/` | `/es/about/` | `/en/about/` |
 | Тур 1 | `/tour-info/1/` | `/es/tour-info/1/` | `/en/tour-info/1/` |
 | Тур 2 | `/tour-info/2/` | `/es/tour-info/2/` | `/en/tour-info/2/` |
 | Тур 3 | `/tour-info/3/` | `/es/tour-info/3/` | `/en/tour-info/3/` |
@@ -78,6 +79,8 @@
 <link rel="alternate" hreflang="en" href="https://costaricatures.com/en/faq/" />
 <link rel="alternate" hreflang="x-default" href="https://costaricatures.com/faq/" />
 ```
+
+Аналогично для `/about/`, `/` и `/tour-info/N/`.
 
 ## 5. Определение языка
 
@@ -223,10 +226,15 @@ if (pathname === '/' && (stored === 'es' || stored === 'en')) {
 ### 8.11 `src/i18/lang-*.json`
 
 - заполнить отсутствующие ключи;
-- добавить H1/About/FAQ-тексты с именем Ольги;
+- добавить H1/About/team/FAQ-тексты с именами Ольги и Давида;
 - синхронизировать ключи между `ru`, `es`, `en`.
 
-### 8.12 `AGENTS.md`
+### 8.12 `src/widgets/nav-menu/nav-paths.ts`
+
+- добавить `aboutPage: '/about'`;
+- использовать `localizedPath(PATHS.aboutPage, lang)` для языковых ссылок.
+
+### 8.13 `AGENTS.md`
 
 Обновить после реализации:
 
@@ -269,6 +277,9 @@ if (pathname === '/' && (stored === 'es' || stored === 'en')) {
 | `/` | русский, `lang="ru"` |
 | `/es/` | испанский, `lang="es"` |
 | `/en/` | английский, `lang="en"` |
+| `/about/` | русская страница о компании |
+| `/es/about/` | испанская страница о компании |
+| `/en/about/` | английская страница о компании |
 | `/tour-info/2/` | русский тур 2 |
 | `/es/tour-info/2/` | испанский тур 2 |
 | `/de/` | 404 |
@@ -285,7 +296,7 @@ if (pathname === '/' && (stored === 'es' || stored === 'en')) {
 
 - `/` отдаёт русскую версию.
 - `/es/` и `/en/` отдают соответствующие версии.
-- Все 18 страниц пререндерены.
+- Все 21 страница пререндерены.
 - `<html lang>` соответствует языку.
 - Canonical и `hreflang` корректны.
 - Явный выбор сохраняется в `localStorage`.

@@ -57,11 +57,14 @@ pnpm build
 dist/client/
   index.html
   faq/index.html
+  about/index.html
   tour-info/1/index.html
   ...
   es/index.html
   es/faq/index.html
+  es/about/index.html
   en/tour-info/1/index.html
+  en/about/index.html
   assets/
   robots.txt
   sitemap.xml
@@ -69,6 +72,8 @@ dist/client/
   404.html
   logo.png
   og/cover.jpg
+  team/olga.jpg
+  team/david.jpg
 ```
 
 Vike также создаёт `*.pageContext.json` рядом с HTML — они нужны для клиентской навигации. Деплоить нужно весь `dist/client`, а не только HTML.
@@ -190,7 +195,7 @@ server {
         return 301 https://costaricatures.com$uri/;
     }
 
-    location ~ ^/(?:(?:es|en)/)?(?:faq|tour-info/[0-9]+)$ {
+    location ~ ^/(?:(?:es|en)/)?(?:about|faq|tour-info/[0-9]+)$ {
         return 301 https://costaricatures.com$uri/;
     }
 
@@ -264,6 +269,8 @@ curl -sSI https://turescostarica.com/ | grep -i "^location: https://costaricatur
 curl -sSI https://costaricatures.com/
 curl -sSI https://costaricatures.com/es/
 curl -sSI https://costaricatures.com/en/tour-info/1/
+curl -sSI https://costaricatures.com/about/
+curl -sSI https://costaricatures.com/es/about/
 curl -sSI https://costaricatures.com/faq/
 curl -sSI https://costaricatures.com/tour-info/1/
 ```
@@ -274,6 +281,7 @@ curl -sSI https://costaricatures.com/tour-info/1/
 
 ```bash
 curl -sSI https://costaricatures.com/faq
+curl -sSI https://costaricatures.com/about
 curl -sSI https://costaricatures.com/es
 curl -sSI https://costaricatures.com/tour-info/1
 ```
@@ -306,7 +314,7 @@ curl -sS https://costaricatures.com/sitemap.xml
 curl -sS https://costaricatures.com/llms.txt
 ```
 
-Проверить, что в `sitemap.xml` есть все 18 URL, а `robots.txt` указывает на `https://costaricatures.com/sitemap.xml`.
+Проверить, что в `sitemap.xml` есть все 21 URL, а `robots.txt` указывает на `https://costaricatures.com/sitemap.xml`.
 
 ## 9. Rollback
 
@@ -340,7 +348,7 @@ systemctl reload nginx
 - [ ] `pnpm lint`
 - [ ] `pnpm build`
 - [ ] `pnpm exec vike preview`
-- [ ] `dist/client` содержит 18 HTML-страниц
+- [ ] `dist/client` содержит 21 HTML-страницу
 - [ ] nginx-конфиг проверен `nginx -t`
 - [ ] 301 с `http`, `www`, `turescostarica.com`
 - [ ] trailing slash 301

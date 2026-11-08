@@ -42,10 +42,10 @@
 | H1 | один на страницу, видимый |
 | FAQ | `<details>/<summary>`, ответы в DOM |
 | Ссылки | реальные `<a href>` |
-| Schema.org | `TravelAgency`, `Person`, `WebSite`, `FAQPage` |
+| Schema.org | `TravelAgency`, `Person` (Ольга и Давид), `WebSite`, `FAQPage`, `AboutPage` |
 | `sameAs` | только реальные профили |
 | Рейтинги | не добавлять без реальных отзывов |
-| Sitemap | все 18 URL + языковые альтернативы |
+| Sitemap | все 21 URL + языковые альтернативы |
 | `llms.txt` | добавить как краткую карту сайта |
 
 ## 4. Что видят роботы после миграции
@@ -88,13 +88,52 @@
 - Вопросы — H2 или `<summary>`; ответы — видимый текст в DOM.
 - На главной — тот же FAQ или его часть.
 
-### 5.4 About и футер
+### 5.4 Страница `/about/`
 
-- В About добавить: `Меня зовут Ольга Наймушина, я основатель компании Costa Rica Tures...`.
+Добавить отдельную страницу о компании и команде:
+
+- `/about/`
+- `/es/about/`
+- `/en/about/`
+
+Структура:
+
+- **H1:** `Туроператор и принимающая сторона в Коста-Рике — Costa Rica Tures`.
+- **Лид:** кто вы, для кого работаете, чем отличаетесь.
+- **H2 `О компании`:** принимающая сторона/DMC, опыт, работа с туроператорами, агентствами и частными клиентами.
+- **H2 `Команда`:**
+  - карточка Ольги Наймушиной: основатель, организатор и координатор туров;
+  - карточка Давида Гонсалеса: главный гид, гид-костариканец, свободно говорящий по-русски;
+  - у каждой карточки — место под фото, имя, роль, короткий био и ссылка на NeedGuide.
+- **H2 `Наши услуги`:** индивидуальные туры, экскурсии, авторские маршруты, VIP-транспорт и трансферы, подбор отелей, курирование тура, большие группы, новые маршруты.
+- **H2 `Почему выбирают нас`:** опыт, русскоязычная команда, местный гид, логистика, отели, полный цикл.
+- **H2 `Работа с туроператорами и агентствами`:** B2B/DMC-сценарий.
+- **Ссылка на FAQ** вместо дублирования всего FAQ на странице.
+
+Фото:
+
+- `public/team/olga.jpg` — фото Ольги;
+- `public/team/david.jpg` — фото Давида;
+- до получения фото — нейтральный placeholder с инициалами, без выдуманных изображений;
+- CSS: фиксированное соотношение сторон (например, `4/5`), `object-fit: cover`, адаптивность;
+- `alt` — имя и роль, например `Ольга Наймушина, основатель Costa Rica Tures`;
+- `Person.image` в Schema.org добавлять только после появления реальных фото.
+
+Формулировки, требующие проверки:
+
+- `10+ лет опыта` — уточнить, это опыт Ольги или компании; в текущем тексте компания с 2018 года;
+- `туроператор`/`DMC` — подтвердить юридический статус;
+- `единственный гид-костариканец` — заменить на проверяемое `гид-костариканец, свободно говорящий по-русски`.
+
+### 5.5 About-секция на главной и футер
+
+- На главной оставить короткий блок About как teaser.
+- Добавить ссылку `Подробнее о компании` → `/about/`.
 - В футере: `Costa Rica Tures — Туры и гид Ольга Наймушина`.
+- В футере добавить ссылку `О компании` → `/about/`.
 - Юридическое имя: `SRL Oldaga Group`.
 
-### 5.5 Реализация заголовков
+### 5.6 Реализация заголовков
 
 - `ArticleTitle` получает уровень (`as="h1" | "h2" | "h3"`).
 - H1 не использовать для декоративных заголовков.
@@ -136,7 +175,11 @@ FAQ-разметка `FAQPage` должна генерироваться из т
 - карточки туров;
 - логотип → `/`;
 - переключатель языка → `/es/...`, `/en/...`;
-- ссылки на FAQ и контакты.
+- ссылки на FAQ и контакты;
+- пункт меню `О нас` → `/about/`;
+- ссылка `Подробнее о компании` из About-секции главной → `/about/`;
+- ссылка `О компании` в футере → `/about/`;
+- ссылки `Профиль на NeedGuide` в карточках Ольги и Давида.
 
 Клиентскую навигацию можно сохранить через `navigate`/перехват, но у ссылки должен быть реальный `href`, чтобы робот мог её обойти.
 
@@ -190,6 +233,18 @@ FAQ-разметка `FAQPage` должна генерироваться из т
         { "@type": "Language", "name": "English", "alternateName": "en" }
       ],
       "founder": { "@id": "https://costaricatures.com/#olga" },
+      "employee": [
+        { "@id": "https://costaricatures.com/#olga" },
+        { "@id": "https://costaricatures.com/#david" }
+      ],
+      "foundingDate": "2018",
+      "knowsAbout": [
+        "Туры по Коста-Рике",
+        "Экскурсии и авторские маршруты",
+        "VIP-транспорт и трансферы",
+        "Подбор отелей",
+        "Организация туров для туроператоров"
+      ],
       "legalName": "SRL Oldaga Group",
       "sameAs": [
         "https://www.facebook.com/Brokertour.ru",
@@ -201,12 +256,33 @@ FAQ-разметка `FAQPage` должна генерироваться из т
       "@id": "https://costaricatures.com/#olga",
       "name": "Ольга Наймушина",
       "alternateName": "Olga Naimushina",
-      "jobTitle": "Русскоговорящий гид в Коста-Рике",
+      "description": "Основатель Costa Rica Tures, организатор и координатор туров.",
+      "jobTitle": "Основатель, организатор и координатор туров",
       "worksFor": { "@id": "https://costaricatures.com/#travelagency" },
       "knowsLanguage": [
         { "@type": "Language", "name": "Russian", "alternateName": "ru" },
         { "@type": "Language", "name": "Spanish", "alternateName": "es" },
         { "@type": "Language", "name": "English", "alternateName": "en" }
+      ],
+      "sameAs": [
+        "https://needguide.net/view_guide.php?user_id=19691"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://costaricatures.com/#david",
+      "name": "Давид Гонсалес",
+      "alternateName": "David Gonzalez",
+      "description": "Главный гид, гид-костариканец, свободно говорящий по-русски.",
+      "jobTitle": "Главный гид",
+      "worksFor": { "@id": "https://costaricatures.com/#travelagency" },
+      "knowsLanguage": [
+        { "@type": "Language", "name": "Russian", "alternateName": "ru" },
+        { "@type": "Language", "name": "Spanish", "alternateName": "es" },
+        { "@type": "Language", "name": "English", "alternateName": "en" }
+      ],
+      "sameAs": [
+        "https://needguide.net/view_guide.php?user_id=22898"
       ]
     },
     {
@@ -228,7 +304,10 @@ FAQ-разметка `FAQPage` должна генерироваться из т
 - `image` — реальное фото тура, не логотип.
 - `@id` — стабильные идентификаторы.
 - `sameAs` — только реальные профили, не домашние страницы.
-- `sameAs` у `Person` — только личные профили Ольги. Если Facebook/Instagram — профили компании, оставить их только у `TravelAgency`.
+- `sameAs` у `Person` — только личные профили. Facebook/Instagram — профили компании, оставить их только у `TravelAgency`.
+- NeedGuide: `user_id=19691` — профиль Ольги, `user_id=22898` — профиль Давида (уточнить соответствие перед релизом).
+- `Person.image` добавлять только после появления реальных фото `public/team/olga.jpg` и `public/team/david.jpg`.
+- `foundingDate: "2018"` оставить только если это подтверждено; формулировку `10+ лет` проверить отдельно.
 - `telephone` — основной номер Ольги.
 - `email` — рабочий email.
 - `address` — Alajuela, Grecia, Costa Rica; улица уже есть в контактах сайта (`src/widgets/contacts/contacts-2.tsx:50`). Если юридический адрес другой — заменить до релиза.
@@ -261,6 +340,27 @@ FAQ-разметка `FAQPage` должна генерироваться из т
 ```
 
 Для `/es/faq/` и `/en/faq/` — свои `url`, `@id` и `inLanguage`.
+
+### 8.4 AboutPage
+
+Для страницы `/about/` добавить `AboutPage`, связывающий страницу с компанией и командой:
+
+```json
+{
+  "@type": "AboutPage",
+  "@id": "https://costaricatures.com/about/#webpage",
+  "url": "https://costaricatures.com/about/",
+  "inLanguage": "ru",
+  "mainEntity": { "@id": "https://costaricatures.com/#travelagency" },
+  "about": [
+    { "@id": "https://costaricatures.com/#travelagency" },
+    { "@id": "https://costaricatures.com/#olga" },
+    { "@id": "https://costaricatures.com/#david" }
+  ]
+}
+```
+
+Для `/es/about/` и `/en/about/` — свои `url`, `@id` и `inLanguage`.
 
 ## 9. Head, canonical и hreflang
 
@@ -295,9 +395,9 @@ FAQ-разметка `FAQPage` должна генерироваться из т
 
 ### 10.1 `sitemap.xml`
 
-Сгенерировать все 18 URL (на этапе сборки из тех же per-page `+onBeforePrerenderStart`-списков, либо статическим файлом):
+Сгенерировать все 21 URL (на этапе сборки из тех же per-page `+onBeforePrerenderStart`-списков, либо статическим файлом):
 
-- `/`, `/faq/`, `/tour-info/1..4/`;
+- `/`, `/about/`, `/faq/`, `/tour-info/1..4/`;
 - `/es/...`;
 - `/en/...`.
 
@@ -333,7 +433,7 @@ Sitemap: https://costaricatures.com/sitemap.xml
 - кто такой гид;
 - какие услуги;
 - языки;
-- ключевые URL;
+- ключевые URL, включая `/about/`;
 - контакты;
 - ссылки на FAQ и туры.
 
@@ -343,6 +443,7 @@ Sitemap: https://costaricatures.com/sitemap.xml
 - `logo_white.png` — для тёмных фонов, в Schema.org не использовать.
 - `image`/OG: фото тура, например `main_photo_1.jpeg` (1280×614), подготовить `public/og/cover.jpg` 1200×630.
 - Favicon уже есть: `public/favicon.svg`.
+- Фото команды: `public/team/olga.jpg`, `public/team/david.jpg`; до получения — placeholder без выдуманных лиц.
 - В alt писать, что на фото и где это в Коста-Рике; не оставлять пустые alt у ключевых изображений.
 
 ## 12. Домены и `sameAs`
@@ -355,11 +456,13 @@ Sitemap: https://costaricatures.com/sitemap.xml
 - `sameAs` — не альтернативные домены, а профили:
   - Facebook: `https://www.facebook.com/Brokertour.ru`;
   - Instagram: `https://www.instagram.com/costarica_travelideas/`;
+  - NeedGuide Ольги: `https://needguide.net/view_guide.php?user_id=19691`;
+  - NeedGuide Давида: `https://needguide.net/view_guide.php?user_id=22898`;
   - Google Business Profile / Google Maps;
   - Tripadvisor;
-  - NeedGuide;
   - Turtella;
   - Telegram-канал.
+- NeedGuide профили гидов идут в `Person.sameAs`, а не в `TravelAgency.sameAs`, если это личные профили.
 - Если профиля нет — не добавлять.
 
 ## 13. Проверка
@@ -371,6 +474,8 @@ curl -sS https://costaricatures.com/ | grep -q "<h1"
 curl -sS https://costaricatures.com/ | grep -q "Ольга Наймушина"
 curl -sS https://costaricatures.com/ | grep -q "Русскоговорящий гид"
 curl -sS https://costaricatures.com/faq/ | grep -q "<details"
+curl -sS https://costaricatures.com/about/ | grep -q "Давид Гонсалес"
+curl -sS https://costaricatures.com/about/ | grep -q "NeedGuide"
 curl -sS https://costaricatures.com/es/ | grep -q 'lang="es"'
 curl -sS https://costaricatures.com/en/tour-info/1/ | grep -q 'lang="en"'
 curl -sS -A "GPTBot" https://costaricatures.com/ | grep -q "<h1"
@@ -389,9 +494,11 @@ curl -sS -A "PerplexityBot" https://costaricatures.com/ | grep -q "<h1"
 
 - H1 ровно один на страницу.
 - H1 содержит ключевую фразу.
+- `/about/` существует на трёх языках, содержит команду, услуги и ссылки NeedGuide.
+- У карточек Ольги и Давида есть место под фото.
 - FAQ-ответы в HTML.
 - Навигация и карточки — `<a href>`.
-- JSON-LD валиден.
+- JSON-LD валиден; в графе есть `Person` Ольги и `Person` Давида, `employee` и NeedGuide `sameAs`.
 - `sameAs` — реальные профили.
 - Нет выдуманных рейтингов.
 - Sitemap содержит все URL.

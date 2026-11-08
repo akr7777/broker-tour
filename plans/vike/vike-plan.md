@@ -69,7 +69,7 @@ pnpm add vike@0.4.220 vike-react@0.5.10 react-streaming@0.3.42
 - `react-streaming@0.3.42` — peer `react >= 18`;
 - `vite@5.2.11` и `react@18.2.x` остаются.
 
-> PoC на этой связке собрал все 18 HTML: `/`, `/faq/`, `/tour-info/1..4/` на `ru`/`es`/`en`, с корректным `<html lang>` и per-page `+onBeforePrerenderStart`.
+> PoC на этой связке собрал 18 HTML для 6 маршрутов: `/`, `/faq/`, `/tour-info/1..4/` на `ru`/`es`/`en`, с корректным `<html lang>` и per-page `+onBeforePrerenderStart`. После добавления `/about/` будет 21 страница по той же схеме.
 
 > Переход на Vike 0.4.268 + vike-react 0.6 + React 19 + Vite 7 — отдельная большая миграция. Её не смешиваем с SEO/GEO-задачей.
 
@@ -137,6 +137,9 @@ pages/
   faq/+Page.tsx
   faq/+route.ts
   faq/+onBeforePrerenderStart.ts
+  about/+Page.tsx
+  about/+route.ts
+  about/+onBeforePrerenderStart.ts
   tour-info/@tourId/+Page.tsx
   tour-info/@tourId/+route.ts
   tour-info/@tourId/+onBeforePrerenderStart.ts
@@ -149,6 +152,8 @@ src/
 public/
   logo.png
   og/cover.jpg
+  team/olga.jpg
+  team/david.jpg
   robots.txt
   sitemap.xml
   llms.txt
@@ -161,6 +166,7 @@ public/
 ```text
 /                         RU главная
 /faq/                     RU FAQ
+/about/                   RU о компании и команде
 /tour-info/:tourId/       RU тур 1–4
 /es/...                   ES
 /en/...                   EN
@@ -179,6 +185,13 @@ export function route(pageContext) {
 // pages/faq/+route.ts
 export function route(pageContext) {
   const match = pageContext.urlPathname.match(/^\/(?:(es|en)\/)?faq\/?$/)
+  if (!match) return false
+  return { routeParams: { lang: match[1] ?? 'ru' } }
+}
+
+// pages/about/+route.ts
+export function route(pageContext) {
+  const match = pageContext.urlPathname.match(/^\/(?:(es|en)\/)?about\/?$/)
   if (!match) return false
   return { routeParams: { lang: match[1] ?? 'ru' } }
 }
@@ -204,6 +217,11 @@ export function onBeforePrerenderStart() {
 // pages/faq/+onBeforePrerenderStart.ts
 export function onBeforePrerenderStart() {
   return ['/faq/', '/es/faq/', '/en/faq/']
+}
+
+// pages/about/+onBeforePrerenderStart.ts
+export function onBeforePrerenderStart() {
+  return ['/about/', '/es/about/', '/en/about/']
 }
 
 // pages/tour-info/@tourId/+onBeforePrerenderStart.ts
@@ -348,7 +366,7 @@ export function onBeforePrerenderStart() {
 
 ### Этап 2. Маршруты и компоненты
 
-- Создать `pages/index`, `pages/faq`, `pages/tour-info/@tourId`.
+- Создать `pages/index`, `pages/faq`, `pages/about`, `pages/tour-info/@tourId`.
 - Заменить React Router:
   - `useNavigate` → Vike `navigate`;
   - `useParams` → `pageContext.routeParams`;
@@ -359,6 +377,9 @@ export function onBeforePrerenderStart() {
 - Перенести hash-scroll в effect.
 - Заменить клики на ссылки: nav, карточки туров, логотип, языковой переключатель.
 - H1/H2 семантика и CSS.
+- Страница `/about/`: команда, услуги, преимущества, B2B/DMC-блок.
+- Карточки Ольги и Давида с местом под фото `public/team/olga.jpg` и `public/team/david.jpg`.
+- Header: пункт `О нас` ведёт на `/about/`; на главной — teaser со ссылкой `Подробнее о компании`; в футере — ссылка `О компании`.
 - FAQ на `<details>/<summary>`.
 - **Выход**: все маршруты работают, ссылки индексируемы, SSR-контент полный.
 
@@ -371,12 +392,12 @@ export function onBeforePrerenderStart() {
 - `localStorage` только для явного выбора.
 - Авторедирект только с `/`.
 - `hreflang`, canonical, `<html lang>`.
-- Per-page `+onBeforePrerenderStart` хуки возвращают 18 URL суммарно (без дубликатов).
+- Per-page `+onBeforePrerenderStart` хуки возвращают 21 URL суммарно (без дубликатов).
 - **Выход**: все языковые версии пререндерятся, язык не смешивается.
 
 ### Этап 4. SEO/GEO
 
-- JSON-LD: `TravelAgency`, `Person`, `WebSite`, `FAQPage`.
+- JSON-LD: `TravelAgency`, `Person` (Ольга и Давид), `WebSite`, `FAQPage`, `AboutPage`.
 - H1/H2 с ключевыми фразами.
 - FAQ-ответы в HTML.
 - `sitemap.xml`, `robots.txt`, `llms.txt`.
@@ -402,11 +423,12 @@ export function onBeforePrerenderStart() {
 Обязательные тесты:
 
 - SSR-рендер каждой страницы без `window`/`localStorage` ошибок;
-- 18 пререндеренных URL существуют в `dist/client`;
+- 21 пререндеренный URL существует в `dist/client`;
 - `<html lang>` соответствует языку;
 - title/description/canonical/hreflang;
 - H1 ровно один на страницу;
-- FAQ-ответы присутствуют в HTML;
+- FAQ-ответы и страница `/about/` присутствуют в HTML;
+- в `/about/` есть карточки Ольги и Давида с местом под фото;
 - JSON-LD парсится и содержит нужные поля;
 - ссылки навигации/туров/языков — `<a href>`;
 - язык не смешивается между страницами;
@@ -457,7 +479,8 @@ curl -sS -A "PerplexityBot" https://costaricatures.com/ | grep -q "<h1"
 ## 12. Критерии готовности
 
 - Vike собирает статику в `dist/client/`.
-- 18 страниц (3 языка × 6 маршрутов) пререндерены.
+- 21 страница (3 языка × 7 маршрутов) пререндерена.
+- `/about/` содержит команду, услуги, преимущества и ссылки NeedGuide.
 - В HTML без JS есть H1, текст, FAQ-ответы, ссылки, JSON-LD.
 - Нет ошибок гидрации.
 - Язык определяется URL; `localStorage` — только явный выбор.
