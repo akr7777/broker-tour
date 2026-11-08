@@ -12,6 +12,55 @@
 - `turescostarica.com` и `www.*` — 301 на основной домен.
 - Языковые версии: `/`, `/es/`, `/en/`.
 
+
+## 1.1 Вариант: сторонний статический хостинг
+
+Если сайт размещается не на своём nginx, а на стороннем хостинге, схема остаётся статической: собираете проект локально/в CI и загружаете **всё содержимое** `dist/client/` в корень сайта.
+
+> Сейчас, до миграции на Vike, `pnpm build` — это обычный Vite SPA и он создаёт `dist/`, а не `dist/client/`. Описанная ниже схема относится к состоянию **после** миграции на Vike.
+
+Что загружать:
+
+- все HTML-файлы и директории (`index.html`, `about/index.html`, `es/`, `en/`, `tour-info/...`);
+- `assets/`;
+- `*.pageContext.json` — без них ломается клиентская навигация Vike;
+- `robots.txt`, `sitemap.xml`, `llms.txt`;
+- `404.html`;
+- `logo.png`, `og/`, `team/` и остальные файлы из `public/`.
+
+Не загружать:
+
+- `dist/server/` — для полного SSG он не нужен;
+- `node_modules/`;
+- `.env` — переменные уже встроены в бандл на этапе сборки.
+
+Что должен уметь хостинг:
+
+- отдавать `index.html` для директорий (`/about/` → `/about/index.html`);
+- отдавать `404.html` для неизвестных URL;
+- **не** включать SPA-fallback вида «все пути → `/index.html`», иначе `/es/`, `/en/` и несуществующие туры будут отдавать неверную страницу;
+- поддерживать HTTPS и основной домен без `www`;
+- по возможности делать 301 с `/about` на `/about/`, `/es` на `/es/` и т.п.
+
+Если хостинг собирает проект из Git, укажите:
+
+- build command: `pnpm build`;
+- publish/output directory: `dist/client`;
+- Node.js 20+;
+- build-time env: `VITE_SERVER_URL`, `VITE_WEB_SITE_URL`.
+
+Если сайт будет не в корне домена, а в подпапке (`example.com/site/`), недостаточно просто скопировать файлы: нужно настроить `base` в Vite/Vike и пересобрать проект.
+
+Примеры:
+
+- **Netlify:** build `pnpm build`, publish `dist/client`; не добавлять SPA-redirect на `/index.html`.
+- **Vercel:** output directory `dist/client`, статический проект.
+- **Cloudflare Pages:** build output `dist/client`.
+- **Apache/ shared hosting:** загрузить содержимое `dist/client` в `public_html`; включить `DirectoryIndex index.html`, `ErrorDocument 404 /404.html`; при возможности настроить 301 на trailing slash.
+- **GitHub Pages:** загрузить содержимое `dist/client`, добавить `.nojekyll`, настроить `404.html`; серверных 301 может не быть, поэтому ссылки должны сразу вести на URL со слэшем.
+
+Главное: `dist/client` — это не только HTML. Если загрузить только `index.html` и `assets/`, страницы `/about/`, `/es/`, `/en/` и клиентская навигация работать не будут.
+
 ## 2. Требования
 
 - Node.js 20+ для сборки (локально проверено на Node 24).
