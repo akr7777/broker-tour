@@ -2,19 +2,18 @@ import { WidgetWrapper } from '../../shared/widget-wrapper/widget-wrapper'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import uuid from 'react-uuid'
-import { useNavigate } from 'react-router-dom'
 import { toursContent } from '../../store/tour-info'
 import { ArticleTitle } from '../../shared/title/title'
 import { DIV_IDS } from '../../store/consts'
+import { localizedPath, LanguagesType } from '../../i18/langs'
 
 import titleIcon from '../../assets/icons/summer-vacation.svg'
 
 import './our-tour-2-classes.scss'
 
 export const OurTour2 = () => {
-    const {t} = useTranslation()
-    const navigate = useNavigate()
-    const onCardClickHandler = (link: string) => navigate(link)
+    const {t, i18n} = useTranslation()
+    const language = i18n.language as LanguagesType
 
     return (
         <WidgetWrapper>
@@ -23,12 +22,13 @@ export const OurTour2 = () => {
 
             <div className="our-tours-2-wrapper" id={DIV_IDS.toursCards}>
 
-                {toursContent().map(tour => {
+                {toursContent(i18n).map(tour => {
                     return (
-                        <div 
+                        <a
                             key={uuid()}
                             className='our-tours-2-card'
-                            onClick={() => onCardClickHandler(tour.urlPath)}
+                            href={localizedPath(tour.urlPath, language)}
+                            aria-label={tour.title}
                         >
 
                             <motion.div
@@ -57,7 +57,7 @@ export const OurTour2 = () => {
                                 {tour.description}
                             </div>
 
-                        </div>
+                        </a>
                     )
                 })}
             </div>

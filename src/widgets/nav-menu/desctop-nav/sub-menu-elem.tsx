@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "../../../vike/router"
 import { NavMenuElementsType } from "../../../pages/header/header"
 import { useAppDispatch } from "../../../store/store"
 import { setWhichSubMenuPointOpen } from "../../../store/appSlice"
@@ -32,7 +32,8 @@ export const SubNavMenuElement = (props: NavMenuElementsType) => {
         
         : <>{props.title}</>
 
-    const onElemClick = () => {
+    const onElemClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+        event.preventDefault()
         dispatch(setWhichSubMenuPointOpen(''))
         navigate(props.path)
         // document.documentElement.scrollTo({
@@ -48,8 +49,9 @@ export const SubNavMenuElement = (props: NavMenuElementsType) => {
     }
 
     return (
-        <div
+        <a
             className="desctop-nav-sublink-elem-wrapper-class"
+            href={props.path}
             onClick={onElemClick}
         >
             <div className="desctop-nav-sublink-elem-title-class">
@@ -59,6 +61,6 @@ export const SubNavMenuElement = (props: NavMenuElementsType) => {
             <div className="desctop-nav-sublink-elem-description-class">
                 {props.description}
             </div>
-        </div>
+        </a>
     )
 }

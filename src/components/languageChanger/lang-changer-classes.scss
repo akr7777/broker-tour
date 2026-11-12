@@ -18,12 +18,19 @@
     }
 }
 
+.lang-current {
+    background: none;
+    border: 0;
+    padding: 0;
+    line-height: 0;
+}
+
 .lang-panel-div {
     position: absolute;
     top: 0;
     left: 0;
 
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 15px;
     // background-color: bisque;
@@ -33,7 +40,11 @@
         height: $language_img_size;
         cursor: pointer;
     }
+}
+
+.lang-panel-div-show {
+    display: flex;
+}
     // img:hover {
     //     scale: 1.2;
     // }
-}

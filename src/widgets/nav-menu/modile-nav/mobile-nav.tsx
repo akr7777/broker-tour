@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import { NavMenuPropsType } from '../../../pages/header/header'
 import uuid from 'react-uuid';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from '../../../vike/router'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ANIMATION_TIME_SHORT, DIV_IDS, LINE_DEVIDER } from '../../../store/consts';
 import { useAppDispatch, useAppSelector } from '../../../store/store';
@@ -100,18 +100,22 @@ export const MobileNavigation = (props: NavMenuPropsType) => {
                             {props.elements.map(elem => {
                                 return (
                                     <AnimatePresence mode='wait' key={uuid()}>
-                                        <motion.nav 
+                                        <motion.a
                                             key={uuid()}
-                                            className='mobile-nav-menu-element' 
-                                            onClick={
-                                                elem.subElements
-                                                    ? () => onShowClickHandler(elem.title)
-                                                    : () => onLinkClickHandler(elem.path)
+                                            className='mobile-nav-menu-element'
+                                            href={elem.subElements?.[0]?.path ?? elem.path}
+                                            onClick={(event) => {
+                                                event.preventDefault()
+                                                if (elem.subElements) {
+                                                    onShowClickHandler(elem.title)
+                                                } else {
+                                                    onLinkClickHandler(elem.path)
                                                 }
+                                            }}
                                         >
                                             <img alt='' src={elem.imagePath} />
                                             <div>{elem.title}</div>
-                                        </motion.nav>
+                                        </motion.a>
 
                                         <AnimatePresence mode='wait'>
                                             {titleShow === elem.title && elem.subElements &&
@@ -125,10 +129,14 @@ export const MobileNavigation = (props: NavMenuPropsType) => {
                                                 >
                                                     {elem.subElements.map(subElem => {
                                                         return (
-                                                            <div 
+                                                            <a
                                                                 key={uuid()}
                                                                 className='mobile-nav-menu-subelem-child-class'
-                                                                onClick={() => onLinkClickHandler(subElem.path)}
+                                                                href={subElem.path}
+                                                                onClick={(event) => {
+                                                                    event.preventDefault()
+                                                                    onLinkClickHandler(subElem.path)
+                                                                }}
                                                             >
                                                                 <img alt="" src={elem.imagePath} />
                                                                 <div>
@@ -138,7 +146,7 @@ export const MobileNavigation = (props: NavMenuPropsType) => {
                                                                         </div>
                                                                     )}
                                                                 </div>
-                                                            </div>
+                                                            </a>
                                                         )
                                                     })}
                                                 </motion.nav>

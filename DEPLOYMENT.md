@@ -47,7 +47,7 @@
 - build command: `pnpm build`;
 - publish/output directory: `dist/client`;
 - Node.js 20+;
-- build-time env: `VITE_SERVER_URL`, `VITE_WEB_SITE_URL`.
+- build-time env: `VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID`, `VITE_EMAILJS_PUBLIC_KEY`.
 
 Если сайт будет не в корне домена, а в подпапке (`example.com/site/`), недостаточно просто скопировать файлы: нужно настроить `base` в Vite/Vike и пересобрать проект.
 
@@ -79,8 +79,9 @@
 Создать `.env` в корне проекта (не коммитить):
 
 ```dotenv
-VITE_SERVER_URL=https://<backend>
-VITE_WEB_SITE_URL=https://costaricatures.com
+VITE_EMAILJS_SERVICE_ID=service_xxxxxxxxxxxx
+VITE_EMAILJS_TEMPLATE_ID=template_xxxxxxxxxxxx
+VITE_EMAILJS_PUBLIC_KEY=public_xxxxxxxxxxxx
 ```
 
 Важно:

@@ -1,0 +1,76 @@
+.about-page {
+    padding-bottom: 40px;
+
+    .about-page-intro {
+        max-width: 900px;
+        margin-bottom: 32px;
+    }
+
+    h2 {
+        margin-top: 36px;
+        margin-bottom: 16px;
+    }
+
+    .about-page-team {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    .about-page-person {
+        display: grid;
+        grid-template-columns: 180px minmax(0, 1fr);
+        gap: 20px;
+        align-items: start;
+
+        h3 {
+            margin-top: 0;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 8px;
+        }
+    }
+
+    .about-page-role {
+        font-weight: 600;
+        margin-top: 0;
+    }
+
+    .about-page-photo-placeholder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        aspect-ratio: 4 / 5;
+        border-radius: 16px;
+        background: #e9eef2;
+        color: #6b7b86;
+        font-size: 36px;
+        font-weight: 700;
+    }
+
+    .about-page-list {
+        padding-left: 20px;
+
+        li + li {
+            margin-top: 8px;
+        }
+    }
+
+    @media (max-width: 900px) {
+        .about-page-team {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 560px) {
+        .about-page-person {
+            grid-template-columns: 1fr;
+        }
+
+        .about-page-photo-placeholder {
+            max-width: 220px;
+        }
+    }
+}

@@ -1,7 +1,8 @@
 import { useTranslation } from 'react-i18next'
 import { ContactForm } from '../contact-form/contact-form'
 import { useAppDispatch, useAppSelector } from '../../store/store'
-import { setIsBookTourShow } from '../../store/appSlice'
+import { setBookTourSendStatusAC, setIsBookTourShow } from '../../store/appSlice'
+import { bookTourSendStatusEnum } from '../../store/consts'
 import clsx from 'clsx'
 
 import './button-classes.scss'
@@ -14,7 +15,10 @@ export const ButtonContact = (props: PropsType) => {
 
     const dispatch = useAppDispatch()
     const isBookFormShow: boolean = useAppSelector(state => state.app.isBookTourShow)
-    const showBookTour = () => dispatch(setIsBookTourShow(true))
+    const showBookTour = () => {
+        dispatch(setBookTourSendStatusAC(bookTourSendStatusEnum.notSent))
+        dispatch(setIsBookTourShow(true))
+    }
     
     return (
         <div className='center-button-div'>

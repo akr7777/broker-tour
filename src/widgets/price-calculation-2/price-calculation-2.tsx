@@ -1,8 +1,8 @@
 
-import { useEffect, useState } from 'react'
+import { useEffect, useId, useState } from 'react'
 import { PersonsCountChooser } from '../../components/persons-count-chooser/persons-count-chooser'
 import { TourType, toursContent } from '../../store/tour-info'
-import { useParams } from 'react-router-dom'
+import { useParams } from '../../vike/router'
 import { useTranslation } from 'react-i18next'
 import { PriceResults } from './price-result'
 import clsx from 'clsx'
@@ -14,7 +14,6 @@ import { WidgetWrapper } from '../../shared/widget-wrapper/widget-wrapper'
 import { AnimatePresence, motion } from 'framer-motion'
 import { HotelRecomendations } from '../hotels-recomendations/hotel-recomendations'
 import { ArticleTitle } from '../../shared/title/title'
-import i18next from 'i18next'
 import uuid from 'react-uuid'
 
 import vacationImage from '../../assets/icons/summer-vacation.svg'
@@ -30,24 +29,24 @@ const totalMaxPersons = 8
 export const PriceCalculation2 = () => {
 
     const {tourId} = useParams()
-    const { t } = useTranslation()
+    const { t, i18n } = useTranslation()
 
     const [currentTour, setCurrentTour] = useState<TourType | null>(null)
 
-    const divIdPriceCalcResult = uuid()
+    const divIdPriceCalcResult = useId()
 
     //Переменные currentLang и tourTitle нужны, чтобы корректно отобразить название тура в первом поле (ячейке)
     //при смене языка во время выбора тура
-    const currentLang = i18next.language
+    const currentLang = i18n.language
     const [tourTitle, setTourTitle] = useState<string>(
         currentTour?.title || ""
     )
 
     useEffect(() => {
         // Обновление информации при смене route тура
-        const isPathFound: boolean = toursContent().some(tour => tour.id === Number(tourId))
+        const isPathFound: boolean = toursContent(i18n).some(tour => tour.id === Number(tourId))
         if (isPathFound) {
-            const newCurrentTour: TourType | undefined = toursContent().find(tour => tour.id === Number(tourId))
+            const newCurrentTour: TourType | undefined = toursContent(i18n).find(tour => tour.id === Number(tourId))
             if (newCurrentTour) {
                 setCurrentTour(newCurrentTour)
                 setTourTitle(newCurrentTour.title)
@@ -55,13 +54,13 @@ export const PriceCalculation2 = () => {
         }
         // Обновление информации при смене языка
         if (currentTour?.id) {
-            const currentTourNewLang: TourType | undefined = toursContent().find(tour => tour.id === currentTour.id)
+            const currentTourNewLang: TourType | undefined = toursContent(i18n).find(tour => tour.id === currentTour.id)
             if (currentTourNewLang) {
                 setCurrentTour(currentTourNewLang)
                 setTourTitle(currentTourNewLang.title)
             }
         }
-    }, [tourId, currentLang, currentTour?.id])
+    }, [tourId, currentLang, currentTour?.id, i18n])
 
     // Информация о выборе детей-взрослых и вспомогательные переменные
     const [adultCount, setAdultCount] = useState<number>(minAdultCount)

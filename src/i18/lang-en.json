@@ -1,42 +1,36 @@
 {
   "site_title": "Costa Rica Tours",
   "site_description": "Book tours, guided visits, airport transfers, and activities in Costa Rica online.",
-
   "loading": "Loading...",
-
   "wellcome-widget": {
     "line1": "Discover Costa Rica \nwith Our Pre-Planned Tours",
     "line2": "Choose Your Adventure.",
     "tours-to-costa-rica": "Explore Our Costa Rica Tours",
     "contact-with-us": "Get in Touch"
   },
-  
   "contacts": {
     "contact-button-text": "Book a Tour!",
     "contact-whatsapp-text": "Good afternoon! I want to book a tour {{tour}}",
     "contacts": "Contact Us",
-    "questions_and_booking": "For questions and booking, reach out via", 
+    "questions_and_booking": "For questions and booking, reach out via",
     "or": "or",
     "or_use_phone": "You can also call us at",
     "our_address": "Our Address:",
     "company_name": "Company Name:"
   },
-
-  
   "booking": {
     "how_to_book": "How to Book?",
     "how_to_book_description_1": "You can book any of our tours by calculating the cost using our form ",
     "how_to_book_description_2": "You can also request a pre-planned tour or customize your own. Contact details are provided ",
     "here": "here"
   },
-
   "about_us": {
     "about_us": "About Us",
     "about_us_1": "Since 2018, Costa Rica Tours has been welcoming travelers. Our guests become friends, and their positive feedback inspires us to keep improving.",
     "about_us_2": "We are conveniently located near San José airport with our own transport, drivers, and guides, allowing us to promptly respond to any requests.",
-    "about_us_3": "We also partner with many verified tourism providers throughout Costa Rica, ensuring quick solutions to any issues. We speak Spanish, English, and Russian."
+    "about_us_3": "We also partner with many verified tourism providers throughout Costa Rica, ensuring quick solutions to any issues. We speak Spanish, English, and Russian.",
+    "more": "More about the company"
   },
-
   "nav": {
     "main_page": "Home",
     "contacts": "Contact",
@@ -45,7 +39,6 @@
     "about_us": "About Us",
     "faq": "FAQ"
   },
-
   "tours": {
     "title": "Find Your Perfect Tour",
     "choose_tour": "Select a Tour",
@@ -67,7 +60,6 @@
     "hotel-recomenddations-description": "Hotel accommodation is not included in the tour price. Tourists book hotels based on their preferences. Below are recommended hotels along the route, ranked from luxury to budget.",
     "from": "From",
     "per-person": "per person",
-
     "tour1": {
       "title": "Costa Rica Classic Mini\n4 Days / 3 Nights",
       "description": "Poás Volcano - Arenal Volcano - Monteverde Cloud Forest - Manuel Antonio Beach.",
@@ -90,7 +82,6 @@
         "hotel2": "La Fortuna (2 nights)"
       }
     },
-
     "tour2": {
       "title": "Costa Rica Classic Active\n7 Days / 6 Nights",
       "description": "Visit Costa Rica’s iconic locations: Manuel Antonio Beach - Monteverde Cloud Forest - Arenal Volcano - Poás Volcano.",
@@ -117,7 +108,6 @@
         "hotel3": "Central Valley near coffee plantations and airport (1 night)"
       }
     },
-
     "tour3": {
       "title": "Costa Rica Classic Relax\n9 Days / 8 Nights",
       "description": "Visit Costa Rica’s popular spots at a leisurely pace. Tour: Poás Volcano - Arenal Volcano - Monteverde Cloud Forest - Pacific Beach - Manuel Antonio National Park.",
@@ -148,7 +138,6 @@
         "hotel5": "Manuel Antonio (2 nights)"
       }
     },
-
     "tour4": {
       "title": "Costa Rica Classic Two Oceans\n12 Days / 11 Nights",
       "description": "Tour: Manuel Antonio Beach (Pacific Ocean) - Monteverde Cloud Forest - Arenal Volcano - Puerto Viejo Beach (Atlantic Ocean) - Poás Volcano.",
@@ -163,31 +152,31 @@
         "day4": "Transfer to Monteverde National Park.\n- Zip-line over the jungle;\n- Walk over the treetops;\n- Visit a tropical butterfly garden.\nTransfer to La Fortuna resort at the foot of Arenal Volcano.",
         "day5": "See the majestic La Fortuna waterfall and swim in its azure waters with trout;\nWalk on suspension bridges with views of Arenal Volcano;\nRelax in the hotel’s hot springs.",
         "day6": "Transfer to the Central Valley:\n- Visit a rescued animals park and La Paz waterfall gardens;\n- See one of the largest craters in the world at Poás Volcano;\n- Visit the world's only Starbucks coffee plantation;\n- Learn about coffee harvesting;\n- Explore the full coffee production process;\n- Taste the best varieties of freshly brewed coffee with a stunning view of the plantation and waterfall.",
-        "day7": "Transfer to San José Airport."
+        "day7": "Transfer to San José Airport.",
+        "day8": "Explore the jungle of Cahuita National Park on a full-day hike along the coast, with swimming and relaxation on white-sand beaches.",
+        "day9": "Morning visit to the Bribri indigenous reserve: walk through the rainforest to the Volio Watsi waterfall, then visit an indigenous village to learn about medicinal plants, poison frogs and cacao production.",
+        "day10": "Relax at the hotel. Transfer to a hotel in the Central Valley.",
+        "day11": "Morning ascent to Poás Volcano, one of the world’s largest active craters. Then visit the rescued animals park and La Paz waterfall. Visit the world’s only Starbucks coffee plantation, learn about coffee harvesting and production, and taste freshly brewed coffee with views of the plantation and waterfall.",
+        "day12": "Transfer to San José airport."
       },
       "hotels": {
         "hotel1": "Manuel Antonio (3 nights)",
         "hotel2": "La Fortuna (2 nights)",
-        "hotel3": "Central Valley near coffee plantations and airport (1 night)"
+        "hotel3": "Central Valley near coffee plantations and airport (1 night)",
+        "hotel4": "Central Valley near coffee plantations and airport (1 night)"
       }
     }
-
-
   },
-
   "not_found_page": {
     "title": "Page Not Found",
     "text": "Please proceed to the",
     "link_text": "main page"
   },
-  
   "stepper": {
     "day": "Day"
   },
-  
   "faq": {
     "title": "Frequently Asked Questions About Costa Rica",
-  
     "1": {
       "question": "Where is Costa Rica located?",
       "answer": "Costa Rica is bordered by Nicaragua to the north, Panama to the southeast, the Pacific Ocean to the south and west, and the Atlantic Ocean (Caribbean Sea) to the east."
@@ -236,14 +225,10 @@
       "question": "Why choose an organized tour in Costa Rica?",
       "answer": "Public transportation is limited. Costa Rica's beauty lies in its undeveloped areas, offering exclusive experiences. Many attractions are unmarked on maps, making car rentals expensive and challenging. We provide reliable transfer services and know the best routes, tailored to your needs."
     },
-
-
     "13": {
       "question": "How much do tours cost in Costa Rica?",
       "answer": "Tour prices vary based on duration, location, and activities. Prices range from $50 to $200 per person. National park tours and adventure activities like canopy tours or rafting are mid-range, while exclusive tours may cost more. Compare prices and read reviews to ensure the best experience."
     },
-
-    
     "18": {
       "question": "What excursions can I do in Costa Rica?",
       "answer": "Costa Rica offers diverse excursions for all interests and adventure levels. Popular options include wildlife tours in national parks like Manuel Antonio or Corcovado, jungle hikes in Monteverde, ziplining over rainforests, river boat tours to spot crocodiles and birds, and relaxing hot spring baths at Arenal Volcano."
@@ -255,9 +240,24 @@
     "20": {
       "question": "What can I do in Costa Rica in 7 days?",
       "answer": "In a week, explore multiple regions: start in Arenal for volcano and adventure activities, move to Monteverde for cloud forest experiences, and finish at the Pacific coast in Tamarindo or Manuel Antonio for sun and surf. Plan well for a week filled with adventure and natural beauty."
+    },
+    "14": {
+      "question": "When is the best time to visit Costa Rica?",
+      "answer": "The best time to visit Costa Rica is from December to April, during the dry season. The weather is sunnier and drier, making it ideal for beach holidays and exploring natural attractions."
+    },
+    "15": {
+      "question": "Can Russians travel to Costa Rica?",
+      "answer": "Yes, Russian tourists can visit Costa Rica. Most foreign visitors need a valid passport; visa requirements depend on nationality, so check with the Costa Rican consulate in your country before travelling."
+    },
+    "16": {
+      "question": "Where is the best place to vacation in Costa Rica?",
+      "answer": "Guanacaste on the Pacific coast is one of the most popular regions, with beautiful beaches, resorts, surfing and wildlife. Monteverde and Arenal are excellent choices for jungle and ecotourism experiences."
+    },
+    "17": {
+      "question": "How much do excursions cost in Costa Rica?",
+      "answer": "Excursion prices depend on duration, location and included activities. They usually range from $50 to $200 per person. Half-day and full-day national park tours are mid-range, while private or specialized excursions can cost more."
     }
   },
-  
   "contact-form": {
     "title": "Book a Tour",
     "description1": "Book your tour here",
@@ -266,6 +266,44 @@
     "send-btn-text": "Send",
     "contact-form-network-delivered-text": "Your message has been received!\nWe will respond within 12 hours. If you don't hear from us, please contact us using the details provided on the website.",
     "network-error-text": "Sorry, there was a technical issue.\nPlease try contacting us by phone.",
-    "goto_main_page": "Return to the main page"
+    "goto_main_page": "Return to the main page",
+    "booking-message": "I want to book the tour {{tour}}",
+    "phone-required": "Please enter a valid phone number.",
+    "send-btn-text-loading": "Sending...",
+    "try-again": "Try again"
+  },
+  "about_page": {
+    "title": "Tour Operator and DMC in Costa Rica — Costa Rica Tures",
+    "intro": "Costa Rica Tures is a tour operator and destination management company (DMC) in Costa Rica. We organize tours for tour operators, travel agencies and private clients — from route planning and hotel booking to airport pickup, VIP transport and on-site group support.",
+    "experience": "The company has been welcoming travelers since 2018; our team has over 10 years of tourism experience.",
+    "team_title": "Team",
+    "olga_name": "Olga Naimushina",
+    "olga_role": "Founder, tour organizer and coordinator",
+    "olga_bio": "Personally oversees routes and stays in touch with clients at every stage.",
+    "david_name": "David Gonzalez",
+    "david_role": "Head guide",
+    "david_bio": "A Costa Rican guide who speaks fluent Russian and knows the country's nature and logistics from the inside.",
+    "needguide": "NeedGuide profile",
+    "services_title": "Our services",
+    "service1": "Tailor-made tour planning and organization in Costa Rica",
+    "service2": "Excursions and original itineraries",
+    "service3": "VIP transport and transfers",
+    "service4": "Hotel selection — from the best value to VIP level",
+    "service5": "Daily tour supervision and client support",
+    "service6": "Large groups and private clients",
+    "service7": "New routes and wow locations beyond standard programs",
+    "service8": "Destination management for tour operators and travel agencies",
+    "why_title": "Why choose us",
+    "why1": "10+ years of experience organizing tours in Costa Rica",
+    "why2": "A Russian-speaking team with a local Costa Rican guide",
+    "why3": "Deep knowledge of the country's logistics and best hotels",
+    "why4": "Service for different budgets — from comfort to VIP",
+    "why5": "Full cycle: from route idea to on-site support",
+    "b2b_title": "Working with tour operators and agencies",
+    "b2b_text": "We help tour operators from other countries organize a trip to Costa Rica — from route planning and hotel booking to airport pickup, VIP transport and group support.",
+    "photo_placeholder": "Photo coming soon"
+  },
+  "main-page": {
+    "h1": "Russian-speaking guide in Costa Rica — Olga Naimushina"
   }
 }

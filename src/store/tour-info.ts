@@ -1,4 +1,4 @@
-import i18next from "i18next"
+import type { i18n as I18n } from "i18next"
 import { LINE_DEVIDER, TOURS_IDS } from "./consts"
 import { PATHS } from "../widgets/nav-menu/nav-paths"
 
@@ -125,13 +125,13 @@ export const costaRicaHotels: Array<HotelType> = [
 ]
 
 type TourPlanCreatorType = {days: number, tourI18n: string}
-const tourPlanCreator = (props: TourPlanCreatorType):Array<PlanDayType> => {
+const tourPlanCreator = (i18n: I18n, props: TourPlanCreatorType):Array<PlanDayType> => {
     const tour1PlanResult: Array<PlanDayType> = []
     for (let i=1; i<=props.days; i++) {
         tour1PlanResult.push({
-            dayNumber: i, 
-            dayContent: i18next.t(props.tourI18n +'.plan.day' + i) 
-                    ? i18next.t(props.tourI18n+'.plan.day' + i).split(LINE_DEVIDER) 
+            dayNumber: i,
+            dayContent: i18n.t(props.tourI18n +'.plan.day' + i)
+                    ? i18n.t(props.tourI18n+'.plan.day' + i).split(LINE_DEVIDER)
                     : []
         })
     }
@@ -139,25 +139,25 @@ const tourPlanCreator = (props: TourPlanCreatorType):Array<PlanDayType> => {
 }
 
 
-export const toursContent = ():Array<TourType> => [
-    
+export const toursContent = (i18n: I18n):Array<TourType> => [
+
     // TOUR 4 days
     {
         // TOUR 4 days
         id: TOURS_IDS.tour_4_days,
         urlPath: PATHS.tourInfo + '/' + TOURS_IDS.tour_4_days + '/',
-        title: i18next.t('tours.tour' + TOURS_IDS.tour_4_days + '.title'),
+        title: i18n.t('tours.tour' + TOURS_IDS.tour_4_days + '.title'),
         tourImage: {
             img: tourMainPhotos.find(el => el.tourId === TOURS_IDS.tour_4_days)?.photo || "",
             url: tourMainPhotos.find(el => el.tourId === TOURS_IDS.tour_4_days)?.photoUrl || ""
         },
         tourIcon: t3Icon,
-        description: i18next.t('tours.tour' + TOURS_IDS.tour_4_days + '.description'),
-        fullDescription: i18next.t('tours.tour' + TOURS_IDS.tour_4_days + '.full-description'),
-        daysCount: Number(i18next.t('tours.tour' + TOURS_IDS.tour_4_days + '.days-count')),
+        description: i18n.t('tours.tour' + TOURS_IDS.tour_4_days + '.description'),
+        fullDescription: i18n.t('tours.tour' + TOURS_IDS.tour_4_days + '.full-description'),
+        daysCount: Number(i18n.t('tours.tour' + TOURS_IDS.tour_4_days + '.days-count')),
         minPrice: 570,
-        plan: tourPlanCreator({
-            days: Number(i18next.t('tours.tour' + TOURS_IDS.tour_4_days + '.days-count')),
+        plan: tourPlanCreator(i18n, {
+            days: Number(i18n.t('tours.tour' + TOURS_IDS.tour_4_days + '.days-count')),
             tourI18n: 'tours.tour' + TOURS_IDS.tour_4_days
         }),
         adultPrice: [
@@ -197,7 +197,7 @@ export const toursContent = ():Array<TourType> => [
         childAbsDiscount: 90,
         hotelRecomendations: [
             {
-                point: i18next.t('tours.tour' + TOURS_IDS.tour_4_days + '.hotels.hotel1'),
+                point: i18n.t('tours.tour' + TOURS_IDS.tour_4_days + '.hotels.hotel1'),
                 hotels: [
                     costaRicaHotels.find(h => h.hotelId === '01'),
                     costaRicaHotels.find(h => h.hotelId === '02'),
@@ -205,7 +205,7 @@ export const toursContent = ():Array<TourType> => [
                 ]
             },
             {
-                point: i18next.t('tours.tour' + TOURS_IDS.tour_4_days + '.hotels.hotel2'),
+                point: i18n.t('tours.tour' + TOURS_IDS.tour_4_days + '.hotels.hotel2'),
                 hotels: [
                     costaRicaHotels.find(h => h.hotelId === '04'),
                     costaRicaHotels.find(h => h.hotelId === '05'),
@@ -213,7 +213,7 @@ export const toursContent = ():Array<TourType> => [
                 ]
             }
          ]
-        
+
     },
 
 
@@ -227,13 +227,13 @@ export const toursContent = ():Array<TourType> => [
             url: tourMainPhotos.find(el => el.tourId === TOURS_IDS.tour_7_days)?.photoUrl || "",
         },
         tourIcon: t1Icon,
-        daysCount: Number(i18next.t('tours.tour'+TOURS_IDS.tour_7_days+'.days-count')),
-        title: i18next.t('tours.tour'+TOURS_IDS.tour_7_days+'.title'),
-        description: i18next.t('tours.tour'+TOURS_IDS.tour_7_days+'.description'),
-        fullDescription: i18next.t('tours.tour' + TOURS_IDS.tour_7_days + '.full-description'),
+        daysCount: Number(i18n.t('tours.tour'+TOURS_IDS.tour_7_days+'.days-count')),
+        title: i18n.t('tours.tour'+TOURS_IDS.tour_7_days+'.title'),
+        description: i18n.t('tours.tour'+TOURS_IDS.tour_7_days+'.description'),
+        fullDescription: i18n.t('tours.tour' + TOURS_IDS.tour_7_days + '.full-description'),
         minPrice: 690,
-        plan: tourPlanCreator({
-            days: Number(i18next.t('tours.tour'+TOURS_IDS.tour_7_days+'.days-count')),
+        plan: tourPlanCreator(i18n, {
+            days: Number(i18n.t('tours.tour'+TOURS_IDS.tour_7_days+'.days-count')),
             tourI18n: 'tours.tour' + TOURS_IDS.tour_7_days
         }),
         adultPrice: [
@@ -273,7 +273,7 @@ export const toursContent = ():Array<TourType> => [
         childAbsDiscount: 70,
         hotelRecomendations: [
             {
-                point: i18next.t('tours.tour'+TOURS_IDS.tour_7_days+'.hotels.hotel1'),
+                point: i18n.t('tours.tour'+TOURS_IDS.tour_7_days+'.hotels.hotel1'),
                 hotels: [
                     costaRicaHotels.find(h => h.hotelId === '07'),
                     costaRicaHotels.find(h => h.hotelId === '08'),
@@ -281,7 +281,7 @@ export const toursContent = ():Array<TourType> => [
                 ]
             },
             {
-                point: i18next.t('tours.tour'+TOURS_IDS.tour_7_days+'.hotels.hotel2'),
+                point: i18n.t('tours.tour'+TOURS_IDS.tour_7_days+'.hotels.hotel2'),
                 hotels: [
                     costaRicaHotels.find(h => h.hotelId === '04'),
                     costaRicaHotels.find(h => h.hotelId === '05'),
@@ -289,15 +289,15 @@ export const toursContent = ():Array<TourType> => [
                 ]
             },
             {
-                point: i18next.t('tours.tour'+TOURS_IDS.tour_7_days+'.hotels.hotel3'),
+                point: i18n.t('tours.tour'+TOURS_IDS.tour_7_days+'.hotels.hotel3'),
                 hotels: [
                     costaRicaHotels.find(h => h.hotelId === '01'),
                     costaRicaHotels.find(h => h.hotelId === '02'),
                     costaRicaHotels.find(h => h.hotelId === '03'),
                 ]
             }
-   
-        ]   
+
+        ]
     },
 
     // TOUR 9 days
@@ -305,18 +305,18 @@ export const toursContent = ():Array<TourType> => [
         // TOUR 9 days
         id: TOURS_IDS.tour_9_days,
         urlPath: PATHS.tourInfo + '/'+TOURS_IDS.tour_9_days+'/',
-        title: i18next.t('tours.tour'+TOURS_IDS.tour_9_days+'.title'),
+        title: i18n.t('tours.tour'+TOURS_IDS.tour_9_days+'.title'),
         tourImage: {
             img: tourMainPhotos.find(el => el.tourId === TOURS_IDS.tour_9_days)?.photo || "",
             url: tourMainPhotos.find(el => el.tourId === TOURS_IDS.tour_9_days)?.photoUrl || "",
         },
         tourIcon: t4Icon,
-        description: i18next.t('tours.tour'+TOURS_IDS.tour_9_days+'.description'),
-        fullDescription: i18next.t('tours.tour' + TOURS_IDS.tour_9_days + '.full-description'),
-        daysCount: Number(i18next.t('tours.tour'+TOURS_IDS.tour_9_days+'.days-count')),
+        description: i18n.t('tours.tour'+TOURS_IDS.tour_9_days+'.description'),
+        fullDescription: i18n.t('tours.tour' + TOURS_IDS.tour_9_days + '.full-description'),
+        daysCount: Number(i18n.t('tours.tour'+TOURS_IDS.tour_9_days+'.days-count')),
         minPrice: 890,
-        plan: tourPlanCreator({
-            days: Number(i18next.t('tours.tour'+TOURS_IDS.tour_9_days+'.days-count')),
+        plan: tourPlanCreator(i18n, {
+            days: Number(i18n.t('tours.tour'+TOURS_IDS.tour_9_days+'.days-count')),
             tourI18n: 'tours.tour' + TOURS_IDS.tour_9_days
         }),
         adultPrice: [
@@ -356,7 +356,7 @@ export const toursContent = ():Array<TourType> => [
         childAbsDiscount: 90,
         hotelRecomendations: [
             {
-                point: i18next.t('tours.tour'+TOURS_IDS.tour_9_days+'.hotels.hotel1'),
+                point: i18n.t('tours.tour'+TOURS_IDS.tour_9_days+'.hotels.hotel1'),
                 hotels: [
                     costaRicaHotels.find(h => h.hotelId === '01'),
                     costaRicaHotels.find(h => h.hotelId === '02'),
@@ -364,7 +364,7 @@ export const toursContent = ():Array<TourType> => [
                 ]
             },
             {
-                point: i18next.t('tours.tour'+TOURS_IDS.tour_9_days+'.hotels.hotel2'),
+                point: i18n.t('tours.tour'+TOURS_IDS.tour_9_days+'.hotels.hotel2'),
                 hotels: [
                     costaRicaHotels.find(h => h.hotelId === '04'),
                     costaRicaHotels.find(h => h.hotelId === '05'),
@@ -373,7 +373,7 @@ export const toursContent = ():Array<TourType> => [
 
             },
             {
-                point: i18next.t('tours.tour'+TOURS_IDS.tour_9_days+'.hotels.hotel3'),
+                point: i18n.t('tours.tour'+TOURS_IDS.tour_9_days+'.hotels.hotel3'),
                 hotels: [
                     costaRicaHotels.find(h => h.hotelId === '07'),
                     costaRicaHotels.find(h => h.hotelId === '08'),
@@ -381,7 +381,7 @@ export const toursContent = ():Array<TourType> => [
                 ]
             },
             {
-                point: i18next.t('tours.tour'+TOURS_IDS.tour_9_days+'.hotels.hotel4'),
+                point: i18n.t('tours.tour'+TOURS_IDS.tour_9_days+'.hotels.hotel4'),
                 hotels: [
                     costaRicaHotels.find(h => h.hotelId === '07'),
                     costaRicaHotels.find(h => h.hotelId === '08'),
@@ -401,13 +401,13 @@ export const toursContent = ():Array<TourType> => [
             url: tourMainPhotos.find(el => el.tourId === TOURS_IDS.tour_12_days)?.photoUrl || "",
         },
         tourIcon: t2Icon,
-        title: i18next.t('tours.tour'+TOURS_IDS.tour_12_days+'.title'),
-        description: i18next.t('tours.tour'+TOURS_IDS.tour_12_days+'.description'),
-        fullDescription: i18next.t('tours.tour' + TOURS_IDS.tour_12_days + '.full-description'),
+        title: i18n.t('tours.tour'+TOURS_IDS.tour_12_days+'.title'),
+        description: i18n.t('tours.tour'+TOURS_IDS.tour_12_days+'.description'),
+        fullDescription: i18n.t('tours.tour' + TOURS_IDS.tour_12_days + '.full-description'),
         minPrice: 690,
-        daysCount: Number(i18next.t('tours.tour'+TOURS_IDS.tour_12_days+'.days-count')),
-        plan: tourPlanCreator({
-            days: Number(i18next.t('tours.tour'+TOURS_IDS.tour_12_days+'.days-count')),
+        daysCount: Number(i18n.t('tours.tour'+TOURS_IDS.tour_12_days+'.days-count')),
+        plan: tourPlanCreator(i18n, {
+            days: Number(i18n.t('tours.tour'+TOURS_IDS.tour_12_days+'.days-count')),
             tourI18n: 'tours.tour' + TOURS_IDS.tour_12_days
         }),
         adultPrice: [
@@ -447,7 +447,7 @@ export const toursContent = ():Array<TourType> => [
         childAbsDiscount: 80,
         hotelRecomendations: [
             {
-                point: i18next.t('tours.tour'+TOURS_IDS.tour_12_days+'.hotels.hotel1'),
+                point: i18n.t('tours.tour'+TOURS_IDS.tour_12_days+'.hotels.hotel1'),
                 hotels: [
                     costaRicaHotels.find(h => h.hotelId === '07'),
                     costaRicaHotels.find(h => h.hotelId === '08'),
@@ -455,7 +455,7 @@ export const toursContent = ():Array<TourType> => [
                 ]
             },
             {
-                point: i18next.t('tours.tour'+TOURS_IDS.tour_12_days+'.hotels.hotel2'),
+                point: i18n.t('tours.tour'+TOURS_IDS.tour_12_days+'.hotels.hotel2'),
                 hotels: [
                     costaRicaHotels.find(h => h.hotelId === '04'),
                     costaRicaHotels.find(h => h.hotelId === '05'),
@@ -463,7 +463,7 @@ export const toursContent = ():Array<TourType> => [
                 ]
             },
             {
-                point: i18next.t('tours.tour'+TOURS_IDS.tour_12_days+'.hotels.hotel3'),
+                point: i18n.t('tours.tour'+TOURS_IDS.tour_12_days+'.hotels.hotel3'),
                 hotels: [
                     costaRicaHotels.find(h => h.hotelId === '10'),
                     costaRicaHotels.find(h => h.hotelId === '11'),
@@ -473,7 +473,7 @@ export const toursContent = ():Array<TourType> => [
                 ]
             },
             {
-                point: i18next.t('tours.tour'+TOURS_IDS.tour_12_days+'.hotels.hotel4'),
+                point: i18n.t('tours.tour'+TOURS_IDS.tour_12_days+'.hotels.hotel4'),
                 hotels: [
                     costaRicaHotels.find(h => h.hotelId === '01'),
                     costaRicaHotels.find(h => h.hotelId === '02'),

@@ -1,0 +1,42 @@
+.faq-native-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+}
+
+.faq-native-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    padding: 6px 0 12px;
+}
+
+.faq-native-question {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    cursor: pointer;
+    list-style: none;
+
+    &::-webkit-details-marker {
+        display: none;
+    }
+
+    h4 {
+        margin: 0;
+    }
+}
+
+.faq-native-circle {
+    min-width: 10px;
+    min-height: 10px;
+    background: #cc0;
+    border-radius: 50%;
+}
+
+.faq-native-answer {
+    padding: 10px 0 0 24px;
+
+    p {
+        margin: 0 0 8px;
+    }
+}

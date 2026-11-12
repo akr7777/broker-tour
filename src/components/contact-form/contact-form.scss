@@ -91,3 +91,11 @@ $cross-icon-size: 35px;
 .contact-form-phone-container {
     background-color: red;
 }
+.contact-form-honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}

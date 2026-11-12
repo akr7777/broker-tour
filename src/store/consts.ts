@@ -1,4 +1,4 @@
-import i18next from "i18next";
+import type { i18n as I18n } from "i18next";
 
 export const DIV_IDS = {
     contacts: 'contacts',
@@ -21,8 +21,8 @@ export const bookTourSendStatusEnum = {
     notSent: "NOT_SENT",
     delivered: "DELIVERED",
     error: "ERROR"
-} 
-export type BookTourSendStatusType = 
+}
+export type BookTourSendStatusType =
     typeof bookTourSendStatusEnum.notSent |
     typeof bookTourSendStatusEnum.delivered |
     typeof bookTourSendStatusEnum.error
@@ -67,16 +67,16 @@ export const FAQ_QUESTIONS_COUNT = 20
 
 
 export type FAQ_Type = { question: string, answer: string }
-export const faq_Data = (): Array<FAQ_Type> => {
+export const faq_Data = (i18n: I18n): Array<FAQ_Type> => {
 
     const faqData: Array<FAQ_Type> = []
     for (let i=1; i<=FAQ_QUESTIONS_COUNT; i++) {
-        
-        if (i18next.exists('faq.' + i + '.question') && 
-                i18next.exists('faq.' + i + '.answer')) {
+
+        if (i18n.exists('faq.' + i + '.question') &&
+                i18n.exists('faq.' + i + '.answer')) {
             faqData.push({
-                question: i18next.t('faq.' + i + '.question'),
-                answer: i18next.t('faq.' + i + '.answer')
+                question: i18n.t('faq.' + i + '.question'),
+                answer: i18n.t('faq.' + i + '.answer')
             })
         }
     }
@@ -84,4 +84,4 @@ export const faq_Data = (): Array<FAQ_Type> => {
     return faqData
 }
 
-    
+

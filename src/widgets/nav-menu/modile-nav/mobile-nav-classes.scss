@@ -93,6 +93,8 @@
     gap: 10px;
 }
 .mobile-nav-menu-subelem-child-class {
+    text-decoration: none;
+    color: inherit;
     width: calc(100% - 40px);
     // background-color: $nav-menu-element-bg-color;
     padding: 10px 20px;

@@ -8,15 +8,15 @@ import './separate-faq-page.scss'
 import { PriceCalculation2 } from '../../widgets/price-calculation-2/price-calculation-2'
 
 const SeparateFAQpage = () => {
-    const {t} = useTranslation()
+    const {t, i18n} = useTranslation()
 
     return (
         <WidgetWrapper>
-            <ArticleTitle title={t('faq.title')} />
+            <ArticleTitle title={t('faq.title')} level="h1" />
 
             <PriceCalculation2 />
 
-            {faq_Data().map(el => {
+            {faq_Data(i18n).map(el => {
                 return (
                     <div key={uuid()} className='separate_faq_page_qa'>
                         <div>

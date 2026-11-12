@@ -6,8 +6,11 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { ButtonOne } from '../buttons/button1'
 import { ANIMATION_TIME_SHORT, BookTourSendStatusType, CONTACTS, LINE_DEVIDER, bookTourSendStatusEnum } from '../../store/consts'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from '../../vike/router'
 import { PATHS } from '../../widgets/nav-menu/nav-paths'
+import { localizedPath, LanguagesType } from '../../i18/langs'
+import { sendBookingNotification } from '../../api/emailjs'
+import { isHoneypotFilled, isValidPhone } from './contact-form-utils'
 
 import waImage from '../../assets/icons/social-networks/whatsapp.svg'
 import crossImg from '../../assets/icons/cross.png'
@@ -24,10 +27,14 @@ import 'react-international-phone/style.css';
 type PropsType = { tourTitle: string }
 
 export const ContactForm = (props: PropsType) => {
-    const {t} = useTranslation()
+    const {t, i18n} = useTranslation()
+    const language = i18n.language as LanguagesType
     const navigate = useNavigate()
     const dispatch = useAppDispatch()
     const [phone, setPhone] = useState<string>('')
+    const [isSending, setIsSending] = useState<boolean>(false)
+    const [validationError, setValidationError] = useState<string | null>(null)
+    const [honeypot, setHoneypot] = useState<string>('')
 
     // const countries = defaultCountries.filter((country) => {
     //     const { iso2 } = parseCountry(country);
@@ -43,34 +50,39 @@ export const ContactForm = (props: PropsType) => {
 
     const waLink = 'https://api.whatsapp.com/send/?phone=' + CONTACTS.phoneOlga + '&text=' + t('contacts.contact-whatsapp-text', {tour: props.tourTitle})
     
-    const CONTACT_FORM_SEND_URL = import.meta.env.VITE_SERVER_URL
+    const onBtnClickHandler = async () => {
+        if (isSending) return
 
-    const onBtnClickHandler = () => {
-        fetch(CONTACT_FORM_SEND_URL, {
-            method: "POST",
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                title: props.tourTitle,
-                phone: phone,
-                content: "Хочу забронировать тур " + props.tourTitle
+        if (isHoneypotFilled(honeypot)) return
+
+        if (!isValidPhone(phone)) {
+            setValidationError(t('contact-form.phone-required'))
+            return
+        }
+
+        setValidationError(null)
+        setIsSending(true)
+
+        try {
+            await sendBookingNotification({
+                tourTitle: props.tourTitle,
+                phone,
+                message: t('contact-form.booking-message', { tour: props.tourTitle }),
+                language,
+                pageUrl: window.location.href,
             })
-        })
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 277) {
-                    dispatch(setBookTourSendStatusAC(bookTourSendStatusEnum.delivered))
-                } else {
-                    dispatch(setBookTourSendStatusAC(bookTourSendStatusEnum.error))
-                }
-            })
-            .catch(error => {
-                console.error(error)
-                dispatch(setBookTourSendStatusAC(bookTourSendStatusEnum.error))
-            });
+            dispatch(setBookTourSendStatusAC(bookTourSendStatusEnum.delivered))
+        } catch (error) {
+            const message = error instanceof Error ? error.message : 'unknown error'
+            console.error('EmailJS booking notification failed', message)
+            dispatch(setBookTourSendStatusAC(bookTourSendStatusEnum.error))
+        } finally {
+            setIsSending(false)
+        }
     }
     const closeClickHandler = () => dispatch(setIsBookTourShow(false))
     const onMainPageBtnClick = () => {
-        navigate(PATHS.mainPage)
+        navigate(localizedPath(PATHS.mainPage, language))
         closeClickHandler()
         document.documentElement.scrollTo({
             top: 0,
@@ -130,7 +142,29 @@ export const ContactForm = (props: PropsType) => {
                             />
                             </div>
                         </div>
-                        <ButtonOne text={t('contact-form.send-btn-text')} onClick={onBtnClickHandler} />
+
+                        <input
+                            type='text'
+                            name='company'
+                            value={honeypot}
+                            onChange={(event) => setHoneypot(event.target.value)}
+                            className='contact-form-honeypot'
+                            tabIndex={-1}
+                            autoComplete='off'
+                            aria-hidden='true'
+                        />
+
+                        {validationError && (
+                            <div className='contact-form-network-error-text' role='alert'>
+                                {validationError}
+                            </div>
+                        )}
+
+                        <ButtonOne
+                            text={isSending ? t('contact-form.send-btn-text-loading') : t('contact-form.send-btn-text')}
+                            onClick={onBtnClickHandler}
+                            disabled={isSending}
+                        />
                     </>}
 
                 {sendStatus === bookTourSendStatusEnum.delivered && 

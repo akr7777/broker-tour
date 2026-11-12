@@ -1,14 +1,11 @@
 import { motion } from 'framer-motion'
 import { Header } from '../../pages/header/header'
 import { LowerInfoPanel } from './wellcome-lower-info'
-import { useTranslation } from 'react-i18next'
 
 import './wellcome-classes.scss'
 import '../../pages/header/header-classes.scss'
 
 export const WellcomeFrame = () => {
-    const {t} = useTranslation()
-
     return (
         <>
         

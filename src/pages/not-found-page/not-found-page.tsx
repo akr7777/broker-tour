@@ -1,12 +1,14 @@
 import { useTranslation } from 'react-i18next'
 import { PATHS } from '../../widgets/nav-menu/nav-paths'
-import { NavLink } from 'react-router-dom'
+import { localizedPath, LanguagesType } from '../../i18/langs'
+import { NavLink } from '../../vike/nav-link'
 
 import './not-found-page-classes.scss'
 import clsx from 'clsx'
 
 export const NotFoundPage = () => {
-    const {t} = useTranslation()
+    const {t, i18n} = useTranslation()
+    const language = i18n.language as LanguagesType
 
     return (
         <>
@@ -16,7 +18,7 @@ export const NotFoundPage = () => {
                     <div>{t('not_found_page.text')}</div>
                     <NavLink 
                         className={'not-found-page-link-class'}
-                        to={PATHS.mainPage}
+                        to={localizedPath(PATHS.mainPage, language)}
                     >
                         {t('not_found_page.link_text')}
                     </NavLink>

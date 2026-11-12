@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import { ANIMATION_TIME, ANIMATION_TIME_SHORT, DIV_IDS } from '../../../store/consts'
 import uuid from 'react-uuid'
 import { SubNavMenuElement } from './sub-menu-elem'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from '../../../vike/router'
 import { useAppDispatch, useAppSelector } from '../../../store/store'
 import { setWhichSubMenuPointOpen } from '../../../store/appSlice'
 
@@ -63,16 +63,20 @@ export const DestopNavMenu = (props: NavMenuPropsType) => {
                         return (
                             <div key={uuid()}>
 
-                                <nav 
-                                    className='desctop-nav-link-class' 
-                                    onClick={
-                                        elem.subElements 
-                                            ? () => subMenuClickHandler(elem.title)
-                                            : () => onLinkClickHandler(elem.path)
-                                    }
+                                <a
+                                    className='desctop-nav-link-class'
+                                    href={elem.subElements?.[0]?.path ?? elem.path}
+                                    onClick={(event) => {
+                                        event.preventDefault()
+                                        if (elem.subElements) {
+                                            subMenuClickHandler(elem.title)
+                                        } else {
+                                            onLinkClickHandler(elem.path)
+                                        }
+                                    }}
                                 >
                                     {elem.title}
-                                </nav>
+                                </a>
 
                                 <AnimatePresence mode="wait" initial={false}>
                                     {elem.title === whichTitleOpen &&

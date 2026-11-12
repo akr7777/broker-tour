@@ -15,9 +15,12 @@ export type ResizeType = {
   isScreenXl: boolean;
   isScreenXxl: boolean;
 };
+const SSR_WIDTH = 1200;
+const SSR_HEIGHT = 800;
+
 export const useResize = () => {
-  const [width, setWidth] = useState(window.innerWidth);
-  const [height, setHeight] = useState(window.innerWidth);
+  const [width, setWidth] = useState(SSR_WIDTH);
+  const [height, setHeight] = useState(SSR_HEIGHT);
 
   useEffect(() => {
     const handleResize = () => {

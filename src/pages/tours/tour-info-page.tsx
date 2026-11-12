@@ -1,9 +1,10 @@
 import { useTranslation } from "react-i18next"
 import { WidgetWrapper } from "../../shared/widget-wrapper/widget-wrapper"
 import { PriceCalculation2 } from "../../widgets/price-calculation-2/price-calculation-2"
-import { useNavigate, useParams } from "react-router-dom"
+import { useNavigate, useParams } from "../../vike/router"
 import { TourType, toursContent } from "../../store/tour-info"
 import { PATHS } from "../../widgets/nav-menu/nav-paths"
+import { localizedPath, LanguagesType } from '../../i18/langs'
 import { DaysPlan2, DaysPlanType } from "./tour-plan-2"
 import { ReactNode } from "react"
 import { tourPhotos } from "../../store/tour-days-photos"
@@ -14,14 +15,15 @@ import { ArticleTitle } from "../../shared/title/title"
 import './tours-classes.scss'
 
 const TourInfoPage = () => {
-    const { t } = useTranslation()
+    const { t, i18n } = useTranslation()
+    const language = i18n.language as LanguagesType
     const {tourId} = useParams()
     const navigate = useNavigate()
 
-    const currentTour: TourType | undefined = toursContent().find(tour => tour.id === Number(tourId))
+    const currentTour: TourType | undefined = toursContent(i18n).find(tour => tour.id === Number(tourId))
 
     if (!currentTour)
-        navigate(PATHS.mainPage)
+        navigate(localizedPath(PATHS.mainPage, language))
 
     const daysPlanData: Array<DaysPlanType> = currentTour?.plan.map(d => {
         const photos: Array<ReactNode> | undefined = 
@@ -34,7 +36,7 @@ const TourInfoPage = () => {
         <>
 
          <WidgetWrapper>
-            <ArticleTitle title={currentTour?.title} />
+            <ArticleTitle title={currentTour?.title} level="h1" />
             <div className="tour-page-description">
                 { currentTour?.description }
             </div>

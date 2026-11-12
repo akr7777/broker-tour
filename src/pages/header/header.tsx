@@ -7,6 +7,7 @@ import { ResizeType, useResize } from '../../hooks/use-resize/useResize';
 import { MobileNavigation } from '../../widgets/nav-menu/modile-nav/mobile-nav';
 import { toursContent } from '../../store/tour-info';
 import { DIV_IDS, NAV_MENU_BREAKPOINT } from '../../store/consts';
+import { localizedPath, LanguagesType } from '../../i18/langs';
 
 import mainPageIcon from '../../assets/icons/menu/home_page.png'
 import phoneIcon from '../../assets/icons/menu/contacts.png'
@@ -33,7 +34,9 @@ export type NavMenuPropsType = {
 
 export const Header = () => {
 
-    const { t } = useTranslation()
+    const { t, i18n } = useTranslation()
+    const language = i18n.language as LanguagesType
+    const localize = (path: string) => localizedPath(path, language)
     const windowSize: ResizeType = useResize()
 
     // const toursSubElements: Array<NavMenuElementsType> = [
@@ -42,23 +45,23 @@ export const Header = () => {
     //     { title: t('tours.tour3.title'), description: t('tours.tour3.description'), path: PATHS.mainPage, imagePath: mainPageIcon },
     // ]
 
-    const tourSubElem: Array<NavMenuElementsType> = toursContent().map(t => {
+    const tourSubElem: Array<NavMenuElementsType> = toursContent(i18n).map(t => {
         return {
-            title: t.title, description: t.description, path: t.urlPath, imagePath: t.tourIcon
+            title: t.title, description: t.description, path: localize(t.urlPath), imagePath: t.tourIcon
         }
     })
 
     const headerNavElements: Array<NavMenuElementsType> = [
-        { title: t('nav.main_page'), path: PATHS.mainPage, imagePath: mainPageIcon },
-        { title: t('nav.nav_tours'), path: PATHS.tourInfo, imagePath: toursIcon, subElements: tourSubElem },
+        { title: t('nav.main_page'), path: localize(PATHS.mainPage), imagePath: mainPageIcon },
+        { title: t('nav.nav_tours'), path: localize(PATHS.tourInfo), imagePath: toursIcon, subElements: tourSubElem },
         { title: t('nav.contacts'), path: '#'+DIV_IDS.contacts, imagePath: phoneIcon },
         
         
-        { title: t('nav.how_to_book'), path: PATHS.mainPage + '#'+DIV_IDS.howToBook, imagePath: bookingIcon },
-        { title: t('nav.about_us'), path: PATHS.mainPage + '#'+DIV_IDS.aboutUs, imagePath: aboutUsIcon },
+        { title: t('nav.how_to_book'), path: localize(PATHS.mainPage) + '#'+DIV_IDS.howToBook, imagePath: bookingIcon },
+        { title: t('nav.about_us'), path: localize(PATHS.aboutPage), imagePath: aboutUsIcon },
         // { title: t('nav.faq'), path: PATHS.mainPage + '#' + DIV_IDS.faq, imagePath: faqImage },
 
-        { title: t('nav.faq'), path: PATHS.separateFaqPage, imagePath: faqImage },
+        { title: t('nav.faq'), path: localize(PATHS.separateFaqPage), imagePath: faqImage },
     ]
     
     return (

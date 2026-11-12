@@ -29,3 +29,7 @@
 .center-button-div {
     text-align: center;
 }
+.button-one-class:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}

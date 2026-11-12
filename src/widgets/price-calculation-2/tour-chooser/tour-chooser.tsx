@@ -17,7 +17,7 @@ export type PriceCalc2TourChooserPropsType = {
 }
 
 export const PriceCalc2TourChooser = (props: PriceCalc2TourChooserPropsType) => {
-    const {t} = useTranslation()
+    const {t, i18n} = useTranslation()
     const onTourChooseClickHandler = (newTour: TourType) => {
         props.setCurrentTour(newTour)
         props.closeFunction(false)
@@ -43,7 +43,7 @@ export const PriceCalc2TourChooser = (props: PriceCalc2TourChooserPropsType) => 
             </div>
 
 
-            {toursContent().map(t => {
+            {toursContent(i18n).map(t => {
                 return (
                     <div
                         key={uuid()}
