@@ -15,7 +15,7 @@ Telegram больше не нужен. EmailJS заменяет текущий b
 - активная форма бронирования тура должна отправлять уведомление через EmailJS;
 - уведомление приходит на email менеджера (по умолчанию `CONTACTS.email`);
 - из кода и env удаляются backend-URL, axios, мёртвая форма обратной связи и весь Telegram-легаси;
-- добавляются `.env.example`, типизация env, обработка ошибок, защита от дублей, honeypot, reCAPTCHA v2, тесты и документация.
+- добавляются `.env.example`, типизация env, обработка ошибок, защита от дублей, honeypot, тесты и документация.
 
 ## 2. Текущее состояние
 
@@ -92,8 +92,6 @@ Telegram больше не нужен. EmailJS заменяет текущий b
 | Telegram-ссылка в контактах | удалить вместе с `CONTACTS.telegram`, CSS и `contacts.or` |
 | Защита от дублей | `isSending` + `disabled` + guard в обработчике |
 | Honeypot | скрытое поле `company`; если заполнено — не отправлять |
-| CAPTCHA | reCAPTCHA v2 checkbox + проверка в EmailJS-шаблоне |
-| Секрет reCAPTCHA | только в EmailJS template settings, не во фронтенде |
 
 ### 3.1 Готовность к старту
 
@@ -103,8 +101,6 @@ Telegram больше не нужен. EmailJS заменяет текущий b
 - [ ] Создан шаблон с переменными из раздела 4.2; `To Email` указывает на реального получателя.
 - [ ] Получены `Service ID`, `Template ID`, `Public Key`.
 - [ ] В Dashboard → Account → Security → Domains добавлены localhost и production-домены.
-- [ ] Зарегистрирован reCAPTCHA v2, получены Site Key и Secret Key; Secret Key добавлен в EmailJS template settings.
-- [ ] В список доменов reCAPTCHA добавлены localhost и production-домены.
 - [x] Подтверждено: Telegram больше не нужен; Telegram-бот, секреты и фронтенд-легаси удаляются.
 - [x] Подтверждено удаление мёртвой формы `ContactFeedbackForm` и `src/api/api.ts`.
 - [ ] Подтверждён получатель уведомлений (по умолчанию `CONTACTS.email`).
@@ -165,9 +161,6 @@ Telegram больше не нужен. EmailJS заменяет текущий b
 | `language` | текущий язык i18n | да |
 | `page_url` | `window.location.href` (содержит домен и путь) | да |
 | `submitted_at` | ISO-время отправки | да |
-| `g-recaptcha-response` | токен reCAPTCHA v2 | да |
-
-`g-recaptcha-response` — специальное поле для EmailJS CAPTCHA. Его не нужно выводить в теле письма; EmailJS использует его для проверки.
 
 При необходимости добавить `tour_id`, `user_email` и другие поля, но только после обновления кода и шаблона одновременно.
 
@@ -182,36 +175,12 @@ Telegram больше не нужен. EmailJS заменяет текущий b
    - preview-домены, если используются.
 3. Синтаксис домена: `<scheme>://<hostname>[:port]`, например `https://costaricatures.com` или `http://localhost:5173`. Используется заголовок `Origin`; добавлять нужно именно origin, без пути.
 4. Не использовать wildcard, если можно указать точные домены.
-5. reCAPTCHA v2 настраивается отдельно по разделу 4.5.
-6. Если тариф и настройки позволяют — включить rate limiting.
-7. Если список доменов пуст, public key технически можно использовать с любого origin. Для production обязательно заполнить allowlist.
+5. Если тариф и настройки позволяют — включить rate limiting.
+6. Если список доменов пуст, public key технически можно использовать с любого origin. Для production обязательно заполнить allowlist.
 
 ### 4.4 Проверка шаблона
 
 Отправить тестовое письмо из EmailJS dashboard. Убедиться, что все переменные подставляются и письмо не попадает в спам. Добавить адрес отправителя в контакты/белый список у менеджера.
-
-### 4.5 Регистрация reCAPTCHA v2
-
-EmailJS поддерживает **только reCAPTCHA v2** (checkbox), не v3.
-
-1. Открыть [Google reCAPTCHA Admin](https://www.google.com/recaptcha/admin/create).
-2. Указать Label, например `BrokerTour`.
-3. Выбрать тип **reCAPTCHA v2 → «I'm not a robot» Checkbox**.
-4. Добавить домены:
-   - `localhost` для локальной разработки;
-   - production-домен(ы);
-   - preview-домены, если используются.
-5. Принять условия и создать ключи.
-6. Скопировать **Site Key** (публичный) и **Secret Key** (секретный).
-7. **Site Key** добавить в `.env` как `VITE_RECAPTCHA_SITE_KEY`.
-8. **Secret Key** добавить в EmailJS: шаблон → **Settings** → включить **reCAPTCHA V2 verification** и вставить секрет.
-9. Secret Key не добавлять в `.env` с префиксом `VITE_`, не коммитить и не логировать.
-
-Домены в Google reCAPTCHA и EmailJS — это два разных allowlist. Нужно заполнить оба.
-
-### 4.6 Проверка CAPTCHA
-
-В EmailJS dashboard убедиться, что у шаблона включена reCAPTCHA V2. Без токена `g-recaptcha-response` письмо не должно отправляться.
 
 ## 5. Env и конфигурация
 
@@ -224,9 +193,6 @@ EmailJS поддерживает **только reCAPTCHA v2** (checkbox), не 
 VITE_EMAILJS_SERVICE_ID=service_xxxxxxxxxxxx
 VITE_EMAILJS_TEMPLATE_ID=template_xxxxxxxxxxxx
 VITE_EMAILJS_PUBLIC_KEY=public_xxxxxxxxxxxx
-
-# Google reCAPTCHA v2 public site key
-VITE_RECAPTCHA_SITE_KEY=6Lc_xxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
 `VITE_SERVER_URL` в `.env.example` не добавлять: после миграции он не используется.
@@ -253,18 +219,10 @@ interface ImportMetaEnv {
   readonly VITE_EMAILJS_SERVICE_ID: string;
   readonly VITE_EMAILJS_TEMPLATE_ID: string;
   readonly VITE_EMAILJS_PUBLIC_KEY: string;
-  readonly VITE_RECAPTCHA_SITE_KEY: string;
 }
 
 interface ImportMeta {
   readonly env: ImportMetaEnv;
-}
-
-interface Window {
-  grecaptcha?: {
-    getResponse(): string;
-    reset(): void;
-  };
 }
 ```
 
@@ -294,7 +252,6 @@ export type BookingNotification = {
     message: string;
     language: string;
     pageUrl?: string;
-    recaptchaToken: string;
 };
 
 type EmailJsConfig = {
@@ -322,7 +279,6 @@ export const buildBookingParams = (data: BookingNotification) => ({
     language: data.language,
     page_url: data.pageUrl || window.location.href,
     submitted_at: new Date().toISOString(),
-    'g-recaptcha-response': data.recaptchaToken,
 });
 
 export const sendBookingNotification = async (data: BookingNotification) => {
@@ -363,7 +319,6 @@ export const sendBookingNotification = async (data: BookingNotification) => {
 - показывать ошибку валидации;
 - блокировать повторную отправку;
 - добавить проверку honeypot;
-- добавить проверку reCAPTCHA и сброс виджета при ошибке;
 - добавить кнопку «Попробовать снова» в состоянии ошибки.
 
 Ключевой фрагмент:
@@ -385,12 +340,6 @@ const onBtnClickHandler = async () => {
         return;
     }
 
-    const recaptchaToken = window.grecaptcha?.getResponse();
-    if (!recaptchaToken) {
-        setValidationError(t('contact-form.captcha-required'));
-        return;
-    }
-
     setValidationError(null);
     setIsSending(true);
 
@@ -401,13 +350,11 @@ const onBtnClickHandler = async () => {
             message: t('contact-form.booking-message', { tour: props.tourTitle }),
             language: i18n.language,
             pageUrl: window.location.href,
-            recaptchaToken,
         });
         dispatch(setBookTourSendStatusAC(bookTourSendStatusEnum.delivered));
     } catch (error) {
         const message = error instanceof Error ? error.message : 'unknown error';
         console.error('EmailJS booking notification failed', message);
-        window.grecaptcha?.reset();
         dispatch(setBookTourSendStatusAC(bookTourSendStatusEnum.error));
     } finally {
         setIsSending(false);
@@ -435,11 +382,6 @@ UI:
     </div>
 )}
 
-<div
-    className="g-recaptcha"
-    data-sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
-/>
-
 <ButtonOne
     text={isSending
         ? t('contact-form.send-btn-text-loading')
@@ -460,17 +402,7 @@ UI:
 
 Не логировать телефон, сообщение или env-значения. В `console.error` допустимо передавать только статус/текст ошибки без payload.
 
-### 6.2.1 `index.html`
-
-Добавить скрипт reCAPTCHA v2:
-
-```html
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-```
-
-Скрипт должен загрузиться до того, как пользователь нажмёт «Отправить». Если `window.grecaptcha` ещё нет, форма покажет `captcha-required`; повторная попытка после загрузки скрипта сработает.
-
-### 6.2.2 `src/components/contact-form/contact-form.scss`
+### 6.2.1 `src/components/contact-form/contact-form.scss`
 
 ```scss
 .contact-form-honeypot {
@@ -526,7 +458,6 @@ type ButtonPropsType = {
 ```json
 "booking-message": "I want to book the tour {{tour}}",
 "phone-required": "Please enter a valid phone number.",
-"captcha-required": "Please confirm that you are not a robot.",
 "send-btn-text-loading": "Sending...",
 "try-again": "Try again"
 ```
@@ -536,7 +467,6 @@ type ButtonPropsType = {
 ```json
 "booking-message": "Quiero reservar el tour {{tour}}",
 "phone-required": "Por favor, introduzca un número de teléfono válido.",
-"captcha-required": "Por favor, confirme que no es un robot.",
 "send-btn-text-loading": "Enviando...",
 "try-again": "Intentar de nuevo"
 ```
@@ -546,7 +476,6 @@ type ButtonPropsType = {
 ```json
 "booking-message": "Хочу забронировать тур {{tour}}",
 "phone-required": "Пожалуйста, укажите корректный номер телефона.",
-"captcha-required": "Пожалуйста, подтвердите, что вы не робот.",
 "send-btn-text-loading": "Отправка...",
 "try-again": "Попробовать снова"
 ```
@@ -582,7 +511,7 @@ grep -rniE "telegram|t\.me|tg_keyframes|contacts\.or([^_[:alnum:]]|$)|VITE_SERVE
 
 Обновить:
 
-- **Environment:** `.env.example` существует; локальный `.env`; переменные `VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID`, `VITE_EMAILJS_PUBLIC_KEY`, `VITE_RECAPTCHA_SITE_KEY`; `VITE_*` публичны; `VITE_SERVER_URL` и `VITE_WEB_SITE_URL` удалены.
+- **Environment:** `.env.example` существует; локальный `.env`; переменные `VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID`, `VITE_EMAILJS_PUBLIC_KEY`; `VITE_*` публичны; `VITE_SERVER_URL` и `VITE_WEB_SITE_URL` удалены.
 - **Architecture:** уведомления отправляются через `src/api/emailjs.ts`; backend-URL для форм больше нет.
 - **Testing:** добавить `pnpm test` и путь к тестам EmailJS.
 - **Gotchas:** EmailJS public key не секрет; ограничить origins; шаблон и переменные должны совпадать; Telegram не используется ни для уведомлений, ни как контактный канал; `ContactFeedbackForm` удалена.
@@ -599,44 +528,14 @@ grep -rniE "telegram|t\.me|tg_keyframes|contacts\.or([^_[:alnum:]]|$)|VITE_SERVE
 
 ### 7.2 Honeypot
 
-- Добавить скрытое поле `company` (см. 6.2 и 6.2.2).
+- Добавить скрытое поле `company` (см. 6.2 и 6.2.1).
 - Если `honeypot.trim()` не пустой — не отправлять письмо и не менять UI.
 - Поле должно быть скрыто визуально, но присутствовать в DOM.
 - Honeypot — только базовый барьер; умные боты его обходят.
 
-### 7.3 reCAPTCHA v2
-
-EmailJS поддерживает только reCAPTCHA v2 (checkbox), не v3.
-
-- Зарегистрировать сайт в Google reCAPTCHA (см. 4.5).
-- Site Key добавить в `.env` как `VITE_RECAPTCHA_SITE_KEY`.
-- Secret Key добавить только в EmailJS template settings.
-- Подключить скрипт `https://www.google.com/recaptcha/api.js` в `index.html`.
-- Отрисовать виджет в форме:
-  ```tsx
-  <div
-      className="g-recaptcha"
-      data-sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
-  />
-  ```
-- Перед отправкой получить токен:
-  ```ts
-  const recaptchaToken = window.grecaptcha?.getResponse();
-  if (!recaptchaToken) {
-      setValidationError(t('contact-form.captcha-required'));
-      return;
-  }
-  ```
-- Передать токен в `sendBookingNotification`; `buildBookingParams` кладёт его в `'g-recaptcha-response'`.
-- При ошибке отправки вызвать `window.grecaptcha?.reset()`, чтобы пользователь мог попробовать снова.
-- Если скрипт Google заблокирован/не загрузился, форма не отправится; пользователь может использовать телефон/WhatsApp.
-- Google reCAPTCHA — третья сторона; обновить privacy policy при необходимости.
-- Если CSP появится, разрешить домены `https://www.google.com/recaptcha/`, `https://www.gstatic.com/recaptcha/` для script/frame/connect.
-
-### 7.4 UX и ошибки
+### 7.3 UX и ошибки
 
 - Пустой/слишком короткий телефон показывает `phone-required` и не отправляет запрос.
-- Непройденная CAPTCHA показывает `captcha-required`.
 - Успех: текущий экран `delivered` с существующим текстом.
 - Ошибка EmailJS/сети/конфига: текущий экран `error` + кнопка «Попробовать снова».
 - При повторном открытии модалки статус сбрасывается в `notSent`.
@@ -651,15 +550,15 @@ EmailJS поддерживает только reCAPTCHA v2 (checkbox), не v3.
 - `VITE_*` попадают в клиентский бандл. `VITE_EMAILJS_PUBLIC_KEY` — публичный идентификатор, не секрет.
 - Private key/серверные токены EmailJS нельзя добавлять во фронтенд.
 - Ограничить домены в EmailJS (**Account → Security → Domains**); не полагаться только на public key.
-- Включить reCAPTCHA v2 в EmailJS template settings и использовать honeypot-поле; это два независимых барьера.
-- Client-side honeypot обходим; EmailJS reCAPTCHA и лимиты — основная защита.
+- Использовать honeypot-поле, EmailJS rate limits и allowlist origins.
+- Client-side honeypot обходим; основная защита — rate limits EmailJS и ограничение origins.
 - Не использовать `{{{variable}}}` и raw HTML в шаблоне; ограничивать длину `tour_title`/`phone`/`message`.
-- Не логировать name/email/phone/message/env/recaptcha token.
-- Уведомление содержит PII (телефон, текст заявки). Проверить privacy policy и, при необходимости, добавить упоминание EmailJS и Google reCAPTCHA как обработчиков и сроки хранения.
-- CSP: если появится, добавить `https://api.emailjs.com` в `connect-src`, а для reCAPTCHA — `https://www.google.com/recaptcha/` и `https://www.gstatic.com/recaptcha/` в `script-src`, `frame-src` и `connect-src`.
+- Не логировать name/email/phone/message/env-значения.
+- Уведомление содержит PII (телефон, текст заявки). Проверить privacy policy и, при необходимости, добавить упоминание EmailJS как обработчика и сроки хранения.
+- CSP: если появится, добавить `https://api.emailjs.com` в `connect-src`.
 - `.env` не коммитить; `.env.example` содержит только плейсхолдеры.
 - EmailJS и email-провайдер — третьи стороны; проверить их политику и лимиты.
-- Остаточный риск: публичный ключ можно использовать с разрешённого origin для спама; EmailJS rate limits/reCAPTCHA снижают, но не устраняют риск.
+- Остаточный риск: публичный ключ можно использовать с разрешённого origin для спама; EmailJS rate limits снижают, но не устраняют риск.
 
 ## 9. Тестирование
 
@@ -725,7 +624,6 @@ describe('EmailJS booking notification', () => {
             message: ' Hello ',
             language: 'ru',
             pageUrl: 'https://example.com/tour-info/1',
-            recaptchaToken: 'test-token',
         });
 
         expect(params.tour_title).toBe('Tour');
@@ -734,7 +632,6 @@ describe('EmailJS booking notification', () => {
         expect(params.language).toBe('ru');
         expect(params.page_url).toBe('https://example.com/tour-info/1');
         expect(params.submitted_at).toMatch(/^\d{4}-\d{2}-\d{2}T/);
-        expect(params['g-recaptcha-response']).toBe('test-token');
     });
 
     it('sends with configured ids and public key', async () => {
@@ -746,7 +643,6 @@ describe('EmailJS booking notification', () => {
             message: 'Hello',
             language: 'es',
             pageUrl: 'https://example.com/tour-info/1',
-            recaptchaToken: 'token',
         });
 
         expect(sendMock).toHaveBeenCalledWith(
@@ -756,7 +652,6 @@ describe('EmailJS booking notification', () => {
                 tour_title: 'Tour',
                 phone: '+50689122090',
                 language: 'es',
-                'g-recaptcha-response': 'token',
             }),
             { publicKey: 'public' },
         );
@@ -770,7 +665,6 @@ describe('EmailJS booking notification', () => {
             phone: '+50689122090',
             message: 'Hello',
             language: 'es',
-            recaptchaToken: 'token',
         })).rejects.toThrow('EmailJS configuration is missing');
     });
 
@@ -782,7 +676,6 @@ describe('EmailJS booking notification', () => {
             phone: '+50689122090',
             message: 'Hello',
             language: 'es',
-            recaptchaToken: 'token',
         })).rejects.toThrow('EmailJS responded with status 422');
     });
 });
@@ -792,23 +685,22 @@ describe('EmailJS booking notification', () => {
 
 ### 9.2 Ручная проверка
 
-1. Заполнить `.env` реальными EmailJS-значениями и `VITE_RECAPTCHA_SITE_KEY`.
+1. Заполнить `.env` реальными EmailJS-значениями.
 2. `pnpm dev`.
-3. Открыть тур, нажать «Забронировать тур», ввести телефон, отправить без CAPTCHA — показать `captcha-required`, письмо не отправлять.
-4. Пройти CAPTCHA и отправить. Проверить:
+3. Открыть тур, нажать «Забронировать тур», ввести телефон и отправить. Проверить:
    - письмо пришло на `CONTACTS.email`;
    - тема и переменные корректны;
    - в письме правильные тур, телефон, язык, URL;
    - UI показал успех.
-5. Повторно открыть модалку — форма снова в состоянии `notSent`, CAPTCHA сброшена.
-6. Отправить дважды быстро — должно уйти одно письмо.
-7. Очистить телефон — показать ошибку, письмо не отправлять.
-8. В DevTools заполнить скрытое поле `company` и отправить — письмо не должно уйти (honeypot).
-9. Подставить неверный `VITE_EMAILJS_TEMPLATE_ID` — UI показывает ошибку, приложение не падает, CAPTCHA сбрасывается.
-10. Отключить сеть — UI показывает ошибку.
-11. Проверить на en/es/ru, что `booking-message` переведён и `language` правильный.
-12. Проверить production origin в EmailJS Dashboard → Account → Security → Domains и домены в Google reCAPTCHA Admin.
-13. Проверить, что в консоли нет PII и env-значений.
+4. Повторно открыть модалку — форма снова в состоянии `notSent`.
+5. Отправить дважды быстро — должно уйти одно письмо.
+6. Очистить телефон — показать ошибку, письмо не отправлять.
+7. В DevTools заполнить скрытое поле `company` и отправить — письмо не должно уйти (honeypot).
+8. Подставить неверный `VITE_EMAILJS_TEMPLATE_ID` — UI показывает ошибку, приложение не падает.
+9. Отключить сеть — UI показывает ошибку.
+10. Проверить на en/es/ru, что `booking-message` переведён и `language` правильный.
+11. Проверить production origin в EmailJS Dashboard → Account → Security → Domains.
+12. Проверить, что в консоли нет PII и env-значений.
 
 ### 9.3 Команды
 
@@ -822,8 +714,8 @@ pnpm build
 
 ## 10. Деплой и миграция
 
-1. Настроить EmailJS-шаблон, Allowed origins и домены Google reCAPTCHA.
-2. Добавить `VITE_EMAILJS_*` и `VITE_RECAPTCHA_SITE_KEY` в env хостинга/CI. Vite встраивает их на этапе build.
+1. Настроить EmailJS-шаблон и Allowed origins.
+2. Добавить `VITE_EMAILJS_*` в env хостинга/CI. Vite встраивает их на этапе build.
 3. Задеплоить на preview/staging, отправить тестовую заявку.
 4. Задеплоить production, отправить тестовую заявку с production-домена.
 5. Убедиться, что письмо приходит и не попадает в спам.
@@ -849,17 +741,15 @@ pnpm build
 - Успех/ошибка/валидация/повторная отправка работают.
 - Двойное нажатие не создаёт второе письмо.
 - Honeypot блокирует отправку при заполненном поле `company`.
-- reCAPTCHA v2 включена в EmailJS и проверяется перед отправкой; без токена письмо не уходит.
-- При ошибке CAPTCHA сбрасывается.
 - При повторном открытии модалки статус сбрасывается.
 - `VITE_SERVER_URL`, `axios`, `feedbackAPI`, `ContactFeedbackForm` и `src/api/api.ts` удалены.
 - Удалены `CONTACTS.telegram`, Telegram-ссылка в контактах, CSS/keyframes Telegram и i18n-ключ `contacts.or`.
 - В `src` не осталось упоминаний `telegram`, `t.me`, `tg_keyframes`, `contacts.or` как отдельного ключа/вызова, `VITE_SERVER_URL`, `axios`, `feedbackAPI`, `ContactFeedbackForm`.
-- `.env.example` содержит только актуальные переменные, включая `VITE_RECAPTCHA_SITE_KEY`; `.env` не коммитится.
+- `.env.example` содержит только актуальные переменные `VITE_EMAILJS_*`; `.env` не коммитится.
 - `AGENTS.md` обновлён.
 - `pnpm test`, `pnpm exec tsc --noEmit`, `pnpm lint`, `pnpm build` проходят.
-- Проверены en/es/ru, production origin и домены reCAPTCHA.
-- В логах нет PII/env-значений/recaptcha token.
+- Проверены en/es/ru и production origin.
+- В логах нет PII и env-значений.
 - Telegram-бот и его секреты выведены из эксплуатации; email-to-Telegram мост не настроен.
 
 ## 13. Риски
@@ -867,11 +757,10 @@ pnpm build
 - **Смена привычного канала** — менеджеры привыкли к Telegram; нужно заранее сообщить о переходе на email и проверить, что письма не попадают в спам.
 - **Лимиты EmailJS** — при исчерпании квоты отправка падает; нужен мониторинг и fallback на телефон/WhatsApp.
 - **Спам/доставляемость** — письмо может попасть в спам; проверить отправителя, SPF/DKIM на стороне EmailJS, добавить в белый список.
-- **Публичный ключ** — может быть использован с разрешённого origin; ограничить origins/rate limits/reCAPTCHA.
+- **Публичный ключ** — может быть использован с разрешённого origin; ограничить origins и rate limits.
 - **PII** — телефон и текст заявки уходят третьей стороне; обновить privacy policy при необходимости.
 - **Несовпадение переменных шаблона** — поля будут пустыми; тестировать шаблон и код вместе.
-- **reCAPTCHA недоступна** — Google может быть заблокирован/недоступен; форма не отправится, нужен fallback на телефон/WhatsApp.
-- **Домены reCAPTCHA** — localhost/preview/production должны быть добавлены в Google reCAPTCHA Admin; иначе виджет не пройдёт проверку.
+- **Защита от спама** — остаются honeypot, allowlist origins и rate limits EmailJS; при росте спама может понадобиться отдельная защита.
 - **Allowed domains** — забытый production/preview origin блокирует отправку. Настраивается в EmailJS Dashboard → Account → Security → Domains.
 - **Env на build-time** — Vite встраивает значения при сборке; изменение env требует пересборки.
 - **Мёртвый код** — если продукт позже захочет форму обратной связи, понадобится отдельная задача с i18n-ключами и, возможно, отдельным EmailJS-шаблоном.
@@ -891,5 +780,4 @@ pnpm build
 1. Подтвердить, что уведомления должны приходить именно на `oldagatour@gmail.com`, а не на другой адрес/группу.
 2. Подтвердить, нужен ли автоответ пользователю (в текущем функционале его нет).
 3. Проверить тариф EmailJS и лимиты отправки.
-4. Уточнить, требуется ли юридическое согласие/обновление privacy policy для передачи телефона и текста заявки в EmailJS и Google reCAPTCHA.
-5. Подтвердить, что reCAPTCHA v2 (checkbox) подходит по UX; v3 EmailJS не поддерживает.
+4. Уточнить, требуется ли юридическое согласие/обновление privacy policy для передачи телефона и текста заявки в EmailJS.
