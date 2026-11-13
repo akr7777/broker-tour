@@ -15,6 +15,8 @@ export function Head() {
     <>
       <AnalyticsScripts />
       <script src="/index-preloader-script.js" defer />
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <link rel="alternate icon" type="image/png" href="/logo.png" />
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={canonical} />
